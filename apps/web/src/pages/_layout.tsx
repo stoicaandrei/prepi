@@ -18,8 +18,8 @@ const navigation = [
   { name: "Calendar", href: "#", current: false },
 ];
 const userNavigation = [
-  { name: "Your Profile", href: "#", disabled: true },
-  { name: "Settings", href: "#", disabled: true },
+  // { name: "Your Profile", href: "#" },
+  // { name: "Settings", href: "#" },
   { name: "Sign out", href: "#", action: "sign_out" },
 ];
 
