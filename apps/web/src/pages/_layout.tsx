@@ -10,12 +10,13 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
+import { usePathname, useRouter } from "next/navigation";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Subiecte Bac", href: "exams", current: true },
+  // { name: "Team", href: "#", current: false },
+  // { name: "Projects", href: "#", current: false },
+  // { name: "Calendar", href: "#", current: false },
 ];
 const userNavigation = [
   // { name: "Your Profile", href: "#" },
@@ -30,6 +31,9 @@ export type LayoutProps = {
 export const Layout = ({ children }: LayoutProps) => {
   const { signOut } = useClerk();
   const { user } = useUser();
+
+  const pathname = usePathname();
+  const currentPath = pathname.split("/").pop();
 
   if (!user) {
     return null;
@@ -141,7 +145,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 key={item.name}
                 as="a"
                 href={item.href}
-                aria-current={item.current ? "page" : undefined}
+                aria-current={currentPath === item.href ? "page" : undefined}
                 className={classNames(
                   item.current
                     ? "border-indigo-500 bg-indigo-50 text-indigo-700"

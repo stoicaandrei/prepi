@@ -1,17 +1,11 @@
 import type { NextPage } from "next";
-import Head from "next/head";
+import { useRouter } from "next/navigation";
 
 const Home: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>Prepi</title>
-        <meta name="description" content="Prepi" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      Hello
-    </>
-  );
+  const { push } = useRouter();
+  push("/exams");
+
+  return null;
 };
 
 export default Home;
