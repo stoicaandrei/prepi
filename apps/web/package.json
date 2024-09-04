@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.4.1",
+    "@headlessui/react": "^2.1.4",
+    "@heroicons/react": "^2.1.5",
     "@prepi/api": "*",
     "@trpc/client": "^10.1.0",
     "@trpc/next": "^10.45.2",
