@@ -61,7 +61,8 @@ const navClasses = (active: boolean, small?: boolean) =>
   );
 
 export function Layout({ children }: LayoutProps) {
-  const path = usePathname();
+  const fullPath = usePathname();
+  const activeSection = fullPath?.split("/")[1];
   const { signOut } = useAuth();
 
   return (
@@ -78,34 +79,43 @@ export function Layout({ children }: LayoutProps) {
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
               <Link
                 href="/dashboard"
-                className={navClasses(path === "/dashboard")}
+                className={navClasses(activeSection === "dashboard")}
               >
                 <ChartPie className="h-4 w-4" />
                 Dashboard
               </Link>
-              <Link href="/lessons" className={navClasses(path === "/lessons")}>
+              <Link
+                href="/lessons"
+                className={navClasses(activeSection === "lessons")}
+              >
                 <BookOpen className="h-4 w-4" />
                 Lecții
               </Link>
               <Link
                 href="/practice"
-                className={navClasses(path === "/practice")}
+                className={navClasses(activeSection === "practice")}
               >
                 <ListChecks className="h-4 w-4" />
                 Exersează
               </Link>
-              <Link href="/exams" className={navClasses(path === "/exams")}>
+              <Link
+                href="/exams"
+                className={navClasses(activeSection === "exams")}
+              >
                 <Files className="h-4 w-4" />
                 Variante
               </Link>
               <Link
                 href="/leaderboard"
-                className={navClasses(path === "/leaderboard")}
+                className={navClasses(activeSection === "leaderboard")}
               >
                 <Star className="h-4 w-4" />
                 Clasament
               </Link>
-              <Link href="/store" className={navClasses(path === "/store")}>
+              <Link
+                href="/store"
+                className={navClasses(activeSection === "store")}
+              >
                 <ShoppingBag className="h-4 w-4" />
                 Magazin
               </Link>
@@ -137,42 +147,42 @@ export function Layout({ children }: LayoutProps) {
                 </Link>
                 <Link
                   href="/dashboard"
-                  className={navClasses(path === "/dashboard", true)}
+                  className={navClasses(activeSection === "/dashboard", true)}
                 >
                   <ChartPie className="h-4 w-4" />
                   Dashboard
                 </Link>
                 <Link
                   href="/lessons"
-                  className={navClasses(path === "/lessons", true)}
+                  className={navClasses(activeSection === "/lessons", true)}
                 >
                   <BookOpen className="h-4 w-4" />
                   Lecții
                 </Link>
                 <Link
                   href="/practice"
-                  className={navClasses(path === "/practice", true)}
+                  className={navClasses(activeSection === "/practice", true)}
                 >
                   <ListChecks className="h-4 w-4" />
                   Exersează
                 </Link>
                 <Link
                   href="/exams"
-                  className={navClasses(path === "/exams", true)}
+                  className={navClasses(activeSection === "/exams", true)}
                 >
                   <Files className="h-4 w-4" />
                   Variante
                 </Link>
                 <Link
                   href="/leaderboard"
-                  className={navClasses(path === "/leaderboard", true)}
+                  className={navClasses(activeSection === "/leaderboard", true)}
                 >
                   <Star className="h-4 w-4" />
                   Clasament
                 </Link>
                 <Link
                   href="/store"
-                  className={navClasses(path === "/store", true)}
+                  className={navClasses(activeSection === "/store", true)}
                 >
                   <ShoppingBag className="h-4 w-4" />
                   Magazin
