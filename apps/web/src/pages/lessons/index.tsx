@@ -9,6 +9,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function MathPlatformCardExpanded() {
   return (
@@ -53,14 +54,16 @@ export default function MathPlatformCardExpanded() {
                     "Exponentul unui număr real pozitiv",
                     "Partea întreagă și partea fracționară a unui număr real",
                   ].map((item) => (
-                    <Button
-                      key={item}
-                      variant="ghost"
-                      size="sm"
-                      className="w-full justify-start font-normal text-gray-600 hover:text-blue-500"
-                    >
-                      {item}
-                    </Button>
+                    <Link href="/lessons/da">
+                      <Button
+                        key={item}
+                        variant="ghost"
+                        size="sm"
+                        className="w-full justify-start font-normal text-gray-600 hover:text-blue-500"
+                      >
+                        {item}
+                      </Button>
+                    </Link>
                   ))}
                 </CollapsibleContent>
               </Collapsible>
