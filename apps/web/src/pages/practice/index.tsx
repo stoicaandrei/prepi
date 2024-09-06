@@ -90,8 +90,10 @@ export default function MathPracticeInteractive() {
               </div>
               <div className="flex items-center space-x-3">
                 <span className="text-sm text-gray-500">
-                  Ai rezolvat {topic.progress}/{topic.total} probleme din
-                  această categorie
+                  Ai rezolvat {topic.progress}/{topic.total} probleme
+                  <span className="hidden sm:inline">
+                    din această categorie
+                  </span>
                 </span>
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                   <PlayCircle className="text-blue-500 w-6 h-6" />
