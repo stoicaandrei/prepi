@@ -1,5 +1,6 @@
 "use client";
 
+import { PracticeModal } from "@/components/practice-modal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -7,6 +8,15 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   CheckSquare,
   ChevronDown,
@@ -25,12 +35,27 @@ export default function MathPracticeInteractive() {
             </h2>
             <p>Durează aproximativ 30 de minute.</p>
           </div>
-          <Button
-            variant="secondary"
-            className="bg-gray-800 text-white hover:bg-gray-700"
-          >
-            Haide!
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                variant="secondary"
+                className="bg-gray-800 text-white hover:bg-gray-700"
+              >
+                Haide!
+              </Button>
+            </DialogTrigger>
+            <PracticeModal />
+            {/* <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Hello there</DialogTitle>
+                <DialogDescription>hmm</DialogDescription>
+              </DialogHeader>
+              <div>main content is here</div>
+              <DialogFooter>
+                <Button type="submit">Save changes</Button>
+              </DialogFooter>
+            </DialogContent> */}
+          </Dialog>
         </CardContent>
       </Card>
 
