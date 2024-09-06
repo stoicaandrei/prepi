@@ -1,9 +1,10 @@
 // src/utils/trpc.ts
-import { createTRPCNext } from "@trpc/next";
+import { CreateTRPCNext, createTRPCNext } from "@trpc/next";
 import { httpBatchLink, loggerLink } from "@trpc/client";
 import { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "@prepi/api";
 import { transformer } from "@prepi/api/transformer";
+import { NextPageContext } from "next";
 
 const getBaseUrl = () => {
   if (typeof window !== "undefined") return ""; // browser should use relative url
@@ -12,7 +13,7 @@ const getBaseUrl = () => {
   return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 };
 
-export const trpc = createTRPCNext<AppRouter>({
+export const trpc: CreateTRPCNext<AppRouter, NextPageContext, null> = createTRPCNext<AppRouter>({
   config() {
     return {
       transformer,
