@@ -143,46 +143,46 @@ export function Layout({ children }: LayoutProps) {
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
                   <Package2 className="h-6 w-6" />
-                  <span className="sr-only">Prepi</span>
+                  <span className="">Prepi</span>
                 </Link>
                 <Link
                   href="/dashboard"
-                  className={navClasses(activeSection === "/dashboard", true)}
+                  className={navClasses(activeSection === "dashboard", true)}
                 >
                   <ChartPie className="h-4 w-4" />
                   Dashboard
                 </Link>
                 <Link
                   href="/lessons"
-                  className={navClasses(activeSection === "/lessons", true)}
+                  className={navClasses(activeSection === "lessons", true)}
                 >
                   <BookOpen className="h-4 w-4" />
                   Lecții
                 </Link>
                 <Link
                   href="/practice"
-                  className={navClasses(activeSection === "/practice", true)}
+                  className={navClasses(activeSection === "practice", true)}
                 >
                   <ListChecks className="h-4 w-4" />
                   Exersează
                 </Link>
                 <Link
                   href="/exams"
-                  className={navClasses(activeSection === "/exams", true)}
+                  className={navClasses(activeSection === "exams", true)}
                 >
                   <Files className="h-4 w-4" />
                   Variante
                 </Link>
                 <Link
                   href="/leaderboard"
-                  className={navClasses(activeSection === "/leaderboard", true)}
+                  className={navClasses(activeSection === "leaderboard", true)}
                 >
                   <Star className="h-4 w-4" />
                   Clasament
                 </Link>
                 <Link
                   href="/store"
-                  className={navClasses(activeSection === "/store", true)}
+                  className={navClasses(activeSection === "store", true)}
                 >
                   <ShoppingBag className="h-4 w-4" />
                   Magazin
