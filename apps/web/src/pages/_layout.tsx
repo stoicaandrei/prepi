@@ -34,9 +34,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useAuth } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
+import classNames from "classnames";
 
 export const description =
   "A products dashboard with a sidebar navigation and a main content area. The dashboard has a header with a search input and a user menu. The sidebar has a logo, navigation links, and a card with a call to action. The main content area shows an empty state with a call to action.";
@@ -45,7 +46,17 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
+const navClasses = (active: boolean) =>
+  classNames(
+    "flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary",
+    {
+      "bg-muted text-primary": active,
+      "text-muted-foreground": !active,
+    }
+  );
+
 export function Layout({ children }: LayoutProps) {
+  const path = usePathname();
   const { signOut } = useAuth();
 
   return (
@@ -62,43 +73,34 @@ export function Layout({ children }: LayoutProps) {
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
               <Link
                 href="/dashboard"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                className={navClasses(path === "/dashboard")}
               >
                 <ChartPie className="h-4 w-4" />
                 Dashboard
               </Link>
-              <Link
-                href="/lessons"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              <Link href="/lessons" className={navClasses(path === "/lessons")}>
                 <BookOpen className="h-4 w-4" />
                 Lecții
               </Link>
               <Link
                 href="/practice"
-                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
+                className={navClasses(path === "/practice")}
               >
                 <ListChecks className="h-4 w-4" />
                 Exersează
               </Link>
-              <Link
-                href="/exams"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              <Link href="/exams" className={navClasses(path === "/exams")}>
                 <Files className="h-4 w-4" />
                 Variante
               </Link>
               <Link
                 href="/leaderboard"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                className={navClasses(path === "/leaderboard")}
               >
                 <Star className="h-4 w-4" />
                 Clasament
               </Link>
-              <Link
-                href="/store"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              <Link href="/store" className={navClasses(path === "/store")}>
                 <ShoppingBag className="h-4 w-4" />
                 Magazin
               </Link>
