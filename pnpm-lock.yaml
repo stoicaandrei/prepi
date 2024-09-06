@@ -30,7 +30,7 @@ importers:
         specifier: ^2.1.5
         version: 2.1.5(react@18.3.1)
       '@prepi/api':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/api
       '@radix-ui/react-avatar':
         specifier: ^1.1.0
@@ -133,7 +133,7 @@ importers:
         specifier: ^5.4.1
         version: 5.4.1(next@14.2.6)(react-dom@18.3.1)(react@18.3.1)
       '@prepi/db':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../db
       '@trpc/client':
         specifier: ^10.1.0
@@ -148,6 +148,12 @@ importers:
         specifier: ^3.18.0
         version: 3.23.8
     devDependencies:
+      '@prepi/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@prepi/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
       eslint:
         specifier: ^8.28.0
         version: 8.57.0
@@ -161,6 +167,12 @@ importers:
         specifier: ^4.6.1
         version: 4.16.2(prisma@4.16.2)
     devDependencies:
+      '@prepi/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@prepi/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
       dotenv-cli:
         specifier: ^6.0.0
         version: 6.0.0
