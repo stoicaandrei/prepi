@@ -1,11 +1,12 @@
-import type { NextPage } from "next";
-import { useRouter } from "next/navigation";
+export async function getServerSideProps() {
+  return {
+    redirect: {
+      destination: "/exams",
+      permanent: false, // If true, the redirect is cached permanently
+    },
+  };
+}
 
-const Home: NextPage = () => {
-  const { push } = useRouter();
-  push("/exams");
-
-  return null;
-};
-
-export default Home;
+export default function HomePage() {
+  return <p>Redirecting...</p>;
+}
