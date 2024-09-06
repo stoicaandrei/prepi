@@ -1,7 +1,7 @@
 export async function getServerSideProps() {
   return {
     redirect: {
-      destination: "/exams",
+      destination: "/dashboard",
       permanent: false, // If true, the redirect is cached permanently
     },
   };
