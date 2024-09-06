@@ -15,7 +15,11 @@ import {
   Star,
   ShoppingBag,
   Files,
+  Flame,
+  Cloud,
+  Coins,
 } from "lucide-react";
+import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -46,12 +50,13 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-const navClasses = (active: boolean) =>
+const navClasses = (active: boolean, small?: boolean) =>
   classNames(
     "flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary",
     {
       "bg-muted text-primary": active,
       "text-muted-foreground": !active,
+      "mx-[-0.65rem]": small,
     }
   );
 
@@ -66,7 +71,7 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link href="/" className="flex items-center gap-2 font-semibold">
               <Package2 className="h-6 w-6" />
-              <span className="">Acme Inc</span>
+              <span className="">Prepi</span>
             </Link>
           </div>
           <div className="flex-1">
@@ -131,63 +136,69 @@ export function Layout({ children }: LayoutProps) {
                   <span className="sr-only">Prepi</span>
                 </Link>
                 <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                  href="/dashboard"
+                  className={navClasses(path === "/dashboard", true)}
                 >
-                  <Home className="h-5 w-5" />
+                  <ChartPie className="h-4 w-4" />
                   Dashboard
                 </Link>
                 <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
+                  href="/lessons"
+                  className={navClasses(path === "/lessons", true)}
                 >
-                  <ShoppingCart className="h-5 w-5" />
-                  Orders
-                  <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                    6
-                  </Badge>
+                  <BookOpen className="h-4 w-4" />
+                  Lecții
                 </Link>
                 <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                  href="/practice"
+                  className={navClasses(path === "/practice", true)}
                 >
-                  <Package className="h-5 w-5" />
-                  Products
+                  <ListChecks className="h-4 w-4" />
+                  Exersează
                 </Link>
                 <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                  href="/exams"
+                  className={navClasses(path === "/exams", true)}
                 >
-                  <Users className="h-5 w-5" />
-                  Customers
+                  <Files className="h-4 w-4" />
+                  Variante
                 </Link>
                 <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                  href="/leaderboard"
+                  className={navClasses(path === "/leaderboard", true)}
                 >
-                  <LineChart className="h-5 w-5" />
-                  Analytics
+                  <Star className="h-4 w-4" />
+                  Clasament
+                </Link>
+                <Link
+                  href="/store"
+                  className={navClasses(path === "/store", true)}
+                >
+                  <ShoppingBag className="h-4 w-4" />
+                  Magazin
                 </Link>
               </nav>
-              <div className="mt-auto">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Upgrade to Pro</CardTitle>
-                    <CardDescription>
-                      Unlock all features and get unlimited access to our
-                      support team.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button size="sm" className="w-full">
-                      Upgrade
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
             </SheetContent>
           </Sheet>
           <div className="w-full flex-1">{/* Empty left space */}</div>
+          <div className="flex items-center bg-cyan-100 text-cyan-700 rounded-full px-4 py-1">
+            <Flame className="w-4 h-4 mr-2" />
+            <span className="text-sm font-medium">
+              0 <span className="hidden sm:inline">zile</span>
+            </span>
+          </div>
+          <div className="flex items-center bg-blue-100 text-blue-700 rounded-full px-4 py-1">
+            <Coins className="w-4 h-4 mr-2" />
+            <span className="text-sm font-medium">
+              0 <span className="hidden sm:inline">puncte</span>
+            </span>
+          </div>
+          <div className="flex items-center">
+            <div className="text-right mr-4 hidden sm:inline">
+              <h1 className="text-xl font-bold">Salut, Andreieii!</h1>
+              <p className="text-sm text-gray-600">Învățăcel</p>
+            </div>
+          </div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">
