@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from "next/link";
 
 export default function ExamVariantsResponsive() {
   const variants = [
@@ -70,13 +71,15 @@ export default function ExamVariantsResponsive() {
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {variants.map((variant, index) => (
-            <Button
-              key={index}
-              variant="ghost"
-              className="w-full justify-start font-normal text-gray-700 hover:text-blue-500 hover:bg-blue-50"
-            >
-              {variant}
-            </Button>
+            <Link key={index} href="/exams/yes">
+              <Button
+                key={index}
+                variant="ghost"
+                className="w-full justify-start font-normal text-gray-700 hover:text-blue-500 hover:bg-blue-50"
+              >
+                {variant}
+              </Button>
+            </Link>
           ))}
         </div>
       </CardContent>
