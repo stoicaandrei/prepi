@@ -53,6 +53,7 @@ export function PracticeModal() {
               onChange={(e) => setAnswer(e.target.value)}
               className="flex-grow"
               placeholder="Introduceți răspunsul aici"
+              autoFocus={false}
             />
           </div>
 
