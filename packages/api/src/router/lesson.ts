@@ -1,6 +1,8 @@
 import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { z } from "zod";
 
+// TODO: Make sure to change these to protectedProcedure
+
 export const lessonRouter = router({
   listByTags: publicProcedure.query(({ ctx }) => {
     // TODO: Add sorting by tag order and lesson order
