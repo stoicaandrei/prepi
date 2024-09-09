@@ -19,6 +19,13 @@ export const lessonRouter = router({
         }
       }
     })
+  }),
+  getBySlug: publicProcedure.input(z.string()).query(({ ctx, input }) => {
+    return ctx.prisma.lesson.findFirst({
+      where: {
+        slug: input
+      }
+    })
   })
   // all: publicProcedure.query(({ ctx }) => {
   //   return []

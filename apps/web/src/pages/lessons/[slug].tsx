@@ -1,24 +1,19 @@
 "use client";
 
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  ChevronDown,
-  ChevronRight,
-  Search,
-} from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { ArrowLeft, ArrowRight, BookOpen, LucideLoader } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { trpc } from "@/utils/trpc";
 
 export default function LessonCard() {
+  const router = useRouter();
+  const { slug } = router.query;
+
+  const { data: lesson, isLoading: lessonLoading } =
+    trpc.lesson.getBySlug.useQuery(slug as string);
+
   return (
     <div>
       <Link href="/lessons">
@@ -34,45 +29,28 @@ export default function LessonCard() {
             <div className="flex items-center">
               <BookOpen className="h-8 w-8 text-blue-500" />
               <span className="ml-2 text-2xl font-semibold text-blue-500">
-                Titlul lectie
+                {lesson?.title || "Lecție.."}
               </span>
+              {lessonLoading && (
+                <LucideLoader className="h-6 w-6 ml-2 text-blue-500" />
+              )}
             </div>
           </div>
         </CardHeader>
-        <CardContent className="space-y-5">
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
-            porro nisi harum vel, velit numquam incidunt mollitia deserunt nobis
-            laborum.
-          </p>
-          <p>
-            Vel quae dolore corrupti vitae optio dignissimos dolores, accusamus
-            mollitia assumenda quam incidunt totam suscipit, fugit reiciendis
-            sint excepturi temporibus.
-          </p>
-          <p>
-            Necessitatibus quaerat autem facilis ab similique enim suscipit
-            mollitia expedita repellendus, aspernatur, asperiores sunt nemo ad
-            exercitationem sint officia quo.
-          </p>
-          <p>
-            Iure aliquid quis harum fugit autem? Vel dicta rem, dolor qui
-            officiis cupiditate aut quae quisquam minima quasi earum nostrum!
-          </p>
-          <p>
-            Delectus recusandae sapiente dolorum, minima quo ducimus
-            perspiciatis consequatur fugit tenetur doloremque quae nihil
-            aspernatur impedit, blanditiis consectetur, at eligendi!
-          </p>
+        <CardContent>
+          {/* TODO: Fix "Un videoclip va apărea aici..." error */}
+          {/* TODO: Fix exerseaza buttons with classnames uk-button uk-button-primary */}
+          <div dangerouslySetInnerHTML={{ __html: lesson?.html ?? "" }} />
         </CardContent>
       </Card>
 
+      {/* TODO: Make these buttons work */}
       <div className="flex justify-between mt-6">
-        <Button variant="outline">
+        <Button variant="outline" disabled>
           <ArrowLeft className="mr-2 h-4 w-4" />
           Lecția anterioară
         </Button>
-        <Button>
+        <Button disabled>
           Lecția următoare
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
