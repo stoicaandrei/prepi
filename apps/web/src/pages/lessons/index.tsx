@@ -1,6 +1,12 @@
 "use client";
 
-import { BookOpen, ChevronDown, ChevronRight, Search } from "lucide-react";
+import {
+  BookOpen,
+  ChevronDown,
+  ChevronRight,
+  LucideLoader,
+  Search,
+} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,8 +17,42 @@ import {
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
 import Head from "next/head";
+import { trpc } from "@/utils/trpc";
 
 export default function MathPlatformCardExpanded() {
+  const { data: lessonsByTags, isLoading: lessonsLoading } =
+    trpc.lesson.listByTags.useQuery();
+
+  const firstBatch = lessonsByTags?.slice(0, lessonsByTags.length / 2 + 1);
+  const secondBatch = lessonsByTags?.slice(lessonsByTags.length / 2 + 1);
+
+  const renderTag = (tag: (typeof lessonsByTags)[0]) => (
+    <Collapsible key={tag.id}>
+      <CollapsibleTrigger asChild>
+        <Button
+          variant="ghost"
+          className="w-full justify-between font-semibold text-blue-500"
+        >
+          {tag.name}
+          <ChevronDown className="h-4 w-4" />
+        </Button>
+      </CollapsibleTrigger>
+      <CollapsibleContent className="mt-2 space-y-1">
+        {tag.lessons.map((lesson) => (
+          <Link key={lesson.slug} href={`/lessons/${lesson.slug}`}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start font-normal text-gray-600 hover:text-blue-500"
+            >
+              {lesson.title}
+            </Button>
+          </Link>
+        ))}
+      </CollapsibleContent>
+    </Collapsible>
+  );
+
   return (
     <div>
       <Head>
@@ -26,90 +66,24 @@ export default function MathPlatformCardExpanded() {
               <span className="ml-2 text-2xl font-semibold text-blue-500">
                 Lectii
               </span>
+              {lessonsLoading && (
+                <LucideLoader className="h-6 w-6 ml-2 text-blue-500" />
+              )}
             </div>
             <div className="w-full max-w-xs">
-              <Input type="search" placeholder="Caută..." className="w-full" />
+              <Input
+                disabled
+                type="search"
+                placeholder="Caută..."
+                className="w-full"
+              />
             </div>
           </div>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <Collapsible defaultOpen>
-                <CollapsibleTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-between font-semibold text-blue-500"
-                  >
-                    Ecuații și inecuații
-                    <ChevronDown className="h-4 w-4" />
-                  </Button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="mt-2 space-y-1">
-                  {[
-                    "Modulul unui număr real",
-                    "Ecuația de gradul al II-lea cu coeficienți reali",
-                    "Inecuații",
-                    "Puteri și radicali",
-                    "Logaritmul unui număr real pozitiv",
-                    "Numere complexe",
-                    "Elemente de trigonometrie",
-                    "Ecuații",
-                    "Exponentul unui număr real pozitiv",
-                    "Partea întreagă și partea fracționară a unui număr real",
-                  ].map((item) => (
-                    <Link href="/lessons/da">
-                      <Button
-                        key={item}
-                        variant="ghost"
-                        size="sm"
-                        className="w-full justify-start font-normal text-gray-600 hover:text-blue-500"
-                      >
-                        {item}
-                      </Button>
-                    </Link>
-                  ))}
-                </CollapsibleContent>
-              </Collapsible>
-              {[
-                "Progresii",
-                "Șiruri",
-                "Funcții",
-                "Limite",
-                "Derivate",
-                "Primitive",
-                "Integrale",
-              ].map((item) => (
-                <Button
-                  key={item}
-                  variant="ghost"
-                  className="w-full justify-between text-gray-600 hover:text-blue-500"
-                >
-                  {item}
-                  <ChevronRight className="h-4 w-4" />
-                </Button>
-              ))}
-            </div>
-            <div className="space-y-2">
-              {[
-                "Matrice",
-                "Grupuri",
-                "Inele și corpuri",
-                "Sisteme de ecuații",
-                "Geometrie",
-                "Combinatorică",
-                "Permutări",
-              ].map((item) => (
-                <Button
-                  key={item}
-                  variant="ghost"
-                  className="w-full justify-between text-gray-600 hover:text-blue-500"
-                >
-                  {item}
-                  <ChevronRight className="h-4 w-4" />
-                </Button>
-              ))}
-            </div>
+            <div className="space-y-2">{firstBatch?.map(renderTag)}</div>
+            <div className="space-y-2">{secondBatch?.map(renderTag)}</div>
           </div>
         </CardContent>
       </Card>
