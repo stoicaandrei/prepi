@@ -1,0 +1,19 @@
+{
+  "name": "@prepi/migration",
+  "version": "1.0.0",
+  "description": "Migration scripts",
+  "main": "index.ts",
+  "scripts": {
+    "migrate": "ts-node index.ts"
+  },
+  "dependencies": {
+    "mongodb": "^4.4.0",
+    "@prepi/db": "workspace:*",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "^4.7.0",
+    "ts-node": "^10.8.0"
+  }
+}

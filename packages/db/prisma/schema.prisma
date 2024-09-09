@@ -6,12 +6,23 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "postgresql"
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id      String @id @default(cuid())
-    title   String
-    content String
+model Lesson {
+    id    String @id @default(cuid())
+    title String
+    slug  String @unique
+    html  String
+    tags  Tag[]
+}
+
+model Tag {
+    id       String   @id @default(cuid())
+    name     String   @unique
+    parentId String? // This allows for null, indicating a top-level tag
+    parent   Tag?     @relation("SubTags", fields: [parentId], references: [id])
+    children Tag[]    @relation("SubTags")
+    lessons  Lesson[]
 }
