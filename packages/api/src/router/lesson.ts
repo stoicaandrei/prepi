@@ -3,6 +3,7 @@ import { z } from "zod";
 
 export const lessonRouter = router({
   listByTags: publicProcedure.query(({ ctx }) => {
+    // TODO: Add sorting by tag order and lesson order
     return ctx.prisma.tag.findMany({
       where: {
         parentId: null // This ensures we only get top-level tags
