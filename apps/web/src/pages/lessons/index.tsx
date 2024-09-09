@@ -10,10 +10,14 @@ import {
 } from "@/components/ui/collapsible";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function MathPlatformCardExpanded() {
   return (
     <div>
+      <Head>
+        <title>Lectii | Prepi</title>
+      </Head>
       <Card className="w-full max-w-4xl">
         <CardHeader className="space-y-4">
           <div className="flex items-center justify-between">

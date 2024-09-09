@@ -10,10 +10,14 @@ import {
   Book,
   ClipboardList,
 } from "lucide-react";
+import Head from "next/head";
 
 export default function Dashboard() {
   return (
     <div className="container mx-auto">
+      <Head>
+        <title>Dashboard | Prepi</title>
+      </Head>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <Card className="col-span-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
