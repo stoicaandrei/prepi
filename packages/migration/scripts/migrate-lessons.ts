@@ -25,7 +25,7 @@ async function migrateData() {
 
     for (const page of pages) {
       console.log(`Migrating page: ${page.title}`);
-      const { title, html, tag, subtags } = page;
+      const { title, html, tag, subTags } = page;
 
       const tags = [tag];
 
@@ -35,8 +35,8 @@ async function migrateData() {
         create: { name: tag },
       });
 
-      if (subtags) {
-        for (const subTag of subtags) {
+      if (subTags) {
+        for (const subTag of subTags) {
           tags.push(subTag);
 
           await prisma.tag.upsert({
@@ -46,8 +46,6 @@ async function migrateData() {
           });
         }
       }
-
-      tags.push(firstTag.name);
 
       await prisma.lesson.create({
         data: {
