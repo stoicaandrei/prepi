@@ -57,7 +57,7 @@ const navClasses = (active: boolean, small?: boolean) =>
       "bg-muted text-primary": active,
       "text-muted-foreground": !active,
       "mx-[-0.65rem]": small,
-    }
+    },
   );
 
 export function Layout({ children }: LayoutProps) {

@@ -4,7 +4,7 @@ import { lessonRouter } from "./lesson";
 
 export const appRouter = router({
   auth: authRouter,
-  lesson: lessonRouter
+  lesson: lessonRouter,
 });
 
 // export type definition of API

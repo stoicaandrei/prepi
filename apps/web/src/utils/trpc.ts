@@ -13,24 +13,25 @@ const getBaseUrl = () => {
   return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 };
 
-export const trpc: CreateTRPCNext<AppRouter, NextPageContext, null> = createTRPCNext<AppRouter>({
-  config() {
-    return {
-      transformer,
-      links: [
-        loggerLink({
-          enabled: (opts) =>
-            process.env.NODE_ENV === "development" ||
-            (opts.direction === "down" && opts.result instanceof Error),
-        }),
-        httpBatchLink({
-          url: `${getBaseUrl()}/api/trpc`,
-        }),
-      ],
-    };
-  },
-  ssr: false,
-});
+export const trpc: CreateTRPCNext<AppRouter, NextPageContext, null> =
+  createTRPCNext<AppRouter>({
+    config() {
+      return {
+        transformer,
+        links: [
+          loggerLink({
+            enabled: (opts) =>
+              process.env.NODE_ENV === "development" ||
+              (opts.direction === "down" && opts.result instanceof Error),
+          }),
+          httpBatchLink({
+            url: `${getBaseUrl()}/api/trpc`,
+          }),
+        ],
+      };
+    },
+    ssr: false,
+  });
 
 /**
  * Inference helpers for input types

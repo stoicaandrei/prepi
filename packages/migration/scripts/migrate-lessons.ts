@@ -75,11 +75,11 @@ async function migrateData() {
               html: html
                 .replace(
                   /\/public\/uploads\/(\w+)\.PNG/g,
-                  `${blobUrl}/legacy_uploads/$1.PNG`
+                  `${blobUrl}/legacy_uploads/$1.PNG`,
                 )
                 .replace(
                   /\/public\/uploads\/(\w+)\.png/g,
-                  `${blobUrl}/legacy_uploads/$1.png`
+                  `${blobUrl}/legacy_uploads/$1.png`,
                 ),
             },
           },
