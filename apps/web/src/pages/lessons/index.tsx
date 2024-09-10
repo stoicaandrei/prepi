@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  BookOpen,
-  ChevronDown,
-  ChevronRight,
-  LucideLoader,
-  Search,
-} from "lucide-react";
+import { BookOpen, ChevronDown, LucideLoader } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,7 +20,7 @@ export default function MathPlatformCardExpanded() {
   const firstBatch = lessonsByTags?.slice(0, lessonsByTags.length / 2 + 1);
   const secondBatch = lessonsByTags?.slice(lessonsByTags.length / 2 + 1);
 
-  const renderTag = (tag: (typeof lessonsByTags)[0]) => (
+  const renderTag = (tag: NonNullable<typeof lessonsByTags>[number]) => (
     <Collapsible key={tag.id}>
       <CollapsibleTrigger asChild>
         <Button
