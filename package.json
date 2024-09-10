@@ -9,7 +9,9 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "migrate": "npm run migrate --workspace=packages/migration --"
+    "migrate": "npm run migrate --workspace=packages/migration --",
+    "db:generate": "turbo db:generate",
+    "db:push": "turbo db:push"
   },
   "devDependencies": {
     "@types/node": "^22.5.4",
