@@ -58,7 +58,7 @@ export default function MathPlatformCardExpanded() {
             <div className="flex items-center">
               <BookOpen className="h-8 w-8 text-blue-500" />
               <span className="ml-2 text-2xl font-semibold text-blue-500">
-                Lectii
+                Lectii disponibile
               </span>
               {lessonsLoading && (
                 <LucideLoader className="h-6 w-6 ml-2 text-blue-500" />
