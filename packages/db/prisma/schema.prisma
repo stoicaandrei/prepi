@@ -11,11 +11,19 @@ datasource db {
 }
 
 model Lesson {
-    id    String @id @default(cuid())
-    title String
-    slug  String @unique
-    html  String
-    tags  Tag[]
+    id            String               @id @default(cuid())
+    title         String
+    slug          String               @unique
+    tags          Tag[]
+    legacyContent LessonLegacyContent?
+}
+
+model LessonLegacyContent {
+    id       String @id @default(cuid())
+    html     String
+    raw      String
+    lessonId String @unique
+    lesson   Lesson @relation(fields: [lessonId], references: [id])
 }
 
 model Tag {

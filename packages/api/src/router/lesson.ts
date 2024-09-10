@@ -8,7 +8,7 @@ export const lessonRouter = router({
     // TODO: Add sorting by tag order and lesson order
     return ctx.prisma.tag.findMany({
       where: {
-        parentId: null // This ensures we only get top-level tags
+        parentId: null, // This ensures we only get top-level tags
       },
       select: {
         id: true,
@@ -16,19 +16,26 @@ export const lessonRouter = router({
         lessons: {
           select: {
             title: true,
-            slug: true
-          }
-        }
-      }
-    })
+            slug: true,
+          },
+        },
+      },
+    });
   }),
   getBySlug: publicProcedure.input(z.string()).query(({ ctx, input }) => {
     return ctx.prisma.lesson.findFirst({
       where: {
-        slug: input
-      }
-    })
-  })
+        slug: input,
+      },
+      include: {
+        legacyContent: {
+          select: {
+            html: true,
+          },
+        },
+      },
+    });
+  }),
   // all: publicProcedure.query(({ ctx }) => {
   //   return []
   // }),
