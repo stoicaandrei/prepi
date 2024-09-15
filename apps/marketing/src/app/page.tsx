@@ -149,6 +149,26 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+type SectionDividerProps = {
+  shape: string;
+};
+
+function SectionDivider({ shape }: SectionDividerProps) {
+  return (
+    <Image
+      src={`/_homepage/shapes/${shape}.svg`}
+      alt=""
+      width={1000}
+      height={100}
+      className="p-shape"
+      style={{ width: "100%", height: "auto" }}
+      draggable={false}
+      aria-hidden="true"
+      priority
+    />
+  );
+}
+
 export default function Home() {
   return (
     <div className="bg-[#F8F9FB] min-h-screen">
@@ -230,6 +250,8 @@ export default function Home() {
           />
         </section>
 
+        <SectionDivider shape="c1" />
+
         <section className="bg-white py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">
@@ -256,6 +278,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <SectionDivider shape="c2" />
 
         <section id="stats" className=" py-16">
           <div className="container mx-auto px-4">
@@ -297,6 +321,8 @@ export default function Home() {
           </div>
         </section>
 
+        <SectionDivider shape="f1" />
+
         <section id="questions" className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <Question
@@ -320,7 +346,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="benefits" className="py-16 bg-gray-100">
+        <SectionDivider shape="f2" />
+
+        <section id="benefits" className="py-16 ">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
               Ce beneficii ai folosind Prepi?
@@ -333,7 +361,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="reviews" className="py-16 bg-gray-100">
+        <SectionDivider shape="f1" />
+
+        <section id="reviews" className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
               Ce spun colegii tăi?
@@ -342,7 +372,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="pricing" className="py-16 bg-white">
+        <SectionDivider shape="c2" />
+
+        <section id="pricing" className="py-16 ">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
               <div className="bg-gradient-to-r from-purple-400 to-blue-500 rounded-3xl shadow-xl overflow-hidden">
