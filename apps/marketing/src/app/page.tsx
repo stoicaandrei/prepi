@@ -352,7 +352,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <Button
               variant="outline"
-              className="text-white border-white font-bold"
+              className="text-black border-white font-bold"
             >
               Începe azi gratuit!
             </Button>
@@ -420,9 +420,6 @@ export default function Home() {
                   />
                 </Link>
               </div>
-            </div>
-            <div>
-              <p>v2.0</p>
             </div>
           </div>
         </div>
