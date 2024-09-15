@@ -2,6 +2,7 @@
   "name": "prepi",
   "private": true,
   "workspaces": [
+    "apps/*",
     "packages/*"
   ],
   "scripts": {
