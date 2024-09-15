@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import Header from "@/components/Header";
 
 interface QuestionProps {
   question: string;
@@ -172,66 +173,9 @@ function SectionDivider({ shape }: SectionDividerProps) {
 export default function Home() {
   return (
     <div className="bg-[#F8F9FB] min-h-screen">
-      <header className="bg-white shadow-md">
-        <div className="container mx-auto px-4">
-          <nav className="flex items-center justify-between py-4">
-            <Link href="/">
-              <Image
-                src="/_homepage/logo.svg"
-                alt="Prepi - Pregătire BAC online"
-                width={162.5}
-                height={52}
-              />
-            </Link>
-            <div className="hidden md:flex space-x-6">
-              <Link href="/#stats" className="text-[#505050] font-semibold">
-                Statistici
-              </Link>
-              <Link href="/#benefits" className="text-[#505050] font-semibold">
-                Beneficii
-              </Link>
-              <Link href="/#reviews" className="text-[#505050] font-semibold">
-                Recenzii
-              </Link>
-              <Link href="/#pricing" className="text-[#505050] font-semibold">
-                Prețuri
-              </Link>
-              <Link href="/contact" className="text-[#505050] font-semibold">
-                Contact
-              </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-4">
-              <Button variant="link" className="text-[#00CCCC] font-bold">
-                Login
-              </Button>
-              <Button
-                variant="outline"
-                className="text-[#6BADEE] border-[#6BADEE] font-bold"
-              >
-                Cont nou
-              </Button>
-            </div>
-            <button className="md:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
-      <main>
+      <main className="pt-[84px]">
         <section className="text-center py-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-8">
             Învață matematica de liceu
