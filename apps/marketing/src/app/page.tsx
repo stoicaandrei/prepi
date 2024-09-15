@@ -322,7 +322,7 @@ export default function Home() {
           <div className="max-w-2xl mx-auto">
             <div className="bg-gradient-to-r from-purple-400 to-blue-500 rounded-3xl shadow-xl overflow-hidden">
               <div className="px-8 py-12 text-center text-white">
-                <h2 className="text-5xl font-bold mb-4">34.99 lei/lună</h2>
+                <h2 className="text-5xl font-bold mb-4">64.99 lei/lună</h2>
                 <p className="text-xl mb-8">14 zile gratuit fără card</p>
                 <ul className="text-lg space-y-4 mb-8">
                   <li>Plan de pregătire personalizat</li>
