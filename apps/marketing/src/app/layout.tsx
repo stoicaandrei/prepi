@@ -74,7 +74,10 @@ export default function RootLayout({
               <div>
                 <p>Rețele sociale:</p>
                 <div className="flex space-x-4 mt-2">
-                  <Link href="https://www.instagram.com/prepi.ro/">
+                  <Link
+                    href="https://www.instagram.com/prepi.ro/"
+                    target="_blank"
+                  >
                     <Image
                       src="/social/instagram.png"
                       alt="Instagram"
@@ -82,7 +85,10 @@ export default function RootLayout({
                       height={24}
                     />
                   </Link>
-                  <Link href="https://www.facebook.com/prepi.roo">
+                  <Link
+                    href="https://www.facebook.com/prepi.roo"
+                    target="_blank"
+                  >
                     <Image
                       src="/social/fb.png"
                       alt="Facebook"
@@ -90,7 +96,7 @@ export default function RootLayout({
                       height={24}
                     />
                   </Link>
-                  <Link href="https://www.tiktok.com/prepi.roo">
+                  <Link href="https://www.tiktok.com/@prepi.ro" target="_blank">
                     <Image
                       src="/social/tiktok.png"
                       alt="TikTok"
