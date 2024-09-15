@@ -7,7 +7,5 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     a: ({ href, ...props }) => (
       <Link href={href ?? "#"} target="_blank" {...props} />
     ),
-    h1: (props) => <h1 className="text-3xl font-bold mb-4" {...props} />,
-    p: (props) => <p className="mb-4" {...props} />,
   };
 }
