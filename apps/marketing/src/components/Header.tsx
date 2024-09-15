@@ -73,18 +73,14 @@ export default function Header() {
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="link"
-              className="text-[#00CCCC] font-bold hover:text-[#00AAAA]"
-            >
-              Login
-            </Button>
-            <Button
-              variant="outline"
-              className="text-[#6BADEE] border-[#6BADEE] font-bold hover:bg-[#6BADEE] hover:text-white transition-colors"
-            >
-              Cont nou
-            </Button>
+            <Link href="https://app.prepi.ro">
+              <Button
+                variant="outline"
+                className="text-[#6BADEE] border-[#6BADEE] font-bold hover:bg-[#6BADEE] hover:text-white transition-colors"
+              >
+                Începe Acum
+              </Button>
+            </Link>
           </div>
           <button className="md:hidden" aria-label="Open menu">
             <svg

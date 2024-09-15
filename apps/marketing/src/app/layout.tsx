@@ -29,12 +29,14 @@ export default function RootLayout({
               Începe-ți drumul către succes!
             </h2>
             <div className="text-center mb-12">
-              <Button
-                variant="outline"
-                className="text-black border-white font-bold"
-              >
-                Începe azi gratuit!
-              </Button>
+              <Link href="https://app.prepi.ro">
+                <Button
+                  variant="outline"
+                  className="text-black border-white font-bold"
+                >
+                  Începe azi gratuit!
+                </Button>
+              </Link>
             </div>
             <div className="grid md:grid-cols-4 gap-8">
               <div>

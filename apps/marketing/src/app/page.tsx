@@ -179,9 +179,11 @@ export default function Home() {
           <br className="hidden md:inline" />
           rapid și simplu.
         </h1>
-        <Button className="bg-gradient-to-r from-[#00CCCC] to-[#6BADEE] text-white font-bold py-3 px-8 rounded-full shadow-lg">
-          Începe acum gratuit!
-        </Button>
+        <Link href="https://app.prepi.ro">
+          <Button className="bg-gradient-to-r from-[#00CCCC] to-[#6BADEE] text-white font-bold py-3 px-8 rounded-full shadow-lg">
+            Începe acum gratuit!
+          </Button>
+        </Link>
         <Image
           src="/_homepage/promo-img.svg"
           alt="Imagine promoțională Prepi"
@@ -213,9 +215,11 @@ export default function Home() {
             </p>
           </div>
           <div className="text-center mt-12">
-            <Button className="bg-gradient-to-r from-[#00CCCC] to-[#6BADEE] text-white font-bold py-3 px-8 rounded-full shadow-lg">
-              Începe pregătirea acum!
-            </Button>
+            <Link href="https://app.prepi.ro">
+              <Button className="bg-gradient-to-r from-[#00CCCC] to-[#6BADEE] text-white font-bold py-3 px-8 rounded-full shadow-lg">
+                Începe pregătirea acum!
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -329,9 +333,11 @@ export default function Home() {
                   <li>Recomandări bazate pe stilul tău</li>
                   <li>Asistent Prepi</li>
                 </ul>
-                <Button className="bg-white text-blue-600 hover:bg-blue-100 text-lg font-semibold py-3 px-8 rounded-full transition duration-300">
-                  Începe acum!
-                </Button>
+                <Link href="https://app.prepi.ro">
+                  <Button className="bg-white text-blue-600 hover:bg-blue-100 text-lg font-semibold py-3 px-8 rounded-full transition duration-300">
+                    Începe acum!
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
