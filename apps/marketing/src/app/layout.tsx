@@ -20,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
+
         <div className="bg-[#F8F9FB] min-h-screen pt-[84px]">{children}</div>
+
         <footer className="bg-[#6BADEE] text-white py-12">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-semibold text-center mb-8">
@@ -41,7 +43,7 @@ export default function RootLayout({
                     <Link href="/">Prepi - Pregătire BAC</Link>
                   </li>
                   <li>
-                    <Link href="/licente">Licențe</Link>
+                    <Link href="/licenses">Licențe</Link>
                   </li>
                   <li>
                     <Link href="/privacy-policy">
