@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { currentPrice } from "@/constants";
 
 const faqs = [
   {
@@ -55,8 +56,7 @@ const faqs = [
   },
   {
     question: "Prepi costă bani?",
-    answer:
-      "Da, Prepi costă doar 64.99 lei/lună, mai puțin decât o oră de meditație!",
+    answer: `Da, Prepi costă doar ${currentPrice}, mai puțin decât o oră de meditație!`,
   },
 ];
 
@@ -82,7 +82,7 @@ export default function FaqPage() {
           </div>
           <div className="mt-10 lg:mt-0">
             <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg shadow-xl p-6 text-white">
-              <h2 className="text-3xl font-bold mb-4">64.99 lei/lună</h2>
+              <h2 className="text-3xl font-bold mb-4">{currentPrice}</h2>
               <p className="text-xl mb-8">14 zile gratuit fără card</p>
               <ul className="space-y-2 mb-6">
                 <li>Plan de pregătire personalizat</li>
