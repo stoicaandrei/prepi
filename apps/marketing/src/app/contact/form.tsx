@@ -9,9 +9,12 @@ import { submitForm } from "./actions";
 import { useState } from "react";
 
 export const ContactForm = () => {
-  const [state, setState] = useState<"idle" | "error" | "success">("idle");
+  const [state, setState] = useState<"idle" | "loading" | "error" | "success">(
+    "idle"
+  );
 
   async function handleSubmit(formData: FormData) {
+    setState("loading");
     const result = await submitForm(formData);
     if (result.error) {
       setState("error");
@@ -78,7 +81,7 @@ export const ContactForm = () => {
           type="submit"
           className="px-8 py-2 bg-gradient-to-r from-teal-400 to-blue-500 text-white font-bold rounded-full hover:opacity-90 transition-opacity"
         >
-          Trimite
+          Trimite {state === "loading" && "…"}
         </Button>
       </div>
     </form>
