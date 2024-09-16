@@ -66,9 +66,6 @@ export default function RootLayout({
                     <Link href="/contact">Contact</Link>
                   </li>
                   <li>
-                    <Link href="https://status.prepi.ro/">Stare servicii</Link>
-                  </li>
-                  <li>
                     <Link href="/faq">Întrebări frecvente</Link>
                   </li>
                 </ul>
