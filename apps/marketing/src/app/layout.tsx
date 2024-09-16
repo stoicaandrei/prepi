@@ -4,8 +4,9 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Prepi",
-  description: "Prepi",
+  title: "Matematică Liceu | Pregătire Online | Prepi.ro",
+  description:
+    "Prepi este platforma care te pregătește să iei BACul la matematică cu brio. Ai acces la toate exercițiile rezolvate și materialele explicative necesare. Începe pregătirea gratuit!",
 };
 
 export default function RootLayout({
