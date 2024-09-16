@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import Header from "@/components/Header";
+import { startNowUrl } from "@/constants";
 
 interface QuestionProps {
   question: string;
@@ -179,7 +180,7 @@ export default function Home() {
           <br className="hidden md:inline" />
           rapid și simplu.
         </h1>
-        <Link href="https://app.prepi.ro">
+        <Link href={startNowUrl}>
           <Button className="bg-gradient-to-r from-[#00CCCC] to-[#6BADEE] text-white font-bold py-3 px-8 rounded-full shadow-lg">
             Începe acum gratuit!
           </Button>
@@ -215,7 +216,7 @@ export default function Home() {
             </p>
           </div>
           <div className="text-center mt-12">
-            <Link href="https://app.prepi.ro">
+            <Link href={startNowUrl}>
               <Button className="bg-gradient-to-r from-[#00CCCC] to-[#6BADEE] text-white font-bold py-3 px-8 rounded-full shadow-lg">
                 Începe pregătirea acum!
               </Button>
@@ -333,7 +334,7 @@ export default function Home() {
                   <li>Recomandări bazate pe stilul tău</li>
                   <li>Asistent Prepi</li>
                 </ul>
-                <Link href="https://app.prepi.ro">
+                <Link href={startNowUrl}>
                   <Button className="bg-white text-blue-600 hover:bg-blue-100 text-lg font-semibold py-3 px-8 rounded-full transition duration-300">
                     Începe acum!
                   </Button>

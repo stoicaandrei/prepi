@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import Header from "@/components/Header";
+import { startNowUrl } from "@/constants";
 
 export const metadata: Metadata = {
   title: "Prepi",
@@ -29,7 +30,7 @@ export default function RootLayout({
               Începe-ți drumul către succes!
             </h2>
             <div className="text-center mb-12">
-              <Link href="https://app.prepi.ro">
+              <Link href={startNowUrl}>
                 <Button
                   variant="outline"
                   className="text-black border-white font-bold"

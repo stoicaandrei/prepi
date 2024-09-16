@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { startNowUrl } from "@/constants";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,7 +74,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="https://app.prepi.ro">
+            <Link href={startNowUrl}>
               <Button
                 variant="outline"
                 className="text-[#6BADEE] border-[#6BADEE] font-bold hover:bg-[#6BADEE] hover:text-white transition-colors"
