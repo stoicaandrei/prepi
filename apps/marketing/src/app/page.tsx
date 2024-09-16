@@ -5,6 +5,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 import Header from "@/components/Header";
 import { currentPrice, startNowUrl } from "@/constants";
 import clsx from "clsx";
+import { SectionDivider } from "@/components/SectionDivider";
 
 interface QuestionProps {
   question: string;
@@ -168,26 +169,6 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-type SectionDividerProps = {
-  shape: string;
-};
-
-function SectionDivider({ shape }: SectionDividerProps) {
-  return (
-    <Image
-      src={`/_homepage/shapes/${shape}.svg`}
-      alt=""
-      width={1000}
-      height={100}
-      className="p-shape"
-      style={{ width: "100%", height: "auto" }}
-      draggable={false}
-      aria-hidden="true"
-      priority
-    />
-  );
-}
-
 export default function Home() {
   return (
     <main>
@@ -334,7 +315,7 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionDivider shape="c2" />
+      <SectionDivider shape="f2" />
 
       <section id="pricing" className="py-16 ">
         <div className="container mx-auto px-4">

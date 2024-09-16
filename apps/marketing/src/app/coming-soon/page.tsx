@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function ComingSoon() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex flex-col items-center justify-center px-4 py-16">
+    <div className="flex flex-col items-center justify-center px-4 py-16">
       <h1 className="text-6xl font-bold text-[#6BADEE] mb-4">În curând</h1>
       <p className="text-xl text-gray-600 text-center max-w-md mb-8">
         Lucrăm din greu să punem în mișcare{" "}
