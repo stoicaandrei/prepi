@@ -174,8 +174,7 @@ export default function Home() {
     <main>
       <section className="text-center py-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-8">
-          Învață matematica de liceu
-          <br className="hidden md:inline" />
+          Învață matematica de liceu <br className="hidden md:inline" />
           rapid și simplu.
         </h1>
         <Link href={startNowUrl}>

@@ -32,7 +32,7 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between py-4">
+        <nav className="flex items-center md:justify-between justify-center py-4">
           <Link href="/">
             <Image
               src="_homepage/logo.svg"
@@ -83,7 +83,7 @@ export default function Header() {
               </Button>
             </Link>
           </div>
-          <button className="md:hidden" aria-label="Open menu">
+          {/* <button className="md:hidden" aria-label="Open menu">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -98,7 +98,7 @@ export default function Header() {
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
-          </button>
+          </button> */}
         </nav>
       </div>
     </header>
