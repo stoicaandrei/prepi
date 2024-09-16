@@ -15,11 +15,36 @@ interface TestimonialCarouselProps {
   testimonials: Testimonial[];
 }
 
+function useDeviceDetect() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkDevice = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Check on initial load
+    checkDevice();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkDevice);
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener("resize", checkDevice);
+  }, []);
+
+  return { isMobile, isDesktop: !isMobile };
+}
+
 export default function TestimonialCarousel({
   testimonials,
 }: TestimonialCarouselProps) {
+  const { isDesktop } = useDeviceDetect();
+  const perPage = isDesktop ? 2 : 1;
+  const minHeight = isDesktop ? "400px" : "500px";
+
   const [activeIndex, setActiveIndex] = useState(0);
-  const totalPages = Math.ceil(testimonials.length / 2);
+  const totalPages = Math.ceil(testimonials.length / perPage);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,7 +77,7 @@ export default function TestimonialCarousel({
 
   return (
     <>
-      <div className="relative overflow-hidden" style={{ minHeight: "400px" }}>
+      <div className="relative overflow-hidden" style={{ minHeight }}>
         {Array.from({ length: totalPages }).map((_, pageIndex) => (
           <div
             key={pageIndex}
@@ -64,7 +89,7 @@ export default function TestimonialCarousel({
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {testimonials
-                .slice(pageIndex * 2, pageIndex * 2 + 2)
+                .slice(pageIndex * perPage, pageIndex * perPage + perPage)
                 .map((testimonial) => (
                   <TestimonialCard
                     key={testimonial.id}
