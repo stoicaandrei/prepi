@@ -35,3 +35,13 @@ model Tag {
     children Tag[]    @relation("SubTags")
     lessons  Lesson[]
 }
+
+model Subject {
+    id   String @id @default(uuid())
+    name String
+
+    // Self-referential many-to-many relationship for prerequisites
+    level           Int       @default(0)
+    prerequisites   Subject[] @relation("Prerequisites")
+    prerequisiteFor Subject[] @relation("Prerequisites")
+}
