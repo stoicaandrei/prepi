@@ -4,26 +4,41 @@ import { Button } from "@/components/ui/button";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import Header from "@/components/Header";
 import { currentPrice, startNowUrl } from "@/constants";
+import clsx from "clsx";
 
 interface QuestionProps {
   question: string;
   answer: string;
   isReversed?: boolean;
+  last?: boolean;
 }
 
 const Question: React.FC<QuestionProps> = ({
   question,
   answer,
   isReversed = false,
+  last = false,
 }) => (
-  <div
-    className={`flex flex-col md:flex-row items-center justify-between my-16 ${isReversed ? "md:flex-row-reverse" : ""}`}
-  >
-    <div className="md:w-1/2 mb-8 md:mb-0">
-      <h2 className="text-4xl font-bold text-[#79b6f2] mb-4">{question}</h2>
-    </div>
-    <div className="md:w-1/2">
-      <p className="text-lg text-gray-600">{answer}</p>
+  <div className="relative">
+    <div
+      className={clsx(
+        `flex gap-8 flex-col md:flex-row items-center justify-between my-16`,
+        { "pb-7": !last, "md:flex-row-reverse": isReversed }
+      )}
+    >
+      <div
+        className={clsx("md:w-1/2 mb-8 md:mb-0", {
+          "md:text-right": isReversed,
+        })}
+      >
+        <h2 className="text-4xl font-bold text-[#79b6f2] mb-4">{question}</h2>
+      </div>
+      <div className="md:w-1/2">
+        <p className="text-lg text-gray-600">{answer}</p>
+      </div>
+      {!last && (
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/6 h-px bg-gray-200" />
+      )}
     </div>
   </div>
 );
@@ -40,9 +55,11 @@ const BenefitCard: React.FC<BenefitCardProps> = ({
   description,
 }) => (
   <div className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-    <Image src={icon} alt={title} width={64} height={64} className="mb-4" />
-    <h3 className="text-xl font-semibold text-[#79b6f2] mb-2">{title}</h3>
-    <p className="text-gray-600">{description}</p>
+    <img src={icon} alt={title} className="mb-4 h-[65px] m-auto" />
+    <h3 className="text-xl font-semibold text-[#79b6f2] mb-2 text-center">
+      {title}
+    </h3>
+    <p className="text-gray-600 text-center">{description}</p>
   </div>
 );
 
@@ -233,7 +250,7 @@ export default function Home() {
             Succesul nostru înseamnă reușitele tale
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-8 h-1/2 self-center">
               <div className="text-center">
                 <p className="text-4xl font-semibold text-[#6BADEE]">6.042</p>
                 <p className="text-[#787676]">
@@ -286,6 +303,7 @@ export default function Home() {
             question="Cum ajungi la rezultate?"
             answer="Rapid! Probabil iubești timpul liber, dar testele, bacul si admiterea sunt o prioritate a ta. Astfel timpul tău va fi folosit cu grijă și respectarea planului de pregătire îți asigură rezultate, dar și timp personal."
             isReversed
+            last
           />
         </div>
       </section>
