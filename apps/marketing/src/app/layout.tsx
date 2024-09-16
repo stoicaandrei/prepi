@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Matematică Liceu | Pregătire Online | Prepi.ro",
@@ -16,6 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <title>Prepi</title>
+      </Head>
       <body className="min-h-screen flex flex-col">
         <Header />
 
