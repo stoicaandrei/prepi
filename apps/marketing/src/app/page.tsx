@@ -272,7 +272,7 @@ export default function Home() {
           />
           <Question
             question="Cum înveți inteligent?"
-            answer="Totul constă în atenție, ritm și ce alegi să înveți. Am dezvoltat pentru tine un algoritm care folosește acești parametrii și felul în care tu înveți pentru a te ajuta să înveți ușor și rapid."
+            answer="Totul constă în atenție, ritm și ce alegi să înveți. Am dezvoltat pentru tine un algoritm care folosește acești parametri și felul în care tu înveți pentru a te ajuta să înveți ușor și rapid."
             isReversed
           />
           <Question
