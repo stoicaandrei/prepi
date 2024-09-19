@@ -242,14 +242,14 @@ async function migrateData() {
             name:
               prettyNames[categorySlug as keyof typeof prettyNames] ??
               categorySlug,
-            slug: categorySlug,
+            slug: categorySlug.replace(/_/g, "-"),
             order: i,
             subjects: {
               create: subjects.map((subjectSlug, j) => ({
                 name:
                   prettyNames[subjectSlug as keyof typeof prettyNames] ??
                   subjectSlug,
-                slug: subjectSlug,
+                slug: subjectSlug.replace(/_/g, "-"),
                 order: j,
               })),
             },
