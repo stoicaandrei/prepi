@@ -22,6 +22,9 @@ model Lesson {
     order             Int             @default(0)
 
     legacyContent LessonLegacyContent?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now()) @updatedAt
 }
 
 model LessonLegacyContent {
@@ -56,8 +59,82 @@ model Subject {
     category   SubjectCategory @relation(fields: [categoryId], references: [id])
     categoryId String
 
-    lessons Lesson[]
+    lessons  Lesson[]
+    problems Problem[]
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+}
+
+enum ProblemType {
+    MULTIPLE_CHOICE
+    SINGLE_ANSWER
+    MULTIPLE_VARIABLES
+}
+
+model Problem {
+    id       String      @id @default(cuid())
+    type     ProblemType
+    subjects Subject[]
+    legacyId String?
+
+    description String
+    source      String @default("archive")
+    difficulty  Int    @default(1)
+
+    // Problem Type = MULTIPLE_CHOICE
+    multipleChoiceOptions MultipleChoiceOption[]
+
+    // Problem Type = SINGLE_ANSWER
+    singleAnswer SingleAnswer?
+
+    // Problem Type = MULTIPLE_VARIABLES
+    variables ProblemVariable[]
+
+    hints                ProblemHint[]
+    explanation          ProblemExplanation @relation(fields: [problemExplanationId], references: [id])
+    problemExplanationId String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now()) @updatedAt
+}
+
+model MultipleChoiceOption {
+    id        String  @id @default(cuid())
+    text      String
+    isCorrect Boolean
+
+    problem   Problem @relation(fields: [problemId], references: [id])
+    problemId String
+}
+
+model SingleAnswer {
+    id            String  @id @default(cuid())
+    correctAnswer String
+    problem       Problem @relation(fields: [problemId], references: [id])
+    problemId     String  @unique
+}
+
+model ProblemVariable {
+    id            String  @id @default(cuid())
+    variableName  String
+    correctAnswer String
+    problem       Problem @relation(fields: [problemId], references: [id])
+    problemId     String
+}
+
+model ProblemHint {
+    id      String @id @default(cuid())
+    content String
+    order   Int    @default(0)
+
+    problem   Problem @relation(fields: [problemId], references: [id])
+    problemId String
+}
+
+model ProblemExplanation {
+    id      String @id @default(cuid())
+    content String
+
+    problem Problem[]
 }

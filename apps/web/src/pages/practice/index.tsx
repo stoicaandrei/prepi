@@ -24,11 +24,14 @@ import {
   ChevronRight,
   PlayCircle,
 } from "lucide-react";
+import { useState } from "react";
 
 export default function MathPracticeInteractive() {
   const subjectsByCategories = trpc.practice.listSubjectsByCategory.useQuery();
 
-  console.log(subjectsByCategories.data);
+  const [selectedSubjectId, setSelectedSubjectId] = useState<string | null>(
+    null
+  );
 
   return (
     <div className="space-y-4">
@@ -63,7 +66,7 @@ export default function MathPracticeInteractive() {
         </CardHeader>
         <CardContent className="space-y-4">
           {subjectsByCategories.data?.map((category) => (
-            <Collapsible key={category.id}>
+            <Collapsible key={category.id} open>
               <CollapsibleTrigger asChild>
                 <Button
                   key={category.name}
@@ -94,12 +97,12 @@ export default function MathPracticeInteractive() {
                     key={subject.id}
                     variant="ghost"
                     className="w-full justify-between p-2 h-auto hover:bg-gray-100"
-                    onClick={() => console.log(`Opening ${subject.name} page`)}
+                    onClick={() => setSelectedSubjectId(subject.id)}
                   >
                     <span>{subject.name}</span>
                     <div className="flex items-center space-x-2">
                       <span className="text-sm text-gray-500">
-                        0/0 exerciții rezolvate
+                        0/{subject._count.problems} exerciții rezolvate
                       </span>
                       <span className="text-sm text-blue-500">0%</span>
                     </div>
@@ -108,6 +111,11 @@ export default function MathPracticeInteractive() {
               </CollapsibleContent>
             </Collapsible>
           ))}
+          <PracticeModal
+            open={!!selectedSubjectId}
+            onClose={() => setSelectedSubjectId(null)}
+            subjectId={selectedSubjectId ?? ""}
+          />
         </CardContent>
       </Card>
     </div>

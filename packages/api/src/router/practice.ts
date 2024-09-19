@@ -12,9 +12,30 @@ export const practiceRouter = router({
             id: true,
             name: true,
             slug: true,
+            _count: {
+              select: { problems: true },
+            },
           },
         },
       },
     });
   }),
+  listProblemsBySubject: publicProcedure
+    .input(z.string())
+    .query(({ ctx, input }) => {
+      return ctx.prisma.problem.findMany({
+        where: { subjects: { some: { id: input } } },
+        select: {
+          id: true,
+          type: true,
+          description: true,
+          multipleChoiceOptions: true,
+          singleAnswer: true,
+          variables: true,
+          hints: true,
+          explanation: true,
+        },
+        take: 5,
+      });
+    }),
 });
