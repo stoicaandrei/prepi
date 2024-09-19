@@ -24,6 +24,13 @@ async function migrateData() {
               },
             },
           });
+          const subjectCategory = await tx.subjectCategory.findFirst({
+            where: {
+              slug: {
+                in: tags.map((tag) => tag.slug),
+              },
+            },
+          });
 
           console.log(`Found ${subjects.length} subjects for lesson`);
 
@@ -32,6 +39,9 @@ async function migrateData() {
             data: {
               subjects: {
                 connect: subjects.map((subject) => ({ id: subject.id })),
+              },
+              subjectCategory: {
+                connect: { id: subjectCategory!.id },
               },
             },
           });

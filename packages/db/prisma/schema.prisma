@@ -11,11 +11,16 @@ datasource db {
 }
 
 model Lesson {
-    id            String               @id @default(cuid())
-    title         String
-    slug          String               @unique
-    tags          Tag[]
-    subjects      Subject[]
+    id    String @id @default(cuid())
+    title String
+    slug  String @unique
+
+    subjects Subject[]
+
+    subjectCategoryId String
+    subjectCategory   SubjectCategory @relation(fields: [subjectCategoryId], references: [id])
+    order             Int             @default(0)
+
     legacyContent LessonLegacyContent?
 }
 
@@ -27,16 +32,6 @@ model LessonLegacyContent {
     lesson   Lesson @relation(fields: [lessonId], references: [id])
 }
 
-model Tag {
-    id       String   @id @default(cuid())
-    name     String   @unique
-    slug     String   @unique
-    parentId String? // This allows for null, indicating a top-level tag
-    parent   Tag?     @relation("SubTags", fields: [parentId], references: [id])
-    children Tag[]    @relation("SubTags")
-    lessons  Lesson[]
-}
-
 model SubjectCategory {
     id   String @id @default(cuid())
     name String
@@ -45,6 +40,7 @@ model SubjectCategory {
     order Int @default(0)
 
     subjects Subject[]
+    lessons  Lesson[]
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
@@ -60,8 +56,8 @@ model Subject {
     category   SubjectCategory @relation(fields: [categoryId], references: [id])
     categoryId String
 
+    lessons Lesson[]
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-    Lesson    Lesson?  @relation(fields: [lessonId], references: [id])
-    lessonId  String?
 }
