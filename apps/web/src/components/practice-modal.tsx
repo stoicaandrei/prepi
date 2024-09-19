@@ -47,7 +47,7 @@ export function PracticeModal({
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-full w-[90%] h-[80vh]">
+      <DialogContent className="max-w-full w-[90%] h-[90vh] md:h-[50vh]">
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold">
