@@ -15,6 +15,7 @@ model Lesson {
     title         String
     slug          String               @unique
     tags          Tag[]
+    subjects      Subject[]
     legacyContent LessonLegacyContent?
 }
 
@@ -36,12 +37,31 @@ model Tag {
     lessons  Lesson[]
 }
 
-model Subject {
-    id   String @id @default(uuid())
+model SubjectCategory {
+    id   String @id @default(cuid())
     name String
+    slug String @unique
 
-    // Self-referential many-to-many relationship for prerequisites
-    level           Int       @default(0)
-    prerequisites   Subject[] @relation("Prerequisites")
-    prerequisiteFor Subject[] @relation("Prerequisites")
+    order Int @default(0)
+
+    subjects Subject[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Subject {
+    id   String @id @default(cuid())
+    name String
+    slug String @unique
+
+    order Int @default(0)
+
+    category   SubjectCategory @relation(fields: [categoryId], references: [id])
+    categoryId String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    Lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+    lessonId  String?
 }
