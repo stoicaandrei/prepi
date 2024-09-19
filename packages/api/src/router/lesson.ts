@@ -10,6 +10,10 @@ export const lessonRouter = router({
         id: true,
         name: true,
         lessons: {
+          // TODO: Create interface to order lessons
+          orderBy: {
+            order: "asc",
+          },
           select: {
             title: true,
             slug: true,
