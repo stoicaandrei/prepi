@@ -83,7 +83,7 @@ export default function FaqPage() {
           <div className="mt-10 lg:mt-0">
             <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg shadow-xl p-6 text-white">
               <h2 className="text-3xl font-bold mb-4">{currentPrice}</h2>
-              <p className="text-xl mb-8">14 zile gratuit fără card</p>
+              <p className="text-xl mb-8">7 zile gratuit fără card</p>
               <ul className="space-y-2 mb-6">
                 <li>Plan de pregătire personalizat</li>
                 <li>Explicații pentru fiecare lecție</li>
