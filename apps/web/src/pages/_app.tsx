@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { trpc } from "@/utils/trpc";
 import { Layout } from "@/components/layouts/MainLayout";
 import { MathJaxContext } from "better-react-mathjax";
+import { Analytics } from "@vercel/analytics/react";
 
 const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
   return (
@@ -12,6 +13,7 @@ const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
       <MathJaxContext>
         <Layout>
           <Component {...pageProps} />
+          <Analytics />
         </Layout>
       </MathJaxContext>
     </ClerkProvider>
