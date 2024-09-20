@@ -324,13 +324,13 @@ export default function Home() {
                 <h2 className="text-5xl font-bold mb-4">{currentPrice}</h2>
                 <p className="text-xl mb-8">7 zile gratuit fără card</p>
                 <ul className="text-lg space-y-4 mb-8">
-                  <li>Plan de pregătire personalizat</li>
-                  <li>Explicații pentru fiecare lecție</li>
-                  <li>Recomandări zilnice</li>
-                  <li>Teste și rezolvări nelimitate</li>
-                  <li>Videoclipuri explicative</li>
-                  <li>Recomandări bazate pe stilul tău</li>
-                  <li>Asistent Prepi</li>
+                  <li>✅ Plan de pregătire personalizat</li>
+                  <li>✅ Explicații pentru fiecare lecție</li>
+                  <li>✅ Recomandări zilnice</li>
+                  <li>✅ Teste și rezolvări nelimitate</li>
+                  <li>✅ Videoclipuri explicative</li>
+                  <li>✅ Recomandări bazate pe stilul tău</li>
+                  <li>✅ Asistent Prepi</li>
                 </ul>
                 <Link href={startNowUrl}>
                   <Button className="bg-white text-blue-600 hover:bg-blue-100 text-lg font-semibold py-3 px-8 rounded-full transition duration-300">
