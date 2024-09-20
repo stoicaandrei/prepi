@@ -32,7 +32,7 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4">
-        <nav className="flex items-center md:justify-between justify-center py-4">
+        <nav className="flex items-center justify-between  py-4">
           <Link href="/">
             <Image
               src="_homepage/logo.svg"
@@ -73,7 +73,7 @@ export default function Header() {
               Contact
             </Link>
           </div>
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <Link href={startNowUrl}>
               <Button
                 variant="outline"
