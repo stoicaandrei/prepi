@@ -79,7 +79,7 @@ const benefits: BenefitCardProps[] = [
   },
   {
     icon: "/_homepage/i/rezolvari.png",
-    title: "Explicații să înțeleagă oricine",
+    title: "Explicații pe înțelesul tău",
     description:
       "Rezolvări pas cu pas la orice exercițiu și la modele de BAC ca să înțelegi fără efort",
   },
