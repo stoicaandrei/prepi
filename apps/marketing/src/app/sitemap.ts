@@ -17,19 +17,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
     },
     {
-      url: "https://prepi.ro/faq",
+      url: "https://prepi.ro/legal-notice",
       lastModified: currentDate,
     },
     {
-      url: "https://prepi.ro/faq",
+      url: "https://prepi.ro/licenses",
       lastModified: currentDate,
     },
     {
-      url: "https://prepi.ro/faq",
+      url: "https://prepi.ro/privacy-policy",
       lastModified: currentDate,
     },
     {
-      url: "https://prepi.ro/faq",
+      url: "https://prepi.ro/terms-of-service",
       lastModified: currentDate,
     },
   ];
