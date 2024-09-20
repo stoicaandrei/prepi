@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { OptInForm } from "./form";
 
 export default function ComingSoon() {
   return (
@@ -10,6 +11,9 @@ export default function ComingSoon() {
         <span className="text-[#6BADEE]">#RevolutiaEducatiei 👨‍🎓</span> cât mai
         curând posibil
       </p>
+
+      <OptInForm />
+
       <div className="space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row">
         <Button
           asChild
@@ -26,6 +30,15 @@ export default function ComingSoon() {
             Fii primul care află
           </Link>
         </Button>
+      </div>
+
+      <div className="mt-8 text-sm text-gray-500">
+        <Link href="/terms" className="hover:underline mr-4">
+          Termeni și Condiții
+        </Link>
+        <Link href="/privacy" className="hover:underline">
+          Politica de Confidențialitate
+        </Link>
       </div>
     </div>
   );
