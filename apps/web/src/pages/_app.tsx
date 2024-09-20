@@ -6,11 +6,15 @@ import { trpc } from "@/utils/trpc";
 import { Layout } from "@/components/layouts/MainLayout";
 import { MathJaxContext } from "better-react-mathjax";
 import { Analytics } from "@vercel/analytics/react";
+import Head from "next/head";
 
 const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
   return (
     <ClerkProvider {...pageProps}>
       <MathJaxContext>
+        <Head>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <Layout>
           <Component {...pageProps} />
           <Analytics />
