@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Matematică Liceu | Pregătire Online | Prepi.ro",
@@ -26,6 +27,7 @@ export default function RootLayout({
 
         <div className="bg-[#F8F9FB] pt-[84px] h-auto flex-grow">
           {children}
+          <Analytics />
         </div>
 
         <Footer />
