@@ -73,12 +73,21 @@ export function PracticeModal({
               <RadioGroup
                 value={selectedAnswer}
                 onValueChange={setSelectedAnswer}
-                className="space-y-2"
+                className="space-y-4"
               >
                 {currentProblem.multipleChoiceOptions.map((choice) => (
-                  <div key={choice.id} className="flex items-center space-x-2">
-                    <RadioGroupItem value={choice.id} id={choice.id} />
-                    <Label htmlFor={choice.id}>{choice.text}</Label>
+                  <div key={choice.id} className="flex items-center space-x-3">
+                    <RadioGroupItem
+                      value={choice.id}
+                      id={choice.id}
+                      className="h-6 w-6 border-2 border-primary text-primary focus:ring-primary"
+                    />
+                    <Label
+                      htmlFor={choice.id}
+                      className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      {choice.text}
+                    </Label>
                   </div>
                 ))}
               </RadioGroup>
