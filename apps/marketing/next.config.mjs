@@ -5,6 +5,18 @@ const nextConfig = {
   // Configure `pageExtensions` to include markdown and MDX files
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   // Optionally, add any other Next.js config below
+  rewrites: async () => {
+    return [
+      {
+        "source": "/ingest/static/:path*",
+        "destination": "https://eu-assets.i.posthog.com/static/:path*"
+      },
+      {
+        "source": "/ingest/:path*",
+        "destination": "https://eu.i.posthog.com/:path*"
+      }
+    ]
+  }
 }
  
 const withMDX = createMDX({

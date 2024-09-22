@@ -19,6 +19,19 @@ const nextConfig = {
     }
 
     return config
+  },
+
+  rewrites: async () => {
+    return [
+      {
+        "source": "/ingest/static/:path*",
+        "destination": "https://eu-assets.i.posthog.com/static/:path*"
+      },
+      {
+        "source": "/ingest/:path*",
+        "destination": "https://eu.i.posthog.com/:path*"
+      }
+    ]
   }
 };
 
