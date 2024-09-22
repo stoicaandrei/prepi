@@ -5,6 +5,7 @@ import "./globals.css";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Matematică Liceu | Pregătire Online | Prepi.ro",
@@ -19,21 +20,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <title>Prepi</title>
-      </Head>
-      <body className="min-h-screen flex flex-col">
-        <Header />
+      <Providers>
+        <Head>
+          <link rel="icon" href="/favicon.ico" sizes="any" />
+          <title>Prepi</title>
+        </Head>
+        <body className="min-h-screen flex flex-col">
+          <Header />
 
-        <div className="bg-[#F8F9FB] pt-[84px] h-auto flex-grow">
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </div>
+          <div className="bg-[#F8F9FB] pt-[84px] h-auto flex-grow">
+            {children}
+            <Analytics />
+            <SpeedInsights />
+          </div>
 
-        <Footer />
-      </body>
+          <Footer />
+        </body>
+      </Providers>
     </html>
   );
 }
