@@ -6,7 +6,7 @@ import { PostHogProvider } from "posthog-js/react";
 if (typeof window !== "undefined") {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? "", {
     person_profiles: "always",
-    api_host: "https://prepi.ro/ingest",
+    api_host: `https://${process.env.VERCEL_URL}/ingest`,
     ui_host: "https://eu.posthog.com",
   });
 }
