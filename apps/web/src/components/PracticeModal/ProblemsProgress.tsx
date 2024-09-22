@@ -11,6 +11,7 @@ enum SubmissionStatus {
 interface ProblemsProgressProps {
   submissions: SubmissionStatus[];
   total: number;
+  displayMode?: "default" | "large";
 }
 
 function getStatusIcon(status: SubmissionStatus) {
@@ -31,12 +32,16 @@ function getStatusIcon(status: SubmissionStatus) {
 export function ProblemsProgress({
   submissions,
   total,
+  displayMode = "default",
 }: ProblemsProgressProps) {
   const current = submissions.length;
 
   return (
     <div
-      className="flex items-center space-x-2"
+      className={cn(
+        "flex items-center",
+        displayMode === "default" ? "space-x-2" : "space-x-4"
+      )}
       role="progressbar"
       aria-valuenow={current}
       aria-valuemin={0}
@@ -48,8 +53,10 @@ export function ProblemsProgress({
           <div
             key={index}
             className={cn(
-              "w-5 h-5 rounded-full transition-all duration-300 ease-in-out flex items-center justify-center",
-              "sm:w-6 sm:h-6",
+              "rounded-full transition-all duration-300 ease-in-out flex items-center justify-center",
+              displayMode === "default"
+                ? "w-5 h-5 sm:w-6 sm:h-6"
+                : "w-20 h-20 sm:w-24 sm:h-24",
               status !== SubmissionStatus.UNATTEMPTED
                 ? "bg-primary"
                 : "bg-secondary"
