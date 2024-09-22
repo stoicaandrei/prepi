@@ -67,6 +67,8 @@ export function PracticeModal({
   const [hintCount, setHintCount] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
 
+  console.log(currentProblem);
+
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="max-w-full w-[90%] min-h-[90vh] md:min-h-[50vh]">
@@ -102,7 +104,12 @@ export function PracticeModal({
                       htmlFor={choice.id}
                       className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                      {choice.text}
+                      <MathJax
+                        inline
+                        text={choice.text}
+                        renderMode="pre"
+                        typesettingOptions={{ fn: "tex2chtml" }}
+                      />
                     </Label>
                   </div>
                 ))}
