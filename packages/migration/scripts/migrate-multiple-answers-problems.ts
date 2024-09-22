@@ -75,8 +75,6 @@ async function migrateData() {
           },
         },
       });
-
-      break;
     }
 
     console.log("Migration complete");
