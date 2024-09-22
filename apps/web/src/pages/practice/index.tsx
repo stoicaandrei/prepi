@@ -65,52 +65,57 @@ export default function MathPracticeInteractive() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {subjectsByCategories.data?.map((category) => (
-            <Collapsible key={category.id} open>
-              <CollapsibleTrigger asChild>
-                <Button
-                  key={category.name}
-                  variant="ghost"
-                  className="w-full p-4 h-auto flex items-center justify-between hover:bg-gray-100"
-                  onClick={() =>
-                    console.log(`Opening ${category.name} category`)
-                  }
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 rounded-full bg-blue-500" />
-                    <span className="text-lg font-medium">{category.name}</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="text-sm text-gray-500">
-                      Ai rezolvat 0/0 probleme
-                      <span className="hidden sm:inline">
-                        din această categorie
-                      </span>
-                    </span>
-                    <ChevronRight className="w-6 h-6" />
-                  </div>
-                </Button>
-              </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-2 mt-2">
-                {category.subjects.map((subject) => (
+          {/* TODO: Remove this dumb filter */}
+          {subjectsByCategories.data
+            ?.filter((cat) => cat.subjects.length)
+            .map((category) => (
+              <Collapsible key={category.id} open>
+                <CollapsibleTrigger asChild>
                   <Button
-                    key={subject.id}
+                    key={category.name}
                     variant="ghost"
-                    className="w-full justify-between p-2 h-auto hover:bg-gray-100"
-                    onClick={() => setSelectedSubjectId(subject.id)}
+                    className="w-full p-4 h-auto flex items-center justify-between hover:bg-gray-100"
+                    onClick={() =>
+                      console.log(`Opening ${category.name} category`)
+                    }
                   >
-                    <span>{subject.name}</span>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-sm text-gray-500">
-                        0/{subject._count.problems} exerciții rezolvate
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 rounded-full bg-blue-500" />
+                      <span className="text-lg font-medium">
+                        {category.name}
                       </span>
-                      <span className="text-sm text-blue-500">0%</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <span className="text-sm text-gray-500">
+                        Ai rezolvat 0/0 probleme
+                        <span className="hidden sm:inline">
+                          din această categorie
+                        </span>
+                      </span>
+                      <ChevronRight className="w-6 h-6" />
                     </div>
                   </Button>
-                ))}
-              </CollapsibleContent>
-            </Collapsible>
-          ))}
+                </CollapsibleTrigger>
+                <CollapsibleContent className="space-y-2 mt-2">
+                  {category.subjects.map((subject) => (
+                    <Button
+                      key={subject.id}
+                      variant="ghost"
+                      className="w-full justify-between p-2 h-auto hover:bg-gray-100"
+                      onClick={() => setSelectedSubjectId(subject.id)}
+                    >
+                      <span>{subject.name}</span>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-sm text-gray-500">
+                          0/{subject._count.problems} exerciții rezolvate
+                        </span>
+                        <span className="text-sm text-blue-500">0%</span>
+                      </div>
+                    </Button>
+                  ))}
+                </CollapsibleContent>
+              </Collapsible>
+            ))}
           <PracticeModal
             open={!!selectedSubjectId}
             onClose={() => setSelectedSubjectId(null)}

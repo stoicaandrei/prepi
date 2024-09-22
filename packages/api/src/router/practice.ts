@@ -8,6 +8,12 @@ export const practiceRouter = router({
         id: true,
         name: true,
         subjects: {
+          // TODO: remove this dumb filter
+          where: {
+            problems: {
+              some: {}, // This ensures that only subjects with at least one problem are included
+            },
+          },
           select: {
             id: true,
             name: true,
