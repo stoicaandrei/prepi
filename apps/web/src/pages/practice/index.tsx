@@ -1,6 +1,6 @@
 "use client";
 
-import { PracticeModal } from "@/components/practice-modal";
+import { PracticeModal } from "@/components/PracticeModal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {

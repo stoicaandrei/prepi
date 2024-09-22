@@ -15,8 +15,9 @@ import {
 } from "@/components/ui/dialog";
 import { trpc } from "@/utils/trpc";
 import { MathJax } from "better-react-mathjax";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
-import { Label } from "./ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { ProblemsProgress } from "./ProblemsProgress";
 
 type PracticeModalProps = {
   open: boolean;
@@ -24,23 +25,44 @@ type PracticeModalProps = {
   subjectId: string;
 };
 
+enum SubmissionStatus {
+  CORRECT = "CORRECT",
+  INCORRECT = "INCORRECT",
+  HINT = "HINT",
+}
+
 export function PracticeModal({
   open,
   onClose,
   subjectId,
 }: PracticeModalProps) {
-  const problems = trpc.practice.listProblemsBySubject.useQuery(subjectId, {
+  const _problems = trpc.practice.listProblemsBySubject.useQuery(subjectId, {
     enabled: !!subjectId,
     refetchOnMount: false,
     refetchOnReconnect: false,
     refetchOnWindowFocus: false,
     refetchInterval: false,
   });
+  const problems = _problems.data ?? [];
 
-  const currentProblem = problems.data?.[0];
+  const [submissions, setSubmissions] = useState<SubmissionStatus[]>([]);
+
+  const [currentProblemIndex, setCurrentProblemIndex] = useState(0);
+  const currentProblem = problems?.[0];
 
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  const [answer, setAnswer] = useState("");
+
+  const submitAnswer = () => {
+    if (currentProblem?.type === "MULTIPLE_CHOICE") {
+      const isCorrect = currentProblem.multipleChoiceOptions.find(
+        (option) => option.id === selectedAnswer
+      )?.isCorrect;
+      setSubmissions((prev) => [
+        ...prev,
+        isCorrect ? SubmissionStatus.CORRECT : SubmissionStatus.INCORRECT,
+      ]);
+    }
+  };
 
   const [hintCount, setHintCount] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -51,18 +73,12 @@ export function PracticeModal({
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold">
-              Modul de exersare {problems.isLoading ? "..." : ""}
+              Modul de exersare {_problems.isLoading ? "..." : ""}
             </h2>
-            <div className="flex space-x-2">
-              {[0, 1, 2, 3, 4].map((_, index) => (
-                <div
-                  key={index}
-                  className={`w-3 h-3 rounded-full ${
-                    index === 0 ? "bg-blue-500" : "bg-gray-300"
-                  }`}
-                />
-              ))}
-            </div>
+            <ProblemsProgress
+              total={problems.length}
+              submissions={submissions}
+            />
           </div>
 
           <div className="mb-6">
@@ -143,13 +159,15 @@ export function PracticeModal({
                 >
                   Vezi rezolvare
                 </Button>
-                <Button disabled={!selectedAnswer}>
+                <Button disabled={!selectedAnswer} onClick={submitAnswer}>
                   Trimite <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </>
             )}
 
-            {showExplanation && <Button onClick={() => {}}>Următorul</Button>}
+            {showExplanation && (
+              <Button onClick={submitAnswer}>Următorul</Button>
+            )}
           </div>
         </div>
       </DialogContent>
