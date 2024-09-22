@@ -48,8 +48,8 @@ export function ProblemsProgress({
           <div
             key={index}
             className={cn(
-              "w-6 h-6 rounded-full transition-all duration-300 ease-in-out flex items-center justify-center",
-              "sm:w-8 sm:h-8",
+              "w-5 h-5 rounded-full transition-all duration-300 ease-in-out flex items-center justify-center",
+              "sm:w-6 sm:h-6",
               status !== SubmissionStatus.UNATTEMPTED
                 ? "bg-primary"
                 : "bg-secondary"
