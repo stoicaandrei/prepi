@@ -66,7 +66,10 @@ export function PracticeModal({
     setAnswerAttempt(null);
   };
 
-  const submitAnswer = () => {
+  type SubmitAnswerOptions = {
+    forceCorrect?: boolean;
+  };
+  const submitAnswer = (options?: SubmitAnswerOptions) => {
     if (!currentProblem) return;
 
     let isCorrect = false;
@@ -75,6 +78,10 @@ export function PracticeModal({
         (option) => option.id === answerAttempt?.answerId
       );
       isCorrect = selectedAnswer?.isCorrect ?? false;
+    }
+
+    if (typeof options?.forceCorrect === "boolean") {
+      isCorrect = options.forceCorrect;
     }
 
     let status = isCorrect
@@ -182,6 +189,21 @@ export function PracticeModal({
               <Button onClick={submitAnswer}>Următorul</Button>
             )}
           </div>
+        </div>
+        <div className="">
+          <Button
+            variant="link"
+            onClick={() => submitAnswer({ forceCorrect: true })}
+          >
+            Click Correct Answer
+          </Button>
+          <Button
+            variant="link"
+            onClick={() => submitAnswer({ forceCorrect: true })}
+          >
+            Click Correct Answer
+          </Button>
+          {currentProblem?.id}
         </div>
       </DialogContent>
     </Dialog>
