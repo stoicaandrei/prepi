@@ -1,23 +1,9 @@
-import { useState } from "react";
-import { X, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { QueryData, trpc } from "@/utils/trpc";
 import { MathJax } from "better-react-mathjax";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { ProblemsProgress } from "./ProblemsProgress";
 import { MultipleChoiceOption, Problem } from "@prepi/db";
 import { ProblemAnswerAttempt } from ".";
+import { useEffect, useState } from "react";
 
 type ExtendedProblem = Partial<Problem> & {
   multipleChoiceOptions: MultipleChoiceOption[];
@@ -30,12 +16,31 @@ type ProblemDisplayProps = {
   setAnswerAttempt: (attempt: ProblemAnswerAttempt) => void;
 };
 
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export function ProblemDisplay({
   problem,
   hideInput,
   answerAttempt,
   setAnswerAttempt,
 }: ProblemDisplayProps) {
+  const [shuffledOptions, setShuffledOptions] = useState<
+    MultipleChoiceOption[]
+  >([]);
+
+  useEffect(() => {
+    if (problem?.type === "MULTIPLE_CHOICE") {
+      setShuffledOptions(shuffleArray(problem.multipleChoiceOptions));
+    }
+  }, [problem]);
+
   if (hideInput) {
     return (
       <p className="text-lg mb-4">
@@ -55,7 +60,7 @@ export function ProblemDisplay({
           onValueChange={(value) => setAnswerAttempt?.({ answerId: value })}
           className="space-y-4"
         >
-          {problem.multipleChoiceOptions.map((choice) => (
+          {shuffledOptions.map((choice) => (
             <div key={choice.id} className="flex items-center space-x-3">
               <RadioGroupItem
                 value={choice.id}
