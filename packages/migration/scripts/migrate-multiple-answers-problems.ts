@@ -56,7 +56,6 @@ async function migrateData() {
               .filter((s) => !!s)
               .map((choice, index) => ({
                 text: choice,
-                // TODO: Check this fact
                 isCorrect: index === 0, // The first one is always the correct one
               })),
           },

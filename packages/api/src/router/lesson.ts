@@ -1,8 +1,6 @@
 import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { z } from "zod";
 
-// TODO: Make sure to change these to protectedProcedure
-
 export const lessonRouter = router({
   listByTags: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.subjectCategory.findMany({
@@ -10,7 +8,6 @@ export const lessonRouter = router({
         id: true,
         name: true,
         lessons: {
-          // TODO: Create interface to order lessons
           orderBy: {
             order: "asc",
           },

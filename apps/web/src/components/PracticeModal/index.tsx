@@ -94,7 +94,6 @@ export function PracticeModal({
       isCorrect = selectedAnswer?.isCorrect ?? false;
     }
     if (currentProblem.type === "SINGLE_ANSWER") {
-      // TODO: Make this comparison math sensitive
       isCorrect =
         answerAttempt?.singleAnswerText ===
         currentProblem.singleAnswer?.correctAnswer;

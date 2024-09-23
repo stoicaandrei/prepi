@@ -38,8 +38,6 @@ export default function LessonCard() {
           </div>
         </CardHeader>
         <CardContent>
-          {/* TODO: Fix "Un videoclip va apărea aici..." error. I need to map each video id to a video from youtube, this might take a while */}
-          {/* TODO: Fix exerseaza buttons with classnames uk-button uk-button-primary */}
           <div
             dangerouslySetInnerHTML={{
               __html: lesson?.legacyContent?.html ?? "",
@@ -48,7 +46,6 @@ export default function LessonCard() {
         </CardContent>
       </Card>
 
-      {/* TODO: Make these buttons work */}
       <div className="flex justify-between mt-6">
         <Button variant="outline" disabled>
           <ArrowLeft className="mr-2 h-4 w-4" />

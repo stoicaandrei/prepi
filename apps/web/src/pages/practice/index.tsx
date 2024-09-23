@@ -65,7 +65,6 @@ export default function MathPracticeInteractive() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {/* TODO: Remove this dumb filter */}
           {subjectsByCategories.data
             ?.filter((cat) => cat.subjects.length)
             .map((category) => (
