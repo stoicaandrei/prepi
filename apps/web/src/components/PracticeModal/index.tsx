@@ -18,6 +18,7 @@ import { MathJax } from "better-react-mathjax";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { ProblemsProgress } from "./ProblemsProgress";
+import { ProblemDisplay } from "./ProblemDisplay";
 
 type PracticeModalProps = {
   open: boolean;
@@ -30,6 +31,10 @@ enum SubmissionStatus {
   INCORRECT = "INCORRECT",
   HINT = "HINT",
 }
+
+export type ProblemAnswerAttempt = {
+  answerId?: string;
+};
 
 export function PracticeModal({
   open,
@@ -48,19 +53,39 @@ export function PracticeModal({
   const [submissions, setSubmissions] = useState<SubmissionStatus[]>([]);
 
   const [currentProblemIndex, setCurrentProblemIndex] = useState(0);
-  const currentProblem = problems?.[0];
+  const currentProblem = problems?.[currentProblemIndex];
 
-  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [answerAttempt, setAnswerAttempt] =
+    useState<ProblemAnswerAttempt | null>(null);
 
   const submitAnswer = () => {
-    if (currentProblem?.type === "MULTIPLE_CHOICE") {
-      const isCorrect = currentProblem.multipleChoiceOptions.find(
-        (option) => option.id === selectedAnswer
-      )?.isCorrect;
-      setSubmissions((prev) => [
-        ...prev,
-        isCorrect ? SubmissionStatus.CORRECT : SubmissionStatus.INCORRECT,
-      ]);
+    if (!currentProblem) return;
+
+    let isCorrect = false;
+    if (currentProblem.type === "MULTIPLE_CHOICE") {
+      const selectedAnswer = currentProblem.multipleChoiceOptions.find(
+        (option) => option.id === answerAttempt?.answerId
+      );
+      isCorrect = selectedAnswer?.isCorrect ?? false;
+    }
+
+    let status = isCorrect
+      ? SubmissionStatus.CORRECT
+      : SubmissionStatus.INCORRECT;
+    if (hintCount || showExplanation) {
+      status = SubmissionStatus.HINT;
+    }
+
+    setAnswerAttempt(null);
+
+    if (submissions.length < problems.length) {
+      setSubmissions((prev) => [...prev, status]);
+    }
+
+    if (isCorrect || showExplanation) {
+      setCurrentProblemIndex((prev) => prev + 1);
+      setHintCount(0);
+      setShowExplanation(false);
     }
   };
 
@@ -84,49 +109,14 @@ export function PracticeModal({
           </div>
 
           <div className="mb-6">
-            <p className="text-lg mb-4">
-              <MathJax>{currentProblem?.description}</MathJax>
-            </p>
-            {currentProblem?.type === "MULTIPLE_CHOICE" && !showExplanation && (
-              <RadioGroup
-                value={selectedAnswer}
-                onValueChange={setSelectedAnswer}
-                className="space-y-4"
-              >
-                {currentProblem.multipleChoiceOptions.map((choice) => (
-                  <div key={choice.id} className="flex items-center space-x-3">
-                    <RadioGroupItem
-                      value={choice.id}
-                      id={choice.id}
-                      className="h-6 w-6 border-2 border-primary text-primary focus:ring-primary"
-                    />
-                    <Label
-                      htmlFor={choice.id}
-                      className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      <MathJax
-                        inline
-                        text={choice.text}
-                        renderMode="pre"
-                        typesettingOptions={{ fn: "tex2chtml" }}
-                      />
-                    </Label>
-                  </div>
-                ))}
-              </RadioGroup>
-            )}
-
-            {/* <div className="flex items-center space-x-2 mb-4">
-              <span className="text-lg">x ∈</span>
-              <Input
-                type="text"
-                value={answer}
-                onChange={(e) => setAnswer(e.target.value)}
-                className="flex-grow"
-                placeholder="Introduceți răspunsul aici"
-                autoFocus={false}
+            {currentProblem && (
+              <ProblemDisplay
+                problem={currentProblem}
+                answerAttempt={answerAttempt}
+                setAnswerAttempt={setAnswerAttempt}
+                hideInput={showExplanation}
               />
-            </div> */}
+            )}
 
             {!!hintCount && !showExplanation && (
               <div className="mt-4 bg-gray-100 p-4 rounded-lg">
@@ -166,7 +156,7 @@ export function PracticeModal({
                 >
                   Vezi rezolvare
                 </Button>
-                <Button disabled={!selectedAnswer} onClick={submitAnswer}>
+                <Button disabled={!answerAttempt} onClick={submitAnswer}>
                   Trimite <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </>

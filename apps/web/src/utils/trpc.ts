@@ -1,7 +1,11 @@
 // src/utils/trpc.ts
 import { CreateTRPCNext, createTRPCNext } from "@trpc/next";
 import { httpBatchLink, loggerLink } from "@trpc/client";
-import { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
+import {
+  inferRouterInputs,
+  inferRouterOutputs,
+  inferProcedureOutput,
+} from "@trpc/server";
 import type { AppRouter } from "@prepi/api";
 import { transformer } from "@prepi/api/transformer";
 import { NextPageContext } from "next";
@@ -44,3 +48,17 @@ export type RouterInputs = inferRouterInputs<AppRouter>;
  * @example type HelloOutput = RouterOutputs['example']['hello']
  **/
 export type RouterOutputs = inferRouterOutputs<AppRouter>;
+
+// Utility type to infer the data type of any query
+export type InferQueryOutput<
+  TRouteKey extends keyof AppRouter["_def"]["procedures"],
+> = inferProcedureOutput<AppRouter["_def"]["procedures"][TRouteKey]>;
+
+// Utility type to extract the data type from a query result
+export type ExtractQueryData<TQuery> = TQuery extends { data: infer TData }
+  ? TData
+  : never;
+
+// Combine both utilities for ease of use
+export type QueryData<TRouteKey extends keyof AppRouter["_def"]["procedures"]> =
+  ExtractQueryData<InferQueryOutput<TRouteKey>>;
