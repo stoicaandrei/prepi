@@ -1,6 +1,12 @@
 import { cn } from "@/lib/utils";
 import { HelpCircleIcon, XCircleIcon, CheckCircle2Icon } from "lucide-react";
-import { SubmissionStatus } from ".";
+
+export enum SubmissionStatus {
+  CORRECT = "CORRECT",
+  INCORRECT = "INCORRECT",
+  HINT = "HINT",
+  UNATTEMPTED = "UNATTEMPTED",
+}
 
 interface ProblemsProgressProps {
   submissions: SubmissionStatus[];
@@ -11,17 +17,26 @@ interface ProblemsProgressProps {
 function getStatusIcon(status: SubmissionStatus) {
   switch (status) {
     case SubmissionStatus.CORRECT:
-      return (
-        <CheckCircle2Icon className="w-full h-full text-primary-foreground" />
-      );
+      return <CheckCircle2Icon className="w-full h-full" />;
     case SubmissionStatus.INCORRECT:
-      return <XCircleIcon className="w-full h-full text-primary-foreground" />;
+      return <XCircleIcon className="w-full h-full" />;
     case SubmissionStatus.HINT:
-      return (
-        <HelpCircleIcon className="w-full h-full text-primary-foreground" />
-      );
+      return <HelpCircleIcon className="w-full h-full" />;
     default:
       return null;
+  }
+}
+
+function getStatusColor(status: SubmissionStatus) {
+  switch (status) {
+    case SubmissionStatus.CORRECT:
+      return "bg-primary text-primary-foreground";
+    case SubmissionStatus.INCORRECT:
+      return "bg-destructive text-destructive-foreground";
+    case SubmissionStatus.HINT:
+      return "bg-warning text-warning-foreground";
+    default:
+      return "bg-secondary text-secondary-foreground";
   }
 }
 
@@ -53,9 +68,7 @@ export function ProblemsProgress({
               displayMode === "default"
                 ? "w-5 h-5 sm:w-6 sm:h-6"
                 : "w-20 h-20 sm:w-24 sm:h-24",
-              status !== SubmissionStatus.UNATTEMPTED
-                ? "bg-primary"
-                : "bg-secondary"
+              getStatusColor(status)
             )}
           >
             {getStatusIcon(status)}
