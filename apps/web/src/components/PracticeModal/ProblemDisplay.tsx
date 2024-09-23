@@ -1,14 +1,10 @@
 import { MathJax } from "better-react-mathjax";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { MultipleChoiceOption, Problem } from "@prepi/db";
-import { ProblemAnswerAttempt } from ".";
+import { MultipleChoiceOption, Problem, ProblemVariable } from "@prepi/db";
+import { ExtendedProblem, ProblemAnswerAttempt } from ".";
 import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
-
-type ExtendedProblem = Partial<Problem> & {
-  multipleChoiceOptions: MultipleChoiceOption[];
-};
 
 type ProblemDisplayProps = {
   problem: ExtendedProblem;
@@ -95,6 +91,35 @@ export function ProblemDisplay({
             placeholder="Introduceți răspunsul aici"
             autoFocus
           />
+        </div>
+      )}
+      {problem?.type === "MULTIPLE_VARIABLES" && problem.variables && (
+        <div className="space-y-6">
+          {problem.variables.slice(0, 4).map((variable, index) => (
+            <div key={variable.id} className="w-1/2">
+              <Label htmlFor={`variable-${variable.id}`} className="block mb-2">
+                <MathJax inline>{variable.variableName}</MathJax>
+              </Label>
+              <Input
+                id={`variable-${variable.id}`}
+                type="text"
+                value={
+                  answerAttempt?.multipleVariableValues?.[variable.id] || ""
+                }
+                onChange={(e) =>
+                  setAnswerAttempt({
+                    multipleVariableValues: {
+                      ...answerAttempt?.multipleVariableValues,
+                      [variable.id]: e.target.value,
+                    },
+                  })
+                }
+                className="w-full text-lg py-3 px-4"
+                placeholder={`Introduceți valoarea`}
+                autoFocus={index === 0}
+              />
+            </div>
+          ))}
         </div>
       )}
     </>

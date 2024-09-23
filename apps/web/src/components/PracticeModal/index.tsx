@@ -20,11 +20,17 @@ import { Label } from "@/components/ui/label";
 import { ProblemsProgress } from "./ProblemsProgress";
 import { ProblemDisplay } from "./ProblemDisplay";
 import { useUserRoles } from "@/utils/useUserRoles";
+import { MultipleChoiceOption, Problem, ProblemVariable } from "@prepi/db";
 
 type PracticeModalProps = {
   open: boolean;
   onClose: () => void;
   subjectId: string;
+};
+
+export type ExtendedProblem = Partial<Problem> & {
+  multipleChoiceOptions: MultipleChoiceOption[];
+  variables: ProblemVariable[];
 };
 
 export enum SubmissionStatus {
@@ -37,6 +43,29 @@ export enum SubmissionStatus {
 export type ProblemAnswerAttempt = {
   answerId?: string;
   singleAnswerText?: string;
+  multipleVariableValues?: Record<string, string>;
+};
+
+const isReadyToSubmit = (
+  problem: ExtendedProblem | undefined,
+  attempt: ProblemAnswerAttempt | null
+) => {
+  if (!problem) return false;
+  if (!attempt) return false;
+
+  if (problem.type === "MULTIPLE_CHOICE") {
+    return !!attempt.answerId;
+  }
+  if (problem.type === "SINGLE_ANSWER") {
+    return !!attempt.singleAnswerText;
+  }
+  if (problem.type === "MULTIPLE_VARIABLES") {
+    return (
+      Object.values(attempt.multipleVariableValues ?? {}).filter((val) => !!val)
+        .length === problem.variables.length
+    );
+  }
+  return false;
 };
 
 export function PracticeModal({
@@ -63,6 +92,7 @@ export function PracticeModal({
 
   const [answerAttempt, setAnswerAttempt] =
     useState<ProblemAnswerAttempt | null>(null);
+  const readyToSubmit = isReadyToSubmit(currentProblem, answerAttempt);
 
   const setNextProblem = () => {
     setCurrentProblemIndex((prev) => prev + 1);
@@ -97,6 +127,16 @@ export function PracticeModal({
       isCorrect =
         answerAttempt?.singleAnswerText ===
         currentProblem.singleAnswer?.correctAnswer;
+    }
+    if (currentProblem.type === "MULTIPLE_VARIABLES") {
+      isCorrect = Object.entries(
+        answerAttempt?.multipleVariableValues ?? {}
+      ).every(([variableId, value]) => {
+        const variable = currentProblem.variables.find(
+          (variable) => variable.id === variableId
+        );
+        return variable?.correctAnswer === value;
+      });
     }
 
     if (typeof options?.forceCorrect === "boolean") {
@@ -204,7 +244,7 @@ export function PracticeModal({
               </Button>
             )}
             {!isSolved && (
-              <Button disabled={!answerAttempt} onClick={() => submitAnswer()}>
+              <Button disabled={!readyToSubmit} onClick={() => submitAnswer()}>
                 Trimite <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             )}
