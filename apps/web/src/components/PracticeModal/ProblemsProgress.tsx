@@ -30,13 +30,13 @@ function getStatusIcon(status: SubmissionStatus) {
 function getStatusColor(status: SubmissionStatus) {
   switch (status) {
     case SubmissionStatus.CORRECT:
-      return "bg-primary text-primary-foreground";
+      return "bg-primary text-white";
     case SubmissionStatus.INCORRECT:
-      return "bg-destructive text-destructive-foreground";
+      return "bg-destructive text-white";
     case SubmissionStatus.HINT:
-      return "bg-warning text-warning-foreground";
+      return "bg-warning text-white";
     default:
-      return "bg-secondary text-secondary-foreground";
+      return "bg-secondary text-white";
   }
 }
 
