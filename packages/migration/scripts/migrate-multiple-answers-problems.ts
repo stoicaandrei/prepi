@@ -3,8 +3,6 @@ import { MongoClient } from "mongodb";
 
 const mongoUri = process.env.MONGO_URI;
 
-// TODO: use chatgpt to correct the correct answer
-
 // Migrates multiple answer problems from mongo to postgres
 async function migrateData() {
   if (!mongoUri) {
