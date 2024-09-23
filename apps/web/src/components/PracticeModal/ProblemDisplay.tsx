@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { MultipleChoiceOption, Problem } from "@prepi/db";
 import { ProblemAnswerAttempt } from ".";
 import { useEffect, useState } from "react";
+import { Input } from "@/components/ui/input";
 
 type ExtendedProblem = Partial<Problem> & {
   multipleChoiceOptions: MultipleChoiceOption[];
@@ -80,19 +81,21 @@ export function ProblemDisplay({
               </Label>
             </div>
           ))}
-
-          {/* <div className="flex items-center space-x-2 mb-4">
-              <span className="text-lg">x ∈</span>
-              <Input
-                type="text"
-                value={answer}
-                onChange={(e) => setAnswer(e.target.value)}
-                className="flex-grow"
-                placeholder="Introduceți răspunsul aici"
-                autoFocus={false}
-              />
-            </div> */}
         </RadioGroup>
+      )}
+      {problem?.type === "SINGLE_ANSWER" && (
+        <div className="w-1/2">
+          <Input
+            type="text"
+            value={answerAttempt?.singleAnswerText}
+            onChange={(e) =>
+              setAnswerAttempt({ singleAnswerText: e.target.value })
+            }
+            className="w-full text-lg py-3 px-4"
+            placeholder="Introduceți răspunsul aici"
+            autoFocus
+          />
+        </div>
       )}
     </>
   );

@@ -36,6 +36,7 @@ export enum SubmissionStatus {
 
 export type ProblemAnswerAttempt = {
   answerId?: string;
+  singleAnswerText?: string;
 };
 
 export function PracticeModal({
@@ -71,6 +72,14 @@ export function PracticeModal({
     setIsSolved(false);
   };
 
+  const displayExplanation = () => {
+    setShowExplanation(true);
+    setIsSolved(true);
+    if (!currentSubmission) {
+      setSubmissions((prev) => [...prev, SubmissionStatus.HINT]);
+    }
+  };
+
   type SubmitAnswerOptions = {
     forceCorrect?: boolean;
   };
@@ -83,6 +92,12 @@ export function PracticeModal({
         (option) => option.id === answerAttempt?.answerId
       );
       isCorrect = selectedAnswer?.isCorrect ?? false;
+    }
+    if (currentProblem.type === "SINGLE_ANSWER") {
+      // TODO: Make this comparison math sensitive
+      isCorrect =
+        answerAttempt?.singleAnswerText ===
+        currentProblem.singleAnswer?.correctAnswer;
     }
 
     if (typeof options?.forceCorrect === "boolean") {
@@ -173,10 +188,7 @@ export function PracticeModal({
                 <Button
                   variant="outline"
                   className="mr-2"
-                  onClick={() => {
-                    setShowExplanation(true);
-                    setIsSolved(true);
-                  }}
+                  onClick={displayExplanation}
                 >
                   Vezi rezolvare
                 </Button>
@@ -215,7 +227,14 @@ export function PracticeModal({
             >
               Click Correct Answer
             </Button>
-            {currentProblem?.id}
+            <Button
+              variant="link"
+              onClick={() =>
+                navigator.clipboard.writeText(currentProblem?.id ?? "")
+              }
+            >
+              {currentProblem?.id}
+            </Button>
           </div>
         )}
       </DialogContent>
