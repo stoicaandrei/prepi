@@ -19,6 +19,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { ProblemsProgress } from "./ProblemsProgress";
 import { ProblemDisplay } from "./ProblemDisplay";
+import { useUserRoles } from "@/utils/useUserRoles";
 
 type PracticeModalProps = {
   open: boolean;
@@ -42,6 +43,8 @@ export function PracticeModal({
   onClose,
   subjectId,
 }: PracticeModalProps) {
+  const { isTester } = useUserRoles();
+
   const _problems = trpc.practice.listProblemsBySubject.useQuery(subjectId, {
     enabled: !!subjectId,
     refetchOnMount: false,
@@ -198,21 +201,23 @@ export function PracticeModal({
             {isSolved && <Button onClick={setNextProblem}>Următorul</Button>}
           </div>
         </div>
-        <div className="">
-          <Button
-            variant="link"
-            onClick={() => submitAnswer({ forceCorrect: true })}
-          >
-            Click Correct Answer
-          </Button>
-          <Button
-            variant="link"
-            onClick={() => submitAnswer({ forceCorrect: true })}
-          >
-            Click Correct Answer
-          </Button>
-          {currentProblem?.id}
-        </div>
+        {isTester && (
+          <div className="">
+            <Button
+              variant="link"
+              onClick={() => submitAnswer({ forceCorrect: true })}
+            >
+              Click Correct Answer
+            </Button>
+            <Button
+              variant="link"
+              onClick={() => submitAnswer({ forceCorrect: true })}
+            >
+              Click Correct Answer
+            </Button>
+            {currentProblem?.id}
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   );
