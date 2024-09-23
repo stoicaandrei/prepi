@@ -89,6 +89,8 @@ export function PracticeModal({
   const [currentProblemIndex, setCurrentProblemIndex] = useState(0);
   const currentProblem = problems?.[currentProblemIndex];
   const currentSubmission = submissions[currentProblemIndex];
+  const practiceFinished =
+    problems.length && currentProblemIndex === problems.length;
 
   const [answerAttempt, setAnswerAttempt] =
     useState<ProblemAnswerAttempt | null>(null);
@@ -166,6 +168,55 @@ export function PracticeModal({
   const [isSolved, setIsSolved] = useState(false);
 
   console.log(currentProblem);
+
+  if (practiceFinished) {
+    return (
+      <Dialog open={open} onOpenChange={onClose}>
+        <DialogContent className="max-w-full w-[90%] min-h-[90vh] md:min-h-[50vh]">
+          <div className="p-6">
+            <h2 className="text-2xl font-bold mb-6">Felicitări!</h2>
+
+            <h2 className="text-4xl font-bold text-center mb-8">
+              Ai terminat testul!
+            </h2>
+
+            <div className="flex justify-center space-x-8 mb-8">
+              <div className="text-center">
+                <p className="text-lg font-semibold text-gray-700">Scor</p>
+                <p className="text-3xl font-bold">-%</p>
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-semibold text-gray-700">
+                  Performanță
+                </p>
+                <p className="text-3xl font-bold text-green-500">+-%</p>
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-semibold text-gray-700">Puncte</p>
+                <p className="text-3xl font-bold text-blue-500">+-</p>
+              </div>
+            </div>
+
+            <div className="flex justify-center mb-8">
+              <ProblemsProgress
+                submissions={submissions}
+                total={problems.length}
+                displayMode="large"
+              />
+            </div>
+
+            <div className="flex justify-center space-x-8">
+              <Button variant="outline" onClick={onClose}>
+                Închide
+              </Button>
+              <Button variant="outline">Repetă capitol</Button>
+              <Button>Următorul test: Mulțimi</Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+    );
+  }
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
@@ -273,6 +324,21 @@ export function PracticeModal({
               }
             >
               {currentProblem?.id}
+            </Button>
+            <Button
+              variant="link"
+              onClick={() => {
+                const getRandomSubmission = () => {
+                  const randomIndex = Math.floor(Math.random() * 3);
+                  return Object.values(SubmissionStatus)[
+                    randomIndex
+                  ] as SubmissionStatus;
+                };
+                setSubmissions(problems.map(() => getRandomSubmission()));
+                setCurrentProblemIndex(problems.length);
+              }}
+            >
+              finish
             </Button>
           </div>
         )}

@@ -115,11 +115,13 @@ export default function MathPracticeInteractive() {
                 </CollapsibleContent>
               </Collapsible>
             ))}
-          <PracticeModal
-            open={!!selectedSubjectId}
-            onClose={() => setSelectedSubjectId(null)}
-            subjectId={selectedSubjectId ?? ""}
-          />
+          {!!selectedSubjectId && (
+            <PracticeModal
+              open={!!selectedSubjectId}
+              onClose={() => setSelectedSubjectId(null)}
+              subjectId={selectedSubjectId ?? ""}
+            />
+          )}
         </CardContent>
       </Card>
     </div>
