@@ -26,10 +26,11 @@ type PracticeModalProps = {
   subjectId: string;
 };
 
-enum SubmissionStatus {
+export enum SubmissionStatus {
   CORRECT = "CORRECT",
   INCORRECT = "INCORRECT",
   HINT = "HINT",
+  UNATTEMPTED = "UNATTEMPTED",
 }
 
 export type ProblemAnswerAttempt = {
@@ -58,6 +59,13 @@ export function PracticeModal({
   const [answerAttempt, setAnswerAttempt] =
     useState<ProblemAnswerAttempt | null>(null);
 
+  const setNextProblem = () => {
+    setCurrentProblemIndex((prev) => prev + 1);
+    setHintCount(0);
+    setShowExplanation(false);
+    setAnswerAttempt(null);
+  };
+
   const submitAnswer = () => {
     if (!currentProblem) return;
 
@@ -83,9 +91,7 @@ export function PracticeModal({
     }
 
     if (isCorrect || showExplanation) {
-      setCurrentProblemIndex((prev) => prev + 1);
-      setHintCount(0);
-      setShowExplanation(false);
+      setNextProblem();
     }
   };
 
@@ -156,6 +162,16 @@ export function PracticeModal({
                 >
                   Vezi rezolvare
                 </Button>
+                {submissions[currentProblemIndex] ===
+                  SubmissionStatus.INCORRECT && (
+                  <Button
+                    variant="outline"
+                    className="mr-2"
+                    onClick={setNextProblem}
+                  >
+                    Sari peste
+                  </Button>
+                )}
                 <Button disabled={!answerAttempt} onClick={submitAnswer}>
                   Trimite <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>

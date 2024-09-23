@@ -1,12 +1,6 @@
 import { cn } from "@/lib/utils";
-import { CheckIcon, XIcon, HelpCircleIcon } from "lucide-react";
-
-enum SubmissionStatus {
-  CORRECT = "CORRECT",
-  INCORRECT = "INCORRECT",
-  HINT = "HINT",
-  UNATTEMPTED = "UNATTEMPTED",
-}
+import { HelpCircleIcon, XCircleIcon, CheckCircle2Icon } from "lucide-react";
+import { SubmissionStatus } from ".";
 
 interface ProblemsProgressProps {
   submissions: SubmissionStatus[];
@@ -17,9 +11,11 @@ interface ProblemsProgressProps {
 function getStatusIcon(status: SubmissionStatus) {
   switch (status) {
     case SubmissionStatus.CORRECT:
-      return <CheckIcon className="w-full h-full text-primary-foreground" />;
+      return (
+        <CheckCircle2Icon className="w-full h-full text-primary-foreground" />
+      );
     case SubmissionStatus.INCORRECT:
-      return <XIcon className="w-full h-full text-primary-foreground" />;
+      return <XCircleIcon className="w-full h-full text-primary-foreground" />;
     case SubmissionStatus.HINT:
       return (
         <HelpCircleIcon className="w-full h-full text-primary-foreground" />
