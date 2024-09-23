@@ -55,6 +55,7 @@ export function PracticeModal({
 
   const [currentProblemIndex, setCurrentProblemIndex] = useState(0);
   const currentProblem = problems?.[currentProblemIndex];
+  const currentSubmission = submissions[currentProblemIndex];
 
   const [answerAttempt, setAnswerAttempt] =
     useState<ProblemAnswerAttempt | null>(null);
@@ -84,6 +85,10 @@ export function PracticeModal({
       isCorrect = options.forceCorrect;
     }
 
+    if (isCorrect) {
+      setIsSolved(true);
+    }
+
     let status = isCorrect
       ? SubmissionStatus.CORRECT
       : SubmissionStatus.INCORRECT;
@@ -91,19 +96,14 @@ export function PracticeModal({
       status = SubmissionStatus.HINT;
     }
 
-    setAnswerAttempt(null);
-
-    if (submissions.length < problems.length) {
+    if (!currentSubmission) {
       setSubmissions((prev) => [...prev, status]);
-    }
-
-    if (isCorrect || showExplanation) {
-      setNextProblem();
     }
   };
 
   const [hintCount, setHintCount] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
+  const [isSolved, setIsSolved] = useState(false);
 
   console.log(currentProblem);
 
@@ -154,40 +154,45 @@ export function PracticeModal({
           <div className="flex justify-end items-center">
             {!showExplanation && (
               <>
-                <Button
-                  variant="outline"
-                  className="mr-2"
-                  onClick={() => setHintCount((prev) => prev + 1)}
-                  disabled={hintCount === currentProblem?.hints.length}
-                >
-                  {hintCount ? "Următorul pas" : "Indicații"}
-                </Button>
-                <Button
-                  variant="outline"
-                  className="mr-2"
-                  onClick={() => setShowExplanation(true)}
-                >
-                  Vezi rezolvare
-                </Button>
-                {submissions[currentProblemIndex] ===
-                  SubmissionStatus.INCORRECT && (
+                {!isSolved && (
                   <Button
                     variant="outline"
                     className="mr-2"
-                    onClick={setNextProblem}
+                    onClick={() => setHintCount((prev) => prev + 1)}
+                    disabled={hintCount === currentProblem?.hints.length}
                   >
-                    Sari peste
+                    {hintCount ? "Următorul pas" : "Indicații"}
                   </Button>
                 )}
-                <Button disabled={!answerAttempt} onClick={submitAnswer}>
-                  Trimite <ChevronRight className="ml-2 h-4 w-4" />
+                <Button
+                  variant="outline"
+                  className="mr-2"
+                  onClick={() => {
+                    setShowExplanation(true);
+                    setIsSolved(true);
+                  }}
+                >
+                  Vezi rezolvare
                 </Button>
               </>
             )}
 
-            {showExplanation && (
-              <Button onClick={submitAnswer}>Următorul</Button>
+            {currentSubmission === SubmissionStatus.INCORRECT && !isSolved && (
+              <Button
+                variant="outline"
+                className="mr-2"
+                onClick={setNextProblem}
+              >
+                Sari peste
+              </Button>
             )}
+            {!isSolved && (
+              <Button disabled={!answerAttempt} onClick={() => submitAnswer()}>
+                Trimite <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            )}
+
+            {isSolved && <Button onClick={setNextProblem}>Următorul</Button>}
           </div>
         </div>
         <div className="">
