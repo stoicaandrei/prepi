@@ -65,6 +65,7 @@ export function PracticeModal({
     setHintCount(0);
     setShowExplanation(false);
     setAnswerAttempt(null);
+    setIsSolved(false);
   };
 
   type SubmitAnswerOptions = {
@@ -87,6 +88,8 @@ export function PracticeModal({
 
     if (isCorrect) {
       setIsSolved(true);
+    } else {
+      setAnswerAttempt(null);
     }
 
     let status = isCorrect
