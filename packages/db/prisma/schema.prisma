@@ -91,6 +91,8 @@ model Problem {
     // Problem Type = MULTIPLE_VARIABLES
     variables ProblemVariable[]
 
+    buttons MathSymbolButton[]
+
     hints                ProblemHint[]
     explanation          ProblemExplanation @relation(fields: [problemExplanationId], references: [id])
     problemExplanationId String
@@ -137,4 +139,12 @@ model ProblemExplanation {
     content String
 
     problem Problem[]
+}
+
+model MathSymbolButton {
+    id     String @id @default(cuid())
+    symbol String
+    latex  String
+
+    problems Problem[]
 }
