@@ -173,8 +173,6 @@ export function PracticeModal({
   const [showExplanation, setShowExplanation] = useState(false);
   const [isSolved, setIsSolved] = useState(false);
 
-  console.log(currentProblem);
-
   if (practiceFinished) {
     return (
       <Dialog open={open} onOpenChange={onClose}>
@@ -235,6 +233,7 @@ export function PracticeModal({
             <ProblemsProgress
               total={problems.length}
               submissions={submissions}
+              activeIndex={currentProblemIndex}
             />
           </div>
 

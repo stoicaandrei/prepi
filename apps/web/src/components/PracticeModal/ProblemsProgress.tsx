@@ -1,16 +1,23 @@
 import { cn } from "@/lib/utils";
-import { HelpCircleIcon, XCircleIcon, CheckCircle2Icon } from "lucide-react";
+import {
+  HelpCircleIcon,
+  XCircleIcon,
+  CheckCircle2Icon,
+  CircleDotIcon,
+} from "lucide-react";
 
 export enum SubmissionStatus {
   CORRECT = "CORRECT",
   INCORRECT = "INCORRECT",
   HINT = "HINT",
   UNATTEMPTED = "UNATTEMPTED",
+  ACTIVE = "ACTIVE",
 }
 
 interface ProblemsProgressProps {
   submissions: SubmissionStatus[];
   total: number;
+  activeIndex?: number;
   displayMode?: "default" | "large";
 }
 
@@ -22,6 +29,8 @@ function getStatusIcon(status: SubmissionStatus) {
       return <XCircleIcon className="w-full h-full" />;
     case SubmissionStatus.HINT:
       return <HelpCircleIcon className="w-full h-full" />;
+    case SubmissionStatus.ACTIVE:
+      return <CircleDotIcon className="w-full h-full" />;
     default:
       return null;
   }
@@ -35,6 +44,8 @@ function getStatusColor(status: SubmissionStatus) {
       return "bg-destructive text-white";
     case SubmissionStatus.HINT:
       return "bg-warning text-white";
+    case SubmissionStatus.ACTIVE:
+      return "bg-primary text-white";
     default:
       return "bg-secondary text-white";
   }
@@ -43,10 +54,9 @@ function getStatusColor(status: SubmissionStatus) {
 export function ProblemsProgress({
   submissions,
   total,
+  activeIndex,
   displayMode = "default",
 }: ProblemsProgressProps) {
-  const current = submissions.length;
-
   return (
     <div
       className={cn(
@@ -54,12 +64,18 @@ export function ProblemsProgress({
         displayMode === "default" ? "space-x-2" : "space-x-4"
       )}
       role="progressbar"
-      aria-valuenow={current}
+      aria-valuenow={activeIndex}
       aria-valuemin={0}
       aria-valuemax={total}
     >
       {Array.from({ length: total }, (_, index) => {
-        const status = submissions[index] || SubmissionStatus.UNATTEMPTED;
+        let status = submissions[index] || SubmissionStatus.UNATTEMPTED;
+        if (status === SubmissionStatus.UNATTEMPTED && index === activeIndex) {
+          status = SubmissionStatus.ACTIVE;
+        }
+
+        console.log("status", status, activeIndex, index);
+
         return (
           <div
             key={index}
