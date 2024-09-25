@@ -6,12 +6,21 @@ export const lessonRouter = router({
   listByTags: publicProcedure.query(async ({ ctx }) => {
     const { getCache, setCache } = useCache("listByTags");
 
+    type Resp = {
+      id: string;
+      name: string;
+      lessons: {
+        title: string;
+        slug: string;
+      }[];
+    }[];
+
     const cachedData = await getCache();
     if (cachedData) {
-      return cachedData;
+      return cachedData as Resp;
     }
 
-    const data = await ctx.prisma.subjectCategory.findMany({
+    const data: Resp = await ctx.prisma.subjectCategory.findMany({
       select: {
         id: true,
         name: true,
@@ -34,12 +43,21 @@ export const lessonRouter = router({
   getBySlug: publicProcedure.input(z.string()).query(async ({ ctx, input }) => {
     const { getCache, setCache } = useCache(`lesson:${input}`);
 
+    type Resp = {
+      id: string;
+      title: string;
+      slug: string;
+      legacyContent: {
+        html: string;
+      } | null;
+    } | null;
+
     const cachedData = await getCache();
     if (cachedData) {
-      return cachedData;
+      return cachedData as Resp;
     }
 
-    const data = await ctx.prisma.lesson.findFirst({
+    const data: Resp = await ctx.prisma.lesson.findFirst({
       where: {
         slug: input,
       },

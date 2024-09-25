@@ -9,12 +9,23 @@ export const practiceRouter = router({
   listSubjectsByCategory: publicProcedure.query(async ({ ctx }) => {
     const { getCache, setCache } = useCache("listSubjectsByCategory");
 
+    type Resp = {
+      id: string;
+      name: string;
+      subjects: {
+        id: string;
+        name: string;
+        slug: string;
+        _count: { problems: number };
+      }[];
+    }[];
+
     const cachedData = await getCache();
     if (cachedData) {
-      return cachedData;
+      return cachedData as Resp;
     }
 
-    const data = await ctx.prisma.subjectCategory.findMany({
+    const data: Resp = await ctx.prisma.subjectCategory.findMany({
       select: {
         id: true,
         name: true,

@@ -1,12 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import {  ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { trpc } from "@/utils/trpc";
 import { MathJax } from "better-react-mathjax";
 import { ProblemsProgress } from "./ProblemsProgress";
@@ -29,7 +26,7 @@ type PracticeModalProps = {
 
 export type ExtendedProblem = Partial<Problem> & {
   multipleChoiceOptions: MultipleChoiceOption[];
-  singleAnswer?: SingleAnswer;
+  singleAnswer: SingleAnswer | null;
   variables: ProblemVariable[];
   mathSymbolButtons: MathSymbolButton[];
 };
@@ -139,7 +136,7 @@ export function PracticeModal({
         const variable = currentProblem.variables.find(
           (variable) => variable.id === variableId
         );
-        return compareEqs(value, variable?.correctValue ?? "");
+        return compareEqs(value, variable?.correctAnswer ?? "");
       });
     }
 

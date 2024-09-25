@@ -1,10 +1,13 @@
 import { ProblemParser } from "./problemParser";
 
-const evalInfix = (eq: string) => new ProblemParser(eq).eval(244);
-const compare = (val1: string, val2: string) =>
+// Don't modify this function
+// Don't try to understand this function
+
+const evalInfix = (eq) => new ProblemParser(eq).eval(244);
+const compare = (val1, val2) =>
   Math.abs(evalInfix(val1) - evalInfix(val2)) < 0.0001;
 
-const latexToInfix = (latex: string) => {
+const latexToInfix = (latex) => {
   let infix = latex;
 
   // console.log(infix);
@@ -51,9 +54,9 @@ const latexToInfix = (latex: string) => {
   return infix;
 };
 
-const parseNumberSet = (infix: string) => {
-  const setToArray = (set: any) => {
-    let result = [[{}, {}]] as any;
+const parseNumberSet = (infix) => {
+  const setToArray = (set) => {
+    let result = [[{}, {}]];
     let setL = set.length - 1;
 
     if (set[0] == "{")
@@ -81,7 +84,7 @@ const parseNumberSet = (infix: string) => {
     return result;
   };
 
-  const union = (set1: any[], set2: any[]) => {
+  const union = (set1, set2) => {
     if (set2[0][0].val == set2[0][1].val) {
       let result = set1;
 
@@ -107,7 +110,7 @@ const parseNumberSet = (infix: string) => {
     return [set1[0], set2[0]];
   };
 
-  const difference = (set1: any[], set2: any[]) => {
+  const difference = (set1, set2) => {
     let result = set1;
 
     for (let i = 0; i < set2.length; i++) {
@@ -142,16 +145,16 @@ const parseNumberSet = (infix: string) => {
   }
 };
 
-export const compareEqs = (eq1: string, eq2: string) => {
-  const parseLatex = (a: string) =>
+export const compareEqs = (eq1, eq2) => {
+  const parseLatex = (a) =>
     a
       .replace(/,|;/g, ".")
       .replace(/\\begin{pmatrix}|\\end{pmatrix}/g, "")
       .replace(/\\pi/g, "pi");
 
-  const splitEq = (a: string) => a.split(/&|\\\\/g);
+  const splitEq = (a) => a.split(/&|\\\\/g);
 
-  const normalize = (infix: string) =>
+  const normalize = (infix) =>
     infix.replace(/\[|\{/g, "(").replace(/\]|\}/g, ")");
 
   const isNumberSet = (a) =>
