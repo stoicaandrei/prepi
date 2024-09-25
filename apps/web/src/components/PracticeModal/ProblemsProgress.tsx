@@ -74,8 +74,6 @@ export function ProblemsProgress({
           status = SubmissionStatus.ACTIVE;
         }
 
-        console.log("status", status, activeIndex, index);
-
         return (
           <div
             key={index}

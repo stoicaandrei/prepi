@@ -47,8 +47,6 @@ export function ProblemDisplay({
     );
   }
 
-  console.log("answerAttempt", answerAttempt);
-
   return (
     <>
       <p className="text-lg mb-4">

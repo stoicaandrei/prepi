@@ -1,22 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { X, ChevronRight } from "lucide-react";
+import {  ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { trpc } from "@/utils/trpc";
 import { MathJax } from "better-react-mathjax";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
 import { ProblemsProgress } from "./ProblemsProgress";
 import { ProblemDisplay } from "./ProblemDisplay";
 import { useUserRoles } from "@/hooks/useUserRoles";
