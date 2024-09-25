@@ -1,9 +1,20 @@
 import { router, publicProcedure, protectedProcedure } from "../trpc";
+import { kv } from "@vercel/kv";
 import { z } from "zod";
 
+const CACHE_TTL = 3600; // 1 hour in seconds
+
 export const practiceRouter = router({
-  listSubjectsByCategory: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.subjectCategory.findMany({
+  listSubjectsByCategory: publicProcedure.query(async ({ ctx }) => {
+    const CACHE_KEY = "listSubjectsByCategory";
+
+    const cachedData = await kv.get(CACHE_KEY);
+    if (cachedData) {
+      console.log("Data fetched from cache");
+      return cachedData;
+    }
+
+    const data = await ctx.prisma.subjectCategory.findMany({
       select: {
         id: true,
         name: true,
@@ -24,6 +35,13 @@ export const practiceRouter = router({
         },
       },
     });
+
+    await kv.set(CACHE_KEY, data, {
+      ex: CACHE_TTL,
+    });
+    console.log("Data stored in cache");
+
+    return data;
   }),
   listProblemsBySubject: publicProcedure
     .input(z.string())
