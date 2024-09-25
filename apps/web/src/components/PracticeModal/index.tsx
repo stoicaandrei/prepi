@@ -27,6 +27,7 @@ import {
   ProblemVariable,
   SingleAnswer,
 } from "@prepi/db";
+import { compareEqs } from "@prepi/utils";
 
 type PracticeModalProps = {
   open: boolean;
@@ -134,9 +135,10 @@ export function PracticeModal({
       isCorrect = selectedAnswer?.isCorrect ?? false;
     }
     if (currentProblem.type === "SINGLE_ANSWER") {
-      isCorrect =
-        answerAttempt?.singleAnswerText ===
-        currentProblem.singleAnswer?.correctAnswer;
+      isCorrect = compareEqs(
+        answerAttempt?.singleAnswerText ?? "",
+        currentProblem.singleAnswer?.correctAnswer ?? ""
+      );
     }
     if (currentProblem.type === "MULTIPLE_VARIABLES") {
       isCorrect = Object.entries(
@@ -145,7 +147,7 @@ export function PracticeModal({
         const variable = currentProblem.variables.find(
           (variable) => variable.id === variableId
         );
-        return variable?.correctAnswer === value;
+        return compareEqs(value, variable?.correctValue ?? "");
       });
     }
 

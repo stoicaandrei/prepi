@@ -138,6 +138,9 @@ importers:
       '@prepi/db':
         specifier: workspace:*
         version: link:../../packages/db
+      '@prepi/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@radix-ui/react-avatar':
         specifier: ^1.1.0
         version: 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1)(react@18.3.1)
@@ -366,6 +369,25 @@ importers:
         version: 4.9.5
 
   packages/typescript-config: {}
+
+  packages/utils:
+    dependencies:
+      dotenv:
+        specifier: ^16.0.0
+        version: 16.4.5
+    devDependencies:
+      '@prepi/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@prepi/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      eslint:
+        specifier: ^8.28.0
+        version: 8.57.0
+      typescript:
+        specifier: ^4.9.3
+        version: 4.9.5
 
 packages:
 
