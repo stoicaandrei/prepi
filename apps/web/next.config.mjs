@@ -32,7 +32,9 @@ const nextConfig = {
         "destination": "https://eu.i.posthog.com/:path*"
       }
     ]
-  }
+  },
+
+  turbo: true
 };
 
 export default nextConfig;

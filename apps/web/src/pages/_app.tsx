@@ -9,6 +9,12 @@ import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 if (typeof window !== "undefined") {
   // checks that we are client-side
@@ -30,10 +36,12 @@ const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
           <Head>
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <Layout>
-            <Component {...pageProps} />
-            <Analytics />
-          </Layout>
+          <div className={`${montserrat.variable} font-sans`}>
+            <Layout>
+              <Component {...pageProps} />
+              <Analytics />
+            </Layout>
+          </div>
         </MathJaxContext>
       </ClerkProvider>
     </PostHogProvider>
