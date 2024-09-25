@@ -36,12 +36,15 @@ const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
           <Head>
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <div className={`${montserrat.variable} font-sans`}>
-            <Layout>
-              <Component {...pageProps} />
-              <Analytics />
-            </Layout>
-          </div>
+          <style jsx global>{`
+            :root {
+              --font-montserrat: ${montserrat.style.fontFamily};
+            }
+          `}</style>
+          <Layout>
+            <Component {...pageProps} />
+            <Analytics />
+          </Layout>
         </MathJaxContext>
       </ClerkProvider>
     </PostHogProvider>
