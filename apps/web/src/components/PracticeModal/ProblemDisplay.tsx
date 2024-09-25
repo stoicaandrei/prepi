@@ -116,6 +116,7 @@ export function ProblemDisplay({
                 }
                 className="w-full text-lg px-4"
                 autoFocus={index === 0}
+                tabIndex={index + 1}
               />
             </div>
           ))}
