@@ -1,9 +1,17 @@
+import { useCache } from "../cache";
 import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { z } from "zod";
 
 export const lessonRouter = router({
-  listByTags: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.subjectCategory.findMany({
+  listByTags: publicProcedure.query(async ({ ctx }) => {
+    const { getCache, setCache } = useCache("listByTags");
+
+    const cachedData = await getCache();
+    if (cachedData) {
+      return cachedData;
+    }
+
+    const data = await ctx.prisma.subjectCategory.findMany({
       select: {
         id: true,
         name: true,
@@ -18,9 +26,20 @@ export const lessonRouter = router({
         },
       },
     });
+
+    await setCache(data);
+
+    return data;
   }),
-  getBySlug: publicProcedure.input(z.string()).query(({ ctx, input }) => {
-    return ctx.prisma.lesson.findFirst({
+  getBySlug: publicProcedure.input(z.string()).query(async ({ ctx, input }) => {
+    const { getCache, setCache } = useCache(`lesson:${input}`);
+
+    const cachedData = await getCache();
+    if (cachedData) {
+      return cachedData;
+    }
+
+    const data = await ctx.prisma.lesson.findFirst({
       where: {
         slug: input,
       },
@@ -32,6 +51,10 @@ export const lessonRouter = router({
         },
       },
     });
+
+    await setCache(data);
+
+    return data;
   }),
   // all: publicProcedure.query(({ ctx }) => {
   //   return []

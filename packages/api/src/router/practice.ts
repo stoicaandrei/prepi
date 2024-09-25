@@ -1,16 +1,16 @@
 import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { kv } from "@vercel/kv";
 import { z } from "zod";
+import { useCache } from "../cache";
 
 const CACHE_TTL = 3600; // 1 hour in seconds
 
 export const practiceRouter = router({
   listSubjectsByCategory: publicProcedure.query(async ({ ctx }) => {
-    const CACHE_KEY = "listSubjectsByCategory";
+    const { getCache, setCache } = useCache("listSubjectsByCategory");
 
-    const cachedData = await kv.get(CACHE_KEY);
+    const cachedData = await getCache();
     if (cachedData) {
-      console.log("Data fetched from cache");
       return cachedData;
     }
 
@@ -36,9 +36,7 @@ export const practiceRouter = router({
       },
     });
 
-    await kv.set(CACHE_KEY, data, {
-      ex: CACHE_TTL,
-    });
+    await setCache(data);
     console.log("Data stored in cache");
 
     return data;
