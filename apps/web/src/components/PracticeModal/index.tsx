@@ -19,7 +19,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { ProblemsProgress } from "./ProblemsProgress";
 import { ProblemDisplay } from "./ProblemDisplay";
-import { useUserRoles } from "@/utils/useUserRoles";
+import { useUserRoles } from "@/hooks/useUserRoles";
 import { MultipleChoiceOption, Problem, ProblemVariable } from "@prepi/db";
 
 type PracticeModalProps = {
