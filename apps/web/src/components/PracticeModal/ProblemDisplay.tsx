@@ -90,6 +90,7 @@ export function ProblemDisplay({
             onInputChange={(latex) =>
               setAnswerAttempt({ singleAnswerText: latex })
             }
+            mathSymbolButtons={problem.mathSymbolButtons}
             className="w-full text-lg px-4"
             autoFocus
           />
@@ -114,6 +115,7 @@ export function ProblemDisplay({
                     },
                   }))
                 }
+                mathSymbolButtons={problem.mathSymbolButtons}
                 className="w-full text-lg px-4"
                 autoFocus={index === 0}
                 tabIndex={index + 1}

@@ -52,6 +52,7 @@ export const practiceRouter = router({
           description: true,
           multipleChoiceOptions: true,
           singleAnswer: true,
+          mathSymbolButtons: true,
           variables: true,
           hints: true,
           explanation: true,

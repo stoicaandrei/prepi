@@ -21,6 +21,7 @@ import { ProblemsProgress } from "./ProblemsProgress";
 import { ProblemDisplay } from "./ProblemDisplay";
 import { useUserRoles } from "@/hooks/useUserRoles";
 import {
+  MathSymbolButton,
   MultipleChoiceOption,
   Problem,
   ProblemVariable,
@@ -37,6 +38,7 @@ export type ExtendedProblem = Partial<Problem> & {
   multipleChoiceOptions: MultipleChoiceOption[];
   singleAnswer?: SingleAnswer;
   variables: ProblemVariable[];
+  mathSymbolButtons: MathSymbolButton[];
 };
 
 export enum SubmissionStatus {
