@@ -65,7 +65,7 @@ const navClasses = (active: boolean) =>
     "flex items-center pl-10 gap-2 text-sm h-11 transition-all hover:text-primary border-0 border-l-4 border-solid ",
     {
       "text-primary font-semibold border-primary": active,
-      "text-gray-600 border-transparent": !active,
+      "text-[#999] border-transparent": !active,
     }
   );
 
