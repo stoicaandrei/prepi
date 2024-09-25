@@ -20,7 +20,12 @@ import { Label } from "@/components/ui/label";
 import { ProblemsProgress } from "./ProblemsProgress";
 import { ProblemDisplay } from "./ProblemDisplay";
 import { useUserRoles } from "@/hooks/useUserRoles";
-import { MultipleChoiceOption, Problem, ProblemVariable } from "@prepi/db";
+import {
+  MultipleChoiceOption,
+  Problem,
+  ProblemVariable,
+  SingleAnswer,
+} from "@prepi/db";
 
 type PracticeModalProps = {
   open: boolean;
@@ -30,6 +35,7 @@ type PracticeModalProps = {
 
 export type ExtendedProblem = Partial<Problem> & {
   multipleChoiceOptions: MultipleChoiceOption[];
+  singleAnswer?: SingleAnswer;
   variables: ProblemVariable[];
 };
 

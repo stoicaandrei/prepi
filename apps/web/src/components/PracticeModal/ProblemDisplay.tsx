@@ -3,14 +3,15 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { MultipleChoiceOption, Problem, ProblemVariable } from "@prepi/db";
 import { ExtendedProblem, ProblemAnswerAttempt } from ".";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
+import MathInput from "../MathInput";
 
 type ProblemDisplayProps = {
   problem: ExtendedProblem;
   hideInput?: boolean;
   answerAttempt: ProblemAnswerAttempt | null;
-  setAnswerAttempt: (attempt: ProblemAnswerAttempt) => void;
+  setAnswerAttempt: Dispatch<SetStateAction<ProblemAnswerAttempt | null>>;
 };
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -46,6 +47,8 @@ export function ProblemDisplay({
     );
   }
 
+  console.log("answerAttempt", answerAttempt);
+
   return (
     <>
       <p className="text-lg mb-4">
@@ -79,16 +82,15 @@ export function ProblemDisplay({
           ))}
         </RadioGroup>
       )}
+
       {problem?.type === "SINGLE_ANSWER" && (
         <div className="w-1/2">
-          <Input
-            type="text"
-            value={answerAttempt?.singleAnswerText}
-            onChange={(e) =>
-              setAnswerAttempt({ singleAnswerText: e.target.value })
+          <MathInput
+            inputValue={answerAttempt?.singleAnswerText || ""}
+            onInputChange={(latex) =>
+              setAnswerAttempt({ singleAnswerText: latex })
             }
-            className="w-full text-lg py-3 px-4"
-            placeholder="Introduceți răspunsul aici"
+            className="w-full text-lg px-4"
             autoFocus
           />
         </div>
@@ -97,25 +99,22 @@ export function ProblemDisplay({
         <div className="space-y-6">
           {problem.variables.slice(0, 4).map((variable, index) => (
             <div key={variable.id} className="w-1/2">
-              <Label htmlFor={`variable-${variable.id}`} className="block mb-2">
+              <Label className="block mb-2">
                 <MathJax inline>{variable.variableName}</MathJax>
               </Label>
-              <Input
-                id={`variable-${variable.id}`}
-                type="text"
-                value={
+              <MathInput
+                inputValue={
                   answerAttempt?.multipleVariableValues?.[variable.id] || ""
                 }
-                onChange={(e) =>
-                  setAnswerAttempt({
+                onInputChange={(latex) =>
+                  setAnswerAttempt((ans) => ({
                     multipleVariableValues: {
-                      ...answerAttempt?.multipleVariableValues,
-                      [variable.id]: e.target.value,
+                      ...ans?.multipleVariableValues,
+                      [variable.id]: latex,
                     },
-                  })
+                  }))
                 }
-                className="w-full text-lg py-3 px-4"
-                placeholder={`Introduceți valoarea`}
+                className="w-full text-lg px-4"
                 autoFocus={index === 0}
               />
             </div>

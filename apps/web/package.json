@@ -33,6 +33,7 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.438.0",
+    "mathquill": "0.10.1-a",
     "next": "14.2.13",
     "posthog-js": "^1.163.0",
     "react": "18.3.1",

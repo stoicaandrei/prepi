@@ -195,6 +195,9 @@ importers:
       lucide-react:
         specifier: ^0.438.0
         version: 0.438.0(react@18.3.1)
+      mathquill:
+        specifier: 0.10.1-a
+        version: 0.10.1-a
       next:
         specifier: 14.2.13
         version: 14.2.13(react-dom@18.3.1)(react@18.3.1)
@@ -6151,6 +6154,10 @@ packages:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
     dev: true
 
+  /jquery@1.12.4:
+    resolution: {integrity: sha512-UEVp7PPK9xXYSk8xqXCJrkXnKZtlgWkd2GsAQbMRFK6S/ePU2JN5G2Zum8hIVjzR3CpdfSqdqAzId/xd4TJHeg==}
+    dev: false
+
   /js-cookie@3.0.5:
     resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
     engines: {node: '>=14'}
@@ -6349,6 +6356,12 @@ packages:
       mhchemparser: 4.2.1
       mj-context-menu: 0.6.1
       speech-rule-engine: 4.0.7
+    dev: false
+
+  /mathquill@0.10.1-a:
+    resolution: {integrity: sha512-snSAEwAtwdwBFSor+nVBnWWQtTw67kgAgKMyAIxuz4ZPboy0qkWZmd7BL3lfOXp/INihhRlU1PcfaAtDaRhmzA==}
+    dependencies:
+      jquery: 1.12.4
     dev: false
 
   /mdast-util-from-markdown@2.0.1:
