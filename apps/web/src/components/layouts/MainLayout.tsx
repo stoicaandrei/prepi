@@ -62,9 +62,9 @@ type LayoutProps = {
 
 const navClasses = (active: boolean) =>
   classNames(
-    "flex items-center pl-10 gap-2 text-sm h-11 transition-all hover:text-[#6BADEE] border-0 border-l-4 border-solid ",
+    "flex items-center pl-10 gap-2 text-sm h-11 transition-all hover:text-primary border-0 border-l-4 border-solid ",
     {
-      "text-[#6BADEE] font-semibold border-[#6BADEE]": active,
+      "text-primary font-semibold border-primary": active,
       "text-gray-600 border-transparent": !active,
     }
   );
@@ -97,8 +97,8 @@ export function Layout({ children }: LayoutProps) {
               0 <span className="hidden sm:inline">zile</span>
             </span>
           </div>
-          <div className="h-[30px] flex items-center bg-[#6BADEE33] text-[#6BADEE] rounded-full pl-1 pr-2 py-1">
-            <span className="bg-[#6BADEE] rounded-full mr-2 flex justify-center items-center p-1">
+          <div className="h-[30px] flex items-center bg-[#6BADEE33] text-primary rounded-full pl-1 pr-2 py-1">
+            <span className="bg-primary rounded-full mr-2 flex justify-center items-center p-1">
               <Star className="w-4 h-4 text-white" />
             </span>
             <span className="text-xs font-medium">
@@ -161,7 +161,7 @@ export function Layout({ children }: LayoutProps) {
             </Link>
           </nav>
         </div>
-        <main className="flex-1 overflow-y-auto p-4 lg:p-6 bg-[#F2F2F2]">
+        <main className="flex-1 overflow-y-auto p-4 lg:p-6 bg-secondary">
           {children}
         </main>
       </div>
