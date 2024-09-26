@@ -10,6 +10,23 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+model User {
+    id      String @id @default(cuid())
+    clerkId String @unique
+
+    currentStreak  Int       @default(0)
+    longestStreak  Int       @default(0)
+    lastActiveDate DateTime?
+
+    totalPoints Int @default(0)
+
+    practiceSessions PracticeSession[]
+    purchasedItems   MarketplaceItem[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
 model Lesson {
     id    String @id @default(cuid())
     title String
@@ -64,6 +81,8 @@ model Subject {
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+
+    practiceSessions PracticeSession[]
 }
 
 enum ProblemType {
@@ -99,6 +118,8 @@ model Problem {
 
     createdAt DateTime @default(now())
     updatedAt DateTime @default(now()) @updatedAt
+
+    practiceProblemInstances PracticeProblem[]
 }
 
 model MultipleChoiceOption {
@@ -147,4 +168,44 @@ model MathSymbolButton {
     latex  String
 
     problems Problem[]
+}
+
+model PracticeSession {
+    id        String  @id @default(cuid())
+    userId    String
+    user      User    @relation(fields: [userId], references: [id])
+    subjectId String
+    subject   Subject @relation(fields: [subjectId], references: [id])
+
+    score        Int
+    pointsEarned Int
+
+    problems PracticeProblem[]
+
+    createdAt DateTime @default(now())
+}
+
+model PracticeProblem {
+    id                String          @id @default(cuid())
+    practiceSessionId String
+    practiceSession   PracticeSession @relation(fields: [practiceSessionId], references: [id])
+    problemId         String
+    problem           Problem         @relation(fields: [problemId], references: [id])
+
+    userAnswer String?
+    isCorrect  Boolean
+
+    createdAt DateTime @default(now())
+}
+
+model MarketplaceItem {
+    id          String @id @default(cuid())
+    name        String
+    description String
+    pointCost   Int
+
+    purchasedBy User[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
