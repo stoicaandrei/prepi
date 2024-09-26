@@ -1,10 +1,10 @@
-import { withCache } from "../cache";
+import { cacheable } from "../cache";
 import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { z } from "zod";
 
 export const lessonRouter = router({
   listByTags: publicProcedure.query(async ({ ctx }) => {
-    return withCache(
+    return cacheable(
       () =>
         ctx.prisma.subjectCategory.findMany({
           select: {
@@ -25,7 +25,7 @@ export const lessonRouter = router({
     );
   }),
   getBySlug: publicProcedure.input(z.string()).query(async ({ ctx, input }) => {
-    return withCache(
+    return cacheable(
       () =>
         ctx.prisma.lesson.findFirst({
           where: {

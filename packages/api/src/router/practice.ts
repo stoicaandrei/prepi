@@ -1,10 +1,10 @@
 import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { z } from "zod";
-import { withCache } from "../cache";
+import { cacheable } from "../cache";
 
 export const practiceRouter = router({
   listSubjectsByCategory: publicProcedure.query(async ({ ctx }) => {
-    return withCache(
+    return cacheable(
       () =>
         ctx.prisma.subjectCategory.findMany({
           select: {
