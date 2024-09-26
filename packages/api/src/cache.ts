@@ -2,49 +2,36 @@ import { kv } from "@vercel/kv";
 
 const CACHE_TTL = 3600; // 1 hour in seconds
 
-const _useProdCache = (key: string, ttl: number = CACHE_TTL) => {
-  return {
-    getCache: async () => {
-      const cachedData = await kv.get(key);
-      if (cachedData) {
-        console.log("Data fetched from cache");
-        return cachedData;
-      }
-      return null;
-    },
-    setCache: async (data: any) => {
-      await kv.set(key, data, {
-        ex: CACHE_TTL,
-      });
-      console.log("Data stored in cache");
-    },
-    deleteCache: async () => {
-      await kv.del(key);
-      console.log("Data deleted from cache");
-    },
-  };
-};
+export function withCache<T extends (...args: any[]) => Promise<any>>(
+  fn: T,
+  cacheKey: string,
+  ttl = CACHE_TTL
+): T {
+  if (process.env.NODE_ENV === "development") {
+    return fn;
+  }
 
-const _useDevCache = (key: string, ttl: number = CACHE_TTL) => {
-  let cache: any = null;
-  return {
-    getCache: async () => {
-      if (cache) {
-        console.log("Data fetched from cache");
-        return cache;
+  return (async (...args: Parameters<T>) => {
+    try {
+      // Try to get the cached result
+      const cachedResult = await kv.get(cacheKey);
+      if (cachedResult !== null) {
+        console.log(`Cache hit for key: ${cacheKey}`);
+        return cachedResult;
       }
-      return null;
-    },
-    setCache: async (data: any) => {
-      cache = data;
-      console.log("Data stored in cache");
-    },
-    deleteCache: async () => {
-      cache = null;
-      console.log("Data deleted from cache");
-    },
-  };
-};
 
-export const useCache =
-  process.env.NODE_ENV === "production" ? _useProdCache : _useDevCache;
+      // If not in cache, call the original function
+      console.log(`Cache miss for key: ${cacheKey}`);
+      const result = await fn(...args);
+
+      // Store the result in cache
+      await kv.set(cacheKey, result, { ex: ttl });
+
+      return result;
+    } catch (error) {
+      console.error(`Error in cache wrapper: ${error}`);
+      // If there's an error with caching, fall back to the original function
+      return fn(...args);
+    }
+  }) as T;
+}

@@ -8,22 +8,8 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { trpc } from "@/utils/trpc";
-import {
-  CheckSquare,
-  ChevronDown,
-  ChevronRight,
-  PlayCircle,
-} from "lucide-react";
+import { CheckSquare, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 export default function MathPracticeInteractive() {

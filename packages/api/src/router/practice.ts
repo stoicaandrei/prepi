@@ -1,56 +1,34 @@
 import { router, publicProcedure, protectedProcedure } from "../trpc";
-import { kv } from "@vercel/kv";
 import { z } from "zod";
-import { useCache } from "../cache";
-
-const CACHE_TTL = 3600; // 1 hour in seconds
+import { withCache } from "../cache";
 
 export const practiceRouter = router({
   listSubjectsByCategory: publicProcedure.query(async ({ ctx }) => {
-    const { getCache, setCache } = useCache("listSubjectsByCategory");
-
-    type Resp = {
-      id: string;
-      name: string;
-      subjects: {
-        id: string;
-        name: string;
-        slug: string;
-        _count: { problems: number };
-      }[];
-    }[];
-
-    const cachedData = await getCache();
-    if (cachedData) {
-      return cachedData as Resp;
-    }
-
-    const data: Resp = await ctx.prisma.subjectCategory.findMany({
-      select: {
-        id: true,
-        name: true,
-        subjects: {
-          where: {
-            problems: {
-              some: {}, // This ensures that only subjects with at least one problem are included
-            },
-          },
+    return withCache(
+      () =>
+        ctx.prisma.subjectCategory.findMany({
           select: {
             id: true,
             name: true,
-            slug: true,
-            _count: {
-              select: { problems: true },
+            subjects: {
+              where: {
+                problems: {
+                  some: {}, // This ensures that only subjects with at least one problem are included
+                },
+              },
+              select: {
+                id: true,
+                name: true,
+                slug: true,
+                _count: {
+                  select: { problems: true },
+                },
+              },
             },
           },
-        },
-      },
-    });
-
-    await setCache(data);
-    console.log("Data stored in cache");
-
-    return data;
+        }),
+      "listSubjectsByCategory"
+    );
   }),
   listProblemsBySubject: publicProcedure
     .input(z.string())
