@@ -110,7 +110,20 @@ export function Layout({ children }: LayoutProps) {
               <h1 className="text-base font-bold">Salut, Andreieii!</h1>
               <p className="text-xs text-gray-600">Învățăcel</p>
             </div>
-            <img src="" alt="" className="w-14 h-14" />
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <img src="" alt="" className="w-14 h-14 cursor-pointer" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem disabled>Settings</DropdownMenuItem>
+                <DropdownMenuItem disabled>Support</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => signOut()}>
+                  Logout
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </header>
