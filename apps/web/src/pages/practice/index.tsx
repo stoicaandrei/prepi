@@ -72,15 +72,16 @@ export default function MathPracticeInteractive() {
                         {category.name}
                       </span>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    {/* <div className="flex items-center space-x-3">
                       <span className="text-sm text-gray-500">
                         Ai rezolvat 0/0 probleme
                         <span className="hidden sm:inline">
+                          {" "}
                           din această categorie
                         </span>
                       </span>
                       <ChevronRight className="w-6 h-6" />
-                    </div>
+                    </div> */}
                   </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="space-y-2 mt-2">
