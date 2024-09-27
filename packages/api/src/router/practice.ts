@@ -33,6 +33,18 @@ export const practiceRouter = router({
       "listSubjectsByCategory"
     );
   }),
+  listSubjectsProgress: protectedProcedure.query(async ({ ctx }) => {
+    const user = await ctx.getDbUser();
+    if (!user) {
+      return null;
+    }
+
+    return ctx.prisma.userSubjectProgress.findMany({
+      where: {
+        userId: user.id,
+      },
+    });
+  }),
   listProblemsBySubject: publicProcedure
     .input(z.string())
     .query(({ ctx, input }) => {
