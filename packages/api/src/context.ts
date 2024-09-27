@@ -7,7 +7,35 @@ import { config } from "./env";
 export const createContext = async (
   opts: trpcNext.CreateNextContextOptions
 ) => {
-  return { auth: getAuth(opts.req), prisma, env: config };
+  const auth = getAuth(opts.req);
+  return {
+    auth,
+    prisma,
+    env: config,
+    getDbUser: async () => {
+      if (!auth.userId) {
+        return null;
+      }
+
+      const existingUser = await prisma.user.findUnique({
+        where: {
+          clerkId: auth.userId,
+        },
+      });
+
+      if (existingUser) {
+        return existingUser;
+      }
+
+      const newUser = await prisma.user.create({
+        data: {
+          clerkId: auth.userId,
+        },
+      });
+
+      return newUser;
+    },
+  };
 };
 
 export type Context = trpc.inferAsyncReturnType<typeof createContext>;

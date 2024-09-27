@@ -4,6 +4,9 @@ import { cacheable } from "../cache";
 
 export const practiceRouter = router({
   listSubjectsByCategory: publicProcedure.query(async ({ ctx }) => {
+    const dbUser = await ctx.getDbUser();
+    console.log("dbUser", dbUser);
+
     return cacheable(
       () =>
         ctx.prisma.subjectCategory.findMany({
