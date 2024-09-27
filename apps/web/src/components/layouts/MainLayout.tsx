@@ -25,6 +25,7 @@ import { useAuth } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
 import { useState } from "react";
+import { trpc } from "@/utils/trpc";
 
 export const description =
   "A products dashboard with a sidebar navigation and a main content area. The dashboard has a header with a search input and a user menu. The sidebar has a logo, navigation links, and a card with a call to action. The main content area shows an empty state with a call to action.";
@@ -48,6 +49,8 @@ export function Layout({ children }: LayoutProps) {
   const { signOut } = useAuth();
 
   const [sheetOpen, setSheetOpen] = useState(false);
+
+  const { data: userDetails } = trpc.user.userDetails.useQuery();
 
   return (
     <div className="flex h-screen flex-col">
@@ -77,7 +80,8 @@ export function Layout({ children }: LayoutProps) {
               <Star className="w-4 h-4 text-white" />
             </span>
             <span className="text-xs font-medium">
-              0 <span className="hidden sm:inline">puncte</span>
+              {userDetails?.totalPoints ?? 0}{" "}
+              <span className="hidden sm:inline">puncte</span>
             </span>
           </div>
           <div className="flex items-center px-3">
