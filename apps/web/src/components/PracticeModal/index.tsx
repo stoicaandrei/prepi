@@ -77,6 +77,7 @@ export function PracticeModal({
 }: PracticeModalProps) {
   const { isTester } = useUserRoles();
 
+  const utils = trpc.useUtils();
   const _problems = trpc.practice.listProblemsBySubject.useQuery(subjectId, {
     enabled: !!subjectId,
     refetchOnMount: false,
@@ -90,6 +91,7 @@ export function PracticeModal({
     {
       onSuccess: (results) => {
         setPracticeResults(results);
+        utils.practice.listSubjectsProgress.invalidate();
       },
     }
   );
