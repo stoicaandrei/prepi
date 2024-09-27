@@ -1,6 +1,15 @@
 import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { record, z } from "zod";
 import { cacheable } from "../cache";
+import {
+  MathSymbolButton,
+  MultipleChoiceOption,
+  Problem,
+  ProblemExplanation,
+  ProblemHint,
+  ProblemVariable,
+  SingleAnswer,
+} from "@prepi/db";
 
 export const practiceRouter = router({
   listSubjectsByCategory: publicProcedure.query(async ({ ctx }) => {
@@ -45,24 +54,152 @@ export const practiceRouter = router({
       },
     });
   }),
+  // Turns out fetching random object from postgres is not as easy as it seems
+  // This is some complicated code that fetches 5 random problems from a subject
+  // Should be refactored to be more readable later
   listProblemsBySubject: publicProcedure
     .input(z.string())
-    .query(({ ctx, input }) => {
-      return ctx.prisma.problem.findMany({
-        where: { subjects: { some: { id: input } } },
-        select: {
-          id: true,
-          type: true,
-          description: true,
-          multipleChoiceOptions: true,
-          singleAnswer: true,
-          mathSymbolButtons: true,
-          variables: true,
-          hints: true,
-          explanation: true,
+    .query(async ({ ctx, input }) => {
+      const PROBLEMS_PER_SUBJECT = 5;
+
+      const user = await ctx.getDbUser();
+      const subjectProgress = await ctx.prisma.userSubjectProgress.findFirst({
+        where: {
+          userId: user.id,
+          subjectId: input,
         },
-        take: 5,
       });
+
+      type ExtendedProblem = Omit<
+        Problem,
+        | "legacyId"
+        | "createdAt"
+        | "updatedAt"
+        | "source"
+        | "difficulty"
+        | "problemExplanationId"
+      > & {
+        multipleChoiceOptions: MultipleChoiceOption[];
+        singleAnswer: SingleAnswer | null;
+        mathSymbolButtons: MathSymbolButton[];
+        variables: ProblemVariable[];
+        hints: ProblemHint[];
+        explanation: ProblemExplanation;
+      };
+
+      const incompleteProblemsCount = await ctx.prisma.problem.count({
+        where: {
+          subjects: { some: { id: input } },
+          NOT: {
+            CompletedProblem: {
+              some: {
+                userSubjectProgressId: subjectProgress?.id,
+              },
+            },
+          },
+        },
+      });
+
+      const problems: ExtendedProblem[] = [];
+
+      const incompleteSkips: number[] = [];
+      for (let i = 0; i < PROBLEMS_PER_SUBJECT; i += 1) {
+        if (incompleteProblemsCount === incompleteSkips.length) {
+          break;
+        }
+
+        let skip = Math.floor(Math.random() * incompleteProblemsCount);
+        while (incompleteSkips.includes(skip)) {
+          skip = Math.floor(Math.random() * incompleteProblemsCount);
+        }
+        incompleteSkips.push(skip);
+
+        const problem = await ctx.prisma.problem.findFirst({
+          where: {
+            subjects: { some: { id: input } },
+            NOT: {
+              CompletedProblem: {
+                some: {
+                  userSubjectProgressId: subjectProgress?.id,
+                },
+              },
+            },
+          },
+          select: {
+            id: true,
+            type: true,
+            description: true,
+            multipleChoiceOptions: true,
+            singleAnswer: true,
+            mathSymbolButtons: true,
+            variables: true,
+            hints: true,
+            explanation: true,
+          },
+          skip,
+          take: 1,
+        });
+        if (problem) {
+          problems.push(problem);
+        }
+      }
+
+      if (problems.length === PROBLEMS_PER_SUBJECT) {
+        return problems;
+      }
+
+      const completedProblemsCount = await ctx.prisma.problem.count({
+        where: {
+          subjects: { some: { id: input } },
+          CompletedProblem: {
+            some: {
+              userSubjectProgressId: subjectProgress?.id,
+            },
+          },
+        },
+      });
+
+      const completedSkips: number[] = [];
+      for (let i = 0; i < PROBLEMS_PER_SUBJECT - problems.length; i++) {
+        if (completedProblemsCount === completedSkips.length) {
+          break;
+        }
+
+        let skip = Math.floor(Math.random() * completedProblemsCount);
+        while (completedSkips.includes(skip)) {
+          skip = Math.floor(Math.random() * completedProblemsCount);
+        }
+        completedSkips.push(skip);
+
+        const problem = await ctx.prisma.problem.findFirst({
+          where: {
+            subjects: { some: { id: input } },
+            CompletedProblem: {
+              some: {
+                userSubjectProgressId: subjectProgress?.id,
+              },
+            },
+          },
+          select: {
+            id: true,
+            type: true,
+            description: true,
+            multipleChoiceOptions: true,
+            singleAnswer: true,
+            mathSymbolButtons: true,
+            variables: true,
+            hints: true,
+            explanation: true,
+          },
+          skip,
+          take: 1,
+        });
+        if (problem) {
+          problems.push(problem);
+        }
+      }
+
+      return problems;
     }),
   recordPracticeSession: protectedProcedure
     .input(
