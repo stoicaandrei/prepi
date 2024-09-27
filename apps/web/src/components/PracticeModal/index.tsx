@@ -311,9 +311,9 @@ export function PracticeModal({
             </Button>
             <Button
               variant="link"
-              onClick={() => submitAnswer({ forceCorrect: true })}
+              onClick={() => submitAnswer({ forceCorrect: false })}
             >
-              Click Correct Answer
+              Click Wrong Answer
             </Button>
             <Button
               variant="link"
