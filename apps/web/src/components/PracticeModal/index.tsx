@@ -44,6 +44,10 @@ export type ProblemAnswerAttempt = {
   multipleVariableValues?: Record<string, string>;
 };
 
+export type PracticeSessionResults = {
+  pointsEarned: number;
+};
+
 const isReadyToSubmit = (
   problem: ExtendedProblem | undefined,
   attempt: ProblemAnswerAttempt | null
@@ -82,6 +86,16 @@ export function PracticeModal({
   });
   const problems = _problems.data ?? [];
 
+  const recordPracticeSession = trpc.practice.recordPracticeSession.useMutation(
+    {
+      onSuccess: (results) => {
+        setPracticeResults(results);
+      },
+    }
+  );
+  const [practiceResults, setPracticeResults] =
+    useState<PracticeSessionResults>();
+
   const [submissions, setSubmissions] = useState<SubmissionStatus[]>([]);
 
   const [currentProblemIndex, setCurrentProblemIndex] = useState(0);
@@ -94,12 +108,28 @@ export function PracticeModal({
     useState<ProblemAnswerAttempt | null>(null);
   const readyToSubmit = isReadyToSubmit(currentProblem, answerAttempt);
 
+  const submitPracticeSession = async () => {
+    const problemsToRecord = problems.map((problem, index) => ({
+      problemId: problem.id,
+      correct: submissions[index] === SubmissionStatus.CORRECT,
+    }));
+
+    recordPracticeSession.mutate({
+      subjectId,
+      problems: problemsToRecord,
+    });
+  };
+
   const setNextProblem = () => {
     setCurrentProblemIndex((prev) => prev + 1);
     setHintCount(0);
     setShowExplanation(false);
     setAnswerAttempt(null);
     setIsSolved(false);
+
+    if (currentProblemIndex === problems.length - 1) {
+      submitPracticeSession();
+    }
   };
 
   const displayExplanation = () => {
@@ -171,7 +201,9 @@ export function PracticeModal({
       <Dialog open={open} onOpenChange={onClose}>
         <DialogContent className="max-w-full w-[90%] min-h-[90vh] md:min-h-[50vh]">
           <div className="p-6">
-            <h2 className="text-2xl font-bold mb-6">Felicitări!</h2>
+            <h2 className="text-2xl font-bold mb-6">
+              Felicitări! {recordPracticeSession.isLoading && "..."}
+            </h2>
 
             <h2 className="text-4xl font-bold text-center mb-8">
               Ai terminat testul!
@@ -190,7 +222,9 @@ export function PracticeModal({
               </div>
               <div className="text-center">
                 <p className="text-lg font-semibold text-gray-700">Puncte</p>
-                <p className="text-3xl font-bold text-blue-500">+-</p>
+                <p className="text-3xl font-bold text-blue-500">
+                  + {practiceResults?.pointsEarned}
+                </p>
               </div>
             </div>
 

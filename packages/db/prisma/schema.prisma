@@ -36,10 +36,24 @@ model UserSubjectProgress {
     subject   Subject @relation(fields: [subjectId], references: [id])
 
     completedLessons  String[]
-    completedProblems String[]
+    completedProblems CompletedProblem[]
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+
+    @@unique([userId, subjectId])
+}
+
+model CompletedProblem {
+    id                    String              @id @default(cuid())
+    problemId             String
+    problem               Problem             @relation(fields: [problemId], references: [id])
+    userSubjectProgressId String
+    userSubjectProgress   UserSubjectProgress @relation(fields: [userSubjectProgressId], references: [id])
+
+    completedAt DateTime @default(now())
+
+    @@unique([userSubjectProgressId, problemId])
 }
 
 model Lesson {
@@ -136,6 +150,7 @@ model Problem {
     updatedAt DateTime @default(now()) @updatedAt
 
     practiceProblemInstances PracticeProblem[]
+    CompletedProblem         CompletedProblem[]
 }
 
 model MultipleChoiceOption {

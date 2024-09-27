@@ -15,6 +15,8 @@ import { useState } from "react";
 export default function MathPracticeInteractive() {
   const subjectsByCategories = trpc.practice.listSubjectsByCategory.useQuery();
 
+  const subjectsProgress = trpc.practice.listSubjectsProgress.useQuery();
+
   const [selectedSubjectId, setSelectedSubjectId] = useState<string | null>(
     null
   );
@@ -82,22 +84,38 @@ export default function MathPracticeInteractive() {
                   </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="space-y-2 mt-2">
-                  {category.subjects.map((subject) => (
-                    <Button
-                      key={subject.id}
-                      variant="ghost"
-                      className="w-full justify-between p-2 h-auto hover:bg-gray-100"
-                      onClick={() => setSelectedSubjectId(subject.id)}
-                    >
-                      <span>{subject.name}</span>
-                      <div className="flex items-center space-x-2">
-                        <span className="text-sm text-gray-500">
-                          0/{subject._count.problems} exerciții rezolvate
-                        </span>
-                        <span className="text-sm text-blue-500">0%</span>
-                      </div>
-                    </Button>
-                  ))}
+                  {category.subjects.map((subject) => {
+                    const subjectProgress = subjectsProgress.data?.find(
+                      (sp) => sp.subjectId === subject.id
+                    );
+
+                    const problemsDone =
+                      subjectProgress?._count.completedProblems ?? 0;
+                    const totalProblems = subject._count.problems;
+
+                    const progress = Math.round(
+                      (problemsDone / totalProblems) * 100
+                    );
+
+                    return (
+                      <Button
+                        key={subject.id}
+                        variant="ghost"
+                        className="w-full justify-between p-2 h-auto hover:bg-gray-100"
+                        onClick={() => setSelectedSubjectId(subject.id)}
+                      >
+                        <span>{subject.name}</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-sm text-gray-500">
+                            {problemsDone}/{totalProblems} exerciții rezolvate
+                          </span>
+                          <span className="text-sm text-blue-500">
+                            {progress}%
+                          </span>
+                        </div>
+                      </Button>
+                    );
+                  })}
                 </CollapsibleContent>
               </Collapsible>
             ))}

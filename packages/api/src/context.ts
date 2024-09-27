@@ -14,7 +14,9 @@ export const createContext = async (
     env: config,
     getDbUser: async () => {
       if (!auth.userId) {
-        return null;
+        throw new Error(
+          "User is not authenticated, this should only be called for authenticated users"
+        );
       }
 
       const existingUser = await prisma.user.findUnique({
