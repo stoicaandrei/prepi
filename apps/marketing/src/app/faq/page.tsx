@@ -27,7 +27,7 @@ const faqs = [
     question:
       "Nu mă descurc la mate și vreau să încep de jos. Cum să încep și ce plan să urmez?",
     answer:
-      "Prepi este făcut special pentru tine. Sunt 3 pași care garantat te vor ajuta. 1 - Mergi la Exersează și fă testul inițial ca să vedem de unde trebuie să începem.  2 -  Ține cont de sugestiile asistentului pentru a vedea rezultate cât mai rapid.  3 - Exersează teste de 4-6 ori pe săptămână. Folosește indiciile și explicațiile atunci cand ramai blocat. Dar cel mai important: continuă să faci teste.",
+      "Prepi este făcut special pentru tine. Sunt 3 pași care garantat te vor ajuta. 1 - Mergi la Exersează și fă testul inițial ca să vedem de unde trebuie să începem.  2 -  Ține cont de sugestiile asistentului pentru a vedea rezultate cât mai rapid.  3 - Exersează teste de 4-6 ori pe săptămână. Folosește indiciile și explicațiile atunci cand ramai blocat. Dar cel mai important: continuă să faci teste. 🚀",
   },
   {
     question: "Ce este Asistent Prepi și cum mă ajută?",
