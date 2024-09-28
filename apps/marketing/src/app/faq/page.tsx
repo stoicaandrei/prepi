@@ -32,7 +32,7 @@ const faqs = [
   {
     question: "Ce este Asistent Prepi și cum mă ajută?",
     answer:
-      "Asistent Prepi este un bot inteligent, programat să urmărească activitatea ta pe platformă. El îți oferă constant recomandări pentru a obține cele mai bune rezultate și o structură clară în procesul tău de pregătire. Uneori încearcă să fie amuzant, dar nu mereu îi iese. Dă-i un mesaj și află mai multe (stânga jos). Pentru probleme tehnice și discuții cu un membru al echipei, va trebui să folosești Support Chat (dreapta jos).",
+      "Asistent Prepi este un algoritm inteligent, programat să urmărească activitatea ta pe platformă. El îți oferă constant recomandări pentru a obține cele mai bune rezultate și o structură clară în procesul tău de pregătire. Uneori încearcă să fie amuzant, dar nu mereu îi iese. Dă-i un mesaj și află mai multe (stânga jos). Pentru probleme tehnice și discuții cu un membru al echipei, va trebui să folosești Support Chat (dreapta jos).",
   },
   {
     question: "Cum mă ajută Prepi să învăț mai repede și mai ușor?",
