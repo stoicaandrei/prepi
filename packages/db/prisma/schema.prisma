@@ -86,7 +86,8 @@ model SubjectCategory {
     name String
     slug String @unique
 
-    order Int @default(0)
+    order    Int     @default(0)
+    disabled Boolean @default(false)
 
     subjects Subject[]
     lessons  Lesson[]
@@ -100,7 +101,8 @@ model Subject {
     name String
     slug String @unique
 
-    order Int @default(0)
+    order    Int     @default(0)
+    disabled Boolean @default(false)
 
     category   SubjectCategory @relation(fields: [categoryId], references: [id])
     categoryId String

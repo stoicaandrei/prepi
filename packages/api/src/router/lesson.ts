@@ -7,6 +7,9 @@ export const lessonRouter = router({
     return cacheable(
       () =>
         ctx.prisma.subjectCategory.findMany({
+          where: {
+            disabled: false,
+          },
           select: {
             id: true,
             name: true,
