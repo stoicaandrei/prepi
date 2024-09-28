@@ -10,16 +10,18 @@
     "dev": "pnpm with-env pnpm prisma studio --port 5556",
     "db:generate": "pnpm with-env prisma generate",
     "db:push": "pnpm with-env prisma db push --skip-generate",
-    "db:migrate": "pnpm with-env prisma migrate dev"
+    "db:migrate": "pnpm with-env prisma migrate dev",
+    "db:seed": "pnpm with-env ts-node --project ./ts-node-config.json ./seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "^5.19.1"
+    "@prisma/client": "^5.20.0"
   },
   "devDependencies": {
     "@prepi/eslint-config": "workspace:*",
     "@prepi/typescript-config": "workspace:*",
     "dotenv-cli": "^6.0.0",
-    "prisma": "^5.19.1",
+    "prisma": "^5.20.0",
+    "ts-node": "^10.8.0",
     "typescript": "^4.9.3"
   }
 }
