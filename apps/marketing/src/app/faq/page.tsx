@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "De cât timp am nevoie să mă pregătesc pentru bacul la mate?",
     answer:
-      "Depinde. În funcție de nivelul tău de pregătire actual și de cât de multe zile o să exersezi pe săptămână poate dura între 3 și 6 luni. Ca să fii sigur că atingi nivelul dorit, completează Nota țintă de la profilul tău, iar Asistent Prepi te va ghida pe cel mai rapid drum.",
+      "Depinde de tine! În funcție de nivelul tău actual și de cât de des exersezi, te poți pregăti eficient în doar 3 până la 6 luni. Completează Nota țintă în profilul tău, iar Asistentul Prepi îți va crea un plan personalizat care te va ghida pe cel mai rapid și eficient drum spre succes.",
   },
   {
     question: "Dacă nu știu să rezolv un exercițiu, sunt ajutat?",
