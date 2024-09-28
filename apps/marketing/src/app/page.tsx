@@ -242,7 +242,7 @@ export default function Home() {
                 <p className="text-[#787676]">Exerciții bine explicate</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-semibold text-[#6BADEE]">13.768</p>
+                <p className="text-4xl font-semibold text-[#6BADEE]">20.768</p>
                 <p className="text-[#787676]">Ore petrecute învățând</p>
               </div>
               <div className="text-center">
