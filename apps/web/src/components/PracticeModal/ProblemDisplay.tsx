@@ -7,13 +7,6 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import MathInput from "../MathInput";
 
-type ProblemDisplayProps = {
-  problem: ExtendedProblem;
-  hideInput?: boolean;
-  answerAttempt: ProblemAnswerAttempt | null;
-  setAnswerAttempt: Dispatch<SetStateAction<ProblemAnswerAttempt | null>>;
-};
-
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -23,11 +16,22 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled;
 }
 
+type ProblemDisplayProps = {
+  problem: ExtendedProblem;
+  hideInput?: boolean;
+  answerAttempt: ProblemAnswerAttempt | null;
+  setAnswerAttempt: Dispatch<SetStateAction<ProblemAnswerAttempt | null>>;
+  hintCount?: number;
+  showExplanation?: boolean;
+};
+
 export function ProblemDisplay({
   problem,
   hideInput,
   answerAttempt,
   setAnswerAttempt,
+  hintCount,
+  showExplanation,
 }: ProblemDisplayProps) {
   const [shuffledOptions, setShuffledOptions] = useState<
     MultipleChoiceOption[]
@@ -39,20 +43,15 @@ export function ProblemDisplay({
     }
   }, [problem]);
 
-  if (hideInput) {
-    return (
-      <p className="text-lg mb-4">
-        <MathJax>{problem?.description}</MathJax>
-      </p>
-    );
-  }
-
   return (
     <>
+      {/* Display Section */}
       <p className="text-lg mb-4">
         <MathJax>{problem?.description}</MathJax>
       </p>
-      {problem?.type === "MULTIPLE_CHOICE" && (
+
+      {/* Inputs Section */}
+      {problem?.type === "MULTIPLE_CHOICE" && !hideInput && (
         <RadioGroup
           value={answerAttempt?.answerId ?? ""}
           onValueChange={(value) => setAnswerAttempt?.({ answerId: value })}
@@ -81,7 +80,7 @@ export function ProblemDisplay({
         </RadioGroup>
       )}
 
-      {problem?.type === "SINGLE_ANSWER" && (
+      {problem?.type === "SINGLE_ANSWER" && !hideInput && (
         <div className="w-1/2">
           <MathInput
             inputValue={answerAttempt?.singleAnswerText || ""}
@@ -94,32 +93,55 @@ export function ProblemDisplay({
           />
         </div>
       )}
-      {problem?.type === "MULTIPLE_VARIABLES" && problem.variables && (
-        <div className="space-y-6">
-          {problem.variables.slice(0, 4).map((variable, index) => (
-            <div key={variable.id} className="w-1/2">
-              <Label className="block mb-2">
-                <MathJax inline>{variable.variableName}</MathJax>
-              </Label>
-              <MathInput
-                inputValue={
-                  answerAttempt?.multipleVariableValues?.[variable.id] || ""
-                }
-                onInputChange={(latex) =>
-                  setAnswerAttempt((ans) => ({
-                    multipleVariableValues: {
-                      ...ans?.multipleVariableValues,
-                      [variable.id]: latex,
-                    },
-                  }))
-                }
-                mathSymbolButtons={problem.mathSymbolButtons}
-                className="w-full text-lg px-4"
-                autoFocus={index === 0}
-                tabIndex={index + 1}
-              />
-            </div>
-          ))}
+
+      {problem?.type === "MULTIPLE_VARIABLES" &&
+        !hideInput &&
+        problem.variables && (
+          <div className="space-y-6">
+            {problem.variables.slice(0, 4).map((variable, index) => (
+              <div key={variable.id} className="w-1/2">
+                <Label className="block mb-2">
+                  <MathJax inline>{variable.variableName}</MathJax>
+                </Label>
+                <MathInput
+                  inputValue={
+                    answerAttempt?.multipleVariableValues?.[variable.id] || ""
+                  }
+                  onInputChange={(latex) =>
+                    setAnswerAttempt((ans) => ({
+                      multipleVariableValues: {
+                        ...ans?.multipleVariableValues,
+                        [variable.id]: latex,
+                      },
+                    }))
+                  }
+                  mathSymbolButtons={problem.mathSymbolButtons}
+                  className="w-full text-lg px-4"
+                  autoFocus={index === 0}
+                  tabIndex={index + 1}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+
+      {/* Explanations Section */}
+      {!!hintCount && !showExplanation && (
+        <div className="mt-4 bg-gray-100 p-4 rounded-lg">
+          <h3 className="font-bold mb-2">Indicații:</h3>
+          <ol className="list-decimal list-outside pl-4">
+            {problem?.hints.slice(0, hintCount).map((hint) => (
+              <li key={hint.id} className="mb-1">
+                <MathJax>{hint.content}</MathJax>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {showExplanation && (
+        <div className="mt-4 bg-gray-100 p-4 rounded-lg">
+          <MathJax>{problem?.explanation.content}</MathJax>
         </div>
       )}
     </>

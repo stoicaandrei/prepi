@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { trpc } from "@/utils/trpc";
-import { MathJax } from "better-react-mathjax";
 import { ProblemsProgress } from "./ProblemsProgress";
 import { ProblemDisplay } from "./ProblemDisplay";
 import { useUserRoles } from "@/hooks/useUserRoles";
@@ -13,6 +12,8 @@ import {
   MathSymbolButton,
   MultipleChoiceOption,
   Problem,
+  ProblemExplanation,
+  ProblemHint,
   ProblemVariable,
   SingleAnswer,
 } from "@prepi/db";
@@ -29,6 +30,8 @@ export type ExtendedProblem = Partial<Problem> & {
   singleAnswer: SingleAnswer | null;
   variables: ProblemVariable[];
   mathSymbolButtons: MathSymbolButton[];
+  hints: ProblemHint[];
+  explanation: ProblemExplanation;
 };
 
 export enum SubmissionStatus {
@@ -273,26 +276,9 @@ export function PracticeModal({
                 answerAttempt={answerAttempt}
                 setAnswerAttempt={setAnswerAttempt}
                 hideInput={showExplanation}
+                hintCount={hintCount}
+                showExplanation={showExplanation}
               />
-            )}
-
-            {!!hintCount && !showExplanation && (
-              <div className="mt-4 bg-gray-100 p-4 rounded-lg">
-                <h3 className="font-bold mb-2">Indicații:</h3>
-                <ol className="list-decimal list-outside pl-4">
-                  {currentProblem?.hints.slice(0, hintCount).map((hint) => (
-                    <li key={hint.id} className="mb-1">
-                      <MathJax>{hint.content}</MathJax>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            )}
-
-            {showExplanation && (
-              <div className="mt-4 bg-gray-100 p-4 rounded-lg">
-                <MathJax>{currentProblem?.explanation.content}</MathJax>
-              </div>
             )}
           </div>
 
