@@ -11,7 +11,8 @@
     "db:generate": "pnpm with-env prisma generate",
     "db:push": "pnpm with-env prisma db push --skip-generate",
     "db:migrate": "pnpm with-env prisma migrate dev",
-    "db:seed": "pnpm with-env ts-node --project ./ts-node-config.json ./seed.ts"
+    "db:seed": "pnpm with-env ts-node --project ./ts-node-config.json ./seed.ts",
+    "db:reset": "pnpm with-env prisma migrate reset --force && pnpm db:migrate && pnpm db:seed"
   },
   "dependencies": {
     "@prisma/client": "^5.20.0"

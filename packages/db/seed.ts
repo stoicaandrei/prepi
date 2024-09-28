@@ -44,47 +44,56 @@ async function seedChaptersAndSubjects() {
 }
 
 async function seedLessons() {
-  const subjects = await prisma.subject.findMany();
+  const categories = await prisma.subjectCategory.findMany({
+    include: {
+      subjects: true,
+    },
+    orderBy: {
+      order: "asc",
+    },
+  });
 
-  for (const subject of subjects) {
-    const lessons = [
-      {
-        title: `Introduction to ${subject.name}`,
-        slug: `intro-${subject.slug}`,
-        subjectCategoryId: subject.categoryId,
-        order: 1,
-      },
-      {
-        title: `Core Concepts of ${subject.name}`,
-        slug: `core-${subject.slug}`,
-        subjectCategoryId: subject.categoryId,
-        order: 2,
-      },
-      {
-        title: `Advanced Topics in ${subject.name}`,
-        slug: `advanced-${subject.slug}`,
-        subjectCategoryId: subject.categoryId,
-        order: 3,
-      },
-    ];
+  for (const category of categories) {
+    let lessonOrder = 1;
 
-    for (const lesson of lessons) {
-      const createdLesson = await prisma.lesson.create({
-        data: {
-          ...lesson,
-          subjects: {
-            connect: { id: subject.id },
+    for (const subject of category.subjects) {
+      const lessons = [
+        {
+          title: `Introduction to ${subject.name}`,
+          slug: `intro-${subject.slug}`,
+        },
+        {
+          title: `Core Concepts of ${subject.name}`,
+          slug: `core-${subject.slug}`,
+        },
+        {
+          title: `Advanced Topics in ${subject.name}`,
+          slug: `advanced-${subject.slug}`,
+        },
+      ];
+
+      for (const lesson of lessons) {
+        const createdLesson = await prisma.lesson.create({
+          data: {
+            ...lesson,
+            subjectCategoryId: category.id,
+            order: lessonOrder,
+            subjects: {
+              connect: { id: subject.id },
+            },
           },
-        },
-      });
+        });
 
-      await prisma.lessonLegacyContent.create({
-        data: {
-          html: `<p>This is the HTML content for ${lesson.title}</p>`,
-          raw: `This is the raw content for ${lesson.title}`,
-          lessonId: createdLesson.id,
-        },
-      });
+        await prisma.lessonLegacyContent.create({
+          data: {
+            html: `<p>This is the HTML content for ${lesson.title}</p>`,
+            raw: `This is the raw content for ${lesson.title}`,
+            lessonId: createdLesson.id,
+          },
+        });
+
+        lessonOrder++;
+      }
     }
   }
 
