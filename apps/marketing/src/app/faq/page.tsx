@@ -11,28 +11,32 @@ const faqs = [
   {
     question: "Platforma conține toată materia pentru bac?",
     answer:
-      "Da, toată materia din programa pentru liceu și pentru bac se găsește pe platformă, scrisă și explicată într-un mod ușor de înțeles pentru oricine.",
+      "Da, platforma Prepi acoperă toată materia din programa pentru liceu și Bac, organizată într-un mod clar și ușor de înțeles. Lecțiile și exercițiile sunt adaptate nivelului tău de pregătire, pentru ca tu să înveți eficient și să te concentrezi pe ceea ce contează cel mai mult.",
   },
   {
     question: "Dacă fac mate M2 sau M3, mă ajută să folosesc Prepi?",
     answer:
-      "Da, indiferent de nivelul la care faci mate la școală, lecțiile sunt aceleași, iar exercițiile de pe Prepi sunt de la cel mai ușor nivel până la unul ridicat. Când exersezi îți vor fi date teste pentru nivelul tău de cunoștințe.",
+      "Da, Prepi te ajută indiferent dacă faci mate M2 sau M3. Lecțiile acoperă întreaga materie, iar exercițiile sunt disponibile de la cel mai ușor nivel până la unul avansat.",
   },
   {
     question: "Veți adăuga și subiecte speciale pentru M2 și M3?",
     answer:
-      "Da, vor fi adăugate subiecte de bac pentru M2 și M3 până în vara 2024. Între timp, poți să te pregătești cu exercițiile ușoare de la Exersează și să citești rezolvarea acolo unde nu știi.",
+      "Da, vom adăuga subiecte specifice pentru Bac la M2 și M3 până în vara 2024. Până atunci, poți să te pregătești cu exercițiile disponibile la secțiunea „Exersează”, care includ și niveluri mai ușoare, și să folosești explicațiile detaliate pentru a înțelege cum să rezolvi fiecare problemă. ",
   },
   {
     question:
       "Nu mă descurc la mate și vreau să încep de jos. Cum să încep și ce plan să urmez?",
-    answer:
-      "Prepi este făcut special pentru tine. Sunt 3 pași care garantat te vor ajuta. 1 - Mergi la Exersează și fă testul inițial ca să vedem de unde trebuie să începem.  2 -  Ține cont de sugestiile asistentului pentru a vedea rezultate cât mai rapid.  3 - Exersează teste de 4-6 ori pe săptămână. Folosește indiciile și explicațiile atunci cand ramai blocat. Dar cel mai important: continuă să faci teste. 🚀",
+    answer: `Prepi este creat special pentru a te ajuta să progresezi indiferent de nivelul tău. Urmează acești 3 pași simpli care te vor ghida spre succes:
+
+1. Fă testul inițial în secțiunea „Exersează”, ca să identificăm exact de unde trebuie să începi. Platforma noastră îți va personaliza traseul de studiu pe baza rezultatelor tale.
+2. Urmează sugestiile asistentului Prepi, care îți va oferi recomandări personalizate pentru a progresa cât mai rapid.
+3. Exersează regulat, de 4-6 ori pe săptămână, și folosește indiciile și explicațiile detaliate atunci când întâmpini dificultăți. Cel mai important: nu renunța, continuă să faci teste și vei vedea îmbunătățiri rapide!`,
   },
   {
     question: "Ce este Asistent Prepi și cum mă ajută?",
-    answer:
-      "Asistent Prepi este un algoritm inteligent, programat să urmărească activitatea ta pe platformă. El îți oferă constant recomandări pentru a obține cele mai bune rezultate și o structură clară în procesul tău de pregătire. Uneori încearcă să fie amuzant, dar nu mereu îi iese. Dă-i un mesaj și află mai multe (stânga jos). Pentru probleme tehnice și discuții cu un membru al echipei, va trebui să folosești Support Chat (dreapta jos).",
+    answer: `Asistentul Prepi este un instrument inteligent care te ghidează pas cu pas în pregătirea ta. Monitorizează activitatea ta pe platformă și îți oferă recomandări personalizate pentru a obține cele mai bune rezultate, ajutându-te să îți optimizezi procesul de învățare. De asemenea, îți oferă o structură clară pentru fiecare etapă a studiului și îți sugerează exerciții adaptate nivelului tău.
+
+Uneori încearcă să fie amuzant (dar nu-i reușește mereu 😄), așa că nu ezita să îi trimiți un mesaj pentru a afla mai multe (găsești Asistentul Prepi în stânga jos). Dacă întâmpini probleme tehnice sau ai nevoie de ajutor din partea echipei noastre, poți folosi Support Chat (dreapta jos).`,
   },
   {
     question: "Cum mă ajută Prepi să învăț mai repede și mai ușor?",
@@ -42,7 +46,7 @@ const faqs = [
   {
     question: "Prepi este doar pentru cei de clasa a 12-a?",
     answer:
-      "Nu. Orice elev de liceu poate folosi Prepi, indiferent de clasa în care este. Platforma oferă suport atât pentru pregătirea de bac, cât și pentru testele și tezele din liceu.",
+      "Nu, Prepi este pentru toți elevii de liceu, indiferent de clasa în care se află. Platforma este concepută să te ajute nu doar cu pregătirea pentru Bac, ci și cu testele și tezele din timpul liceului.",
   },
   {
     question: "De cât timp am nevoie să mă pregătesc pentru bacul la mate?",
@@ -56,7 +60,7 @@ const faqs = [
   },
   {
     question: "Prepi costă bani?",
-    answer: `Da, Prepi costă doar ${currentPrice}, mai puțin decât o oră de meditație!`,
+    answer: `Da, Prepi costă doar ${currentPrice}. O investiție mai mică decât o singură oră de meditație individuală! Cu acest preț, ai acces nelimitat la o platformă completă care folosește o tehnologie avansată pentru a-ți personaliza planul de studiu în funcție de nevoile și progresul tău. În plus, ai la dispoziție mii de exerciții rezolvate și suport constant, astfel încât să înveți în ritmul tău, oricând și oriunde.`,
   },
 ];
 
