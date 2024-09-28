@@ -24,7 +24,7 @@ const Question: React.FC<QuestionProps> = ({
     <div
       className={clsx(
         `flex gap-8 flex-col md:flex-row items-center justify-between my-16`,
-        { "pb-7": !last, "md:flex-row-reverse": isReversed }
+        { "pb-7": !last, "md:flex-row-reverse": isReversed },
       )}
     >
       <div
@@ -75,7 +75,7 @@ const benefits: BenefitCardProps[] = [
     icon: "/_homepage/i/plan.png",
     title: "Totul în ritmul tău și la nivelul tău",
     description:
-      "Indiferent la ce nivel ești sau cât de repede înțelegi pentru că totul se învârte după tine pe Prepi",
+      "Indiferent la ce nivel ești sau cât de repede înțelegi, algoritmii inteligenți a lui Prepi adaptează totul în funcție de tine",
   },
   {
     icon: "/_homepage/i/rezolvari.png",

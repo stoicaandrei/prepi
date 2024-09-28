@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "Veți adăuga și subiecte speciale pentru M2 și M3?",
     answer:
-      "Da, vor fi adăugate subiecte de bac pentru M2 și M3 până în vara 2020. Între timp, poți să te pregătești cu exercițiile ușoare de la Exersează și să citești rezolvarea acolo unde nu știi.",
+      "Da, vor fi adăugate subiecte de bac pentru M2 și M3 până în vara 2024. Între timp, poți să te pregătești cu exercițiile ușoare de la Exersează și să citești rezolvarea acolo unde nu știi.",
   },
   {
     question:
