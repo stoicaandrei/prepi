@@ -14,6 +14,14 @@
       "inputs": ["prisma/schema.prisma"],
       "cache": false
     },
+    "db:seed": {
+      "dependsOn": ["^db:push"],
+      "cache": false
+    },
+    "db:init": {
+      "dependsOn": ["^db:seed"],
+      "cache": false
+    },
     "build": {
       "dependsOn": ["^db:generate", "^db:push", "^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
