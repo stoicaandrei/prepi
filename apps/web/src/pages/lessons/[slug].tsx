@@ -46,16 +46,31 @@ export default function LessonCard() {
         </CardContent>
       </Card>
 
-      <div className="flex justify-between mt-6">
-        <Button variant="outline" disabled>
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Lecția anterioară
-        </Button>
-        <Button disabled>
-          Lecția următoare
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-      </div>
+      <NavigationButtons slug={slug as string} />
     </div>
   );
 }
+
+const NavigationButtons = ({ slug }: { slug: string }) => {
+  const { data, isLoading } = trpc.lesson.getAdjacentLessons.useQuery(slug);
+
+  const prev = data?.previous;
+  const next = data?.next;
+
+  return (
+    <div className="flex justify-between mt-6">
+      <Link href={prev ? `/lessons/${prev.slug}` : "#"}>
+        <Button variant="outline" disabled={isLoading || !prev}>
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Lecția anterioară {isLoading && <LucideLoader />}
+        </Button>
+      </Link>
+      <Link href={next ? `/lessons/${next.slug}` : "#"}>
+        <Button disabled={isLoading || !next}>
+          Lecția următoare {isLoading && <LucideLoader />}
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+      </Link>
+    </div>
+  );
+};
