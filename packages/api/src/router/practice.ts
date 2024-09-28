@@ -69,7 +69,11 @@ export const practiceRouter = router({
           singleAnswer: true,
           mathSymbolButtons: true,
           variables: true,
-          hints: true,
+          hints: {
+            orderBy: {
+              order: "asc",
+            },
+          },
           explanation: true,
         },
       });
@@ -153,7 +157,11 @@ export const practiceRouter = router({
             singleAnswer: true,
             mathSymbolButtons: true,
             variables: true,
-            hints: true,
+            hints: {
+              orderBy: {
+                order: "asc",
+              },
+            },
             explanation: true,
           },
           skip,
@@ -208,7 +216,11 @@ export const practiceRouter = router({
             singleAnswer: true,
             mathSymbolButtons: true,
             variables: true,
-            hints: true,
+            hints: {
+              orderBy: {
+                order: "asc",
+              },
+            },
             explanation: true,
           },
           skip,
