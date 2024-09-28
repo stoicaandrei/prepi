@@ -37,7 +37,7 @@ const faqs = [
   {
     question: "Cum mă ajută Prepi să învăț mai repede și mai ușor?",
     answer:
-      "Mod de predare, exemple și multe modele rezolvate. Toată materia a fost rescrisă pentru a fi pe înțelesul oricui și conține exemple (uneori din lumea reală) care să te ajute să reții mai rapid. Miile de exerciții nu oferă doar răspunsul final, ci o întreagă explicație a rezolvării astfel încât tu să știi să rezolvi data viitoare. Și Asistent Prepi este întotdeauna prezent, gata să te ajute.",
+      "Prepi folosește algoritmi inteligenți care analizează performanțele tale și îți personalizează traseul de învățare, astfel încât să te concentrezi exact pe conceptele la care ai nevoie de îmbunătățire. Modul nostru de predare este gândit pentru a face materia cât mai accesibilă: toate lecțiile au fost rescrise într-un limbaj simplu, ușor de înțeles, și includ exemple din viața reală, care te ajută să reții mai ușor informațiile.\n\nPe lângă asta, miile de exerciții disponibile nu îți oferă doar răspunsul final, ci și explicații detaliate pas cu pas, astfel încât să înțelegi perfect soluția și să o poți aplica în viitor. Asistentul Prepi este mereu alături de tine, pregătit să îți ofere suport și să te ghideze pe parcursul învățării, totul pentru ca tu să înveți rapid, eficient și fără stres.",
   },
   {
     question: "Prepi este doar pentru cei de clasa a 12-a?",
@@ -75,7 +75,9 @@ export default function FaqPage() {
                   <AccordionTrigger className="text-left">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
+                  <AccordionContent className="whitespace-pre-line">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
