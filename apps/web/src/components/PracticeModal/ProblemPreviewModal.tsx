@@ -13,6 +13,7 @@ import { isCuid } from "@prepi/utils";
 import { useState } from "react";
 import { Label } from "../ui/label";
 import { ProblemDisplay } from "./ProblemDisplay";
+import { Button } from "../ui/button";
 
 type ProblemPreviewModalProps = {
   open: boolean;
@@ -41,6 +42,7 @@ export const ProblemPreviewModal = ({
               value={problemId}
               onChange={(e) => setProblemId(e.target.value)}
             />
+            <Button onClick={() => getProblemById.refetch()}>Refetch</Button>
           </div>
           {getProblemById.isFetching && <p>Loading...</p>}
           {getProblemById.error && (
