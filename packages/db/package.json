@@ -5,11 +5,12 @@
   "types": "./index.ts",
   "license": "MIT",
   "scripts": {
+    "with-env": "dotenv -e ../../.env --",
     "clean": "rm -rf .turbo node_modules",
-    "dev": "pnpm prisma studio --port 5556",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push --skip-generate",
-    "db:migrate": "prisma migrate dev"
+    "dev": "pnpm with-env pnpm prisma studio --port 5556",
+    "db:generate": "pnpm with-env prisma generate",
+    "db:push": "pnpm with-env prisma db push --skip-generate",
+    "db:migrate": "pnpm with-env prisma migrate dev"
   },
   "dependencies": {
     "@prisma/client": "^5.19.1"

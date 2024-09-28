@@ -28,6 +28,7 @@
       "persistent": true
     }
   },
+  "globalDependencies": [".env"],
   "globalEnv": [
     "DATABASE_URL",
     "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY",

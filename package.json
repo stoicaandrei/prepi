@@ -24,5 +24,8 @@
   "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv-cli": "^6.0.0"
   }
 }
