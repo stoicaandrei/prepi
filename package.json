@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "db:init": "turbo db:init",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
