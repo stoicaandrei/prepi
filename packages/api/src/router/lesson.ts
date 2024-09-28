@@ -1,9 +1,9 @@
 import { cacheable } from "../cache";
-import { router, publicProcedure, protectedProcedure } from "../trpc";
+import { router, protectedProcedure } from "../trpc";
 import { z } from "zod";
 
 export const lessonRouter = router({
-  listByTags: publicProcedure.query(async ({ ctx }) => {
+  listByTags: protectedProcedure.query(async ({ ctx }) => {
     return cacheable(
       () =>
         ctx.prisma.subjectCategory.findMany({
@@ -24,25 +24,27 @@ export const lessonRouter = router({
       "listByTags",
     );
   }),
-  getBySlug: publicProcedure.input(z.string()).query(async ({ ctx, input }) => {
-    return cacheable(
-      () =>
-        ctx.prisma.lesson.findFirst({
-          where: {
-            slug: input,
-          },
-          include: {
-            legacyContent: {
-              select: {
-                html: true,
+  getBySlug: protectedProcedure
+    .input(z.string())
+    .query(async ({ ctx, input }) => {
+      return cacheable(
+        () =>
+          ctx.prisma.lesson.findFirst({
+            where: {
+              slug: input,
+            },
+            include: {
+              legacyContent: {
+                select: {
+                  html: true,
+                },
               },
             },
-          },
-        }),
-      `getBySlug:${input}`,
-    );
-  }),
-  getAdjacentLessons: publicProcedure
+          }),
+        `getBySlug:${input}`,
+      );
+    }),
+  getAdjacentLessons: protectedProcedure
     .input(z.string())
     .query(async ({ ctx, input }) => {
       return cacheable(async () => {

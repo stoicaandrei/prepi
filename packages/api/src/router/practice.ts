@@ -1,5 +1,5 @@
-import { router, publicProcedure, protectedProcedure } from "../trpc";
-import { record, z } from "zod";
+import { router, protectedProcedure } from "../trpc";
+import { z } from "zod";
 import { cacheable } from "../cache";
 import {
   MathSymbolButton,
@@ -12,7 +12,7 @@ import {
 } from "@prepi/db";
 
 export const practiceRouter = router({
-  listSubjectsByCategory: publicProcedure.query(async ({ ctx }) => {
+  listSubjectsByCategory: protectedProcedure.query(async ({ ctx }) => {
     return cacheable(
       () =>
         ctx.prisma.subjectCategory.findMany({
@@ -36,7 +36,7 @@ export const practiceRouter = router({
             },
           },
         }),
-      "listSubjectsByCategory"
+      "listSubjectsByCategory",
     );
   }),
   listSubjectsProgress: protectedProcedure.query(async ({ ctx }) => {
@@ -81,7 +81,7 @@ export const practiceRouter = router({
   // Turns out fetching random object from postgres is not as easy as it seems
   // This is some complicated code that fetches 5 random problems from a subject
   // Should be refactored to be more readable later
-  listProblemsBySubject: publicProcedure
+  listProblemsBySubject: protectedProcedure
     .input(z.string())
     .query(async ({ ctx, input }) => {
       const PROBLEMS_PER_SUBJECT = 5;
@@ -241,18 +241,18 @@ export const practiceRouter = router({
           z.object({
             problemId: z.string(),
             correct: z.boolean(),
-          })
+          }),
         ),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       const user = await ctx.getDbUser();
 
       const correctProblems = input.problems.filter(
-        (problem) => problem.correct
+        (problem) => problem.correct,
       );
       const correctProblemIds = correctProblems.map(
-        (problem) => problem.problemId
+        (problem) => problem.problemId,
       );
       const pointsEarned = correctProblems.length;
 
@@ -284,8 +284,8 @@ export const practiceRouter = router({
               userSubjectProgressId: userSubjectProgress.id,
             },
             update: {},
-          })
-        )
+          }),
+        ),
       );
 
       await ctx.prisma.user.update({
