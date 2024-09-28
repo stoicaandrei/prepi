@@ -1,6 +1,7 @@
 "use client";
 
 import { PracticeModal } from "@/components/PracticeModal";
+import { ProblemPreviewModal } from "@/components/PracticeModal/ProblemPreviewModal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -8,11 +9,15 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { useUserRoles } from "@/hooks/useUserRoles";
 import { trpc } from "@/utils/trpc";
 import { CheckSquare, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 export default function MathPracticeInteractive() {
+  const { isTester } = useUserRoles();
+  const [previewModalOpen, setPreviewModalOpen] = useState(false);
+
   const subjectsByCategories = trpc.practice.listSubjectsByCategory.useQuery();
 
   const subjectsProgress = trpc.practice.listSubjectsProgress.useQuery();
@@ -47,9 +52,25 @@ export default function MathPracticeInteractive() {
 
       <Card className="w-full">
         <CardHeader>
-          <CardTitle className="flex items-center text-xl text-blue-500">
-            <CheckSquare className="mr-2" />
-            Exersează {subjectsByCategories.isLoading ? "..." : ""}
+          <CardTitle className="flex items-center justify-between text-xl text-blue-500">
+            <div className="flex items-center">
+              <CheckSquare className="mr-2" />
+              Exersează {subjectsByCategories.isLoading ? "..." : ""}
+            </div>
+            {isTester && (
+              <>
+                <Button
+                  variant="outline"
+                  onClick={() => setPreviewModalOpen(true)}
+                >
+                  Preview Problem
+                </Button>
+                <ProblemPreviewModal
+                  open={previewModalOpen}
+                  onClose={() => setPreviewModalOpen(false)}
+                />
+              </>
+            )}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">

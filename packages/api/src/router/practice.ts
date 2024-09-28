@@ -54,6 +54,26 @@ export const practiceRouter = router({
       },
     });
   }),
+  getProblemById: protectedProcedure
+    .input(z.string())
+    .query(async ({ ctx, input }) => {
+      return ctx.prisma.problem.findFirst({
+        where: {
+          id: input,
+        },
+        select: {
+          id: true,
+          type: true,
+          description: true,
+          multipleChoiceOptions: true,
+          singleAnswer: true,
+          mathSymbolButtons: true,
+          variables: true,
+          hints: true,
+          explanation: true,
+        },
+      });
+    }),
   // Turns out fetching random object from postgres is not as easy as it seems
   // This is some complicated code that fetches 5 random problems from a subject
   // Should be refactored to be more readable later
