@@ -151,6 +151,7 @@ export function PracticeModal({
   };
   const submitAnswer = (options?: SubmitAnswerOptions) => {
     if (!currentProblem) return;
+    console.log("sechimbare");
 
     let isCorrect = false;
     if (currentProblem.type === "MULTIPLE_CHOICE") {
