@@ -233,9 +233,7 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-8 h-1/2 self-center">
               <div className="text-center">
                 <p className="text-4xl font-semibold text-[#6BADEE]">6.042</p>
-                <p className="text-[#787676]">
-                  Elevi învață cu Prepi anul acesta
-                </p>
+                <p className="text-[#787676]">Elevi au ales Prepi</p>
               </div>
               <div className="text-center">
                 <p className="text-4xl font-semibold text-[#6BADEE]">1.424</p>
