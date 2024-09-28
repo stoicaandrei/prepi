@@ -139,6 +139,7 @@ export function PracticeModal({
 
   const displayExplanation = () => {
     setShowExplanation(true);
+    setHintCount(0);
     setIsSolved(true);
     if (!currentSubmission) {
       setSubmissions((prev) => [...prev, SubmissionStatus.HINT]);

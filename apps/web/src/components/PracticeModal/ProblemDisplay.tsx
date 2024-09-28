@@ -19,8 +19,8 @@ function shuffleArray<T>(array: T[]): T[] {
 type ProblemDisplayProps = {
   problem: ExtendedProblem;
   hideInput?: boolean;
-  answerAttempt: ProblemAnswerAttempt | null;
-  setAnswerAttempt: Dispatch<SetStateAction<ProblemAnswerAttempt | null>>;
+  answerAttempt?: ProblemAnswerAttempt | null;
+  setAnswerAttempt?: Dispatch<SetStateAction<ProblemAnswerAttempt | null>>;
   hintCount?: number;
   showExplanation?: boolean;
 };
@@ -85,7 +85,7 @@ export function ProblemDisplay({
           <MathInput
             inputValue={answerAttempt?.singleAnswerText || ""}
             onInputChange={(latex) =>
-              setAnswerAttempt({ singleAnswerText: latex })
+              setAnswerAttempt?.({ singleAnswerText: latex })
             }
             mathSymbolButtons={problem.mathSymbolButtons}
             className="w-full text-lg px-4"
@@ -108,7 +108,7 @@ export function ProblemDisplay({
                     answerAttempt?.multipleVariableValues?.[variable.id] || ""
                   }
                   onInputChange={(latex) =>
-                    setAnswerAttempt((ans) => ({
+                    setAnswerAttempt?.((ans) => ({
                       multipleVariableValues: {
                         ...ans?.multipleVariableValues,
                         [variable.id]: latex,
@@ -126,7 +126,7 @@ export function ProblemDisplay({
         )}
 
       {/* Explanations Section */}
-      {!!hintCount && !showExplanation && (
+      {!!hintCount && (
         <div className="mt-4 bg-gray-100 p-4 rounded-lg">
           <h3 className="font-bold mb-2">Indicații:</h3>
           <ol className="list-decimal list-outside pl-4">
