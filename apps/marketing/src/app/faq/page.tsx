@@ -47,12 +47,12 @@ const faqs = [
   {
     question: "De cât timp am nevoie să mă pregătesc pentru bacul la mate?",
     answer:
-      "Depinde de tine! În funcție de nivelul tău actual și de cât de des exersezi, te poți pregăti eficient în doar 3 până la 6 luni. Completează Nota țintă în profilul tău, iar Asistentul Prepi îți va crea un plan personalizat care te va ghida pe cel mai rapid și eficient drum spre succes.",
+      "Depinde de tine! În funcție de nivelul tău actual și de cât de des exersezi, te poți pregăti eficient în doar 3 până la 6 luni. Completează Nota țintă în profilul tău, iar algoritmul Prepi îți va crea un plan personalizat care te va ghida pe cel mai rapid și eficient drum spre succes.",
   },
   {
     question: "Dacă nu știu să rezolv un exercițiu, sunt ajutat?",
     answer:
-      "Dacă este vorba despre un exercițiu găsit pe Prepi, întotdeauna vei avea la dispoziție rezolvarea completă a acestuia. Dacă este vorba despre un exercițiu din afara platformei, ce poți face este să mergi la lecția respectivă și să vezi dacă găsești modele asemănătoare rezolvate de noi.",
+      "Absolut! Pe Prepi, fiecare exercițiu vine cu o rezolvare completă și detaliată, care te ghidează pas cu pas. Dacă exercițiul tău este din afara platformei, poți merge la lecția corespunzătoare, unde vei găsi exemple similare rezolvate de noi. Algoritmii noștri inteligenți îți recomandă modele asemănătoare, astfel încât să înțelegi mai bine conceptele și să poți aplica soluțiile în diverse contexte.",
   },
   {
     question: "Prepi costă bani?",
