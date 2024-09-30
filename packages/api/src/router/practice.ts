@@ -17,14 +17,14 @@ export const practiceRouter = router({
       () =>
         ctx.prisma.subjectCategory.findMany({
           where: {
-            disabled: false,
+            enabled: true,
           },
           select: {
             id: true,
             name: true,
             subjects: {
               where: {
-                disabled: false,
+                enabled: true,
                 problems: {
                   some: {}, // This ensures that only subjects with at least one problem are included
                 },

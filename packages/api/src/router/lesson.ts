@@ -8,7 +8,7 @@ export const lessonRouter = router({
       () =>
         ctx.prisma.subjectCategory.findMany({
           where: {
-            disabled: false,
+            enabled: true,
           },
           select: {
             id: true,
