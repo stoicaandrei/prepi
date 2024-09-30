@@ -4,8 +4,15 @@ import { z } from "zod";
 export const subjectRouter = router({
   listCategoriesWithSubjects: protectedProcedure.query(async ({ ctx }) => {
     return ctx.prisma.subjectCategory.findMany({
+      orderBy: {
+        order: "asc",
+      },
       include: {
-        subjects: true,
+        subjects: {
+          orderBy: {
+            order: "asc",
+          },
+        },
       },
     });
   }),
