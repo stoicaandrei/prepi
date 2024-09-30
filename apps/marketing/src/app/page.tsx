@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import { currentPrice, startNowUrl } from "@/constants";
 import clsx from "clsx";
 import { SectionDivider } from "@/components/SectionDivider";
+import { FaqSection } from "@/components/sections/Faq";
 
 interface QuestionProps {
   question: string;
@@ -340,6 +341,14 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SectionDivider shape="f1" />
+
+      <section id="faq" className="py-14 bg-white">
+        <FaqSection />
+      </section>
+
+      <SectionDivider shape="c3" className="bg-white" />
     </main>
   );
 }

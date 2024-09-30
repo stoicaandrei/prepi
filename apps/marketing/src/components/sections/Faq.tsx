@@ -64,48 +64,24 @@ Uneori încearcă să fie amuzant (dar nu-i reușește mereu 😄), așa că nu 
   },
 ];
 
-export default function FaqPage() {
+export const FaqSection = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="lg:grid lg:grid-cols-3 lg:gap-8">
-          <div className="lg:col-span-2">
-            <h1 className="text-3xl font-bold text-[#6BADEE] mb-8">
-              Întrebări BAC și materie
-            </h1>
-            <Accordion type="single" collapsible>
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="whitespace-pre-line">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-          <div className="mt-10 lg:mt-0">
-            <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg shadow-xl p-6 text-white">
-              <h2 className="text-3xl font-bold mb-4">{currentPrice}</h2>
-              <p className="text-xl mb-8">7 zile gratuit fără card</p>
-              <ul className="space-y-2 mb-6">
-                <li>Plan de pregătire personalizat</li>
-                <li>Explicații pentru fiecare lecție</li>
-                <li>Recomandări zilnice</li>
-                <li>Teste și rezolvări nelimitate</li>
-                <li>Videoclipuri explicative</li>
-                <li>Recomandări bazate pe stilul tău</li>
-                <li>Asistent Prepi</li>
-              </ul>
-              <Button className="w-full bg-white text-blue-600 hover:bg-blue-100 transition-colors">
-                Începe acum!
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="px-4">
+      <h1 className="text-3xl text-center font-bold text-[#6BADEE] mb-8">
+        Întrebări BAC și materie
+      </h1>
+      <Accordion type="single" collapsible>
+        {faqs.map((faq, index) => (
+          <AccordionItem key={index} value={`item-${index}`}>
+            <AccordionTrigger className="text-left">
+              {faq.question}
+            </AccordionTrigger>
+            <AccordionContent className="whitespace-pre-line">
+              {faq.answer}
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </div>
   );
-}
+};

@@ -25,10 +25,10 @@ export default function RootLayout({
           <link rel="icon" href="/favicon.ico" sizes="any" />
           <title>Prepi</title>
         </Head>
-        <body className="min-h-screen flex flex-col">
+        <body className="min-h-screen flex flex-col bg-[#F8F9FB]">
           <Header />
 
-          <div className="bg-[#F8F9FB] pt-[84px] h-auto flex-grow">
+          <div className=" pt-[84px] h-auto flex-grow">
             {children}
             <Analytics />
             <SpeedInsights />
