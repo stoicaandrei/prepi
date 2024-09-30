@@ -14,6 +14,7 @@
     "migrate": "npm run migrate --workspace=packages/migration --",
     "db:migrate": "npm run db:migrate --workspace=packages/db --",
     "db:generate": "turbo db:generate",
+    "db:deploy": "turbo db:deploy",
     "db:push": "turbo db:push",
     "prepare": "husky"
   },

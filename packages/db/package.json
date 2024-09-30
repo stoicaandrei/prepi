@@ -10,6 +10,7 @@
     "dev": "pnpm with-env pnpm prisma studio --port 5556 --browser none",
     "db:generate": "pnpm with-env prisma generate",
     "db:push": "pnpm with-env prisma db push --skip-generate",
+    "db:deploy": "pnpm with-env prisma migrate deploy",
     "db:migrate": "pnpm with-env prisma migrate dev",
     "db:seed": "pnpm with-env ts-node --project ./ts-node-config.json ./seed.ts",
     "db:reset": "pnpm with-env prisma migrate reset --force && pnpm db:migrate && pnpm db:seed"

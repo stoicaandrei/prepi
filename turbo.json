@@ -10,6 +10,10 @@
       "inputs": ["prisma/schema.prisma"],
       "cache": false
     },
+    "db:deploy": {
+      "inputs": ["prisma/schema.prisma"],
+      "cache": false
+    },
     "db:seed": {
       "dependsOn": ["^db:push"],
       "cache": false
@@ -19,7 +23,7 @@
       "cache": false
     },
     "build": {
-      "dependsOn": ["^db:generate", "^db:push", "^build"],
+      "dependsOn": ["^db:generate", "^db:deploy", "^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
