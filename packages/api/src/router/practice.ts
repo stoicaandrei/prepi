@@ -16,6 +16,9 @@ export const practiceRouter = router({
     return cacheable(
       () =>
         ctx.prisma.subjectCategory.findMany({
+          orderBy: {
+            order: "asc",
+          },
           where: {
             enabled: true,
           },
@@ -23,11 +26,11 @@ export const practiceRouter = router({
             id: true,
             name: true,
             subjects: {
+              orderBy: {
+                order: "asc",
+              },
               where: {
                 enabled: true,
-                problems: {
-                  some: {}, // This ensures that only subjects with at least one problem are included
-                },
               },
               select: {
                 id: true,
