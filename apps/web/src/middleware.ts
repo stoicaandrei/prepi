@@ -1,10 +1,14 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
+const isPublicRoute = createRouteMatcher(["/auth(.*)"]);
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
 
 export default clerkMiddleware((auth, req) => {
-  // Protect all routes
+  if (isPublicRoute(req)) {
+    return;
+  }
+
   const isAdmin = auth().sessionClaims?.metadata.roles?.includes("admin");
 
   if (isAdminRoute(req) && !isAdmin) {

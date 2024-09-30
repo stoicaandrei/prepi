@@ -2,6 +2,7 @@
 import "../styles/globals.css";
 import type { AppType } from "next/app";
 import { ClerkProvider } from "@clerk/nextjs";
+import { roRO } from "@clerk/localizations";
 import { trpc } from "@/utils/trpc";
 import { Layout } from "@/components/layouts/MainLayout";
 import { MathJaxContext } from "better-react-mathjax";
@@ -31,7 +32,7 @@ if (typeof window !== "undefined") {
 const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
   return (
     <PostHogProvider client={posthog}>
-      <ClerkProvider>
+      <ClerkProvider localization={roRO}>
         <MathJaxContext>
           <Head>
             <link rel="icon" href="/favicon.ico" />

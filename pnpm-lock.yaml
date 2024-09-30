@@ -129,6 +129,9 @@ importers:
 
   apps/web:
     dependencies:
+      "@clerk/localizations":
+        specifier: ^3.1.0
+        version: 3.1.0
       "@clerk/nextjs":
         specifier: ^5.4.1
         version: 5.4.1(next@14.2.13)(react-dom@18.3.1)(react@18.3.1)
@@ -1341,6 +1344,16 @@ packages:
       tslib: 2.4.1
     dev: false
 
+  /@clerk/localizations@3.1.0:
+    resolution:
+      {
+        integrity: sha512-f6Wtwwy796S2NLKdoro9wXc/BsrjzxfI9SuZRkX300OVDAf5FSIDyV3LfgyAq4z5wA6f0LIucoXDGTq1wwMyWA==,
+      }
+    engines: { node: ">=18.17.0" }
+    dependencies:
+      "@clerk/types": 4.23.0
+    dev: false
+
   /@clerk/nextjs@5.4.1(next@14.2.13)(react-dom@18.3.1)(react@18.3.1):
     resolution:
       {
@@ -1394,6 +1407,16 @@ packages:
     resolution:
       {
         integrity: sha512-bDN/nRUD5PFCehQ+Kjdcft0I3b9CIyCcY3OBNDSc1L6RQhlXH+J48EtaP/cbRdslb83LJiBPQ2i/gV4VgblzwA==,
+      }
+    engines: { node: ">=18.17.0" }
+    dependencies:
+      csstype: 3.1.1
+    dev: false
+
+  /@clerk/types@4.23.0:
+    resolution:
+      {
+        integrity: sha512-xCAPeKXOt/qAEzhlv35sdNYm9ewoveRMUwVEoGsFIDaeF9N1agCNdzKtCMcHjGZFH4ESnopLmEq2n46aRxPFkA==,
       }
     engines: { node: ">=18.17.0" }
     dependencies:
