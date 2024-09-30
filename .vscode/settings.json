@@ -9,6 +9,7 @@
     "Cacheable",
     "mathjax",
     "posthog",
-    "prepi"
+    "prepi",
+    "tanstack"
   ]
 }

@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import {
   Menu,
@@ -40,10 +41,10 @@ const navClasses = (active: boolean) =>
     {
       "text-primary font-semibold border-primary": active,
       "text-[#999] border-transparent": !active,
-    }
+    },
   );
 
-export function Layout({ children }: LayoutProps) {
+export function MainLayout({ children }: LayoutProps) {
   const fullPath = usePathname();
   const activeSection = fullPath?.split("/")[1];
   const { signOut } = useAuth();

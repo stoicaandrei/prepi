@@ -1,27 +1,25 @@
 import * as trpc from "@trpc/server";
-import * as trpcNext from "@trpc/server/adapters/next";
-import { getAuth } from "@clerk/nextjs/server";
+import { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
+import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@prepi/db";
 import { config } from "./env";
 
-export const createContext = async (
-  opts: trpcNext.CreateNextContextOptions
-) => {
-  const auth = getAuth(opts.req);
+export const createContext = async (opts: FetchCreateContextFnOptions) => {
+  const session = auth();
   return {
-    auth,
+    auth: session,
     prisma,
     env: config,
     getDbUser: async () => {
-      if (!auth.userId) {
+      if (!session.userId) {
         throw new Error(
-          "User is not authenticated, this should only be called for authenticated users"
+          "User is not authenticated, this should only be called for authenticated users",
         );
       }
 
       const existingUser = await prisma.user.findUnique({
         where: {
-          clerkId: auth.userId,
+          clerkId: session.userId,
         },
       });
 
@@ -31,7 +29,7 @@ export const createContext = async (
 
       const newUser = await prisma.user.create({
         data: {
-          clerkId: auth.userId,
+          clerkId: session.userId,
         },
       });
 

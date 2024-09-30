@@ -4,12 +4,11 @@ import { ArrowLeft, ArrowRight, BookOpen, LucideLoader } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import { trpc } from "@/utils/trpc";
 
 export default function LessonCard() {
-  const router = useRouter();
-  const { slug } = router.query;
+  const { slug } = useParams();
 
   const { data: lesson, isLoading: lessonLoading } =
     trpc.lesson.getBySlug.useQuery(slug as string);

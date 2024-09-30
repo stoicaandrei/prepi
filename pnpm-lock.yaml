@@ -150,6 +150,9 @@ importers:
       "@prepi/utils":
         specifier: workspace:*
         version: link:../../packages/utils
+      "@prisma/client":
+        specifier: ^5.20.0
+        version: 5.20.0(prisma@5.20.0)
       "@radix-ui/react-accordion":
         specifier: ^1.2.0
         version: 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1)(react@18.3.1)
@@ -183,12 +186,18 @@ importers:
       "@radix-ui/react-tabs":
         specifier: ^1.1.0
         version: 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1)(react@18.3.1)
+      "@tanstack/react-query":
+        specifier: ^4.36.1
+        version: 4.36.1(react-dom@18.3.1)(react@18.3.1)
       "@trpc/client":
         specifier: ^10.1.0
         version: 10.45.2(@trpc/server@10.45.2)
       "@trpc/next":
         specifier: ^10.45.2
         version: 10.45.2(@tanstack/react-query@4.36.1)(@trpc/client@10.45.2)(@trpc/react-query@10.45.2)(@trpc/server@10.45.2)(next@14.2.13)(react-dom@18.3.1)(react@18.3.1)
+      "@trpc/react-query":
+        specifier: ^10.45.2
+        version: 10.45.2(@tanstack/react-query@4.36.1)(@trpc/client@10.45.2)(@trpc/server@10.45.2)(react-dom@18.3.1)(react@18.3.1)
       "@trpc/server":
         specifier: ^10.1.0
         version: 10.45.2
@@ -6284,7 +6293,7 @@ packages:
       debug: 4.3.6
       enhanced-resolve: 5.17.1
       eslint: 8.57.0
-      eslint-module-utils: 2.9.0(@typescript-eslint/parser@6.21.0)(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.0)
+      eslint-module-utils: 2.9.0(@typescript-eslint/parser@6.21.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.0)
       eslint-plugin-import: 2.30.0(@typescript-eslint/parser@7.18.0)(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.8.0
@@ -6330,7 +6339,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils@2.9.0(@typescript-eslint/parser@6.21.0)(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.0):
+  /eslint-module-utils@2.9.0(@typescript-eslint/parser@6.21.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.0):
     resolution:
       {
         integrity: sha512-McVbYmwA3NEKwRQY5g4aWMdcZE5xZxV8i8l7CqJSrameuGSQJtSWaL/LxTEzSKKaCcOhlpDR8XEfYXWPrdo/ZQ==,
@@ -6357,6 +6366,7 @@ packages:
       "@typescript-eslint/parser": 6.21.0(eslint@8.57.0)(typescript@5.5.4)
       debug: 3.2.7
       eslint: 8.57.0
+      eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.6.3(@typescript-eslint/parser@6.21.0)(eslint-plugin-import@2.30.0)(eslint@8.57.0)
     transitivePeerDependencies:
       - supports-color
