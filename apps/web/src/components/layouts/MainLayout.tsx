@@ -27,6 +27,7 @@ import { usePathname } from "next/navigation";
 import classNames from "classnames";
 import { useState } from "react";
 import { trpc } from "@/utils/trpc";
+import { pluralize } from "@prepi/utils";
 
 export const description =
   "A products dashboard with a sidebar navigation and a main content area. The dashboard has a header with a search input and a user menu. The sidebar has a logo, navigation links, and a card with a call to action. The main content area shows an empty state with a call to action.";
@@ -52,6 +53,8 @@ export function MainLayout({ children }: LayoutProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
 
   const { data: userDetails } = trpc.user.userDetails.useQuery();
+  const currentStreak = userDetails?.currentStreak ?? 0;
+  const totalPoints = userDetails?.totalPoints ?? 0;
 
   return (
     <div className="flex h-screen flex-col">
@@ -73,7 +76,10 @@ export function MainLayout({ children }: LayoutProps) {
               <Flame className="w-4 h-4 text-white" />
             </span>
             <span className="text-xs font-medium">
-              0 <span className="hidden sm:inline">zile</span>
+              {currentStreak}{" "}
+              <span className="hidden sm:inline">
+                {pluralize("zile", currentStreak)}
+              </span>
             </span>
           </div>
           <div className="h-[30px] flex items-center bg-[#6BADEE33] text-primary rounded-full pl-1 pr-2 py-1">
@@ -81,8 +87,10 @@ export function MainLayout({ children }: LayoutProps) {
               <Star className="w-4 h-4 text-white" />
             </span>
             <span className="text-xs font-medium">
-              {userDetails?.totalPoints ?? 0}{" "}
-              <span className="hidden sm:inline">puncte</span>
+              {totalPoints}{" "}
+              <span className="hidden sm:inline">
+                {pluralize("puncte", totalPoints)}
+              </span>
             </span>
           </div>
           <div className="flex items-center px-3">

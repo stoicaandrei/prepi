@@ -8,6 +8,7 @@ export const userRouter = router({
 
     return {
       totalPoints: user.totalPoints,
+      currentStreak: user.currentStreak,
     };
   }),
 });

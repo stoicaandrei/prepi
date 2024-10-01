@@ -9,7 +9,10 @@ import {
   ProblemHint,
   ProblemVariable,
   SingleAnswer,
+  User,
+  PrismaClient,
 } from "@prepi/db";
+import dayjs from "dayjs";
 
 export const practiceRouter = router({
   listSubjectsByCategory: protectedProcedure.query(async ({ ctx }) => {
@@ -304,6 +307,8 @@ export const practiceRouter = router({
         },
       });
 
+      await updateUserStreak(ctx.prisma, user);
+
       await ctx.prisma.practiceSession.create({
         data: {
           userId: user.id,
@@ -322,3 +327,30 @@ export const practiceRouter = router({
       return { pointsEarned };
     }),
 });
+
+const updateUserStreak = async (prisma: PrismaClient, user: User) => {
+  if (!user.lastActiveDate || user.lastActiveDate < new Date()) {
+    const daysDiff = dayjs().diff(user.lastActiveDate, "days");
+
+    if (daysDiff < 1) return;
+
+    let currentStreak = user.currentStreak;
+    let longestStreak = user.longestStreak;
+
+    if (dayjs().diff(user.lastActiveDate, "days") === 1) {
+      currentStreak += 1;
+      longestStreak = Math.max(longestStreak, currentStreak);
+    } else {
+      currentStreak = 1;
+    }
+
+    await prisma.user.update({
+      where: { id: user.id },
+      data: {
+        currentStreak,
+        longestStreak,
+        lastActiveDate: new Date(),
+      },
+    });
+  }
+};
