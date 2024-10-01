@@ -53,7 +53,7 @@ export type PracticeSessionResults = {
 
 const isReadyToSubmit = (
   problem: ExtendedProblem | undefined,
-  attempt: ProblemAnswerAttempt | null
+  attempt: ProblemAnswerAttempt | null,
 ) => {
   if (!problem) return false;
   if (!attempt) return false;
@@ -96,7 +96,7 @@ export function PracticeModal({
         setPracticeResults(results);
         utils.practice.listSubjectsProgress.invalidate();
       },
-    }
+    },
   );
   const [practiceResults, setPracticeResults] =
     useState<PracticeSessionResults>();
@@ -155,22 +155,22 @@ export function PracticeModal({
     let isCorrect = false;
     if (currentProblem.type === "MULTIPLE_CHOICE") {
       const selectedAnswer = currentProblem.multipleChoiceOptions.find(
-        (option) => option.id === answerAttempt?.answerId
+        (option) => option.id === answerAttempt?.answerId,
       );
       isCorrect = selectedAnswer?.isCorrect ?? false;
     }
     if (currentProblem.type === "SINGLE_ANSWER") {
       isCorrect = compareEqs(
         answerAttempt?.singleAnswerText ?? "",
-        currentProblem.singleAnswer?.correctAnswer ?? ""
+        currentProblem.singleAnswer?.correctAnswer ?? "",
       );
     }
     if (currentProblem.type === "MULTIPLE_VARIABLES") {
       isCorrect = Object.entries(
-        answerAttempt?.multipleVariableValues ?? {}
+        answerAttempt?.multipleVariableValues ?? {},
       ).every(([variableId, value]) => {
         const variable = currentProblem.variables.find(
-          (variable) => variable.id === variableId
+          (variable) => variable.id === variableId,
         );
         return compareEqs(value, variable?.correctAnswer ?? "");
       });
@@ -256,8 +256,11 @@ export function PracticeModal({
   }
 
   return (
-    <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-full w-[90%] min-h-[90vh] md:min-h-[50vh]">
+    <Dialog open={open} onOpenChange={() => {}}>
+      <DialogContent
+        onClose={onClose}
+        className="max-w-full w-[90%] min-h-[90vh] md:min-h-[50vh]"
+      >
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold">
