@@ -63,6 +63,7 @@ const LessonContent = ({ content }: { content: string }) => {
 
   return (
     <>
+      {/* We render the head so the styles of the lesson are going to be correct */}
       <div dangerouslySetInnerHTML={{ __html: head }} />
       <div className="prose prose-headings:font-bold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base">
         {parse(body, {
