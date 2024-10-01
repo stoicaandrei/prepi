@@ -38,6 +38,7 @@ export default function LessonCard() {
         </CardHeader>
         <CardContent>
           <div
+            className="prose prose-headings:font-bold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base"
             dangerouslySetInnerHTML={{
               __html: lesson?.legacyContent?.html ?? "",
             }}
