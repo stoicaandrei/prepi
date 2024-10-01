@@ -1,0 +1,619 @@
+{
+  "_id": {
+    "$oid": "5c71492c4e50073a09204e1d"
+  },
+  "chapters": [
+    {
+      "_id": "ecuatii_si_inecuatii",
+      "title": "Ecuații și inecuații",
+      "lessons": [
+        {
+          "_id": "5bde4c750c165a0016b6383f",
+          "title": "Modulul unui număr real",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["modulul_unui_numar_real"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be1a7a69666f7198782c320",
+          "title": "Ecuația de gradul al II-lea cu coeficienți reali",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["ecuatii_si_inecuatii_de_gradul_al_doilea"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be1aae59666f7198782c321",
+          "title": "Inecuații",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["multimi"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be6d5e1626c6900164fc878",
+          "title": "Puteri și radicali",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["radicali"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be6da9e626c6900164fc879",
+          "title": "Logaritmul unui număr real pozitiv",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["logaritmi"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be6ecba626c6900164fc87a",
+          "title": "Numere complexe",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["numere_complexe"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be84c922075d300162205eb",
+          "title": "Elemente de trigonometrie",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["trigonometrie"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be85feb44c96d0016efb3df",
+          "title": "Ecuații",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["multimi", "logaritmi", "trigonometrie"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be876d444c96d0016efb3e2",
+          "title": "Exponentul unui număr real pozitiv",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["exponentiale"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5c8947730a96cf5e9c45bdbe",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "title": "Partea întreagă și partea fracționară a unui număr real",
+          "subTags": ["partea_intreaga_si_partea_fractionara"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "progresii",
+      "title": "Progresii",
+      "lessons": [
+        {
+          "_id": "5bde5a120c165a0016b63841",
+          "title": "Progresii",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["progresii_aritmetice", "progresii_geometrice"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "siruri",
+      "title": "Șiruri",
+      "lessons": [
+        {
+          "_id": "5be883c044c96d0016efb3e3",
+          "title": "Șiruri de numere reale ",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["siruri", "siruri_date_prin_formule_de_recurenta"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "subject": {
+            "$numberInt": "0"
+          },
+          "title": "Limite de șiruri",
+          "_id": "5be944e844c96d0016efb3e5",
+          "subTags": ["limite_de_siruri", "siruri"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "functii",
+      "title": "Funcții",
+      "lessons": [
+        {
+          "_id": "5be1ac0cb6afc31ac58918b8",
+          "title": "Proprietăți ale funcțiilor",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["studiul_functiilor"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be1ad3ab6afc31ac58918b9",
+          "title": "Compunerea funcțiilor",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": [
+            "functia_radical",
+            "functia_logaritm",
+            "functia_exponentiala",
+            "functia_de_gradul_al_doilea"
+          ],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be6d0bc626c6900164fc877",
+          "title": "Funcția de gradul al II-lea",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["functia_de_gradul_al_doilea"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be80c792075d300162205ea",
+          "title": "Funcțiile trigonometrice",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["trigonometrie"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be95b5f44c96d0016efb3e8",
+          "title": "Funcții elementare",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": [
+            "functia_radical",
+            "functia_logaritm",
+            "functia_exponentiala",
+            "functia_de_gradul_al_doilea"
+          ],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be9ed73830c8d00162b7315",
+          "title": "Asimptote",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["studiul_functiilor"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be9f674830c8d00162b7316",
+          "title": "Continuitate",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["studiul_functiilor"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "limite",
+      "title": "Limite",
+      "lessons": [
+        {
+          "_id": "5be950d744c96d0016efb3e7",
+          "title": "Limite de funcții",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["limite_de_functii"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "derivate",
+      "title": "Derivate",
+      "lessons": [
+        {
+          "_id": "5bde45b70c165a0016b6383d",
+          "title": "Rolul derivatei I în studiul funcțiilor",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["derivata_unei_functii", "studiul_functiilor"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5bde48780c165a0016b6383e",
+          "title": "Rolul derivatei de ordin superior ",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": [
+            "studiul_functiilor",
+            "derivata_de_gradul_al_doilea",
+            "concavitate_convexitate"
+          ],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5bde4f930c165a0016b63840",
+          "title": "Derivate uzuale",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["derivata_unei_functii"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be6a655626c6900164fc871",
+          "title": "Interpretarea geometrică a derivatei",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["derivata_unei_functii"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5beac80f830c8d00162b7318",
+          "title": "Derivata unei funcții într-un punct",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["derivata_unei_functii"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5beacd7f830c8d00162b7319",
+          "title": "Reguli de derivare a unei funcții ",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["derivata_unei_functii"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "primitive",
+      "title": "Primitive",
+      "lessons": [
+        {
+          "_id": "5beafd30830c8d00162b731b",
+          "title": "Primitive. Integrala nedefinită",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["calculul_de_primitive"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5beb1ef6add8c600167daab9",
+          "title": "Integrale uzuale",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["calculul_de_primitive"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5beb290cadd8c600167daaba",
+          "title": "Integrala definită",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["integrale_definite"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5beb2d1aadd8c600167daabe",
+          "title": "Aplicații ale integralei definite",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["aplicatii_ale_integralei_definite"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "integrale",
+      "title": "Integrale",
+      "lessons": []
+    },
+    {
+      "_id": "matrice",
+      "title": "Matrice",
+      "lessons": [
+        {
+          "_id": "5be6b626626c6900164fc874",
+          "title": "Determinanți ",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["determinanti"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be6b9df626c6900164fc875",
+          "title": "Inversa unei matrice",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["inversa_unei_matrice", "determinanti"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be6c07c626c6900164fc876",
+          "title": "Rangul unei matrice ",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["rangul_unei_matrice"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "subject": {
+            "$numberInt": "0"
+          },
+          "title": "Matrice",
+          "_id": "5bde5cb60c165a0016b63842",
+          "subTags": ["operatii_cu_matrice", "determinanti"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "grupuri",
+      "title": "Grupuri",
+      "lessons": [
+        {
+          "_id": "5bec2d3fadd8c600167daac3",
+          "title": "Structuri algerbice cu o operație",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["monoizi"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "inele_si_corpuri",
+      "title": "Inele și corpuri",
+      "lessons": [
+        {
+          "_id": "5bec3ed4add8c600167daac4",
+          "title": "Structuri algebrice cu două operații",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["inele"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5bec74c9beadcc00167b455e",
+          "title": "Inele de polinoame",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["polinoame"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "sisteme_de_ecuatii",
+      "title": "Sisteme de ecuații",
+      "lessons": [
+        {
+          "_id": "5beb3855add8c600167daabf",
+          "title": "Sisteme liniare",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["sisteme_cramer"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "geometrie",
+      "title": "Geometrie",
+      "lessons": [
+        {
+          "_id": "5be802262075d300162205e8",
+          "title": "Vectori în reper cartezian",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["vectori"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be8068f2075d300162205e9",
+          "title": "Vectori în plan",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["vectori"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be862a344c96d0016efb3e0",
+          "title": "Aplicații ale trigonometriei în geometrie",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["aplicatii_ale_trigonometriei_in_geometrie"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be8733a44c96d0016efb3e1",
+          "title": "Geometrie analitică",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["geometrie_analitica"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "combinatorica",
+      "title": "Combinatorică",
+      "lessons": [
+        {
+          "_id": "5be6adb7626c6900164fc872",
+          "title": "Probabilități",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["probabilitati"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        },
+        {
+          "_id": "5be6f443626c6900164fc87b",
+          "title": "Combinatorică",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["aranjamente", "combinari", "permutari"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "permutari",
+      "title": "Permutări",
+      "lessons": [
+        {
+          "_id": "5be6b28f626c6900164fc873",
+          "title": "Permutări",
+          "subject": {
+            "$numberInt": "0"
+          },
+          "subTags": ["operatii_cu_permutari"],
+          "videos": {
+            "$numberInt": "0"
+          }
+        }
+      ]
+    }
+  ],
+  "__v": {
+    "$numberInt": "414"
+  }
+}

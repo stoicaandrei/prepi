@@ -7,6 +7,9 @@ export const lessonRouter = router({
     return cacheable(
       () =>
         ctx.prisma.subjectCategory.findMany({
+          orderBy: {
+            order: "asc",
+          },
           where: {
             enabled: true,
           },
