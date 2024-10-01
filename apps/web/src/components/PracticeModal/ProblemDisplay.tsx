@@ -2,19 +2,10 @@ import { MathJax } from "better-react-mathjax";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { MultipleChoiceOption, Problem, ProblemVariable } from "@prepi/db";
-import { ExtendedProblem, ProblemAnswerAttempt } from ".";
+import { ExtendedProblem, ProblemAnswerAttempt } from "./types";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { Input } from "@/components/ui/input";
 import MathInput from "../MathInput";
-
-function shuffleArray<T>(array: T[]): T[] {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
+import { shuffleArray } from "./utils";
 
 type ProblemDisplayProps = {
   problem: ExtendedProblem;
