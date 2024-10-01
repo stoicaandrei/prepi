@@ -46,7 +46,8 @@ export function PracticeModal({
     setCurrentProblemIndex(0);
     setSubmissions([]);
     setPracticeResults(undefined);
-    utils.practice.listProblemsBySubject.invalidate(subjectId);
+
+    utils.practice.listProblemsBySubject.reset(subjectId);
   };
 
   const [submissions, setSubmissions] = useState<SubmissionStatus[]>([]);

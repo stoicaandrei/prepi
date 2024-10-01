@@ -17,11 +17,11 @@ export const ResultsView = ({
   onRepeat,
   onNext,
 }: ResultsViewProps) => {
+  if (!practiceResults) return "...";
+
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold mb-6">
-        Felicitări! {!practiceResults && "..."}
-      </h2>
+      <h2 className="text-2xl font-bold mb-6">Felicitări!</h2>
 
       <h2 className="text-4xl font-bold text-center mb-8">
         Ai terminat testul!
