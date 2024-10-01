@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { trpc } from "@/utils/trpc";
+import parse from "html-react-parser";
 
 export default function LessonCard() {
   const { slug } = useParams();
@@ -37,12 +38,7 @@ export default function LessonCard() {
           </div>
         </CardHeader>
         <CardContent>
-          <div
-            className="prose prose-headings:font-bold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base"
-            dangerouslySetInnerHTML={{
-              __html: lesson?.legacyContent?.html ?? "",
-            }}
-          />
+          <LessonContent content={lesson?.legacyContent?.html ?? ""} />
         </CardContent>
       </Card>
 
@@ -50,6 +46,47 @@ export default function LessonCard() {
     </div>
   );
 }
+
+const extractBodyContent = (html: string) => {
+  const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+  return bodyMatch ? bodyMatch[1] : html;
+};
+
+const extractHeadContent = (html: string) => {
+  const headMatch = html.match(/<head[^>]*>([\s\S]*)<\/head>/i);
+  return headMatch ? headMatch[1] : "";
+};
+
+const LessonContent = ({ content }: { content: string }) => {
+  const body = extractBodyContent(content);
+  const head = extractHeadContent(content);
+
+  return (
+    <>
+      <div dangerouslySetInnerHTML={{ __html: head }} />
+      <div className="prose prose-headings:font-bold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base">
+        {parse(body, {
+          replace(domNode) {
+            if (domNode.type === "tag" && domNode.name === "a") {
+              const href = domNode.attribs.href;
+              const slug = href?.split("=")[1];
+
+              if (!slug) return;
+
+              const text = (domNode.children[0] as any).data;
+
+              return (
+                <Link href={`/practice?open=${slug}`}>
+                  <Button>{text}</Button>
+                </Link>
+              );
+            }
+          },
+        })}
+      </div>
+    </>
+  );
+};
 
 const NavigationButtons = ({ slug }: { slug: string }) => {
   const { data, isLoading } = trpc.lesson.getAdjacentLessons.useQuery(slug);
