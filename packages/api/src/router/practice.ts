@@ -264,7 +264,10 @@ export const practiceRouter = router({
       const correctProblemIds = correctProblems.map(
         (problem) => problem.problemId,
       );
-      const pointsEarned = correctProblems.length;
+      const pointsEarned = calculatePoints(
+        correctProblems.length,
+        user.currentStreak,
+      );
 
       const userSubjectProgress = await ctx.prisma.userSubjectProgress.upsert({
         where: {
@@ -353,4 +356,17 @@ const updateUserStreak = async (prisma: PrismaClient, user: User) => {
       },
     });
   }
+};
+
+const calculatePoints = (basePoints: number, currentStreak: number) => {
+  const streakMultiplier = 1; // 10% increase per streak day
+  const maxStreakBonus = 10; // Maximum 200% bonus
+
+  const streakBonus = Math.min(
+    streakMultiplier * currentStreak,
+    maxStreakBonus,
+  );
+  const points = Math.round(basePoints * (1 + streakBonus));
+
+  return points;
 };
