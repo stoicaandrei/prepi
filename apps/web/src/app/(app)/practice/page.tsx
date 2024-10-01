@@ -11,10 +11,14 @@ import {
 } from "@/components/ui/collapsible";
 import { useUserRoles } from "@/hooks/useUserRoles";
 import { trpc } from "@/utils/trpc";
-import { CheckSquare, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { CheckSquare } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function MathPracticeInteractive() {
+  const searchParams = useSearchParams();
+  const openSubjectSlug = searchParams.get("open");
+
   const { isTester } = useUserRoles();
   const [previewModalOpen, setPreviewModalOpen] = useState(false);
 
@@ -25,6 +29,18 @@ export default function MathPracticeInteractive() {
   const [selectedSubjectId, setSelectedSubjectId] = useState<string | null>(
     null,
   );
+
+  useEffect(() => {
+    if (openSubjectSlug) {
+      const subject = subjectsByCategories.data
+        ?.flatMap((c) => c.subjects)
+        .find((s) => s.slug === openSubjectSlug);
+
+      if (subject) {
+        setSelectedSubjectId(subject.id);
+      }
+    }
+  }, [subjectsByCategories.data]);
 
   return (
     <div className="space-y-4">
