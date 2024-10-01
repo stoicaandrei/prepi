@@ -6,7 +6,10 @@ import dotenv from "dotenv";
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 async function runMigration(scriptName: string) {
-  const scriptPath = path.join(__dirname, "scripts", `${scriptName}.ts`);
+  const scriptPath1 = path.join(__dirname, "scripts", `${scriptName}.ts`);
+  const scriptPath2 = path.join(__dirname, "scripts", `${scriptName}/index.ts`);
+
+  const scriptPath = fs.existsSync(scriptPath1) ? scriptPath1 : scriptPath2;
 
   if (!fs.existsSync(scriptPath)) {
     console.error(`Migration script '${scriptName}' not found.`);
