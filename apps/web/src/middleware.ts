@@ -1,10 +1,16 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
+const isUtilityRoute = createRouteMatcher(["/crons(.*)"]);
+
 const isPublicRoute = createRouteMatcher(["/auth(.*)"]);
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
 
 export default clerkMiddleware((auth, req) => {
+  if (isUtilityRoute(req)) {
+    return;
+  }
+
   if (isPublicRoute(req)) {
     return;
   }
