@@ -4,6 +4,8 @@ import { z } from "zod";
 // Load environment variables from .env file
 dotenv.config();
 
+// For some reason this validation is not working with nextjs app router
+
 // Define a schema for environment variables
 // const envSchema = z.object({
 //   KV_URL: z.string().url(),
