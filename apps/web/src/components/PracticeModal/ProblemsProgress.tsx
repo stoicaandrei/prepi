@@ -39,7 +39,7 @@ function getStatusIcon(status: SubmissionStatus) {
 function getStatusColor(status: SubmissionStatus) {
   switch (status) {
     case SubmissionStatus.CORRECT:
-      return "bg-primary text-white";
+      return "bg-green-500 text-white";
     case SubmissionStatus.INCORRECT:
       return "bg-destructive text-white";
     case SubmissionStatus.HINT:
@@ -61,7 +61,7 @@ export function ProblemsProgress({
     <div
       className={cn(
         "flex items-center",
-        displayMode === "default" ? "space-x-2" : "space-x-4"
+        displayMode === "default" ? "space-x-2" : "space-x-4",
       )}
       role="progressbar"
       aria-valuenow={activeIndex}
@@ -82,7 +82,7 @@ export function ProblemsProgress({
               displayMode === "default"
                 ? "w-5 h-5 sm:w-6 sm:h-6"
                 : "w-20 h-20 sm:w-24 sm:h-24",
-              getStatusColor(status)
+              getStatusColor(status),
             )}
           >
             {getStatusIcon(status)}
