@@ -55,7 +55,7 @@ export function PracticeModal({
   const [currentProblemIndex, setCurrentProblemIndex] = useState(0);
 
   const practiceFinished =
-    problems?.length && currentProblemIndex === problems.length;
+    !!problems?.length && currentProblemIndex === problems.length;
 
   useEffect(() => {
     if (practiceFinished) {
