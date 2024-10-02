@@ -38,7 +38,7 @@ export function ProblemDisplay({
     <>
       {/* Display Section */}
       <p className="text-lg mb-4">
-        <MathJax>{problem?.description}</MathJax>
+        <MathJax key={problem?.description}>{problem?.description}</MathJax>
       </p>
 
       {/* Inputs Section */}
