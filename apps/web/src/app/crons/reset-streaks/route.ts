@@ -10,12 +10,18 @@ export async function GET(request: NextRequest) {
     });
   }
 
+  const intervalStart = dayjs().subtract(3, "day").startOf("day").toDate();
+  const intervalEnd = dayjs().subtract(2, "day").startOf("day").toDate();
+
+  console.log(
+    `Resetting streaks for users who were last active between ${intervalStart} and ${intervalEnd}`,
+  );
+
   await prisma.user.updateMany({
     where: {
       lastActiveDate: {
-        // 2 days ago
-        gte: dayjs().subtract(3, "day").startOf("day").toDate(),
-        lt: dayjs().subtract(2, "day").startOf("day").toDate(),
+        gte: intervalStart,
+        lt: intervalEnd,
       },
     },
     data: {
