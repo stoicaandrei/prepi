@@ -95,13 +95,17 @@ export function MainLayout({ children }: LayoutProps) {
           </div>
           <div className="flex items-center px-3">
             <div className="text-left mr-4 hidden sm:inline">
-              <h1 className="text-base font-bold">Salut, Andreieii!</h1>
+              <h1 className="text-base font-bold">Salut, Andrei!</h1>
               <p className="text-xs text-gray-600">Învățăcel</p>
             </div>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <img src="" alt="" className="w-14 h-14 cursor-pointer" />
+                <img
+                  src="/avatars/babychicken.png"
+                  alt=""
+                  className="w-14 h-14 cursor-pointer"
+                />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem disabled>Settings</DropdownMenuItem>
