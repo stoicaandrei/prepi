@@ -38,6 +38,7 @@ export function ProblemDisplay({
     <>
       {/* Display Section */}
       <p className="text-lg mb-4">
+        {/* I don't understand why the key fix worked, but don't remove it */}
         <MathJax key={problem?.description}>{problem?.description}</MathJax>
       </p>
 
