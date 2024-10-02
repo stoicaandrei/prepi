@@ -13,11 +13,13 @@ import { useUserRoles } from "@/hooks/useUserRoles";
 import { trpc } from "@/utils/trpc";
 import { CheckSquare } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 
-export default function MathPracticeInteractive() {
-  const searchParams = useSearchParams();
-  const openSubjectSlug = searchParams.get("open");
+export default function MathPracticeInteractive({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const openSubjectSlug = searchParams["open"];
 
   const { isTester } = useUserRoles();
   const [previewModalOpen, setPreviewModalOpen] = useState(false);

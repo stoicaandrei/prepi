@@ -1,5 +1,5 @@
 // src/utils/trpc.ts
-import { createTRPCReact } from "@trpc/react-query";
+import { CreateTRPCReact, createTRPCReact } from "@trpc/react-query";
 import { httpBatchLink, loggerLink } from "@trpc/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { AppRouter } from "@prepi/api";
@@ -13,7 +13,8 @@ const getBaseUrl = () => {
   return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 };
 
-export const trpc = createTRPCReact<AppRouter>();
+export const trpc: CreateTRPCReact<AppRouter, unknown, unknown> =
+  createTRPCReact<AppRouter>();
 
 export function TrpcProvider({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(
@@ -22,12 +23,11 @@ export function TrpcProvider({ children }: { children: React.ReactNode }) {
         defaultOptions: {
           queries: {
             staleTime: 1000 * 60 * 60, // 60 minutes
+            cacheTime: 1000 * 60 * 60, // 60 minutes
             refetchOnMount: false,
             refetchOnReconnect: false,
           },
-          mutations: {
-            throwOnError: true,
-          },
+          mutations: {},
         },
       }),
   );
