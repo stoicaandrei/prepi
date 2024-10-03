@@ -1,15 +1,6 @@
 "use client";
 
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  ChevronDown,
-  ChevronRight,
-  Files,
-  Search,
-} from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { ArrowLeft, ChevronRight, Files } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
@@ -18,8 +9,15 @@ import {
 } from "@/components/ui/collapsible";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import { trpc } from "@/utils/trpc";
+import { MathJax } from "better-react-mathjax";
 
 export default function ExamCard() {
+  const { slug } = useParams();
+
+  const { data: exam } = trpc.exam.getExamBySlug.useQuery(slug as string);
+
   return (
     <div>
       <Link href="/exams">
@@ -35,36 +33,70 @@ export default function ExamCard() {
             <div className="flex items-center">
               <Files className="h-8 w-8 text-blue-500" />
               <span className="ml-2 text-2xl font-semibold text-blue-500">
-                Varianta 1
+                {exam?.title ?? "Varianta..."}
               </span>
             </div>
           </div>
         </CardHeader>
-        <CardContent className="space-y-5">
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
-            porro nisi harum vel, velit numquam incidunt mollitia deserunt nobis
-            laborum.
-          </p>
-          <p>
-            Vel quae dolore corrupti vitae optio dignissimos dolores, accusamus
-            mollitia assumenda quam incidunt totam suscipit, fugit reiciendis
-            sint excepturi temporibus.
-          </p>
-          <p>
-            Necessitatibus quaerat autem facilis ab similique enim suscipit
-            mollitia expedita repellendus, aspernatur, asperiores sunt nemo ad
-            exercitationem sint officia quo.
-          </p>
-          <p>
-            Iure aliquid quis harum fugit autem? Vel dicta rem, dolor qui
-            officiis cupiditate aut quae quisquam minima quasi earum nostrum!
-          </p>
-          <p>
-            Delectus recusandae sapiente dolorum, minima quo ducimus
-            perspiciatis consequatur fugit tenetur doloremque quae nihil
-            aspernatur impedit, blanditiis consectetur, at eligendi!
-          </p>
+        <CardContent>
+          <h2>Subiectul 1</h2>
+          {exam?.sub1Problems.map((problem, index) => (
+            <div>
+              <h3>Problema {index + 1}.</h3>
+              <MathJax>{problem.description}</MathJax>
+              <ExplanationSection explanation={problem.explanation} />
+            </div>
+          ))}
+          <h2>Subiectul 2</h2>
+          {exam?.sub2Problems.map((problem, index) => (
+            <div>
+              <h3>Problema {index + 1}.</h3>
+              <MathJax>{problem.description}</MathJax>
+              <div>
+                <h4>
+                  a. <MathJax inline>{problem.subA?.description}</MathJax>
+                </h4>
+                <ExplanationSection explanation={problem.subA?.explanation} />
+              </div>
+              <div>
+                <h4>
+                  b. <MathJax inline>{problem.subB?.description}</MathJax>
+                </h4>
+                <ExplanationSection explanation={problem.subB?.explanation} />
+              </div>
+              <div>
+                <h4>
+                  c. <MathJax inline>{problem.subC?.description}</MathJax>
+                </h4>
+                <ExplanationSection explanation={problem.subC?.explanation} />
+              </div>
+            </div>
+          ))}
+          <h2>Subiectul 3</h2>
+          {exam?.sub3Problems.map((problem, index) => (
+            <div>
+              <h3>Problema {index + 1}.</h3>
+              <MathJax>{problem.description}</MathJax>
+              <div>
+                <h4>
+                  a. <MathJax inline>{problem.subA?.description}</MathJax>
+                </h4>
+                <ExplanationSection explanation={problem.subA?.explanation} />
+              </div>
+              <div>
+                <h4>
+                  b. <MathJax inline>{problem.subB?.description}</MathJax>
+                </h4>
+                <ExplanationSection explanation={problem.subB?.explanation} />
+              </div>
+              <div>
+                <h4>
+                  c. <MathJax inline>{problem.subC?.description}</MathJax>
+                </h4>
+                <ExplanationSection explanation={problem.subC?.explanation} />
+              </div>
+            </div>
+          ))}
         </CardContent>
       </Card>
 
@@ -79,3 +111,23 @@ export default function ExamCard() {
     </div>
   );
 }
+
+const ExplanationSection = ({
+  explanation,
+}: {
+  explanation?: string | null;
+}) => {
+  return (
+    <Collapsible>
+      <CollapsibleTrigger>
+        <Button variant="ghost">
+          <ChevronRight className="mr-2 h-4 w-4" />
+          Rezolvare
+        </Button>
+      </CollapsibleTrigger>
+      <CollapsibleContent>
+        <MathJax>{explanation}</MathJax>
+      </CollapsibleContent>
+    </Collapsible>
+  );
+};
