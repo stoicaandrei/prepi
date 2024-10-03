@@ -20,7 +20,7 @@ export const MySkillsChart = () => {
   console.log(subjectsProgress);
 
   if (subjectsProgressLoading || subjectsLoading) {
-    return "...";
+    return <div className="w-[242px] h-[242px]">...</div>;
   }
 
   type CategoryProgress = {
@@ -75,6 +75,30 @@ export const MySkillsChart = () => {
             legend: {
               display: false,
             },
+            tooltip: {
+              callbacks: {
+                label: (context) => {
+                  const index = context.dataIndex;
+                  const category = categories[index];
+
+                  return `${category.completedProblems}/${category.totalProblems} probleme`;
+                },
+              },
+            },
+          },
+          scales: {
+            r: {
+              ticks: {
+                stepSize: 20,
+              },
+              max: 100,
+              min: 0,
+              beginAtZero: true,
+            },
+          },
+          animation: {
+            animateRotate: true,
+            animateScale: true,
           },
         }}
       />
