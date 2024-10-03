@@ -38,7 +38,7 @@ export default function ExamVariantsResponsive() {
           </div>
           <div className="relative w-full sm:w-auto sm:min-w-[200px]">
             <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-500" />
-            <Input placeholder="Caută..." className="pl-8 w-full" />
+            <Input placeholder="Caută..." className="pl-8 w-full" disabled />
           </div>
         </div>
         <Tabs value={selectedDifficulty} className="w-full">
