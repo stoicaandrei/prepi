@@ -6,6 +6,7 @@ import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Providers } from "./providers";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Matematică Liceu | Pregătire Online | Prepi.ro",
@@ -26,9 +27,10 @@ export default function RootLayout({
           <title>Prepi</title>
 
           {/* Tawk Chat */}
-          <script type="text/javascript">
-            {`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/66fec09937379df10df14bcb/1i99i0lo6';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();`}
-          </script>
+          <Script
+            strategy="lazyOnload"
+            src="https://embed.tawk.to/66fec09937379df10df14bcb/1i99i0lo"
+          />
         </Head>
         <body className="min-h-screen flex flex-col bg-[#F8F9FB]">
           <Header />
