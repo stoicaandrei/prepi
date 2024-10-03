@@ -38,16 +38,18 @@ const getExamSlug = (variant: any) => {
   const year = variant.bacYear;
   const month = variant.bacSession;
   const variantNumber = variant.bacVariant;
-  let slug = `${difficulty}-${type}`;
+  let slug = `${difficulty}`;
   if (year) slug += `-${year}`;
   if (month) slug += `-${month}`;
   if (variantNumber) slug += `-${variantNumber}`;
+  slug += `-${type}`;
 
   return slug;
 };
 
 // Migrates all "variants" from the old MongoDB database to the new Prisma database
 // in "ExamModel" format
+// This script will fail for a few variants that are badly formatted in the old database
 async function migrateData() {
   if (!mongoUri) {
     throw new Error("MONGO_URI is not defined in the environment variables");
@@ -81,6 +83,8 @@ async function migrateData() {
           title: getExamName(variant),
         },
       });
+
+      console.log(`Created exam ${exam.id}`);
 
       const mongoProblems = await problemsCollections
         .find({
