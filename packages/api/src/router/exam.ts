@@ -16,7 +16,7 @@ export const examRouter = router({
               slug: "asc",
             },
           }),
-        `listExams:${input.difficulty}`,
+        `exam.listExams:${input.difficulty}`,
       );
     }),
   getExamBySlug: protectedProcedure
@@ -56,7 +56,7 @@ export const examRouter = router({
               },
             },
           }),
-        `getExamBySlug:${input}`,
+        `exam.getExamBySlug:${input}`,
       );
     }),
 });
