@@ -6,6 +6,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { roRO } from "@clerk/localizations";
 import { MathJaxContext } from "better-react-mathjax";
 import { TrpcProvider } from "@/utils/trpc";
+import { Crisp } from "crisp-sdk-web";
+import { useEffect } from "react";
 
 if (typeof window !== "undefined") {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? "", {
@@ -23,6 +25,10 @@ type SimpleProps = {
 };
 
 export function Providers({ children }: SimpleProps) {
+  useEffect(() => {
+    Crisp.configure(process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID ?? "");
+  });
+
   return (
     <PostHogProvider client={posthog}>
       <ClerkProvider localization={roRO}>

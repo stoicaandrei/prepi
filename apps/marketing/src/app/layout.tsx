@@ -6,7 +6,6 @@ import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Providers } from "./providers";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Matematică Liceu | Pregătire Online | Prepi.ro",
@@ -25,12 +24,6 @@ export default function RootLayout({
         <Head>
           <link rel="icon" href="/favicon.ico" sizes="any" />
           <title>Prepi</title>
-
-          {/* Tawk Chat */}
-          <Script
-            strategy="lazyOnload"
-            src="https://embed.tawk.to/66fec09937379df10df14bcb/1i99i0lo"
-          />
         </Head>
         <body className="min-h-screen flex flex-col bg-[#F8F9FB]">
           <Header />

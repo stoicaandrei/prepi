@@ -2,6 +2,8 @@
 "use client";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
+import { useEffect } from "react";
+import { Crisp } from "crisp-sdk-web";
 
 if (typeof window !== "undefined") {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? "", {
@@ -20,5 +22,9 @@ function CSPostHogProvider({ children }: SimpleProps) {
 }
 
 export function Providers({ children }: SimpleProps) {
+  useEffect(() => {
+    Crisp.configure(process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID ?? "");
+  });
+
   return <CSPostHogProvider>{children}</CSPostHogProvider>;
 }

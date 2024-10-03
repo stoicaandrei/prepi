@@ -4,7 +4,6 @@ import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "./providers";
 import { Montserrat } from "next/font/google";
-import Script from "next/script";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -33,12 +32,6 @@ export default function RootLayout({
           />
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.js"></script>
-
-          {/* Tawk Chat */}
-          <Script
-            strategy="lazyOnload"
-            src="https://embed.tawk.to/66fec09937379df10df14bcb/1i99i0lo"
-          />
         </Head>
         <body>
           {children}
