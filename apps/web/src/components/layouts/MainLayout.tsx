@@ -179,7 +179,7 @@ export function MainLayout({ children }: LayoutProps) {
                 <Files className="h-4 w-4" />
                 Variante
               </Link>
-              <Link
+              {/* <Link
                 href="/leaderboard"
                 className={navClasses(activeSection === "leaderboard")}
                 onClick={() => setSheetOpen(false)}
@@ -194,7 +194,7 @@ export function MainLayout({ children }: LayoutProps) {
               >
                 <ShoppingBag className="h-4 w-4" />
                 Magazin
-              </Link>
+              </Link> */}
               <DropdownMenuSeparator />
               <Link className={navClasses(false)} href="#">
                 Settings
@@ -245,7 +245,7 @@ export function MainLayout({ children }: LayoutProps) {
               <Files className="h-5 w-5 flex-shrink-0" />
               Variante
             </Link>
-            <Link
+            {/* <Link
               href="/leaderboard"
               className={navClasses(activeSection === "leaderboard")}
             >
@@ -258,7 +258,7 @@ export function MainLayout({ children }: LayoutProps) {
             >
               <ShoppingBag className="h-5 w-5 flex-shrink-0" />
               Magazin
-            </Link>
+            </Link> */}
           </nav>
         </div>
         <main className="flex-1 overflow-y-auto p-4 lg:p-6 bg-secondary">
