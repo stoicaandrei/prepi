@@ -49,7 +49,6 @@ const getExamSlug = (variant: any) => {
 
 // Migrates all "variants" from the old MongoDB database to the new Prisma database
 // in "ExamModel" format
-// This script will fail for a few variants that are badly formatted in the old database
 async function migrateData() {
   if (!mongoUri) {
     throw new Error("MONGO_URI is not defined in the environment variables");
