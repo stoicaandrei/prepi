@@ -22,7 +22,7 @@ import Link from "next/link";
 export default function ExamCard() {
   return (
     <div>
-      <Link href="/lessons">
+      <Link href="/exams">
         <Button variant="ghost" className="mb-4">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Înapoi la variante
@@ -69,10 +69,12 @@ export default function ExamCard() {
       </Card>
 
       <div className="flex justify-center mt-6">
-        <Button>
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Înapoi la variante
-        </Button>
+        <Link href="/exams">
+          <Button>
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Înapoi la variante
+          </Button>
+        </Link>
       </div>
     </div>
   );

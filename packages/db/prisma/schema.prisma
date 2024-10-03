@@ -242,3 +242,65 @@ model MarketplaceItem {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
+
+enum ExamDifficulty {
+    M1
+    M2
+    M3
+}
+
+enum ExamType {
+    SIMULARE
+    MODEL
+    SUBIECT
+    SUBIECT_OFICIAL
+}
+
+model Exam {
+    id            String         @id @default(cuid())
+    difficulty    ExamDifficulty
+    type          ExamType
+    year          Int?
+    month         String?
+    variantNumber Int?
+
+    slug  String @unique
+    title String
+
+    sub1Problems ExamProblem[] @relation("Sub1Problems")
+    sub2Problems ExamProblem[] @relation("Sub2Problems")
+    sub3Problems ExamProblem[] @relation("Sub3Problems")
+}
+
+model ExamProblem {
+    id String @id @default(cuid())
+
+    exam1   Exam?   @relation("Sub1Problems", fields: [exam1Id], references: [id])
+    exam1Id String?
+    exam2   Exam?   @relation("Sub2Problems", fields: [exam2Id], references: [id])
+    exam2Id String?
+    exam3   Exam?   @relation("Sub3Problems", fields: [exam3Id], references: [id])
+    exam3Id String?
+
+    order       Int     @default(0)
+    description String
+    explanation String?
+
+    subA   ExamSubproblem? @relation("SubA", fields: [subAId], references: [id])
+    subAId String?         @unique
+    subB   ExamSubproblem? @relation("SubB", fields: [subBId], references: [id])
+    subBId String?         @unique
+    subC   ExamSubproblem? @relation("SubC", fields: [subCId], references: [id])
+    subCId String?         @unique
+}
+
+model ExamSubproblem {
+    id String @id @default(cuid())
+
+    description String
+    explanation String?
+
+    parentA ExamProblem? @relation("SubA")
+    parentB ExamProblem? @relation("SubB")
+    parentC ExamProblem? @relation("SubC")
+}
