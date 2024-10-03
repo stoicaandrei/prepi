@@ -1,5 +1,6 @@
 "use client";
 
+import { MySkillsChart } from "@/components/data/MySkillsChart";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -70,12 +71,14 @@ export default function Dashboard() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground mb-4">
+            {/* <p className="text-sm text-muted-foreground mb-4">
               Pentru a-ți evalua cunoștințele este necesar să începi să lucrezi.
             </p>
             <Button variant="default" className="bg-cyan-500 hover:bg-cyan-600">
               Vreau să lucrez
             </Button>
+             */}
+            <MySkillsChart />
           </CardContent>
         </Card>
 
