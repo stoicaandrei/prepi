@@ -5,6 +5,7 @@
   "scripts": {
     "with-env": "dotenv -e ../../.env --",
     "dev": "pnpm with-env next dev --turbo --port 3000",
+    "build:local": "pnpm with-env next build",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
