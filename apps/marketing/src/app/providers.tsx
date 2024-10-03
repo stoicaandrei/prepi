@@ -23,7 +23,10 @@ function CSPostHogProvider({ children }: SimpleProps) {
 
 export function Providers({ children }: SimpleProps) {
   useEffect(() => {
-    Crisp.configure(process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID ?? "");
+    const websiteId = process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID;
+    if (websiteId) {
+      Crisp.configure(websiteId);
+    }
   });
 
   return <CSPostHogProvider>{children}</CSPostHogProvider>;
