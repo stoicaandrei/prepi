@@ -3,6 +3,7 @@
 import { MySkillsChart } from "@/components/data/MySkillsChart";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { trpc } from "@/utils/trpc";
 import {
   CheckSquare,
   MessageCircle,
@@ -12,6 +13,7 @@ import {
   ClipboardList,
 } from "lucide-react";
 import Head from "next/head";
+import { StreaksCard } from "./cards/StreksCard";
 
 export default function Dashboard() {
   return (
@@ -75,20 +77,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-xl font-bold">
-              <Zap className="mr-2 h-6 w-6 inline-block text-cyan-500" />
-              Streak
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground mb-2">
-              Exersează zilnic și primește bonusuri!
-            </p>
-            <p className="text-4xl font-bold text-center">0 zile</p>
-          </CardContent>
-        </Card>
+        <StreaksCard />
 
         <Card>
           <CardHeader>
