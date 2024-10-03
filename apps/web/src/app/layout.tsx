@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "./providers";
 import { Montserrat } from "next/font/google";
+import Script from "next/script";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
