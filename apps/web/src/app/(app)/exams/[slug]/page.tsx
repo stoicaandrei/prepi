@@ -19,7 +19,7 @@ export default function ExamCard() {
   const { data: exam } = trpc.exam.getExamBySlug.useQuery(slug as string);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container  mx-auto px-4 py-8">
       <Link href="/exams">
         <Button variant="ghost" className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" />
@@ -27,8 +27,8 @@ export default function ExamCard() {
         </Button>
       </Link>
 
-      <Card className="w-full max-w-4xl mx-auto shadow-lg">
-        <CardHeader className="space-y-4 bg-prepi-gradient text-white">
+      <Card className="w-full max-w-4xl mx-auto shadow-lg rounded-md">
+        <CardHeader className="space-y-4 bg-prepi-gradient text-white rounded-t-md">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <Files className="h-8 w-8" />
