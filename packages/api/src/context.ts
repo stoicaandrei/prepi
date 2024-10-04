@@ -3,6 +3,7 @@ import { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { prisma } from "@prepi/db";
 import { config } from "./env";
+import Stripe from "stripe";
 
 export const createContext = async (opts: FetchCreateContextFnOptions) => {
   const session = auth();
@@ -11,6 +12,7 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
     prisma,
     env: config,
     currentUser,
+    stripe: new Stripe(process.env.STRIPE_SECRET_KEY!),
     getDbUser: async () => {
       if (!session.userId) {
         throw new Error(

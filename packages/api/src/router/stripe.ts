@@ -1,15 +1,12 @@
 import { cacheable } from "../cache";
 import { router, protectedProcedure } from "../trpc";
 import { z } from "zod";
-import Stripe from "stripe";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export const stripeRouter = router({
   createCheckoutSession: protectedProcedure.mutation(async ({ ctx }) => {
     const user = await ctx.currentUser();
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await ctx.stripe.checkout.sessions.create({
       ui_mode: "embedded",
       customer_email: user?.emailAddresses[0].emailAddress,
       line_items: [
@@ -40,7 +37,7 @@ export const stripeRouter = router({
   getCheckoutSession: protectedProcedure
     .input(z.string())
     .query(async ({ ctx, input }) => {
-      const session = await stripe.checkout.sessions.retrieve(input);
+      const session = await ctx.stripe.checkout.sessions.retrieve(input);
 
       return {
         status: session.status,
