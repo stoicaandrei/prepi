@@ -110,8 +110,16 @@ export function MainLayout({ children }: LayoutProps) {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem disabled>Setări</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    href={process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL!}
+                    target="_blank"
+                  >
+                    Plăți
+                  </Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => Crisp.chat.open()}>
-                  Support
+                  Ajutor
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => signOut()}>
@@ -204,10 +212,17 @@ export function MainLayout({ children }: LayoutProps) {
               </Link>
               <Link
                 className={navClasses(false)}
+                href={process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL!}
+                target="_blank"
+              >
+                Plăți
+              </Link>
+              <Link
+                className={navClasses(false)}
                 href="#"
                 onClick={() => Crisp.chat.open()}
               >
-                Support
+                Ajutor
               </Link>
               <DropdownMenuSeparator />
               <Link
