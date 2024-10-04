@@ -11,8 +11,9 @@ datasource db {
 }
 
 model User {
-    id      String @id @default(cuid())
-    clerkId String @unique
+    id               String  @id @default(cuid())
+    clerkId          String  @unique
+    stripeCustomerId String? @unique
 
     currentStreak  Int       @default(0)
     longestStreak  Int       @default(0)

@@ -4,15 +4,18 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { prisma } from "@prepi/db";
 import { config } from "./env";
 import Stripe from "stripe";
+import { startStripeSubscription } from "./utils/stripe";
 
 export const createContext = async (opts: FetchCreateContextFnOptions) => {
   const session = auth();
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+
   return {
     auth: session,
     prisma,
     env: config,
     currentUser,
-    stripe: new Stripe(process.env.STRIPE_SECRET_KEY!),
+    stripe,
     getDbUser: async () => {
       if (!session.userId) {
         throw new Error(
@@ -30,9 +33,17 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
         return existingUser;
       }
 
+      const clerkUser = await currentUser();
+      const emailAddress = clerkUser?.emailAddresses[0].emailAddress;
+
+      if (!emailAddress) return null;
+
+      const { customer } = await startStripeSubscription(stripe, emailAddress);
+
       const newUser = await prisma.user.create({
         data: {
           clerkId: session.userId,
+          stripeCustomerId: customer.id,
         },
       });
 
