@@ -60,7 +60,7 @@ export const WeeklyActivityCard = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-xl font-bold">
+        <CardTitle className="text-xl font-bold flex items-center">
           <BarChart2 className="mr-2 h-6 w-6 inline-block text-cyan-500" />
           Activitate {practiceHistoryLoading && "..."}
         </CardTitle>

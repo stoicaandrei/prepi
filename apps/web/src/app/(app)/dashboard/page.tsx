@@ -34,7 +34,7 @@ export default function Dashboard() {
 
         <Card className="col-span-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-2xl font-bold">
+            <CardTitle className="text-2xl font-bold flex items-center">
               <CheckSquare className="mr-2 h-6 w-6 inline-block text-cyan-500" />
               Stabilește-ți nivelul
             </CardTitle>
@@ -52,7 +52,7 @@ export default function Dashboard() {
 
         <Card className="col-span-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-2xl font-bold">
+            <CardTitle className="text-2xl font-bold flex items-center">
               <MessageCircle className="mr-2 h-6 w-6 inline-block text-cyan-500" />
               Recomandarea Asistentului Prepi
             </CardTitle>
@@ -84,7 +84,7 @@ export default function Dashboard() {
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-xl font-bold">
+            <CardTitle className="text-xl font-bold flex items-center">
               <Book className="mr-2 h-6 w-6 inline-block text-cyan-500" />
               Lecții de exersat
             </CardTitle>
