@@ -61,79 +61,6 @@ export function MainLayout({ children }: LayoutProps) {
   return (
     <div className="flex h-screen flex-col">
       <header className="h-[80px] flex flex-row justify-between items-center">
-        <div className="w-[250px] h-full py-4">
-          <Link href="/dashboard">
-            <div className="relative h-full w-full">
-              <Image
-                src="/logo.svg"
-                alt="Prepi Logo"
-                layout="fill"
-                objectFit="contain"
-                priority
-              />
-            </div>
-          </Link>
-        </div>
-        <div className="hidden md:flex flex-row h-full space-x-3 items-center justify-center">
-          <div className="h-[30px] flex items-center bg-[#00cccc33] text-[#00cccc] rounded-full pl-1 pr-2 py-1">
-            <span className="bg-[#00cccc] rounded-full mr-2 flex justify-center items-center p-1">
-              <Flame className="w-4 h-4 text-white" />
-            </span>
-            <span className="text-xs font-medium">
-              {currentStreak}{" "}
-              <span className="hidden sm:inline">
-                {pluralize("zile", currentStreak)}
-              </span>
-            </span>
-          </div>
-          <div className="h-[30px] flex items-center bg-[#6BADEE33] text-primary rounded-full pl-1 pr-2 py-1">
-            <span className="bg-primary rounded-full mr-2 flex justify-center items-center p-1">
-              <Star className="w-4 h-4 text-white" />
-            </span>
-            <span className="text-xs font-medium">
-              {totalPoints}{" "}
-              <span className="hidden sm:inline">
-                {pluralize("puncte", totalPoints)}
-              </span>
-            </span>
-          </div>
-          <div className="flex items-center px-3">
-            <div className="text-left mr-4 hidden sm:inline">
-              <h1 className="text-base font-bold">
-                Salut, {user?.firstName ?? "Elevule"}!
-              </h1>
-              <p className="text-xs text-gray-600">Învățăcel</p>
-            </div>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <img
-                  src="/avatars/babychicken.png"
-                  alt=""
-                  className="w-14 h-14 cursor-pointer"
-                />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem disabled>Setări</DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link
-                    href={process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL!}
-                    target="_blank"
-                  >
-                    Plăți
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => Crisp.chat.open()}>
-                  Ajutor
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => signOut()}>
-                  Logout
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-        </div>
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
           <SheetTrigger asChild>
             <Button
@@ -145,14 +72,17 @@ export function MainLayout({ children }: LayoutProps) {
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="flex flex-col">
+          <SheetContent side="left" className="flex flex-col">
             <nav className="grid gap-2 text-lg font-medium pt-4">
               <div className="h-[30px] flex items-center bg-[#00cccc33] text-[#00cccc] rounded-full pl-1 pr-2 py-1">
                 <span className="bg-[#00cccc] rounded-full mr-2 flex justify-center items-center p-1">
                   <Flame className="w-4 h-4 text-white" />
                 </span>
                 <span className="text-xs font-medium">
-                  0 <span className="hidden sm:inline">zile</span>
+                  {currentStreak}{" "}
+                  <span className="hidden sm:inline">
+                    {pluralize("zile", currentStreak)}
+                  </span>
                 </span>
               </div>
               <div className="h-[30px] flex items-center bg-[#6BADEE33] text-primary rounded-full pl-1 pr-2 py-1">
@@ -160,9 +90,13 @@ export function MainLayout({ children }: LayoutProps) {
                   <Star className="w-4 h-4 text-white" />
                 </span>
                 <span className="text-xs font-medium">
-                  0 <span className="hidden sm:inline">puncte</span>
+                  {totalPoints}{" "}
+                  <span className="hidden sm:inline">
+                    {pluralize("puncte", totalPoints)}
+                  </span>
                 </span>
               </div>
+              <DropdownMenuSeparator />
               <Link
                 href="/dashboard"
                 className={navClasses(activeSection === "dashboard")}
@@ -240,6 +174,79 @@ export function MainLayout({ children }: LayoutProps) {
             </nav>
           </SheetContent>
         </Sheet>
+        <div className="w-[250px] h-full py-4">
+          <Link href="/dashboard">
+            <div className="relative h-full w-full">
+              <Image
+                src="/logo.svg"
+                alt="Prepi Logo"
+                layout="fill"
+                objectFit="contain"
+                priority
+              />
+            </div>
+          </Link>
+        </div>
+        <div className="hidden md:flex flex-row h-full space-x-3 items-center justify-center">
+          <div className="h-[30px] flex items-center bg-[#00cccc33] text-[#00cccc] rounded-full pl-1 pr-2 py-1">
+            <span className="bg-[#00cccc] rounded-full mr-2 flex justify-center items-center p-1">
+              <Flame className="w-4 h-4 text-white" />
+            </span>
+            <span className="text-xs font-medium">
+              {currentStreak}{" "}
+              <span className="hidden sm:inline">
+                {pluralize("zile", currentStreak)}
+              </span>
+            </span>
+          </div>
+          <div className="h-[30px] flex items-center bg-[#6BADEE33] text-primary rounded-full pl-1 pr-2 py-1">
+            <span className="bg-primary rounded-full mr-2 flex justify-center items-center p-1">
+              <Star className="w-4 h-4 text-white" />
+            </span>
+            <span className="text-xs font-medium">
+              {totalPoints}{" "}
+              <span className="hidden sm:inline">
+                {pluralize("puncte", totalPoints)}
+              </span>
+            </span>
+          </div>
+          <div className="flex items-center px-3">
+            <div className="text-left mr-4 hidden sm:inline">
+              <h1 className="text-base font-bold">
+                Salut, {user?.firstName ?? "Elevule"}!
+              </h1>
+              <p className="text-xs text-gray-600">Învățăcel</p>
+            </div>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <img
+                  src="/avatars/babychicken.png"
+                  alt=""
+                  className="w-14 h-14 cursor-pointer"
+                />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem disabled>Setări</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    href={process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL!}
+                    target="_blank"
+                  >
+                    Plăți
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => Crisp.chat.open()}>
+                  Ajutor
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => signOut()}>
+                  Logout
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </div>
       </header>
       <div className="flex flex-1 overflow-hidden">
         <div className="w-[250px] hidden md:block ">
