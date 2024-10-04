@@ -45,7 +45,7 @@ export const stripeRouter = router({
 
       return {
         status: session.status,
-        customer_email: session.customer_details.email,
+        customer_email: session.customer_details?.email,
       };
     }),
 });
