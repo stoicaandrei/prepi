@@ -28,8 +28,8 @@ export const PracticeHistoryCard = () => {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px]">CAPITOL</TableHead>
-              <TableHead className="text-right">PUNCTE</TableHead>
+              <TableHead className="">CAPITOL</TableHead>
+              <TableHead className="text-right w-[100px]">PUNCTE</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
