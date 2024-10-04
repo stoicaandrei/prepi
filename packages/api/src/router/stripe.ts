@@ -11,8 +11,7 @@ export const stripeRouter = router({
       customer_email: user?.emailAddresses[0].emailAddress,
       line_items: [
         {
-          // price: "price_1Q5yR9FMuPtZf5FPrJTOAnxE",
-          price: "price_1Q5ymCFMuPtZf5FPMKorlJ1X",
+          price: process.env.STRIPE_SUBSCRIPTION_PRICE_ID,
           quantity: 1,
         },
       ],
