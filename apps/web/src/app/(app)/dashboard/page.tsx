@@ -13,7 +13,7 @@ import {
   ClipboardList,
 } from "lucide-react";
 import Head from "next/head";
-import { StreaksCard } from "./cards/StreksCard";
+import { StreaksCard } from "./cards/StreaksCard";
 import { PracticeHistoryCard } from "./cards/PracticeHistoryCard";
 
 export default function Dashboard() {
