@@ -108,7 +108,7 @@ export const PracticeView = ({
   return (
     <>
       <div className="p-6">
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-6 flex-wrap gap-6">
           <h2 className="text-2xl font-bold">
             Modul de exersare {!problems.length && "..."}
           </h2>
@@ -132,13 +132,13 @@ export const PracticeView = ({
           )}
         </div>
 
-        <div className="flex justify-end items-center">
+        <div className="flex flex-col md:flex-row md:justify-end items-start md:items-center gap-2 md:gap-2">
           {!showExplanation && (
             <>
               {!isSolved && (
                 <Button
                   variant="outline"
-                  className="mr-2"
+                  className=""
                   onClick={() => setHintCount((prev) => prev + 1)}
                   disabled={hintCount === currentProblem?.hints.length}
                 >

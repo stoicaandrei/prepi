@@ -143,9 +143,12 @@ export default function MathPracticeInteractive({
                       <span>{subject.name}</span>
                       <div className="flex items-center space-x-2">
                         <span className="text-sm text-gray-500">
-                          {problemsDone}/{totalProblems} exerciții rezolvate
+                          {problemsDone}/{totalProblems} exerciții{" "}
+                          <span className="hidden md:inline-block">
+                            rezolvate
+                          </span>
                         </span>
-                        <span className="text-sm text-blue-500">
+                        <span className="text-sm text-blue-500 w-9">
                           {progress}%
                         </span>
                       </div>

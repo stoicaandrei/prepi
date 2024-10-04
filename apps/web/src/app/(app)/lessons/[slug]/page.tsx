@@ -96,7 +96,7 @@ const NavigationButtons = ({ slug }: { slug: string }) => {
   const next = data?.next;
 
   return (
-    <div className="flex justify-between mt-6">
+    <div className="flex justify-between mt-6 flex-wrap gap-6">
       <Link href={prev ? `/lessons/${prev.slug}` : "#"}>
         <Button variant="outline" disabled={isLoading || !prev}>
           <ArrowLeft className="mr-2 h-4 w-4" />

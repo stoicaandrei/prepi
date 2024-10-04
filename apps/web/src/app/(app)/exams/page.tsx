@@ -73,7 +73,7 @@ export default function ExamVariantsResponsive() {
             <Link key={exam.id} href={`/exams/${exam.slug}`}>
               <Button
                 variant="ghost"
-                className="w-full justify-start font-normal text-gray-700 hover:text-blue-500 hover:bg-blue-50"
+                className="w-full justify-start font-normal text-gray-700 hover:text-blue-500 hover:bg-blue-50 text-wrap"
               >
                 {exam.title}
               </Button>

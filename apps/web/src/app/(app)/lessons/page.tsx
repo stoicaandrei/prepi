@@ -64,7 +64,7 @@ export default function MathPlatformCardExpanded() {
                 <LucideLoader className="h-6 w-6 ml-2 text-blue-500" />
               )}
             </div>
-            <div className="w-full max-w-xs">
+            <div className="w-full max-w-40 md:max-w-xs">
               <Input
                 disabled
                 type="search"
@@ -75,7 +75,7 @@ export default function MathPlatformCardExpanded() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
             <div className="space-y-2">{firstBatch?.map(renderTag)}</div>
             <div className="space-y-2">{secondBatch?.map(renderTag)}</div>
           </div>
