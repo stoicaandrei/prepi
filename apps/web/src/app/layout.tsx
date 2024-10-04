@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "./providers";
 import { Montserrat } from "next/font/google";
 import Script from "next/script";
-import Link from "next/link";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -14,7 +12,14 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Prepi",
-  description: "",
+  description:
+    "Prepi este platforma care te pregătește să iei BACul la matematică cu brio. Ai acces la toate exercițiile rezolvate și materialele explicative necesare. Începe pregătirea gratuit!",
+  icons: [
+    {
+      rel: "icon",
+      url: "/favicon.ico",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -24,28 +29,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={montserrat.className}>
-      <Providers>
-        <Head>
-          <link rel="icon" href="/favicon.ico" sizes="any" />
-          <title>Prepi</title>
-          <Link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.css"
-          />
-        </Head>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.css"
+        />
+      </head>
+      <body>
+        <Providers>
+          {children}
+          <Analytics />
+        </Providers>
         <Script
           src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
-          strategy="lazyOnload"
+          strategy="beforeInteractive"
         />
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <body>
-          {children}
-          <Analytics />
-        </body>
-      </Providers>
+      </body>
     </html>
   );
 }
