@@ -1,3 +1,4 @@
+"use client";
 // src/utils/trpc.ts
 import { CreateTRPCReact, createTRPCReact } from "@trpc/react-query";
 import { httpBatchLink, loggerLink } from "@trpc/client";

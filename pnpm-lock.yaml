@@ -192,6 +192,12 @@ importers:
       "@radix-ui/react-tabs":
         specifier: ^1.1.0
         version: 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1)(react@18.3.1)
+      "@stripe/react-stripe-js":
+        specifier: ^2.8.0
+        version: 2.8.0(@stripe/stripe-js@4.6.0)(react-dom@18.3.1)(react@18.3.1)
+      "@stripe/stripe-js":
+        specifier: ^4.6.0
+        version: 4.6.0
       "@tanstack/react-query":
         specifier: ^4.36.1
         version: 4.36.1(react-dom@18.3.1)(react@18.3.1)
@@ -319,6 +325,9 @@ importers:
       "@prepi/db":
         specifier: workspace:*
         version: link:../db
+      "@stripe/stripe-js":
+        specifier: ^4.6.0
+        version: 4.6.0
       "@trpc/client":
         specifier: ^10.1.0
         version: 10.45.2(@trpc/server@10.45.2)
@@ -334,6 +343,9 @@ importers:
       dotenv:
         specifier: ^16.0.0
         version: 16.4.5
+      stripe:
+        specifier: ^17.1.0
+        version: 17.1.0
       superjson:
         specifier: ^1.9.1
         version: 1.13.3
@@ -3688,6 +3700,30 @@ packages:
     dev: false
     optional: true
 
+  /@stripe/react-stripe-js@2.8.0(@stripe/stripe-js@4.6.0)(react-dom@18.3.1)(react@18.3.1):
+    resolution:
+      {
+        integrity: sha512-Vf1gNEuBxA9EtxiLghm2ZWmgbADNMJw4HW6eolUu0DON/6mZvWZgk0KHolN0sozNJwYp0i/8hBsDBcBUWcvnbw==,
+      }
+    peerDependencies:
+      "@stripe/stripe-js": ^1.44.1 || ^2.0.0 || ^3.0.0 || ^4.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      "@stripe/stripe-js": 4.6.0
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
+  /@stripe/stripe-js@4.6.0:
+    resolution:
+      {
+        integrity: sha512-ZoK0dMFnVH0J5XUWGqsta8S8xm980qEwJKAIgZcLQxaSsbGRB9CsVvfOjwQFE1JC1q3rPwb/b+gQAmzIESnHnA==,
+      }
+    engines: { node: ">=12.16" }
+    dev: false
+
   /@swc/counter@0.1.3:
     resolution:
       {
@@ -5406,7 +5442,6 @@ packages:
       function-bind: 1.1.2
       get-intrinsic: 1.2.4
       set-function-length: 1.2.2
-    dev: true
 
   /callsites@3.1.0:
     resolution:
@@ -5862,7 +5897,6 @@ packages:
       es-define-property: 1.0.0
       es-errors: 1.3.0
       gopd: 1.0.1
-    dev: true
 
   /define-properties@1.2.1:
     resolution:
@@ -6163,7 +6197,6 @@ packages:
     engines: { node: ">= 0.4" }
     dependencies:
       get-intrinsic: 1.2.4
-    dev: true
 
   /es-errors@1.3.0:
     resolution:
@@ -6171,7 +6204,6 @@ packages:
         integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==,
       }
     engines: { node: ">= 0.4" }
-    dev: true
 
   /es-get-iterator@1.1.3:
     resolution:
@@ -7262,7 +7294,6 @@ packages:
       has-proto: 1.0.3
       has-symbols: 1.0.3
       hasown: 2.0.2
-    dev: true
 
   /get-nonce@1.0.1:
     resolution:
@@ -7427,7 +7458,6 @@ packages:
       }
     dependencies:
       get-intrinsic: 1.2.4
-    dev: true
 
   /graceful-fs@4.2.11:
     resolution:
@@ -7471,7 +7501,6 @@ packages:
       }
     dependencies:
       es-define-property: 1.0.0
-    dev: true
 
   /has-proto@1.0.3:
     resolution:
@@ -7479,7 +7508,6 @@ packages:
         integrity: sha512-SJ1amZAJUiZS+PhsVLf5tGydlaVB8EdFpaSO4gmiUKUOxk8qzn5AIy4ZeJUmh22znIdk/uMAUT2pl3FxzVUH+Q==,
       }
     engines: { node: ">= 0.4" }
-    dev: true
 
   /has-symbols@1.0.3:
     resolution:
@@ -7487,7 +7515,6 @@ packages:
         integrity: sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==,
       }
     engines: { node: ">= 0.4" }
-    dev: true
 
   /has-tostringtag@1.0.2:
     resolution:
@@ -9328,7 +9355,6 @@ packages:
         integrity: sha512-IRZSRuzJiynemAXPYtPe5BoI/RESNYR7TYm50MC5Mqbd3Jmw5y790sErYw3V6SryFJD64b74qQQs9wn5Bg/k3g==,
       }
     engines: { node: ">= 0.4" }
-    dev: true
 
   /object-is@1.1.6:
     resolution:
@@ -9810,7 +9836,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: true
 
   /property-information@6.5.0:
     resolution:
@@ -9825,6 +9850,16 @@ packages:
         integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==,
       }
     engines: { node: ">=6" }
+
+  /qs@6.13.0:
+    resolution:
+      {
+        integrity: sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==,
+      }
+    engines: { node: ">=0.6" }
+    dependencies:
+      side-channel: 1.0.6
+    dev: false
 
   /queue-microtask@1.2.3:
     resolution:
@@ -9872,7 +9907,6 @@ packages:
       {
         integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==,
       }
-    dev: true
 
   /react-property@2.0.2:
     resolution:
@@ -10269,7 +10303,6 @@ packages:
       get-intrinsic: 1.2.4
       gopd: 1.0.1
       has-property-descriptors: 1.0.2
-    dev: true
 
   /set-function-name@2.0.2:
     resolution:
@@ -10311,7 +10344,6 @@ packages:
       es-errors: 1.3.0
       get-intrinsic: 1.2.4
       object-inspect: 1.13.2
-    dev: true
 
   /signal-exit@4.1.0:
     resolution:
@@ -10682,6 +10714,17 @@ packages:
       }
     engines: { node: ">=8" }
     dev: true
+
+  /stripe@17.1.0:
+    resolution:
+      {
+        integrity: sha512-sNRsJx7LPP2Gg6cBJoHJqhr+UoBVZZRes2BDqbrg+1FDBxJc4Yn+LkrpJ/VnL3XQ3+6I5GrOUnSSFfE/joDFjw==,
+      }
+    engines: { node: ">=12.*" }
+    dependencies:
+      "@types/node": 22.5.4
+      qs: 6.13.0
+    dev: false
 
   /strnum@1.0.5:
     resolution:
