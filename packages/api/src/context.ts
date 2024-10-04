@@ -1,6 +1,6 @@
 import * as trpc from "@trpc/server";
 import { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { prisma } from "@prepi/db";
 import { config } from "./env";
 
@@ -10,6 +10,7 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
     auth: session,
     prisma,
     env: config,
+    getCurrentUser: () => currentUser,
     getDbUser: async () => {
       if (!session.userId) {
         throw new Error(
