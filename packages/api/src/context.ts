@@ -10,7 +10,7 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
     auth: session,
     prisma,
     env: config,
-    getCurrentUser: () => currentUser,
+    currentUser,
     getDbUser: async () => {
       if (!session.userId) {
         throw new Error(

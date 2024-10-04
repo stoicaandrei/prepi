@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export const stripeRouter = router({
   createCheckoutSession: protectedProcedure.mutation(async ({ ctx }) => {
-    const user = await ctx.getCurrentUser();
+    const user = await ctx.currentUser();
 
     const session = await stripe.checkout.sessions.create({
       ui_mode: "embedded",
