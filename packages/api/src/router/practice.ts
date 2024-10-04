@@ -330,20 +330,28 @@ export const practiceRouter = router({
       return { pointsEarned };
     }),
   listPracticeHistory: protectedProcedure
-    .input(z.object({ count: z.number().optional() }).optional())
+    .input(
+      z
+        .object({
+          limit: z.number().optional(),
+          startDate: z.date().optional(),
+        })
+        .optional(),
+    )
     .query(async ({ ctx, input }) => {
       const user = await ctx.getDbUser();
-
-      const take = input?.count ?? 3;
 
       return ctx.prisma.practiceSession.findMany({
         where: {
           userId: user.id,
+          createdAt: {
+            gte: input?.startDate,
+          },
         },
         orderBy: {
           createdAt: "desc",
         },
-        take,
+        take: input?.limit,
         select: {
           id: true,
           subject: {
@@ -353,6 +361,7 @@ export const practiceRouter = router({
           },
           score: true,
           problems: true,
+          createdAt: true,
         },
       });
     }),

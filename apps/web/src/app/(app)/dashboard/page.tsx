@@ -15,6 +15,8 @@ import {
 import Head from "next/head";
 import { StreaksCard } from "./cards/StreaksCard";
 import { PracticeHistoryCard } from "./cards/PracticeHistoryCard";
+import { WeeklyActivityCard } from "./cards/WeeklyActivityCard";
+import { WeeklyPointsCard } from "./cards/WeeklyPointsCard";
 
 export default function Dashboard() {
   return (
@@ -98,47 +100,9 @@ export default function Dashboard() {
 
         <PracticeHistoryCard />
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-xl font-bold">
-              <BarChart2 className="mr-2 h-6 w-6 inline-block text-cyan-500" />
-              Activitate
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="h-[200px] w-full bg-muted rounded-md"></div>
-            <div className="flex justify-between text-xs text-muted-foreground mt-2">
-              <span>SA</span>
-              <span>DU</span>
-              <span>LU</span>
-              <span>MA</span>
-              <span>MI</span>
-              <span>JO</span>
-              <span>VI</span>
-            </div>
-          </CardContent>
-        </Card>
+        <WeeklyActivityCard />
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-xl font-bold">
-              <BarChart2 className="mr-2 h-6 w-6 inline-block text-cyan-500" />
-              Performanță
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="h-[200px] w-full bg-muted rounded-md"></div>
-            <div className="flex justify-between text-xs text-muted-foreground mt-2">
-              <span>SA</span>
-              <span>DU</span>
-              <span>LU</span>
-              <span>MA</span>
-              <span>MI</span>
-              <span>JO</span>
-              <span>VI</span>
-            </div>
-          </CardContent>
-        </Card>
+        <WeeklyPointsCard />
       </div>
     </div>
   );
