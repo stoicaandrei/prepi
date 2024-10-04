@@ -62,15 +62,17 @@ export function MainLayout({ children }: LayoutProps) {
     <div className="flex h-screen flex-col">
       <header className="h-[80px] flex flex-row justify-between items-center">
         <div className="w-[250px] h-full py-4">
-          <div className="relative h-full w-full">
-            <Image
-              src="/logo.svg"
-              alt="Prepi Logo"
-              layout="fill"
-              objectFit="contain"
-              priority
-            />
-          </div>
+          <Link href="/dashboard">
+            <div className="relative h-full w-full">
+              <Image
+                src="/logo.svg"
+                alt="Prepi Logo"
+                layout="fill"
+                objectFit="contain"
+                priority
+              />
+            </div>
+          </Link>
         </div>
         <div className="hidden md:flex flex-row h-full space-x-3 items-center justify-center">
           <div className="h-[30px] flex items-center bg-[#00cccc33] text-[#00cccc] rounded-full pl-1 pr-2 py-1">
