@@ -133,7 +133,9 @@ export function ProblemDisplay({
 
       {showExplanation && (
         <div className="mt-4 bg-gray-100 p-4 rounded-lg">
-          <MathJax>{problem?.explanation.content}</MathJax>
+          <MathJax key={problem?.explanation.id}>
+            {problem?.explanation.content}
+          </MathJax>
         </div>
       )}
     </>
