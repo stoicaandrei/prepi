@@ -28,6 +28,7 @@ import classNames from "classnames";
 import { useState } from "react";
 import { trpc } from "@/utils/trpc";
 import { pluralize } from "@prepi/utils";
+import { Crisp } from "crisp-sdk-web";
 
 export const description =
   "A products dashboard with a sidebar navigation and a main content area. The dashboard has a header with a search input and a user menu. The sidebar has a logo, navigation links, and a card with a call to action. The main content area shows an empty state with a call to action.";
@@ -108,8 +109,10 @@ export function MainLayout({ children }: LayoutProps) {
                 />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem disabled>Settings</DropdownMenuItem>
-                <DropdownMenuItem disabled>Support</DropdownMenuItem>
+                <DropdownMenuItem disabled>Setări</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => Crisp.chat.open()}>
+                  Support
+                </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => signOut()}>
                   Logout
@@ -197,9 +200,13 @@ export function MainLayout({ children }: LayoutProps) {
               </Link> */}
               <DropdownMenuSeparator />
               <Link className={navClasses(false)} href="#">
-                Settings
+                Setări
               </Link>
-              <Link className={navClasses(false)} href="#">
+              <Link
+                className={navClasses(false)}
+                href="#"
+                onClick={() => Crisp.chat.open()}
+              >
                 Support
               </Link>
               <DropdownMenuSeparator />
