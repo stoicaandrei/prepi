@@ -80,7 +80,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <StreaksCard />
+        <PracticeHistoryCard />
 
         <Card>
           <CardHeader>
@@ -98,7 +98,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <PracticeHistoryCard />
+        <StreaksCard />
 
         <WeeklyActivityCard />
 

@@ -15,7 +15,7 @@ import {
 export const PracticeHistoryCard = () => {
   const { data: practiceHistory, isLoading: practiceHistoryLoading } =
     trpc.practice.listPracticeHistory.useQuery({
-      limit: 3,
+      limit: 6,
     });
 
   return (
