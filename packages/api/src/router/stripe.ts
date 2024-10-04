@@ -29,7 +29,7 @@ export const stripeRouter = router({
         // },
       },
       locale: "ro",
-      return_url: `${process.env.NEXT_PUBLIC_API_URL}/?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `${process.env.NEXT_PUBLIC_APP_URL}/?session_id={CHECKOUT_SESSION_ID}`,
       automatic_tax: { enabled: true },
     });
 
