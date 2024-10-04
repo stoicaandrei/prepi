@@ -78,8 +78,10 @@ export const WeeklyPointsCard = () => {
             scales: {
               y: {
                 beginAtZero: true,
+                max: Math.ceil(Math.max(...(data ?? [0])) * 1.5) || 1,
                 ticks: {
                   stepSize: 1,
+                  maxTicksLimit: 5,
                   callback: function (value, index, values) {
                     return Math.round(Number(value)).toString();
                   },
