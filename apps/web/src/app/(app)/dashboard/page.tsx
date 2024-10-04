@@ -22,7 +22,7 @@ export default function Dashboard() {
       <Head>
         <title>Dashboard | Prepi</title>
       </Head>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         <Card className="col-span-full">
           <p className="text-base font-medium text-[#6e6e6e] p-10">
             Amintește-ți că suntem în Beta și încă lucrăm la platformă. Fii
