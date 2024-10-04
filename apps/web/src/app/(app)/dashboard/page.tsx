@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Head from "next/head";
 import { StreaksCard } from "./cards/StreksCard";
+import { PracticeHistoryCard } from "./cards/PracticeHistoryCard";
 
 export default function Dashboard() {
   return (
@@ -95,23 +96,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-xl font-bold">
-              <ClipboardList className="mr-2 h-6 w-6 inline-block text-cyan-500" />
-              Ultimele teste
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex justify-between text-sm font-medium">
-              <span>CAPITOL</span>
-              <span>NOTĂ</span>
-            </div>
-            <p className="text-sm text-muted-foreground text-center mt-4">
-              Nu ai făcut teste încă!
-            </p>
-          </CardContent>
-        </Card>
+        <PracticeHistoryCard />
 
         <Card>
           <CardHeader>

@@ -329,6 +329,33 @@ export const practiceRouter = router({
 
       return { pointsEarned };
     }),
+  listPracticeHistory: protectedProcedure
+    .input(z.object({ count: z.number().optional() }).optional())
+    .query(async ({ ctx, input }) => {
+      const user = await ctx.getDbUser();
+
+      const take = input?.count ?? 3;
+
+      return ctx.prisma.practiceSession.findMany({
+        where: {
+          userId: user.id,
+        },
+        orderBy: {
+          createdAt: "desc",
+        },
+        take,
+        select: {
+          id: true,
+          subject: {
+            select: {
+              name: true,
+            },
+          },
+          score: true,
+          problems: true,
+        },
+      });
+    }),
 });
 
 const updateUserStreak = async (prisma: PrismaClient, user: User) => {
