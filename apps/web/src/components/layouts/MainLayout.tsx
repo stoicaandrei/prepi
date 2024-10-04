@@ -22,7 +22,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useAuth } from "@clerk/nextjs";
+import { useAuth, useUser } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
 import { useState } from "react";
@@ -50,6 +50,7 @@ export function MainLayout({ children }: LayoutProps) {
   const fullPath = usePathname();
   const activeSection = fullPath?.split("/")[1];
   const { signOut } = useAuth();
+  const { user } = useUser();
 
   const [sheetOpen, setSheetOpen] = useState(false);
 
@@ -96,7 +97,9 @@ export function MainLayout({ children }: LayoutProps) {
           </div>
           <div className="flex items-center px-3">
             <div className="text-left mr-4 hidden sm:inline">
-              <h1 className="text-base font-bold">Salut, Andrei!</h1>
+              <h1 className="text-base font-bold">
+                Salut, {user?.firstName ?? "Elevule"}!
+              </h1>
               <p className="text-xs text-gray-600">Învățăcel</p>
             </div>
 
