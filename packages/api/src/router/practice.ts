@@ -258,6 +258,8 @@ export const practiceRouter = router({
     .mutation(async ({ ctx, input }) => {
       const user = await ctx.getDbUser();
 
+      if (!user) return;
+
       const correctProblems = input.problems.filter(
         (problem) => problem.correct,
       );
@@ -268,6 +270,11 @@ export const practiceRouter = router({
         correctProblems.length,
         user.currentStreak,
       );
+
+      const correctCount = correctProblems.length;
+      const totalCount = input.problems.length;
+
+      const performanceScore = totalCount > 0 ? correctCount / totalCount : 0;
 
       const userSubjectProgress = await ctx.prisma.userSubjectProgress.upsert({
         where: {
@@ -281,6 +288,24 @@ export const practiceRouter = router({
           userId: user.id,
           subjectId: input.subjectId,
         },
+      });
+
+      const LEARNING_RATE = 0.2;
+      const MINIMUM_MASTERY = 0.1;
+      const MAXIMUM_MASTERY = 1;
+
+      const previousMastery = userSubjectProgress.masteryLevel;
+      const newMastery =
+        previousMastery + LEARNING_RATE * (performanceScore - previousMastery);
+
+      const updatedMasteryLevel = Math.max(
+        MINIMUM_MASTERY,
+        Math.min(newMastery, MAXIMUM_MASTERY),
+      );
+
+      await ctx.prisma.userSubjectProgress.update({
+        where: { id: userSubjectProgress.id },
+        data: { masteryLevel: updatedMasteryLevel },
       });
 
       await ctx.prisma.$transaction(
@@ -318,6 +343,7 @@ export const practiceRouter = router({
           subjectId: input.subjectId,
           score: pointsEarned,
           pointsEarned,
+          performanceScore,
           problems: {
             create: input.problems.map((problem) => ({
               problemId: problem.problemId,
