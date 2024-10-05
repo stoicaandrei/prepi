@@ -75,7 +75,7 @@ export default function Dashboard() {
           <CardHeader>
             <CardTitle className="text-xl font-bold">
               <BarChart2 className="mr-2 h-6 w-6 inline-block text-cyan-500" />
-              Cunoștințele mele
+              Competențele mele
             </CardTitle>
           </CardHeader>
           <CardContent>

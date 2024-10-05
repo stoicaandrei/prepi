@@ -61,6 +61,7 @@ export const practiceRouter = router({
         _count: {
           select: { completedProblems: true },
         },
+        masteryLevel: true,
       },
     });
   }),
