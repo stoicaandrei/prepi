@@ -10,37 +10,49 @@ async function seedChaptersAndSubjects() {
   ];
 
   for (const chapter of chapters) {
+    // Create the chapter (subject category)
     const createdChapter = await prisma.subjectCategory.create({
       data: chapter,
     });
 
-    const subjects = [
-      {
+    // Create the Basic subject
+    const basicSubject = await prisma.subject.create({
+      data: {
         name: `Basic ${chapter.name}`,
         slug: `basic-${chapter.slug}`,
         order: 1,
         categoryId: createdChapter.id,
       },
-      {
+    });
+
+    // Create the Intermediate subject with Basic as a prerequisite
+    const intermediateSubject = await prisma.subject.create({
+      data: {
         name: `Intermediate ${chapter.name}`,
         slug: `intermediate-${chapter.slug}`,
         order: 2,
         categoryId: createdChapter.id,
+        prerequisites: {
+          connect: [{ id: basicSubject.id }],
+        },
       },
-      {
+    });
+
+    // Create the Advanced subject with Intermediate as a prerequisite
+    const advancedSubject = await prisma.subject.create({
+      data: {
         name: `Advanced ${chapter.name}`,
         slug: `advanced-${chapter.slug}`,
         order: 3,
         categoryId: createdChapter.id,
+        prerequisites: {
+          connect: [{ id: intermediateSubject.id }],
+        },
       },
-    ];
-
-    await prisma.subject.createMany({
-      data: subjects,
     });
   }
 
-  console.log("Chapters and subjects seeded successfully");
+  console.log("Chapters and subjects with prerequisites seeded successfully");
 }
 
 async function seedLessons() {
