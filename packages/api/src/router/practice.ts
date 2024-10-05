@@ -259,8 +259,6 @@ export const practiceRouter = router({
     .mutation(async ({ ctx, input }) => {
       const user = await ctx.getDbUser();
 
-      if (!user) return;
-
       const correctProblems = input.problems.filter(
         (problem) => problem.correct,
       );

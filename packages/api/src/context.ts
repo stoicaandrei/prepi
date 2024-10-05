@@ -34,9 +34,7 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
       }
 
       const clerkUser = await currentUser();
-      const emailAddress = clerkUser?.emailAddresses[0].emailAddress;
-
-      if (!emailAddress) return null;
+      const emailAddress = clerkUser?.emailAddresses[0].emailAddress ?? "";
 
       const { customer } = await startStripeSubscription(stripe, emailAddress);
 
