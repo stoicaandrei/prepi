@@ -107,17 +107,18 @@ export default function MathPracticeInteractive({
             Bazat pe activitatea ta, îți recomandăm să lucrezi la următorul
             subiect:
           </p>
+          {/* TODO: Display all recommened chapters here */}
           <Button
             variant="ghost"
-            className="w-full p-4 h-auto flex items-center justify-between hover:bg-gray-100"
+            className="w-full p-4 h-auto flex items-center justify-between hover:bg-gray-100 shadow-md"
             onClick={() => nextChapter && setSelectedSubjectId(nextChapter.id)}
           >
-            <div className="flex items-center space-x-3 flex-wrap">
+            <div className="flex flex-col items-start gap-2">
               <span className="text-lg font-medium">
                 {nextChapter?.name ?? "..."}
               </span>
               <Progress
-                className="flex-1 w-[300px]"
+                className="w-[300px] shadow-md"
                 value={(nextChapterProgress?.masteryLevel ?? 0) * 100}
               />
               <p>
@@ -126,16 +127,6 @@ export default function MathPracticeInteractive({
                 categorie
               </p>
             </div>
-            {/* <div className="flex items-center space-x-3">
-                      <span className="text-sm text-gray-500">
-                        Ai rezolvat 0/0 probleme
-                        <span className="hidden sm:inline">
-                          {" "}
-                          din această categorie
-                        </span>
-                      </span>
-                      <ChevronRight className="w-6 h-6" />
-                    </div> */}
           </Button>
           <p>Mai multe subiecte:</p>
           {subjectsByCategories.data?.map((category) => (

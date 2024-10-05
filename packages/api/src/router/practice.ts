@@ -444,8 +444,8 @@ export const practiceRouter = router({
       }
     }
 
-    // Step 4: Sort eligible subjects by mastery level (ascending)
-    eligibleSubjects.sort((a, b) => a.masteryLevel - b.masteryLevel);
+    // // Step 4: Sort eligible subjects by mastery level (ascending)
+    // eligibleSubjects.sort((a, b) => a.masteryLevel - b.masteryLevel);
 
     // Step 5: Select subjects with the lowest mastery level
     if (eligibleSubjects.length === 0) {
