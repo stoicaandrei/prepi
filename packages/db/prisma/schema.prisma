@@ -110,6 +110,9 @@ model Subject {
     category   SubjectCategory @relation(fields: [categoryId], references: [id])
     categoryId String
 
+    prerequisites Subject[] @relation("SubjectPrerequisites")
+    requiredBy    Subject[] @relation("SubjectPrerequisites")
+
     lessons  Lesson[]
     problems Problem[]
 
