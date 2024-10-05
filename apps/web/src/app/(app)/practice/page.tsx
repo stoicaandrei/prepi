@@ -9,6 +9,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { Progress } from "@/components/ui/progress";
 import { useUserRoles } from "@/hooks/useUserRoles";
 import { trpc } from "@/utils/trpc";
 import { CheckSquare } from "lucide-react";
@@ -27,6 +28,16 @@ export default function MathPracticeInteractive({
   const subjectsByCategories = trpc.practice.listSubjectsByCategory.useQuery();
 
   const subjectsProgress = trpc.practice.listSubjectsProgress.useQuery();
+
+  const { data: nextChapters } =
+    trpc.practice.getRecommendedNextChapters.useQuery();
+  const nextChapter = nextChapters?.[0];
+  const nextChapterProgress = subjectsProgress.data?.find(
+    (sp) => sp.subjectId === nextChapter?.id,
+  );
+  const nextChapterDetails = subjectsByCategories.data
+    ?.flatMap((c) => c.subjects.find((s) => s.id === nextChapter?.id))
+    .find((s) => s?.id === nextChapter?.id);
 
   const [selectedSubjectId, setSelectedSubjectId] = useState<string | null>(
     null,
@@ -92,8 +103,43 @@ export default function MathPracticeInteractive({
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          <p>
+            Bazat pe activitatea ta, îți recomandăm să lucrezi la următorul
+            subiect:
+          </p>
+          <Button
+            variant="ghost"
+            className="w-full p-4 h-auto flex items-center justify-between hover:bg-gray-100"
+            onClick={() => nextChapter && setSelectedSubjectId(nextChapter.id)}
+          >
+            <div className="flex items-center space-x-3 flex-wrap">
+              <span className="text-lg font-medium">
+                {nextChapter?.name ?? "..."}
+              </span>
+              <Progress
+                className="flex-1 w-[300px]"
+                value={(nextChapterProgress?.masteryLevel ?? 0) * 100}
+              />
+              <p>
+                Ai rezolvat {nextChapterProgress?._count.completedProblems ?? 0}
+                / {nextChapterDetails?._count.problems} probleme din această
+                categorie
+              </p>
+            </div>
+            {/* <div className="flex items-center space-x-3">
+                      <span className="text-sm text-gray-500">
+                        Ai rezolvat 0/0 probleme
+                        <span className="hidden sm:inline">
+                          {" "}
+                          din această categorie
+                        </span>
+                      </span>
+                      <ChevronRight className="w-6 h-6" />
+                    </div> */}
+          </Button>
+          <p>Mai multe subiecte:</p>
           {subjectsByCategories.data?.map((category) => (
-            <Collapsible key={category.id} open>
+            <Collapsible key={category.id}>
               <CollapsibleTrigger asChild>
                 <Button
                   key={category.name}

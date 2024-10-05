@@ -390,6 +390,76 @@ export const practiceRouter = router({
         },
       });
     }),
+  getRecommendedNextChapters: protectedProcedure.query(async ({ ctx }) => {
+    const COMPLETION_THRESHOLD = 0.8;
+    const user = await ctx.getDbUser();
+    const userId = user.id;
+
+    const userSubjectProgress = await ctx.prisma.userSubjectProgress.findMany({
+      where: { userId },
+      include: { subject: true },
+    });
+
+    // Create a map for quick lookup of mastery levels
+    const masteryMap = new Map<string, number>();
+    userSubjectProgress.forEach((usp) => {
+      masteryMap.set(usp.subjectId, usp.masteryLevel);
+    });
+
+    // Step 2: Fetch all subjects with their prerequisites
+    const allSubjects = await ctx.prisma.subject.findMany({
+      where: { enabled: true },
+      include: {
+        prerequisites: true, // Fetch prerequisites
+      },
+    });
+
+    // Step 3: Identify eligible subjects
+    const eligibleSubjects = [];
+
+    for (const subject of allSubjects) {
+      const masteryLevel = masteryMap.get(subject.id) || 0;
+
+      // Skip if the subject is completed
+      if (masteryLevel >= COMPLETION_THRESHOLD) {
+        continue;
+      }
+
+      // Check if prerequisites are met
+      let prerequisitesMet = true;
+
+      for (const prereq of subject.prerequisites) {
+        const prereqMastery = masteryMap.get(prereq.id) || 0;
+        if (prereqMastery < COMPLETION_THRESHOLD) {
+          prerequisitesMet = false;
+          break;
+        }
+      }
+
+      if (prerequisitesMet) {
+        eligibleSubjects.push({
+          subject,
+          masteryLevel,
+        });
+      }
+    }
+
+    // Step 4: Sort eligible subjects by mastery level (ascending)
+    eligibleSubjects.sort((a, b) => a.masteryLevel - b.masteryLevel);
+
+    // Step 5: Select subjects with the lowest mastery level
+    if (eligibleSubjects.length === 0) {
+      return []; // No subjects to recommend
+    }
+
+    const lowestMastery = eligibleSubjects[0].masteryLevel;
+    const recommendedSubjects = eligibleSubjects.filter(
+      (item) => item.masteryLevel === lowestMastery,
+    );
+
+    // Return the recommended subjects
+    return recommendedSubjects.map((item) => item.subject);
+  }),
 });
 
 const updateUserStreak = async (prisma: PrismaClient, user: User) => {

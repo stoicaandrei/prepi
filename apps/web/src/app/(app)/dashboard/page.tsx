@@ -19,6 +19,10 @@ import { WeeklyActivityCard } from "./cards/WeeklyActivityCard";
 import { WeeklyPointsCard } from "./cards/WeeklyPointsCard";
 
 export default function Dashboard() {
+  const { data: nextChapter } =
+    trpc.practice.getRecommendedNextChapters.useQuery();
+  console.log("nextChapter", nextChapter);
+
   return (
     <div className="container mx-auto">
       <Head>
