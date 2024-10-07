@@ -11,8 +11,12 @@ import {
   ExamSubsectionDescription,
 } from "./exam-components";
 
-export default async function ExamCard({ slug }) {
-  const exam = await getExamBySlugAction(slug as string);
+export default async function ExamCard({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
+  const exam = await getExamBySlugAction(slug);
 
   return (
     <div className="container  mx-auto px-4 py-8">

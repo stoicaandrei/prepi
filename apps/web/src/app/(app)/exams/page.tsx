@@ -15,7 +15,11 @@ import { listExamsByDifficultyAction } from "@/actions";
 import { redirect } from "next/navigation";
 import { ExamDifficultyTabs } from "./ExamDifficultyTabs";
 
-export default async function ExamVariantsResponsive({ searchParams }) {
+export default async function ExamVariantsResponsive({
+  searchParams,
+}: {
+  searchParams: { difficulty: ExamDifficulty };
+}) {
   const difficulty = searchParams.difficulty || ExamDifficulty.M1;
   const exams = await listExamsByDifficultyAction(difficulty);
 

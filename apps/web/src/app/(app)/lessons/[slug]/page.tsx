@@ -7,8 +7,12 @@ import parse from "html-react-parser";
 import { getLessonBySlugAction } from "@/actions";
 import { LessonNavigationButtons } from "./LessonNavigationButtons";
 
-export default async function LessonCard({ slug }) {
-  const lesson = await getLessonBySlugAction(slug as string);
+export default async function LessonCard({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
+  const lesson = await getLessonBySlugAction(slug);
 
   return (
     <div>
