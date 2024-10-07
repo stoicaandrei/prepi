@@ -7,6 +7,24 @@ const MAX_QUESTIONS = 15;
 const INITIAL_MASTERY = 0.5; // Starting mastery level
 
 export const assessmentRouter = router({
+  getAssessmentSession: protectedProcedure.query(async ({ ctx }) => {
+    const user = await ctx.getDbUser();
+    const userId = user.id;
+
+    const assessmentSession =
+      await ctx.prisma.initialAssessmentSession.findUnique({
+        where: { userId },
+        include: {
+          _count: {
+            select: {
+              questions: true,
+            },
+          },
+        },
+      });
+
+    return assessmentSession;
+  }),
   getNextProblem: protectedProcedure.query(async ({ ctx }) => {
     const user = await ctx.getDbUser();
     const userId = user.id;
