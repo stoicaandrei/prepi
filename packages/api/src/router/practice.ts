@@ -92,7 +92,7 @@ export const practiceRouter = router({
   // Turns out fetching random object from postgres is not as easy as it seems
   // This is some complicated code that fetches 5 random problems from a subject
   // Should be refactored to be more readable later
-  listProblemsBySubject: protectedProcedure
+  listProblemsForSubject: protectedProcedure
     .input(z.string())
     .query(async ({ ctx, input }) => {
       const PROBLEMS_PER_SUBJECT = 5;

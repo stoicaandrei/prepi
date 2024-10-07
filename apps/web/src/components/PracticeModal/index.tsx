@@ -20,7 +20,7 @@ export function PracticeModal({
   subjectId,
 }: PracticeModalProps) {
   const utils = trpc.useUtils();
-  const { data: problems } = trpc.practice.listProblemsBySubject.useQuery(
+  const { data: problems } = trpc.practice.listProblemsForSubject.useQuery(
     subjectId,
     {
       enabled: !!subjectId,
@@ -47,7 +47,7 @@ export function PracticeModal({
     setSubmissions([]);
     setPracticeResults(undefined);
 
-    utils.practice.listProblemsBySubject.reset(subjectId);
+    utils.practice.listProblemsForSubject.reset(subjectId);
   };
 
   const [submissions, setSubmissions] = useState<SubmissionStatus[]>([]);
