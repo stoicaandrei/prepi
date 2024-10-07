@@ -21,9 +21,10 @@ model User {
 
     totalPoints Int @default(0)
 
-    practiceSessions PracticeSession[]
-    purchasedItems   MarketplaceItem[]
-    subjectsProgress UserSubjectProgress[]
+    practiceSessions  PracticeSession[]
+    purchasedItems    MarketplaceItem[]
+    subjectsProgress  UserSubjectProgress[]
+    initialAssessment InitialAssessmentSession?
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
@@ -159,6 +160,7 @@ model Problem {
 
     practiceProblemInstances PracticeProblem[]
     CompletedProblem         CompletedProblem[]
+    AssessmentQuestion       AssessmentQuestion[]
 }
 
 model MultipleChoiceOption {
@@ -312,4 +314,24 @@ model ExamSubproblem {
     parentA ExamProblem? @relation("SubA")
     parentB ExamProblem? @relation("SubB")
     parentC ExamProblem? @relation("SubC")
+}
+
+model InitialAssessmentSession {
+    id        String               @id @default(cuid())
+    userId    String               @unique
+    user      User                 @relation(fields: [userId], references: [id])
+    questions AssessmentQuestion[]
+    createdAt DateTime             @default(now())
+    updatedAt DateTime             @updatedAt
+}
+
+model AssessmentQuestion {
+    id                         String                   @id @default(cuid())
+    initialAssessmentSessionId String
+    initialAssessmentSession   InitialAssessmentSession @relation(fields: [initialAssessmentSessionId], references: [id])
+    problemId                  String
+    problem                    Problem                  @relation(fields: [problemId], references: [id])
+    userAnswer                 String?
+    isCorrect                  Boolean
+    createdAt                  DateTime                 @default(now())
 }

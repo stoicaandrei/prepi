@@ -5,6 +5,7 @@ import { userRouter } from "./user";
 import { adminRouter } from "./admin";
 import { examRouter } from "./exam";
 import { stripeRouter } from "./stripe";
+import { assessmentRouter } from "./assessment";
 
 export const appRouter = router({
   lesson: lessonRouter,
@@ -13,6 +14,7 @@ export const appRouter = router({
   admin: adminRouter,
   exam: examRouter,
   stripe: stripeRouter,
+  assessment: assessmentRouter,
 });
 
 // export type definition of API
