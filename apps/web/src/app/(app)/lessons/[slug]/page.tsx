@@ -4,8 +4,26 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
 import { trpc } from "@/utils/trpc";
 import parse from "html-react-parser";
-import { getLessonBySlugAction } from "@/actions";
+import {
+  getLessonBySlugAction,
+  getLessonMetadataBySlugAction,
+} from "@/actions";
 import { LessonNavigationButtons } from "./LessonNavigationButtons";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const lesson = await getLessonMetadataBySlugAction(slug);
+
+  const title = lesson?.title ?? "Lecție...";
+
+  return {
+    title: `${title} | Prepi`,
+  };
+}
 
 export default async function LessonCard({
   params: { slug },

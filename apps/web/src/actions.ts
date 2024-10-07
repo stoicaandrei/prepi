@@ -4,6 +4,7 @@ import {
   listAllLessonsByTags,
   listExamsByDifficulty,
   getExamBySlug,
+  getLessonMetadataBySlug,
 } from "@prepi/api/handlers";
 
 export const listAllLessonsByTagsAction = async () => {
@@ -12,6 +13,10 @@ export const listAllLessonsByTagsAction = async () => {
 
 export const getLessonBySlugAction = async (slug: string) => {
   return getLessonBySlug(prisma, slug);
+};
+
+export const getLessonMetadataBySlugAction = async (slug: string) => {
+  return getLessonMetadataBySlug(prisma, slug);
 };
 
 export const listExamsByDifficultyAction = async (

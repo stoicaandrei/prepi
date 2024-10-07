@@ -38,3 +38,18 @@ export const getLessonBySlug = async (prisma: PrismaClient, slug: string) => {
     },
   });
 };
+
+export const getLessonMetadataBySlug = async (
+  prisma: PrismaClient,
+  slug: string,
+) => {
+  return prisma.lesson.findFirst({
+    where: {
+      slug,
+    },
+    select: {
+      id: true,
+      title: true,
+    },
+  });
+};
