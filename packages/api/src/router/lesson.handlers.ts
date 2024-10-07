@@ -23,3 +23,18 @@ export const listAllLessonsByTags = async (prisma: PrismaClient) => {
     },
   });
 };
+
+export const getLessonBySlug = async (prisma: PrismaClient, slug: string) => {
+  return prisma.lesson.findFirst({
+    where: {
+      slug,
+    },
+    include: {
+      legacyContent: {
+        select: {
+          html: true,
+        },
+      },
+    },
+  });
+};

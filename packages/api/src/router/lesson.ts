@@ -1,7 +1,7 @@
 import { cacheable } from "../cache";
 import { router, protectedProcedure } from "../trpc";
 import { z } from "zod";
-import { listAllLessonsByTags } from "./lesson.handlers";
+import { getLessonBySlug, listAllLessonsByTags } from "./lesson.handlers";
 
 export const lessonRouter = router({
   listByTags: protectedProcedure.query(async ({ ctx }) => {
@@ -11,19 +11,7 @@ export const lessonRouter = router({
     .input(z.string())
     .query(async ({ ctx, input }) => {
       return cacheable(
-        () =>
-          ctx.prisma.lesson.findFirst({
-            where: {
-              slug: input,
-            },
-            include: {
-              legacyContent: {
-                select: {
-                  html: true,
-                },
-              },
-            },
-          }),
+        () => getLessonBySlug(ctx.prisma, input),
         `getBySlug:${input}`,
       );
     }),
