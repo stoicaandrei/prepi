@@ -134,7 +134,7 @@ const testimonials: Testimonial[] = [
     school: "Sandwell College",
     image: "/reviews/img-002.jpeg",
     content:
-      "Am ajuns la concluzia ca Prepi este mai mult decat o platforma unde poti exersa la matematica, le ofera tuturor elevilor din Romania posibilitatea de a imbina invatatul cu tehnologia, astfel ghidandu-i pe toti cei care aleg Prepi catre succes. Sa se faca un Prepi pentru UK, va rog!",
+      "Îmi plac super mult exercițiile interactive și faptul că pot vedea progresul meu pas cu pas. Chiar m-a ajutat să înțeleg mai bine la mate",
   },
   {
     id: 4,
