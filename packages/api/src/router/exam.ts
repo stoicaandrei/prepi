@@ -1,21 +1,14 @@
 import { cacheable } from "../cache";
 import { router, protectedProcedure } from "../trpc";
 import { z } from "zod";
+import { getExamBySlug, listExamsByDifficulty } from "./exam.handlers";
 
 export const examRouter = router({
   listExams: protectedProcedure
     .input(z.object({ difficulty: z.enum(["M1", "M2", "M3"]) }))
     .query(async ({ ctx, input }) => {
       return cacheable(
-        () =>
-          ctx.prisma.exam.findMany({
-            where: {
-              difficulty: input.difficulty,
-            },
-            orderBy: {
-              slug: "asc",
-            },
-          }),
+        () => listExamsByDifficulty(ctx.prisma, input.difficulty),
         `exam.listExams:${input.difficulty}`,
       );
     }),
@@ -23,39 +16,7 @@ export const examRouter = router({
     .input(z.string())
     .query(async ({ ctx, input }) => {
       return cacheable(
-        () =>
-          ctx.prisma.exam.findFirst({
-            where: {
-              slug: input,
-            },
-            include: {
-              sub1Problems: {
-                orderBy: {
-                  order: "asc",
-                },
-              },
-              sub2Problems: {
-                orderBy: {
-                  order: "asc",
-                },
-                include: {
-                  subA: true,
-                  subB: true,
-                  subC: true,
-                },
-              },
-              sub3Problems: {
-                orderBy: {
-                  order: "asc",
-                },
-                include: {
-                  subA: true,
-                  subB: true,
-                  subC: true,
-                },
-              },
-            },
-          }),
+        () => getExamBySlug(ctx.prisma, input),
         `exam.getExamBySlug:${input}`,
       );
     }),

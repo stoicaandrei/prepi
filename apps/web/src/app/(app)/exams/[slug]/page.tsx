@@ -1,22 +1,18 @@
-"use client";
-
 import { ArrowLeft, ChevronRight, Files } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import { trpc } from "@/utils/trpc";
-import { MathJax } from "better-react-mathjax";
+import { getExamBySlugAction } from "@/actions";
+import {
+  ExplanationSection,
+  ExamProblemDescription,
+  ExamSubsectionDescription,
+} from "./exam-components";
 
-export default function ExamCard() {
-  const { slug } = useParams();
-
-  const { data: exam } = trpc.exam.getExamBySlug.useQuery(slug as string);
+export default async function ExamCard({ slug }) {
+  const exam = await getExamBySlugAction(slug as string);
 
   return (
     <div className="container  mx-auto px-4 py-8">
@@ -48,9 +44,7 @@ export default function ExamCard() {
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">
                   Problema {index + 1}.
                 </h3>
-                <MathJax className="mb-4 text-gray-700">
-                  {problem.description}
-                </MathJax>
+                <ExamProblemDescription description={problem.description} />
                 <ExplanationSection explanation={problem.explanation} />
               </div>
             ))}
@@ -65,27 +59,34 @@ export default function ExamCard() {
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">
                   Problema {index + 1}.
                 </h3>
-                <MathJax className="mb-4 text-gray-700">
-                  {problem.description}
-                </MathJax>
+                <ExamProblemDescription description={problem.description} />
 
                 <div className="ml-4 mb-4">
                   <h4 className="font-medium text-gray-800 mb-2">
-                    A. <MathJax inline>{problem.subA?.description}</MathJax>
+                    A.{" "}
+                    <ExamSubsectionDescription
+                      description={problem.subA?.description}
+                    />
                   </h4>
                   <ExplanationSection explanation={problem.subA?.explanation} />
                 </div>
 
                 <div className="ml-4 mb-4">
                   <h4 className="font-medium text-gray-800 mb-2">
-                    B. <MathJax inline>{problem.subB?.description}</MathJax>
+                    B.{" "}
+                    <ExamSubsectionDescription
+                      description={problem.subB?.description}
+                    />
                   </h4>
                   <ExplanationSection explanation={problem.subB?.explanation} />
                 </div>
 
                 <div className="ml-4 mb-4">
                   <h4 className="font-medium text-gray-800 mb-2">
-                    C. <MathJax inline>{problem.subC?.description}</MathJax>
+                    C.{" "}
+                    <ExamSubsectionDescription
+                      description={problem.subC?.description}
+                    />
                   </h4>
                   <ExplanationSection explanation={problem.subC?.explanation} />
                 </div>
@@ -102,27 +103,34 @@ export default function ExamCard() {
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">
                   Problema {index + 1}.
                 </h3>
-                <MathJax className="mb-4 text-gray-700">
-                  {problem.description}
-                </MathJax>
+                <ExamProblemDescription description={problem.description} />
 
                 <div className="ml-4 mb-4">
                   <h4 className="font-medium text-gray-800 mb-2">
-                    A. <MathJax inline>{problem.subA?.description}</MathJax>
+                    A.{" "}
+                    <ExamSubsectionDescription
+                      description={problem.subA?.description}
+                    />
                   </h4>
                   <ExplanationSection explanation={problem.subA?.explanation} />
                 </div>
 
                 <div className="ml-4 mb-4">
                   <h4 className="font-medium text-gray-800 mb-2">
-                    B. <MathJax inline>{problem.subB?.description}</MathJax>
+                    B.{" "}
+                    <ExamSubsectionDescription
+                      description={problem.subB?.description}
+                    />
                   </h4>
                   <ExplanationSection explanation={problem.subB?.explanation} />
                 </div>
 
                 <div className="ml-4 mb-4">
                   <h4 className="font-medium text-gray-800 mb-2">
-                    C. <MathJax inline>{problem.subC?.description}</MathJax>
+                    C.{" "}
+                    <ExamSubsectionDescription
+                      description={problem.subC?.description}
+                    />
                   </h4>
                   <ExplanationSection explanation={problem.subC?.explanation} />
                 </div>
@@ -143,26 +151,3 @@ export default function ExamCard() {
     </div>
   );
 }
-
-const ExplanationSection = ({
-  explanation,
-}: {
-  explanation?: string | null;
-}) => {
-  return (
-    <Collapsible>
-      <CollapsibleTrigger asChild>
-        <Button
-          variant="outline"
-          className="w-full justify-start text-left mb-2"
-        >
-          <ChevronRight className="mr-2 h-4 w-4" />
-          Rezolvare
-        </Button>
-      </CollapsibleTrigger>
-      <CollapsibleContent className="bg-white p-4 rounded-md border border-gray-200">
-        <MathJax>{explanation}</MathJax>
-      </CollapsibleContent>
-    </Collapsible>
-  );
-};

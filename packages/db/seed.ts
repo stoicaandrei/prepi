@@ -1,4 +1,9 @@
-import { PrismaClient, ProblemType } from "@prisma/client";
+import {
+  ExamDifficulty,
+  ExamType,
+  PrismaClient,
+  ProblemType,
+} from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -191,10 +196,95 @@ async function seedProblems() {
   console.log("Problems seeded successfully");
 }
 
+async function seedExams() {
+  const exams = [
+    {
+      difficulty: ExamDifficulty.M1,
+      type: ExamType.SUBIECT,
+      year: 2024,
+      month: "June",
+      variantNumber: 1,
+      slug: "exam-2024-june-variant-1",
+      title: "Exam June 2024 Variant 1",
+    },
+    {
+      difficulty: ExamDifficulty.M2,
+      type: ExamType.SIMULARE,
+      year: 2024,
+      month: "March",
+      variantNumber: 2,
+      slug: "exam-2024-march-variant-2",
+      title: "Simulated Exam March 2024 Variant 2",
+    },
+  ];
+
+  for (const exam of exams) {
+    const createdExam = await prisma.exam.create({
+      data: exam,
+    });
+
+    // Create 5 sub1 problems for each exam
+    for (let i = 1; i <= 5; i++) {
+      await prisma.examProblem.create({
+        data: {
+          description: `Description for sub1 problem ${i} of ${createdExam.title}`,
+          order: i,
+          exam1Id: createdExam.id,
+        },
+      });
+    }
+
+    // Create 2 sub2 problems with sub a, b, c each
+    for (let i = 1; i <= 2; i++) {
+      const createdProblem = await prisma.examProblem.create({
+        data: {
+          description: `Description for sub2 problem ${i} of ${createdExam.title}`,
+          order: i,
+          exam2Id: createdExam.id,
+        },
+      });
+
+      for (const sub of ["A", "B", "C"]) {
+        await prisma.examSubproblem.create({
+          data: {
+            description: `Description for sub2 problem ${i} sub ${sub} of ${createdExam.title}`,
+            explanation: `Explanation for sub2 problem ${i} sub ${sub} of ${createdExam.title}`,
+            [`parent${sub}`]: { connect: { id: createdProblem.id } },
+          },
+        });
+      }
+    }
+
+    // Create 2 sub3 problems with sub a, b, c each
+    for (let i = 1; i <= 2; i++) {
+      const createdProblem = await prisma.examProblem.create({
+        data: {
+          description: `Description for sub3 problem ${i} of ${createdExam.title}`,
+          order: i,
+          exam3Id: createdExam.id,
+        },
+      });
+
+      for (const sub of ["A", "B", "C"]) {
+        await prisma.examSubproblem.create({
+          data: {
+            description: `Description for sub3 problem ${i} sub ${sub} of ${createdExam.title}`,
+            explanation: `Explanation for sub3 problem ${i} sub ${sub} of ${createdExam.title}`,
+            [`parent${sub}`]: { connect: { id: createdProblem.id } },
+          },
+        });
+      }
+    }
+  }
+
+  console.log("Exams seeded successfully");
+}
+
 async function main() {
   await seedChaptersAndSubjects();
   await seedLessons();
   await seedProblems();
+  await seedExams();
 }
 
 main()
