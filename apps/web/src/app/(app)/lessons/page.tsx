@@ -1,5 +1,3 @@
-"use client";
-
 import { BookOpen, ChevronDown, LucideLoader } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -11,11 +9,10 @@ import {
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
 import Head from "next/head";
-import { trpc } from "@/utils/trpc";
+import { listAllLessonsByTagsAction } from "@/actions";
 
-export default function MathPlatformCardExpanded() {
-  const { data: lessonsByTags, isLoading: lessonsLoading } =
-    trpc.lesson.listByTags.useQuery();
+export default async function MathPlatformCardExpanded() {
+  const lessonsByTags = await listAllLessonsByTagsAction();
 
   const firstBatch = lessonsByTags?.slice(0, lessonsByTags.length / 2 + 1);
   const secondBatch = lessonsByTags?.slice(lessonsByTags.length / 2 + 1);
@@ -60,9 +57,9 @@ export default function MathPlatformCardExpanded() {
               <span className="ml-2 text-2xl font-semibold text-blue-500">
                 Lectii
               </span>
-              {lessonsLoading && (
+              {/* {lessonsLoading && (
                 <LucideLoader className="h-6 w-6 ml-2 text-blue-500" />
-              )}
+              )} */}
             </div>
             <div className="w-full max-w-40 md:max-w-xs">
               <Input

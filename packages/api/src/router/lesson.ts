@@ -1,34 +1,11 @@
 import { cacheable } from "../cache";
 import { router, protectedProcedure } from "../trpc";
 import { z } from "zod";
+import { listAllLessonsByTags } from "./lesson.handlers";
 
 export const lessonRouter = router({
   listByTags: protectedProcedure.query(async ({ ctx }) => {
-    return cacheable(
-      () =>
-        ctx.prisma.subjectCategory.findMany({
-          orderBy: {
-            order: "asc",
-          },
-          where: {
-            enabled: true,
-          },
-          select: {
-            id: true,
-            name: true,
-            lessons: {
-              orderBy: {
-                order: "asc",
-              },
-              select: {
-                title: true,
-                slug: true,
-              },
-            },
-          },
-        }),
-      "listByTags",
-    );
+    return cacheable(() => listAllLessonsByTags(ctx.prisma), "listByTags");
   }),
   getBySlug: protectedProcedure
     .input(z.string())

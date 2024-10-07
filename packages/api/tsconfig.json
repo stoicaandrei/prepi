@@ -1,4 +1,4 @@
 {
   "extends": "@prepi/typescript-config/nextjs.json",
-  "include": ["src", "index.ts", "transformer.ts"]
+  "include": ["src", "index.ts", "transformer.ts", "handlers.ts"]
 }

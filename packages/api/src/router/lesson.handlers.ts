@@ -1,0 +1,25 @@
+import { PrismaClient } from "@prepi/db";
+
+export const listAllLessonsByTags = async (prisma: PrismaClient) => {
+  return prisma.subjectCategory.findMany({
+    orderBy: {
+      order: "asc",
+    },
+    where: {
+      enabled: true,
+    },
+    select: {
+      id: true,
+      name: true,
+      lessons: {
+        orderBy: {
+          order: "asc",
+        },
+        select: {
+          title: true,
+          slug: true,
+        },
+      },
+    },
+  });
+};
