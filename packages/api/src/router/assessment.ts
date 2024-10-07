@@ -11,6 +11,20 @@ export const assessmentRouter = router({
     const user = await ctx.getDbUser();
     const userId = user.id;
 
+    const assessmentSession =
+      await ctx.prisma.initialAssessmentSession.findUnique({
+        where: { userId },
+      });
+    const questionsCount = await ctx.prisma.assessmentQuestion.count({
+      where: { initialAssessmentSessionId: assessmentSession?.id },
+    });
+
+    if (questionsCount >= MAX_QUESTIONS) {
+      // Assessment is complete
+      return null;
+    }
+
+    // Step 1: Fetch unassessed subjects
     const unassessedSubjects = await ctx.prisma.subject.findMany({
       where: {
         enabled: true,
