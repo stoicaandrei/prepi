@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prepi/db";
+import { PrismaClient, Subject } from "@prepi/db";
 import { cacheable } from "../cache";
 import { router, protectedProcedure } from "../trpc";
 import { z } from "zod";
@@ -70,4 +70,98 @@ export const assessmentRouter = router({
       problem: selectedProblem,
     };
   }),
+  recordAssessmentQuestion: protectedProcedure
+    .input(z.object({ problemId: z.string(), correct: z.boolean() }))
+    .query(async ({ ctx, input }) => {
+      const { problemId, correct } = input;
+
+      const user = await ctx.getDbUser();
+      const userId = user.id;
+
+      let assessmentSession =
+        await ctx.prisma.initialAssessmentSession.findUnique({
+          where: { userId },
+        });
+
+      if (!assessmentSession) {
+        assessmentSession = await ctx.prisma.initialAssessmentSession.create({
+          data: {
+            userId,
+          },
+        });
+      }
+
+      const assessmentQuestion = await ctx.prisma.assessmentQuestion.create({
+        data: {
+          initialAssessmentSessionId: assessmentSession.id,
+          problemId,
+          isCorrect: correct,
+        },
+      });
+
+      const problem = await ctx.prisma.problem.findUnique({
+        where: { id: problemId },
+        include: {
+          subjects: {
+            include: {
+              prerequisites: true, // Ensure we get prerequisites
+            },
+          },
+        },
+      });
+
+      if (!problem) {
+        throw new Error("Problem not found");
+      }
+
+      // Step 4: Update Mastery Levels for Subjects and Prerequisites
+      const subjectsToUpdate = new Set<string>();
+      for (const subject of problem.subjects) {
+        subjectsToUpdate.add(subject.id);
+
+        // Recursively get prerequisites
+        await collectPrerequisites(ctx.prisma, subject, subjectsToUpdate);
+      }
+
+      // Update mastery levels
+      for (const subjectId of subjectsToUpdate) {
+        await ctx.prisma.userSubjectProgress.upsert({
+          where: { userId_subjectId: { userId, subjectId } },
+          update: { masteryLevel: INITIAL_MASTERY },
+          create: {
+            userId,
+            subjectId,
+            masteryLevel: INITIAL_MASTERY,
+          },
+        });
+      }
+    }),
 });
+
+type ExtendedSubject = Subject & { prerequisites: Subject[] };
+
+async function collectPrerequisites(
+  prisma: PrismaClient,
+  subject: ExtendedSubject,
+  subjectsToUpdate: Set<string>,
+) {
+  if (!subject.prerequisites || subject.prerequisites.length === 0) {
+    return;
+  }
+
+  for (const prereq of subject.prerequisites) {
+    if (!subjectsToUpdate.has(prereq.id)) {
+      subjectsToUpdate.add(prereq.id);
+
+      // Fetch prerequisites of the prerequisite
+      const prereqSubject = await prisma.subject.findUnique({
+        where: { id: prereq.id },
+        include: { prerequisites: true },
+      });
+
+      if (prereqSubject) {
+        await collectPrerequisites(prisma, prereqSubject, subjectsToUpdate);
+      }
+    }
+  }
+}

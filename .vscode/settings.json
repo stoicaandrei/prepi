@@ -10,6 +10,7 @@
     "mathjax",
     "posthog",
     "prepi",
+    "prereq",
     "tanstack"
   ]
 }
