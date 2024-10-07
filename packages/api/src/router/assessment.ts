@@ -105,7 +105,7 @@ export const assessmentRouter = router({
   }),
   recordAssessmentQuestion: protectedProcedure
     .input(z.object({ problemId: z.string(), correct: z.boolean() }))
-    .query(async ({ ctx, input }) => {
+    .mutation(async ({ ctx, input }) => {
       const { problemId, correct } = input;
 
       const user = await ctx.getDbUser();
