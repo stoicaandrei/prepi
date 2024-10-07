@@ -25,6 +25,7 @@ export const assessmentRouter = router({
     }
 
     // Step 1: Fetch unassessed subjects
+    // TODO: Filter out subjects that have been assessed in the current session
     const unassessedSubjects = await ctx.prisma.subject.findMany({
       where: {
         enabled: true,
@@ -149,6 +150,8 @@ export const assessmentRouter = router({
           },
         });
       }
+
+      // TODO: Give user points
     }),
 });
 
