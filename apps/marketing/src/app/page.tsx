@@ -118,7 +118,7 @@ const testimonials: Testimonial[] = [
     school: 'Colegiul National "Mihai Eminescu", Botoșani',
     image: "/reviews/img-000.jpeg",
     content:
-      "Din punctul meu de vedere, Prepi este un proiect necesar învățământului defectuos din România. Prepi este eficient deoarece este complex, având exemple potrivite și explicând lecțiile din perspectiva elevilor, fără cuvinte greoaie și fără informații inutile.",
+      "Cred că Prepi este un proiect de care avem nevoie în învățământul din România, care și așa are destule probleme. E tare pentru că e complex, are exemple faine și explică lecțiile din perspectiva noastră, a elevilor, fără cuvinte greoaie și fără informații inutile.",
   },
   {
     id: 2,
@@ -126,7 +126,7 @@ const testimonials: Testimonial[] = [
     school: 'C.N. de Informatică "Tudor Vianu"',
     image: "/reviews/img-001.jpeg",
     content:
-      "Auzim în continuu elevi care se plâng de actualul sistem de învățământ și uite că încep să se producă schimbări. Cred că Prepi este un răspuns pentru modul de predare învechit, depășit în lumea noastră care gravitează parcă în jurul tehnologiei. Prepi m-a atras încă de când era doar o simplă idee în capul unor liceeni grație designului atrăgător, construit ca un joc, dar și materiei corect structurate cu probleme bine alese, iar reminderele pentru pauză au fost surprizător de eficiente. În plus, Prepi nu doar că m-a atras, dar m-a ajutat sa obțin nota 10 la mate, deci vă invit să îl încercați și voi.",
+      "Tot auzim elevi care se plâng de sistemul de învățământ, și uite că încep să apară schimbări. Cred că Prepi e răspunsul pentru modul ăsta de predare învechit, depășit în lumea noastră plină de tehnologie. M-aţi întrebat de ce am fost atrasă. Designul chiar arata bine, and you know, looks are not enough :)) dar e construit ca un joc, și materia e bine structurată cu probleme care chiar le înţeleg. Și faza cu reminderele pentru pauză chiar ajuta. Recomand cu drag!",
   },
   {
     id: 3,
