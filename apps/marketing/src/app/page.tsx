@@ -142,7 +142,7 @@ const testimonials: Testimonial[] = [
     school: 'Colegiul Comercial "Carol I" Constanța',
     image: "/reviews/img-003.jpeg",
     content:
-      "Prepi nu este o aplicație oarecare cu informații curiculare. Este mai mult de atât. E creată cu foarte mare atenție, iar de informații nici nu vă mai spun - sunt mai mult decât bine organizate! Am crezut în ceva diferit la această aplicație încă de înainte să fie gata. Chiar merită să o încercați și nu veți regreta.",
+      "Se vede ca e creata cu mare atentie si informatiile super bine organizate! Ati gandit-o pentru examenul de bacalaureat dar pana acum m-a ajutat mult cu pregatirea pentru teza. Sincer simt ca o sa fie bine la bac. Urati-mi succes!",
   },
   {
     id: 5,
@@ -150,7 +150,7 @@ const testimonials: Testimonial[] = [
     school: "ICHB",
     image: "/reviews/1lJw6SG.png",
     content:
-      "Prepi este aplicația care a descoperit cu adevărat secretul obținerii unui punctaj maxim la examenul de bacalaureat: să înveți eficient în loc să înveți mult și nefolositor. S-a dovedit de-a lungul testărilor făcute că inteligența artificială vine încă o dată în ajutorul omenirii, creând planuri de studiu individuale pentru fiecare utilizator.",
+      "Imi place platforma voastră pentru ca imi creează un plan de studiu si sa stiu exact pe ce trebuie sa lucrez. Sincer daca AI poate sa ma ajute sa trec bacul cu brio sunt total pentru! O sa recomand Prepi cu drag colegilor.",
   },
   {
     id: 6,
@@ -158,7 +158,7 @@ const testimonials: Testimonial[] = [
     school: 'C.N. "Spiru Haret" Suceava',
     image: "/reviews/eeEaf6c.png",
     content:
-      'Mă bucur nespus că am oportunitatea de a folosi această platformă practică și profesională. Aici se găsește toată materia necesară, toate formulele și teoremele necesare pentru a trece cu brio peste examenul "coșmar", bacalaureatul. Ajută la descoperirea modalității practice de învățare, este ceva nou, inovator, un pas înainte pentru educație și pentru sistemul de învățământ.',
+      'Mă bucur nespus că am oportunitatea de a folosi această platformă practică gratuit fiind ambasador. Aici se găsește toată materia necesară, toate formulele și teoremele necesare pentru a trece cu brio peste examenul "coșmar", bacalaureatul. Ajută la descoperirea modalității practice de învățare, este ceva nou, inovator, un pas înainte pentru educație și pentru sistemul de învățământ. 🎉',
   },
   {
     id: 7,
@@ -166,7 +166,7 @@ const testimonials: Testimonial[] = [
     school: 'C.N. "Alexandru Odobescu" Pitești',
     image: "/reviews/BjUJqa5.jpg",
     content:
-      "Prepi este o aplicație care ajută elevii să învețe mai mult și să se concentreze mai bine. Sunt sigură că cine va încerca să folosească această platformă pentru a învața, va avea reușită de 100% la examenul de Bacalaureat. Am urmărit platforma încă de la început și am vazut-o evoluând accelerat.",
+      "Platforma ajută elevii să învețe mai mult și să se concentreze mai bine. Sunt sigură că cine va încerca să o folosească pentru a învața, va avea reușită de 100% la examenul de Bacalaureat. Am urmărit platforma încă de la început și am vazut-o evoluând accelerat.",
   },
 ];
 
