@@ -11,6 +11,7 @@ import {
   Zap,
   Book,
   ClipboardList,
+  ChartNoAxesCombined,
 } from "lucide-react";
 import Head from "next/head";
 import { StreaksCard } from "./cards/StreaksCard";
@@ -18,6 +19,7 @@ import { PracticeHistoryCard } from "./cards/PracticeHistoryCard";
 import { WeeklyActivityCard } from "./cards/WeeklyActivityCard";
 import { WeeklyPointsCard } from "./cards/WeeklyPointsCard";
 import { useAppContext } from "../appContext";
+import Link from "next/link";
 
 export default function Dashboard() {
   const { data: nextChapter } =
@@ -67,26 +69,29 @@ export default function Dashboard() {
           </Card>
         )}
 
-        <Card className="col-span-full">
-          <CardHeader className="flex flex-row items-center flex-wrap justify-between  pb-2">
-            <CardTitle className="text-2xl font-bold flex items-center">
-              <MessageCircle className="mr-2 h-6 w-6 inline-block text-cyan-500" />
-              Recomandarea Asistentului Prepi
-            </CardTitle>
-            <Button
-              variant="default"
-              className="bg-cyan-500 hover:bg-cyan-600 flex-shrink "
-            >
-              Începe acum!
-            </Button>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Astăzi îți recomand să dai testul inițial la{" "}
-              <span className="text-blue-500">matematică</span>!
-            </p>
-          </CardContent>
-        </Card>
+        {initialTestTaken && (
+          <Card className="col-span-full">
+            <CardHeader className="flex flex-row items-center flex-wrap justify-between  pb-2">
+              <CardTitle className="text-2xl font-bold flex items-center">
+                <ChartNoAxesCombined className="mr-2 h-6 w-6 inline-block text-cyan-500" />
+                Nu te opri din exersat!
+              </CardTitle>
+              <Link href="/practice">
+                <Button
+                  variant="default"
+                  className="bg-cyan-500 hover:bg-cyan-600 flex-shrink "
+                >
+                  Continuă!
+                </Button>
+              </Link>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Exersează zilnic pentru a-ți îmbunătăți performanța.
+              </p>
+            </CardContent>
+          </Card>
+        )}
 
         <Card>
           <CardHeader>
