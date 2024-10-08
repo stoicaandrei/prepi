@@ -23,9 +23,11 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
         );
       }
 
+      const clerkId = session.userId;
+
       const existingUser = await prisma.user.findUnique({
         where: {
-          clerkId: session.userId,
+          clerkId,
         },
       });
 
@@ -40,7 +42,7 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
 
       const newUser = await prisma.user.create({
         data: {
-          clerkId: session.userId,
+          clerkId,
           stripeCustomerId: customer.id,
         },
       });
