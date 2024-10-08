@@ -81,18 +81,18 @@ export function InitialAssessmentModal({
   };
 
   const [displayExplanation, setDisplayExplanation] = useState(false);
-
   useEffect(() => {
-    console.log("assessedQuestions", assessmentSession?._count.questions);
-    if (!assessmentSessionLoading) return;
+    if (assessmentSessionLoading) return;
 
     !assessmentSession && setDisplayExplanation(true);
   }, [assessmentSession, assessmentSessionLoading]);
 
+  const isFinished = assessedQuestions >= totalQuestions;
+
   const DialogWrapper = useCallback(
     ({ children }: { children: React.ReactNode }) => {
       return (
-        <Dialog open={open} onOpenChange={onClose}>
+        <Dialog open={open} onOpenChange={() => {}}>
           <DialogContent
             onClose={onClose}
             className="max-w-full w-[90%] min-h-[90vh] md:min-h-[50vh] overflow-scroll"
@@ -104,6 +104,14 @@ export function InitialAssessmentModal({
     },
     [open, onClose],
   );
+
+  if (isFinished) {
+    return (
+      <DialogWrapper>
+        <InitialAssessmentSummary onFinished={onClose} />
+      </DialogWrapper>
+    );
+  }
 
   if (displayExplanation) {
     return (
@@ -138,8 +146,8 @@ export function InitialAssessmentModal({
     <DialogWrapper>
       <div className="flex justify-between items-center mb-6 flex-wrap gap-6">
         <h2 className="text-2xl font-bold">Test inițial</h2>
-        <div className="flex flex-row gap-2 items-center">
-          <span>
+        <div className="flex flex-row gap-2 items-center w-full">
+          <span className="flex-shrink-0">
             {assessedQuestions} / {totalQuestions}
           </span>
           <Progress
@@ -228,6 +236,37 @@ const InitialAssessmentExplanation = ({
       <Button size="lg" className="self-center mt-4" onClick={onReady}>
         Sunt pregătit!
       </Button>
+    </div>
+  );
+};
+
+type InitialAssessmentSummaryProps = {
+  onFinished: () => void;
+};
+
+const InitialAssessmentSummary = ({
+  onFinished,
+}: InitialAssessmentSummaryProps) => {
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-center mb-8">
+        Ai terminat <br className="block md:hidden" /> testul inital! 🎉
+      </h2>
+      <div className="flex flex-row flex-wrap items-center justify-center md:justify-between gap-4 mt-4">
+        <div>
+          <h3 className="text-2xl font-bold">Rezultate</h3>
+          <p className="text-lg mt-4">
+            🤖 Planul tău personalizat a fost creat
+          </p>
+          <p className="text-lg mt-4">
+            ⭐ Ai câștigat {Math.floor(Math.random() * 100)} puncte
+          </p>
+          <Button size="lg" className="mt-8" onClick={onFinished}>
+            Continuă
+          </Button>
+        </div>
+        <img src="/illustrations/student-desk.svg" alt="" />
+      </div>
     </div>
   );
 };
