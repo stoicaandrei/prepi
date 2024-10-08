@@ -53,7 +53,7 @@ export function MainLayout({ children }: LayoutProps) {
   const activeSection = fullPath?.split("/")[1];
   const { signOut } = useAuth();
   const { user } = useUser();
-  const { isTester } = useUserRoles();
+  const { isTester, isAdmin } = useUserRoles();
 
   const [sheetOpen, setSheetOpen] = useState(false);
 
@@ -291,15 +291,30 @@ export function MainLayout({ children }: LayoutProps) {
               <Files className="h-5 w-5 flex-shrink-0" />
               Variante
             </Link>
-            <DropdownMenuSeparator />
+
             {isTester && (
-              <Link
-                href="/tester/dashboard"
-                className={navClasses(activeSection === "tester")}
-              >
-                <Cog className="h-5 w-5" />
-                Tester Dashboard
-              </Link>
+              <>
+                <DropdownMenuSeparator />
+                <Link
+                  href="/tester/dashboard"
+                  className={navClasses(activeSection === "tester")}
+                >
+                  <Cog className="h-5 w-5" />
+                  Tester Dashboard
+                </Link>
+              </>
+            )}
+            {isAdmin && (
+              <>
+                <DropdownMenuSeparator />
+                <Link
+                  href="/admin/invitation-codes"
+                  className={navClasses(activeSection === "admin")}
+                >
+                  <Cog className="h-5 w-5" />
+                  Invitation Codes
+                </Link>
+              </>
             )}
             {/* <Link
               href="/leaderboard"
