@@ -97,11 +97,27 @@ export const assessmentRouter = router({
     const randomProblemIndex = Math.floor(Math.random() * problems.length);
     const selectedProblem = problems[randomProblemIndex];
 
+    const completeProblem = ctx.prisma.problem.findUnique({
+      where: { id: selectedProblem.id },
+      select: {
+        id: true,
+        type: true,
+        description: true,
+        multipleChoiceOptions: true,
+        singleAnswer: true,
+        mathSymbolButtons: true,
+        variables: true,
+        hints: {
+          orderBy: {
+            order: "asc",
+          },
+        },
+        explanation: true,
+      },
+    });
+
     // Return the selected problem and subject information
-    return {
-      subject: selectedSubject,
-      problem: selectedProblem,
-    };
+    return completeProblem;
   }),
   recordAssessmentQuestion: protectedProcedure
     .input(z.object({ problemId: z.string(), correct: z.boolean() }))

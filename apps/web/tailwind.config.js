@@ -83,6 +83,9 @@ module.exports = {
       backgroundImage: {
         "prepi-gradient": "linear-gradient(to right, #00CCCC, #6BADEE)",
       },
+      boxShadow: {
+        prepi: "0 0 3px #6badee",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],

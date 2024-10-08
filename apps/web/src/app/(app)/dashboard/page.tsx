@@ -17,11 +17,14 @@ import { StreaksCard } from "./cards/StreaksCard";
 import { PracticeHistoryCard } from "./cards/PracticeHistoryCard";
 import { WeeklyActivityCard } from "./cards/WeeklyActivityCard";
 import { WeeklyPointsCard } from "./cards/WeeklyPointsCard";
+import { useAppContext } from "../appContext";
 
 export default function Dashboard() {
   const { data: nextChapter } =
     trpc.practice.getRecommendedNextChapters.useQuery();
   console.log("nextChapter", nextChapter);
+
+  const { openInitialAssessmentModal } = useAppContext();
 
   return (
     <div className="container mx-auto">
@@ -42,7 +45,11 @@ export default function Dashboard() {
               <CheckSquare className="mr-2 h-6 w-6 inline-block text-cyan-500" />
               Stabilește-ți nivelul
             </CardTitle>
-            <Button variant="default" className="bg-cyan-500 hover:bg-cyan-600">
+            <Button
+              variant="default"
+              className="bg-cyan-500 hover:bg-cyan-600"
+              onClick={openInitialAssessmentModal}
+            >
               Deschide
             </Button>
           </CardHeader>
