@@ -58,4 +58,6 @@ export const checkAnswerAttempt = (
       },
     );
   }
+
+  return false;
 };

@@ -45,8 +45,7 @@ export function InitialAssessmentModal({
       onSuccess: () => {
         utils.practice.listSubjectsProgress.invalidate();
         utils.assessment.getAssessmentSession.invalidate();
-        utils.assessment.getNextProblem.setData(undefined, () => undefined);
-        utils.assessment.getNextProblem.invalidate();
+        utils.assessment.getNextProblem.reset();
       },
     });
 
@@ -71,6 +70,8 @@ export function InitialAssessmentModal({
     if (!problem || !answerAttempt) return;
 
     const isCorrect = checkAnswerAttempt(problem, answerAttempt);
+
+    sendAttemptRecording(isCorrect);
   };
 
   const skipProblem = () => {
