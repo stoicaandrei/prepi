@@ -10,7 +10,7 @@ import { ResultsView } from "./ResultsView";
 import { Progress } from "@/components/ui/progress";
 import { ProblemDisplay } from "./ProblemDisplay";
 import { Button } from "../ui/button";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, CircleHelp } from "lucide-react";
 import Image from "next/image";
 import { ModalLoader } from "./ModalLoader";
 import { checkAnswerAttempt } from "./utils";
@@ -124,14 +124,14 @@ export function InitialAssessmentModal({
   }
 
   let message = "";
-  if (assessmentSessionLoading) {
-    message = "Se pregătește următoarea testul...";
-  }
   if (problemLoading) {
     message = "Se pregătește următoarea problemă...";
   }
   if (recordAssessmentQuestion.isLoading) {
     message = "Se înregistrează răspunsul...";
+  }
+  if (assessmentSessionLoading) {
+    message = "Se pregătește testul...";
   }
 
   if (message) {
@@ -145,7 +145,13 @@ export function InitialAssessmentModal({
   return (
     <DialogWrapper>
       <div className="flex justify-between items-center mb-6 flex-wrap gap-6">
-        <h2 className="text-2xl font-bold">Test inițial</h2>
+        <h2 className="text-2xl font-bold flex items-center">
+          Test inițial
+          <CircleHelp
+            className="ml-2 h-6 w-6 inline-block hover:text-blue-500 cursor-pointer transition-all"
+            onClick={() => setDisplayExplanation(true)}
+          />
+        </h2>
         <div className="flex flex-row gap-2 items-center w-full">
           <span className="flex-shrink-0">
             {assessedQuestions} / {totalQuestions}
