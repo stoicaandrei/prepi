@@ -85,7 +85,7 @@ export const MySkillsChart = () => {
                   const category = categories[index];
                   const mastery = category.currentMasteryLevel?.toFixed(0);
 
-                  return `${mastery}% competență (${context[0].label})`;
+                  return `${context[0].label} (competență ${mastery}%)`;
                 },
                 label: (context) => {
                   const index = context.dataIndex;
