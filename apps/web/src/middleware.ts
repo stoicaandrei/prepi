@@ -5,6 +5,7 @@ const isUtilityRoute = createRouteMatcher(["/crons(.*)"]);
 
 const isPublicRoute = createRouteMatcher(["/auth(.*)"]);
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
+const isTesterRoute = createRouteMatcher("/tester(.*)");
 
 export default clerkMiddleware((auth, req) => {
   if (isUtilityRoute(req)) {
@@ -15,10 +16,14 @@ export default clerkMiddleware((auth, req) => {
     return;
   }
 
-  const isAdmin = auth().sessionClaims?.metadata.roles?.includes("admin");
+  if (isAdminRoute(req)) {
+    const isAdmin = auth().sessionClaims?.metadata.roles?.includes("admin");
+    if (!isAdmin) return NextResponse.redirect(new URL("/", req.nextUrl));
+  }
 
-  if (isAdminRoute(req) && !isAdmin) {
-    return NextResponse.redirect(new URL("/", req.nextUrl));
+  if (isTesterRoute(req)) {
+    const isTester = auth().sessionClaims?.metadata.roles?.includes("tester");
+    if (!isTester) return NextResponse.redirect(new URL("/", req.nextUrl));
   }
 
   auth().protect();
