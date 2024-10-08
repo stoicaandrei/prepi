@@ -15,7 +15,7 @@ interface AppProviderProps {
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [isInitialAssessmentModalOpen, setInitialAssessmentModalOpen] =
-    useState(true);
+    useState(false);
 
   const openInitialAssessmentModal = () => setInitialAssessmentModalOpen(true);
   const closeInitialAssessmentModal = () =>
