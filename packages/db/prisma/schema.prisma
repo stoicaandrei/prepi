@@ -56,10 +56,14 @@ model UserPreferences {
 model InvitationCode {
     id String @id @default(cuid())
 
-    code       String    @unique
+    code        String  @unique
+    description String?
+
     maxUses    Int?
     usesLeft   Int?
     validUntil DateTime?
+
+    stripePromotionalCode String?
 
     creatorId  String
     creator    User   @relation("creator", fields: [creatorId], references: [id])

@@ -19,7 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ExamDifficulty, IdealGrade } from "@prisma/client";
-import { useState } from "react";
+import { useDeferredValue, useState } from "react";
 import { trpc } from "@/utils/trpc";
 import { useRouter } from "next/navigation";
 
@@ -36,6 +36,11 @@ export default function Page() {
     ExamDifficulty.M2,
   );
   const [invitationCode, setInvitationCode] = useState("");
+  const codeToCheck = useDeferredValue(invitationCode);
+
+  const codeValidation = trpc.user.checkInvitationCode.useQuery(codeToCheck, {
+    enabled: !!codeToCheck,
+  });
 
   const readyToSubmit = idealGrade && examDifficulty;
 
@@ -134,6 +139,16 @@ export default function Page() {
                   value={invitationCode}
                   onChange={(e) => setInvitationCode(e.target.value)}
                 />
+                {invitationCode && codeValidation.isLoading && (
+                  <span className="text-xs text-muted-foreground">
+                    Se verifică codul...
+                  </span>
+                )}
+                {invitationCode && codeValidation.data?.success === false && (
+                  <span className="text-xs text-red-500">
+                    {codeValidation.data?.message}
+                  </span>
+                )}
               </div>
             </div>
           </form>
@@ -141,7 +156,11 @@ export default function Page() {
         <CardFooter className="flex justify-end">
           <Button
             className="text-sm"
-            disabled={!readyToSubmit || onboardPreferences.isLoading}
+            disabled={
+              !readyToSubmit ||
+              onboardPreferences.isLoading ||
+              (!!invitationCode && codeValidation.data?.success === false)
+            }
             onClick={handleSubmit}
           >
             {onboardPreferences.isLoading && "încarcă..."}

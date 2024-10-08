@@ -19,10 +19,16 @@ export const stripeRouter = router({
       // allow_promotion_codes: true,
       subscription_data: {
         trial_period_days: 7,
+
         // trial_settings: {
         //   end_behavior: "cancel",
         // },
       },
+      discounts: [
+        {
+          promotion_code: "promo_1Q5zI9FMuPtZf5FPB2hGQe7h",
+        },
+      ],
       payment_method_collection: "if_required",
       locale: "ro",
       return_url: `${process.env.NEXT_PUBLIC_APP_URL}/onboarding/post-checkout/?session_id={CHECKOUT_SESSION_ID}`,

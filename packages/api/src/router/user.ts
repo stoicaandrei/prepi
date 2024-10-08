@@ -1,4 +1,4 @@
-import { ExamDifficulty, IdealGrade } from "@prepi/db";
+import { ExamDifficulty, IdealGrade, InvitationCode } from "@prepi/db";
 import { cacheable } from "../cache";
 import { router, protectedProcedure } from "../trpc";
 import { z } from "zod";
@@ -13,6 +13,35 @@ export const userRouter = router({
       currentStreak: user.currentStreak,
     };
   }),
+  checkInvitationCode: protectedProcedure
+    .input(z.string())
+    .query(async ({ ctx, input }) => {
+      const invitation = await ctx.prisma.invitationCode.findUnique({
+        where: {
+          code: input,
+        },
+      });
+
+      if (!invitation) {
+        return {
+          success: false,
+          message: "Codul nu există.",
+        };
+      }
+
+      const isValid = await isInvitationCodeValid(invitation);
+
+      if (!isValid) {
+        return {
+          success: false,
+          message: "Codul nu este valid.",
+        };
+      }
+
+      return {
+        success: true,
+      };
+    }),
   onboardPreferences: protectedProcedure
     .input(
       z.object({
@@ -39,26 +68,7 @@ export const userRouter = router({
       });
 
       if (invitationCode) {
-        const invitation = await ctx.prisma.invitationCode.findUnique({
-          where: {
-            code: invitationCode,
-          },
-        });
-
-        // TODO: Check if invitation is valid
-
-        await ctx.prisma.invitationCode.update({
-          where: {
-            code: invitationCode,
-          },
-          data: {
-            redeemedBy: {
-              connect: {
-                id: user.id,
-              },
-            },
-          },
-        });
+        await redeemCode(ctx, invitationCode, user.id);
       }
 
       await clerkClient.users.updateUserMetadata(user.clerkId, {
@@ -68,3 +78,58 @@ export const userRouter = router({
       });
     }),
 });
+
+const isInvitationCodeValid = async (invitationCode: InvitationCode) => {
+  const { usesLeft, validUntil } = invitationCode;
+
+  if (validUntil) {
+    const overdue = new Date() > validUntil;
+    if (overdue) {
+      return false;
+    }
+  }
+
+  if (usesLeft && usesLeft <= 0) {
+    return false;
+  }
+
+  return true;
+};
+
+const redeemCode = async (ctx: any, code: string, userId: string) => {
+  const invitation = await ctx.prisma.invitationCode.findUnique({
+    where: {
+      code,
+    },
+  });
+
+  if (!invitation || !isInvitationCodeValid(invitation)) {
+    return;
+  }
+
+  await ctx.prisma.invitationCode.update({
+    where: {
+      code,
+    },
+    data: {
+      redeemedBy: {
+        connect: {
+          id: userId,
+        },
+      },
+    },
+  });
+
+  if (invitation.usesLeft) {
+    await ctx.prisma.invitationCode.update({
+      where: {
+        code,
+      },
+      data: {
+        usesLeft: {
+          decrement: 1,
+        },
+      },
+    });
+  }
+};
