@@ -6,6 +6,8 @@ export default function TesterDashboardPage() {
   const resetInitialAssessmentSession =
     trpc.tester.resetInitialAssessmentSession.useMutation();
   const resetSubjectProgress = trpc.tester.resetSubjectProgress.useMutation();
+  const randomizeSubjectProgress =
+    trpc.tester.randomizeSubjectProgress.useMutation();
 
   return (
     <div>
@@ -15,6 +17,9 @@ export default function TesterDashboardPage() {
       </Button>
       <Button onClick={() => resetSubjectProgress.mutate()}>
         Reset Skills {resetSubjectProgress.isLoading ?? "..."}
+      </Button>{" "}
+      <Button onClick={() => randomizeSubjectProgress.mutate()}>
+        randomizeSubjectProgress {randomizeSubjectProgress.isLoading ?? "..."}
       </Button>
     </div>
   );
