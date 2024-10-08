@@ -17,6 +17,9 @@ export const MySkillsChart = () => {
   const { data: subjectsProgress, isLoading: subjectsProgressLoading } =
     trpc.practice.listSubjectsProgress.useQuery();
 
+  console.log("subbs", subjectsProgress);
+  console.log("subbs", subjects);
+
   if (subjectsProgressLoading || subjectsLoading) {
     return <div className="w-[242px] h-[242px]">...</div>;
   }
@@ -44,7 +47,7 @@ export const MySkillsChart = () => {
         completedProblems += progress?._count.completedProblems || 0;
         masterySum += progress?.masteryLevel ?? 0;
       }
-      if (completedProblems)
+      if (masterySum > 0)
         categories.push({
           name: category.name,
           totalProblems,
@@ -54,6 +57,8 @@ export const MySkillsChart = () => {
         });
     }
   }
+
+  console.log("subbs categories", categories);
 
   return (
     <>
