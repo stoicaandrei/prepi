@@ -17,10 +17,6 @@ export const MySkillsChart = () => {
   const { data: subjectsProgress, isLoading: subjectsProgressLoading } =
     trpc.practice.listSubjectsProgress.useQuery();
 
-  if (subjectsProgressLoading || subjectsLoading) {
-    return <div className="w-[242px] h-[242px]">...</div>;
-  }
-
   type CategoryProgress = {
     name: string;
     totalProblems: number;
