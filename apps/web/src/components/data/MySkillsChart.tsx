@@ -17,9 +17,6 @@ export const MySkillsChart = () => {
   const { data: subjectsProgress, isLoading: subjectsProgressLoading } =
     trpc.practice.listSubjectsProgress.useQuery();
 
-  console.log("subbs", subjectsProgress);
-  console.log("subbs", subjects);
-
   if (subjectsProgressLoading || subjectsLoading) {
     return <div className="w-[242px] h-[242px]">...</div>;
   }
@@ -57,8 +54,6 @@ export const MySkillsChart = () => {
         });
     }
   }
-
-  console.log("subbs categories", categories);
 
   return (
     <>
