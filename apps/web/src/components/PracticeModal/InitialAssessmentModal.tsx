@@ -13,7 +13,7 @@ import { Button } from "../ui/button";
 import { ChevronRight, CircleHelp } from "lucide-react";
 import Image from "next/image";
 import { ModalLoader } from "./ModalLoader";
-import { checkAnswerAttempt } from "./utils";
+import { checkAnswerAttempt, isReadyToSubmit } from "./utils";
 import { useUserRoles } from "@/hooks/useUserRoles";
 
 type InitialAssessmentModalProps = {
@@ -181,7 +181,10 @@ export function InitialAssessmentModal({
           Sari peste
         </Button>
 
-        <Button onClick={submitAnswer}>
+        <Button
+          onClick={submitAnswer}
+          disabled={!!problem && isReadyToSubmit(problem, answerAttempt)}
+        >
           Trimite <ChevronRight className="ml-2 h-4 w-4" />
         </Button>
       </div>
