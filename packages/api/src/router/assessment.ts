@@ -82,7 +82,7 @@ export const assessmentRouter = router({
     const selectedSubject = subjectsPool[randomSubjectIndex];
 
     // Step 3: Fetch problems from the selected subject
-    const problems = await ctx.prisma.problem.findMany({
+    let problems = await ctx.prisma.problem.findMany({
       where: {
         subjects: {
           some: {
@@ -97,19 +97,8 @@ export const assessmentRouter = router({
       },
     });
 
-    if (problems.length === 0) {
-      // No problems in the selected subject
-      // Optionally, you can remove this subject from the unassessedSubjects list and retry
-      return null;
-    }
-
-    // Step 4: Randomly select a problem from the selected subject
-    const randomProblemIndex = Math.floor(Math.random() * problems.length);
-    let selectedProblem = problems[randomProblemIndex];
-
     // In case something happened with the subject selected problem
-    if (!selectedProblem) {
-      // Get a random problem from database
+    if (problems.length === 0) {
       const problemsCount = await ctx.prisma.problem.count();
       const randomProblemId = Math.floor(Math.random() * problemsCount);
       const randomProblem = await ctx.prisma.problem.findFirst({
@@ -120,7 +109,18 @@ export const assessmentRouter = router({
           type: true,
         },
       });
-      if (randomProblem) selectedProblem = randomProblem;
+
+      if (randomProblem) problems = [randomProblem];
+    }
+
+    // Step 4: Randomly select a problem from the selected subject
+    const randomProblemIndex = Math.floor(Math.random() * problems.length);
+    let selectedProblem = problems[randomProblemIndex];
+
+    if (!selectedProblem) {
+      // Get a random problem from database
+
+      throw new Error("No problems found");
     }
 
     const completeProblem = ctx.prisma.problem.findUnique({
