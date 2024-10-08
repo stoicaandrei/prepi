@@ -35,15 +35,9 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
         return existingUser;
       }
 
-      const clerkUser = await currentUser();
-      const emailAddress = clerkUser?.emailAddresses[0].emailAddress ?? "";
-
-      const { customer } = await startStripeSubscription(stripe, emailAddress);
-
       const newUser = await prisma.user.create({
         data: {
           clerkId,
-          stripeCustomerId: customer.id,
         },
       });
 
