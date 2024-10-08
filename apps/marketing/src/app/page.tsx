@@ -150,7 +150,7 @@ const testimonials: Testimonial[] = [
     school: "ICHB",
     image: "/reviews/1lJw6SG.png",
     content:
-      "Imi place platforma voastră pentru ca imi creează un plan de studiu si sa stiu exact pe ce trebuie sa lucrez. Sincer daca AI poate sa ma ajute sa trec bacul cu brio sunt total pentru! O sa recomand Prepi cu drag colegilor.",
+      "Imi place platforma voastră pentru ca imi creează un plan de studiu si sa stiu exact pe ce trebuie sa lucrez. Daca AI-ul poate sa ma ajute sa trec bacul cu brio sunt total pentru! O sa recomand Prepi cu drag colegilor.",
   },
   {
     id: 6,
