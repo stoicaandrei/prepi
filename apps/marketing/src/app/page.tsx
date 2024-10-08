@@ -142,7 +142,7 @@ const testimonials: Testimonial[] = [
     school: 'Colegiul Comercial "Carol I" Constanța',
     image: "/reviews/img-003.jpeg",
     content:
-      "Se vede ca e creata cu mare atentie si informatiile super bine organizate! Ati gandit-o pentru examenul de bacalaureat dar pana acum m-a ajutat mult cu pregatirea pentru teza. Sincer simt ca o sa fie bine la bac. Urati-mi succes!",
+      "Se vede ca e creata cu mare atentie si informatiile super bine organizate! Ati gandit-o pentru examenul de bacalaureat dar pana acum m-a ajutat mult cu pregatirea pentru teza. Sincer simt ca o sa fie bine la bac.",
   },
   {
     id: 5,
