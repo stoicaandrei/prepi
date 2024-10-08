@@ -6,7 +6,7 @@ import { ProblemDisplay } from "./ProblemDisplay";
 import { useUserRoles } from "@/hooks/useUserRoles";
 import { compareEqs } from "@prepi/utils";
 import { ExtendedProblem, ProblemAnswerAttempt } from "./types";
-import { isReadyToSubmit } from "./utils";
+import { checkAnswerAttempt, isReadyToSubmit } from "./utils";
 
 type PracticeViewProps = {
   currentProblemIndex: number;
@@ -57,31 +57,9 @@ export const PracticeView = ({
     forceCorrect?: boolean;
   };
   const submitAnswer = (options?: SubmitAnswerOptions) => {
-    if (!currentProblem) return;
+    if (!currentProblem || !answerAttempt) return;
 
-    let isCorrect = false;
-    if (currentProblem.type === "MULTIPLE_CHOICE") {
-      const selectedAnswer = currentProblem.multipleChoiceOptions.find(
-        (option) => option.id === answerAttempt?.answerId,
-      );
-      isCorrect = selectedAnswer?.isCorrect ?? false;
-    }
-    if (currentProblem.type === "SINGLE_ANSWER") {
-      isCorrect = compareEqs(
-        answerAttempt?.singleAnswerText ?? "",
-        currentProblem.singleAnswer?.correctAnswer ?? "",
-      );
-    }
-    if (currentProblem.type === "MULTIPLE_VARIABLES") {
-      isCorrect = Object.entries(
-        answerAttempt?.multipleVariableValues ?? {},
-      ).every(([variableId, value]) => {
-        const variable = currentProblem.variables.find(
-          (variable) => variable.id === variableId,
-        );
-        return compareEqs(value, variable?.correctAnswer ?? "");
-      });
-    }
+    let isCorrect = checkAnswerAttempt(currentProblem, answerAttempt);
 
     if (typeof options?.forceCorrect === "boolean") {
       isCorrect = options.forceCorrect;

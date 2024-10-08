@@ -37,20 +37,24 @@ export const assessmentRouter = router({
       where: { initialAssessmentSessionId: assessmentSession?.id },
     });
 
+    console.log("questionsCount", questionsCount);
+
     if (questionsCount >= MAX_QUESTIONS) {
       // Assessment is complete
       return null;
     }
 
     // Step 1: Fetch unassessed subjects
-    // TODO: Filter out subjects that have been assessed in the current session
-    const unassessedSubjects = await ctx.prisma.subject.findMany({
+    let subjectsPool = await ctx.prisma.subject.findMany({
       where: {
         enabled: true,
         usersProgress: {
           none: {
             userId: userId,
           },
+        },
+        problems: {
+          some: {},
         },
       },
       select: {
@@ -59,16 +63,25 @@ export const assessmentRouter = router({
       },
     });
 
-    if (unassessedSubjects.length === 0) {
+    if (subjectsPool.length === 0) {
       // All subjects have been assessed
-      return null;
+      subjectsPool = await ctx.prisma.subject.findMany({
+        where: {
+          enabled: true,
+          problems: {
+            some: {},
+          },
+        },
+        select: {
+          id: true,
+          name: true,
+        },
+      });
     }
 
     // Step 2: Randomly select one of the unassessed subjects
-    const randomSubjectIndex = Math.floor(
-      Math.random() * unassessedSubjects.length,
-    );
-    const selectedSubject = unassessedSubjects[randomSubjectIndex];
+    const randomSubjectIndex = Math.floor(Math.random() * subjectsPool.length);
+    const selectedSubject = subjectsPool[randomSubjectIndex];
 
     // Step 3: Fetch problems from the selected subject
     const problems = await ctx.prisma.problem.findMany({
@@ -172,15 +185,19 @@ export const assessmentRouter = router({
         await collectPrerequisites(ctx.prisma, subject, subjectsToUpdate);
       }
 
+      const masterySign = correct ? 1 : -1;
+      const masteryToAdd = (INITIAL_MASTERY / 2) * masterySign;
+      const initialMastery = correct ? INITIAL_MASTERY : 0;
+
       // Update mastery levels
       for (const subjectId of subjectsToUpdate) {
         await ctx.prisma.userSubjectProgress.upsert({
           where: { userId_subjectId: { userId, subjectId } },
-          update: { masteryLevel: INITIAL_MASTERY },
+          update: { masteryLevel: { increment: masteryToAdd } },
           create: {
             userId,
             subjectId,
-            masteryLevel: INITIAL_MASTERY,
+            masteryLevel: initialMastery,
           },
         });
       }

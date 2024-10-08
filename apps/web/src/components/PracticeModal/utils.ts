@@ -1,3 +1,4 @@
+import { compareEqs } from "@prepi/utils";
 import { ExtendedProblem, ProblemAnswerAttempt } from "./types";
 
 export const isReadyToSubmit = (
@@ -30,3 +31,31 @@ export function shuffleArray<T>(array: T[]): T[] {
   }
   return shuffled;
 }
+
+export const checkAnswerAttempt = (
+  problem: ExtendedProblem,
+  attempt: ProblemAnswerAttempt,
+) => {
+  if (problem.type === "MULTIPLE_CHOICE") {
+    const selectedAnswer = problem.multipleChoiceOptions.find(
+      (option) => option.id === attempt?.answerId,
+    );
+    return selectedAnswer?.isCorrect ?? false;
+  }
+  if (problem.type === "SINGLE_ANSWER") {
+    return compareEqs(
+      attempt?.singleAnswerText ?? "",
+      problem.singleAnswer?.correctAnswer ?? "",
+    );
+  }
+  if (problem.type === "MULTIPLE_VARIABLES") {
+    return Object.entries(attempt?.multipleVariableValues ?? {}).every(
+      ([variableId, value]) => {
+        const variable = problem.variables.find(
+          (variable) => variable.id === variableId,
+        );
+        return compareEqs(value, variable?.correctAnswer ?? "");
+      },
+    );
+  }
+};

@@ -13,6 +13,8 @@ import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { ModalLoader } from "./ModalLoader";
+import { checkAnswerAttempt } from "./utils";
+import { useUserRoles } from "@/hooks/useUserRoles";
 
 type InitialAssessmentModalProps = {
   open: boolean;
@@ -23,6 +25,8 @@ export function InitialAssessmentModal({
   open,
   onClose,
 }: InitialAssessmentModalProps) {
+  const { isTester } = useUserRoles();
+
   const utils = trpc.useUtils();
   const { data: assessmentSession } =
     trpc.assessment.getAssessmentSession.useQuery();
@@ -40,6 +44,8 @@ export function InitialAssessmentModal({
     trpc.assessment.recordAssessmentQuestion.useMutation({
       onSuccess: () => {
         utils.assessment.getAssessmentSession.invalidate();
+        utils.assessment.getNextProblem.setData(undefined, () => undefined);
+        utils.assessment.getNextProblem.invalidate();
       },
     });
 
@@ -47,7 +53,37 @@ export function InitialAssessmentModal({
   const totalQuestions = 15;
   const progress = assessedQuestions / totalQuestions;
 
-  if (problemLoading) {
+  const [answerAttempt, setAnswerAttempt] =
+    useState<ProblemAnswerAttempt | null>(null);
+
+  const sendAttemptRecording = (correct: boolean) => {
+    if (!problem) return;
+
+    recordAssessmentQuestion.mutate({
+      problemId: problem.id,
+      correct,
+    });
+    setAnswerAttempt(null);
+  };
+
+  const submitAnswer = () => {
+    if (!problem || !answerAttempt) return;
+
+    const isCorrect = checkAnswerAttempt(problem, answerAttempt);
+  };
+
+  const skipProblem = () => {
+    if (!problem) return;
+
+    sendAttemptRecording(false);
+  };
+
+  if (problemLoading || recordAssessmentQuestion.isLoading) {
+    let message = "Se pregătește următoarea problemă...";
+    if (recordAssessmentQuestion.isLoading) {
+      message = "Se înregistrează răspunsul...";
+    }
+
     return (
       <Dialog open={open} onOpenChange={() => {}}>
         <DialogContent
@@ -55,7 +91,7 @@ export function InitialAssessmentModal({
           className="max-w-full w-[90%] min-h-[90vh] md:min-h-[50vh] overflow-scroll"
         >
           <div className="p-6">
-            <ModalLoader message="Se pregătește următoarea problemă..." />
+            <ModalLoader message={message} />
           </div>
         </DialogContent>
       </Dialog>
@@ -86,8 +122,8 @@ export function InitialAssessmentModal({
             {problem && (
               <ProblemDisplay
                 problem={problem}
-                answerAttempt={null}
-                setAnswerAttempt={() => {}}
+                answerAttempt={answerAttempt}
+                setAnswerAttempt={setAnswerAttempt}
                 hideInput={false}
                 hintCount={0}
                 showExplanation={false}
@@ -96,14 +132,34 @@ export function InitialAssessmentModal({
           </div>
 
           <div className="flex flex-col md:flex-row md:justify-end items-start md:items-center gap-2 md:gap-2">
-            <Button variant="outline" className="mr-2" onClick={() => {}}>
+            <Button variant="outline" className="mr-2" onClick={skipProblem}>
               Sari peste
             </Button>
 
-            <Button onClick={() => {}}>
+            <Button onClick={submitAnswer}>
               Trimite <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
+
+          {isTester && (
+            <div className="">
+              <Button variant="link" onClick={() => sendAttemptRecording(true)}>
+                Click Correct Answer
+              </Button>
+              <Button
+                variant="link"
+                onClick={() => sendAttemptRecording(false)}
+              >
+                Click Wrong Answer
+              </Button>
+              <Button
+                variant="link"
+                onClick={() => navigator.clipboard.writeText(problem?.id ?? "")}
+              >
+                {problem?.id}
+              </Button>
+            </div>
+          )}
         </div>
       </DialogContent>
     </Dialog>
