@@ -9,6 +9,7 @@ import {
   ShoppingBag,
   Files,
   Flame,
+  Cog,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -29,6 +30,7 @@ import { useState } from "react";
 import { trpc } from "@/utils/trpc";
 import { pluralize } from "@prepi/utils";
 import { Crisp } from "crisp-sdk-web";
+import { useUserRoles } from "@/hooks/useUserRoles";
 
 export const description =
   "A products dashboard with a sidebar navigation and a main content area. The dashboard has a header with a search input and a user menu. The sidebar has a logo, navigation links, and a card with a call to action. The main content area shows an empty state with a call to action.";
@@ -51,6 +53,7 @@ export function MainLayout({ children }: LayoutProps) {
   const activeSection = fullPath?.split("/")[1];
   const { signOut } = useAuth();
   const { user } = useUser();
+  const { isTester } = useUserRoles();
 
   const [sheetOpen, setSheetOpen] = useState(false);
 
@@ -129,6 +132,15 @@ export function MainLayout({ children }: LayoutProps) {
                 <Files className="h-4 w-4" />
                 Variante
               </Link>
+              {isTester && (
+                <Link
+                  href="/tester/dashboard"
+                  className={navClasses(activeSection === "tester")}
+                >
+                  <Cog className="h-4 w-4" />
+                  Tester Dashboard
+                </Link>
+              )}
               {/* <Link
                 href="/leaderboard"
                 className={navClasses(activeSection === "leaderboard")}
@@ -279,6 +291,16 @@ export function MainLayout({ children }: LayoutProps) {
               <Files className="h-5 w-5 flex-shrink-0" />
               Variante
             </Link>
+            <DropdownMenuSeparator />
+            {isTester && (
+              <Link
+                href="/tester/dashboard"
+                className={navClasses(activeSection === "tester")}
+              >
+                <Cog className="h-5 w-5" />
+                Tester Dashboard
+              </Link>
+            )}
             {/* <Link
               href="/leaderboard"
               className={navClasses(activeSection === "leaderboard")}

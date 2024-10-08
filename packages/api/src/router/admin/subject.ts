@@ -1,8 +1,8 @@
-import { router, protectedProcedure } from "../../trpc";
+import { router, adminProcedure } from "../../trpc";
 import { z } from "zod";
 
 export const subjectRouter = router({
-  listCategoriesWithSubjects: protectedProcedure.query(async ({ ctx }) => {
+  listCategoriesWithSubjects: adminProcedure.query(async ({ ctx }) => {
     return ctx.prisma.subjectCategory.findMany({
       orderBy: {
         order: "asc",
@@ -16,7 +16,7 @@ export const subjectRouter = router({
       },
     });
   }),
-  updateSubjectCategory: protectedProcedure
+  updateSubjectCategory: adminProcedure
     .input(
       z.object({
         id: z.string(),
@@ -33,7 +33,7 @@ export const subjectRouter = router({
         },
       });
     }),
-  updateSubject: protectedProcedure
+  updateSubject: adminProcedure
     .input(
       z.object({
         id: z.string(),

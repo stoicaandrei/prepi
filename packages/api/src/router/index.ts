@@ -3,6 +3,7 @@ import { lessonRouter } from "./lesson";
 import { practiceRouter } from "./practice";
 import { userRouter } from "./user";
 import { adminRouter } from "./admin";
+import { testerRouter } from "./tester";
 import { examRouter } from "./exam";
 import { stripeRouter } from "./stripe";
 import { assessmentRouter } from "./assessment";
@@ -12,6 +13,7 @@ export const appRouter = router({
   practice: practiceRouter,
   user: userRouter,
   admin: adminRouter,
+  tester: testerRouter,
   exam: examRouter,
   stripe: stripeRouter,
   assessment: assessmentRouter,
