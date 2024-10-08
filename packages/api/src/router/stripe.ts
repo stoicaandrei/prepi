@@ -16,23 +16,17 @@ export const stripeRouter = router({
         },
       ],
       mode: "subscription",
-      allow_promotion_codes: true,
+      // allow_promotion_codes: true,
       subscription_data: {
         trial_period_days: 7,
         // trial_settings: {
         //   end_behavior: "cancel",
         // },
       },
-      payment_method_configuration:
-        process.env.STRIPE_PAYMENT_METHOD_CONFIGURATION_ID,
       payment_method_collection: "if_required",
-      shipping_address_collection: {
-        allowed_countries: [], // This disables shipping address collection.
-      },
-      billing_address_collection: "auto",
       locale: "ro",
       return_url: `${process.env.NEXT_PUBLIC_APP_URL}/?session_id={CHECKOUT_SESSION_ID}`,
-      automatic_tax: { enabled: true },
+      automatic_tax: { enabled: false },
     });
 
     return {
