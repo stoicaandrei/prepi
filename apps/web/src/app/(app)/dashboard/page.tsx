@@ -22,7 +22,11 @@ import { useAppContext } from "../appContext";
 export default function Dashboard() {
   const { data: nextChapter } =
     trpc.practice.getRecommendedNextChapters.useQuery();
-  console.log("nextChapter", nextChapter);
+  const { data: assessmentSession } =
+    trpc.assessment.getAssessmentSession.useQuery();
+  const initialTestTaken =
+    assessmentSession &&
+    assessmentSession.totalQuestions === assessmentSession._count.questions;
 
   const { openInitialAssessmentModal } = useAppContext();
 
@@ -39,27 +43,29 @@ export default function Dashboard() {
           </p>
         </Card>
 
-        <Card className="col-span-full">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-2xl font-bold flex items-center">
-              <CheckSquare className="mr-2 h-6 w-6 inline-block text-cyan-500" />
-              Stabilește-ți nivelul
-            </CardTitle>
-            <Button
-              variant="default"
-              className="bg-cyan-500 hover:bg-cyan-600"
-              onClick={openInitialAssessmentModal}
-            >
-              Deschide
-            </Button>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Fă testul inițial pentru a stabili planul de pregătire
-              individuală.
-            </p>
-          </CardContent>
-        </Card>
+        {!initialTestTaken && (
+          <Card className="col-span-full">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-2xl font-bold flex items-center">
+                <CheckSquare className="mr-2 h-6 w-6 inline-block text-cyan-500" />
+                Stabilește-ți nivelul
+              </CardTitle>
+              <Button
+                variant="default"
+                className="bg-cyan-500 hover:bg-cyan-600"
+                onClick={openInitialAssessmentModal}
+              >
+                Deschide
+              </Button>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Fă testul inițial pentru a stabili planul de pregătire
+                individuală.
+              </p>
+            </CardContent>
+          </Card>
+        )}
 
         <Card className="col-span-full">
           <CardHeader className="flex flex-row items-center flex-wrap justify-between  pb-2">

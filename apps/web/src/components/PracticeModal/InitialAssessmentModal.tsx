@@ -50,7 +50,7 @@ export function InitialAssessmentModal({
     });
 
   const assessedQuestions = (assessmentSession?._count.questions ?? 0) + 1;
-  const totalQuestions = 15;
+  const totalQuestions = assessmentSession?.totalQuestions ?? 1;
   const progress = assessedQuestions / totalQuestions;
 
   const [answerAttempt, setAnswerAttempt] =
@@ -87,7 +87,7 @@ export function InitialAssessmentModal({
     !assessmentSession && setDisplayExplanation(true);
   }, [assessmentSession, assessmentSessionLoading]);
 
-  const isFinished = assessedQuestions >= totalQuestions;
+  const isFinished = assessedQuestions > totalQuestions;
 
   const DialogWrapper = useCallback(
     ({ children }: { children: React.ReactNode }) => {
