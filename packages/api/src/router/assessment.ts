@@ -37,8 +37,6 @@ export const assessmentRouter = router({
       where: { initialAssessmentSessionId: assessmentSession?.id },
     });
 
-    console.log("questionsCount", questionsCount);
-
     if (questionsCount >= MAX_QUESTIONS) {
       // Assessment is complete
       return null;
@@ -191,7 +189,7 @@ export const assessmentRouter = router({
 
       // Update mastery levels
       for (const subjectId of subjectsToUpdate) {
-        await ctx.prisma.userSubjectProgress.upsert({
+        const progress = await ctx.prisma.userSubjectProgress.upsert({
           where: { userId_subjectId: { userId, subjectId } },
           update: { masteryLevel: { increment: masteryToAdd } },
           create: {
@@ -200,6 +198,14 @@ export const assessmentRouter = router({
             masteryLevel: initialMastery,
           },
         });
+
+        if (progress.masteryLevel > 1) {
+          // Fix mastery level
+          await ctx.prisma.userSubjectProgress.update({
+            where: { userId_subjectId: { userId, subjectId } },
+            data: { masteryLevel: 1 },
+          });
+        }
       }
 
       // TODO: Give user points

@@ -43,6 +43,7 @@ export function InitialAssessmentModal({
   const recordAssessmentQuestion =
     trpc.assessment.recordAssessmentQuestion.useMutation({
       onSuccess: () => {
+        utils.practice.listSubjectsProgress.invalidate();
         utils.assessment.getAssessmentSession.invalidate();
         utils.assessment.getNextProblem.setData(undefined, () => undefined);
         utils.assessment.getNextProblem.invalidate();
