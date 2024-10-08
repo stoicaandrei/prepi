@@ -25,7 +25,7 @@ export const stripeRouter = router({
       },
       payment_method_collection: "if_required",
       locale: "ro",
-      return_url: `${process.env.NEXT_PUBLIC_APP_URL}/?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `${process.env.NEXT_PUBLIC_APP_URL}/onboarding/post-checkout/?session_id={CHECKOUT_SESSION_ID}`,
       automatic_tax: { enabled: false },
     });
 

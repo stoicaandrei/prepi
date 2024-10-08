@@ -12,8 +12,11 @@ const isPublicRoute = createRouteMatcher(["/auth(.*)"]);
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
 const isTesterRoute = createRouteMatcher("/tester(.*)");
 
-const isPreferencesRoute = createRouteMatcher("/onboarding/preferences");
-const isCheckoutRoute = createRouteMatcher("/onboarding/checkout");
+const isPreferencesRoute = createRouteMatcher(["/onboarding/preferences"]);
+const isCheckoutRoute = createRouteMatcher([
+  "/onboarding/checkout",
+  "/onboarding/post-checkout",
+]);
 
 export default clerkMiddleware(async (auth, req) => {
   if (isUtilityRoute(req)) {
@@ -56,6 +59,7 @@ export default clerkMiddleware(async (auth, req) => {
     if (!metadata.subscriptionCreated) {
       const correctRoute = isCheckoutRoute(req);
 
+      console.log({ correctRoute });
       if (correctRoute) return;
 
       return NextResponse.redirect(
