@@ -2,10 +2,14 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 const isUtilityRoute = createRouteMatcher(["/crons(.*)"]);
+const isApiRoute = createRouteMatcher(["/api(.*)"]);
 
 const isPublicRoute = createRouteMatcher(["/auth(.*)"]);
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
 const isTesterRoute = createRouteMatcher("/tester(.*)");
+
+const isPreferencesRoute = createRouteMatcher("/onboarding/preferences");
+const isCheckoutRoute = createRouteMatcher("/onboarding/checkout");
 
 export default clerkMiddleware((auth, req) => {
   if (isUtilityRoute(req)) {
@@ -16,17 +20,45 @@ export default clerkMiddleware((auth, req) => {
     return;
   }
 
+  if (isApiRoute(req)) {
+    auth().protect();
+    return;
+  }
+
+  const metadata = auth().sessionClaims?.metadata ?? {};
+
+  if (!metadata) {
+    auth().protect();
+    return;
+  }
+
+  if (!metadata.preferencesSet) {
+    const correctRoute = isPreferencesRoute(req);
+
+    if (correctRoute) return;
+
+    return NextResponse.redirect(
+      new URL("/onboarding/preferences", req.nextUrl),
+    );
+  }
+
+  if (!metadata.subscriptionCreated) {
+    const correctRoute = isCheckoutRoute(req);
+
+    if (correctRoute) return;
+
+    return NextResponse.redirect(new URL("/onboarding/checkout", req.nextUrl));
+  }
+
   if (isAdminRoute(req)) {
-    const isAdmin = auth().sessionClaims?.metadata.roles?.includes("admin");
+    const isAdmin = metadata.roles?.includes("admin");
     if (!isAdmin) return NextResponse.redirect(new URL("/", req.nextUrl));
   }
 
   if (isTesterRoute(req)) {
-    const isTester = auth().sessionClaims?.metadata.roles?.includes("tester");
+    const isTester = metadata.roles?.includes("tester");
     if (!isTester) return NextResponse.redirect(new URL("/", req.nextUrl));
   }
-
-  auth().protect();
 });
 
 export const config = {
