@@ -1,4 +1,8 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import {
+  clerkClient,
+  clerkMiddleware,
+  createRouteMatcher,
+} from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 const isUtilityRoute = createRouteMatcher(["/crons(.*)"]);
@@ -11,7 +15,7 @@ const isTesterRoute = createRouteMatcher("/tester(.*)");
 const isPreferencesRoute = createRouteMatcher("/onboarding/preferences");
 const isCheckoutRoute = createRouteMatcher("/onboarding/checkout");
 
-export default clerkMiddleware((auth, req) => {
+export default clerkMiddleware(async (auth, req) => {
   if (isUtilityRoute(req)) {
     return;
   }
@@ -32,22 +36,32 @@ export default clerkMiddleware((auth, req) => {
     return;
   }
 
-  if (!metadata.preferencesSet) {
-    const correctRoute = isPreferencesRoute(req);
+  const isOnboardingDone =
+    metadata.preferencesSet && metadata.subscriptionCreated;
 
-    if (correctRoute) return;
+  if (!isOnboardingDone) {
+    const user = await clerkClient.users.getUser(auth().userId ?? "");
+    const metadata = user.publicMetadata;
 
-    return NextResponse.redirect(
-      new URL("/onboarding/preferences", req.nextUrl),
-    );
-  }
+    if (!metadata.preferencesSet) {
+      const correctRoute = isPreferencesRoute(req);
 
-  if (!metadata.subscriptionCreated) {
-    const correctRoute = isCheckoutRoute(req);
+      if (correctRoute) return;
 
-    if (correctRoute) return;
+      return NextResponse.redirect(
+        new URL("/onboarding/preferences", req.nextUrl),
+      );
+    }
 
-    return NextResponse.redirect(new URL("/onboarding/checkout", req.nextUrl));
+    if (!metadata.subscriptionCreated) {
+      const correctRoute = isCheckoutRoute(req);
+
+      if (correctRoute) return;
+
+      return NextResponse.redirect(
+        new URL("/onboarding/checkout", req.nextUrl),
+      );
+    }
   }
 
   if (isAdminRoute(req)) {
