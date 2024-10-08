@@ -50,7 +50,7 @@ export function InitialAssessmentModal({
     });
 
   const assessedQuestions = (assessmentSession?._count.questions ?? 0) + 1;
-  const totalQuestions = assessmentSession?.totalQuestions ?? 1;
+  const totalQuestions = 15;
   const progress = assessedQuestions / totalQuestions;
 
   const [answerAttempt, setAnswerAttempt] =
