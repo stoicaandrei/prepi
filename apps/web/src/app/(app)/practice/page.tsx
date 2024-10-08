@@ -118,7 +118,7 @@ export default function MathPracticeInteractive({
                 {nextChapter?.name ?? "..."}
               </span>
               <Progress
-                className="w-[300px] shadow-md"
+                className="w-[300px] shadow-prepi"
                 value={(nextChapterProgress?.masteryLevel ?? 0) * 100}
               />
               <p>
