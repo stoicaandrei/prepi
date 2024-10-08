@@ -96,7 +96,7 @@ export default function Dashboard() {
 
         <PracticeHistoryCard />
 
-        <Card>
+        {/* <Card>
           <CardHeader>
             <CardTitle className="text-xl font-bold flex items-center">
               <Book className="mr-2 h-6 w-6 inline-block text-cyan-500" />
@@ -112,7 +112,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <StreaksCard />
+        <StreaksCard /> */}
 
         <WeeklyActivityCard />
 
