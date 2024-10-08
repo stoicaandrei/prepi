@@ -204,6 +204,9 @@ importers:
       "@tanstack/react-query":
         specifier: ^4.36.1
         version: 4.36.1(react-dom@18.3.1)(react@18.3.1)
+      "@tanstack/react-query-devtools":
+        specifier: "4"
+        version: 4.36.1(@tanstack/react-query@4.36.1)(react-dom@18.3.1)(react@18.3.1)
       "@tawk.to/tawk-messenger-react":
         specifier: ^2.0.2
         version: 2.0.2(react-dom@18.3.1)(react@18.3.1)
@@ -3783,11 +3786,39 @@ packages:
       tailwindcss: 3.4.10
     dev: true
 
+  /@tanstack/match-sorter-utils@8.19.4:
+    resolution:
+      {
+        integrity: sha512-Wo1iKt2b9OT7d+YGhvEPD3DXvPv2etTusIMhMUoG7fbhmxcXCtIjJDEygy91Y2JFlwGyjqiBPRozme7UD8hoqg==,
+      }
+    engines: { node: ">=12" }
+    dependencies:
+      remove-accents: 0.5.0
+    dev: false
+
   /@tanstack/query-core@4.36.1:
     resolution:
       {
         integrity: sha512-DJSilV5+ytBP1FbFcEJovv4rnnm/CokuVvrBEtW/Va9DvuJ3HksbXUJEpI0aV1KtuL4ZoO9AVE6PyNLzF7tLeA==,
       }
+    dev: false
+
+  /@tanstack/react-query-devtools@4.36.1(@tanstack/react-query@4.36.1)(react-dom@18.3.1)(react@18.3.1):
+    resolution:
+      {
+        integrity: sha512-WYku83CKP3OevnYSG8Y/QO9g0rT75v1om5IvcWUwiUZJ4LanYGLVCZ8TdFG5jfsq4Ej/lu2wwDAULEUnRIMBSw==,
+      }
+    peerDependencies:
+      "@tanstack/react-query": ^4.36.1
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      "@tanstack/match-sorter-utils": 8.19.4
+      "@tanstack/react-query": 4.36.1(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      superjson: 1.13.3
+      use-sync-external-store: 1.2.2(react@18.3.1)
     dev: false
 
   /@tanstack/react-query@4.36.1(react-dom@18.3.1)(react@18.3.1):
@@ -10139,6 +10170,13 @@ packages:
       mdast-util-to-hast: 13.2.0
       unified: 11.0.5
       vfile: 6.0.3
+    dev: false
+
+  /remove-accents@0.5.0:
+    resolution:
+      {
+        integrity: sha512-8g3/Otx1eJaVD12e31UbJj1YzdtVvzH85HV7t+9MJYk/u3XmkOUJ5Ys9wQrf9PCPK8+xn4ymzqYCiZl6QWKn+A==,
+      }
     dev: false
 
   /resolve-from@4.0.0:
