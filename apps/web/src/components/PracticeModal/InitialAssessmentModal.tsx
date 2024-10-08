@@ -200,6 +200,15 @@ export function InitialAssessmentModal({
           >
             {problem?.id}
           </Button>
+          <br />
+          <span>Raspuns corect:</span>
+          {problem?.multipleChoiceOptions.find((o) => o.isCorrect)?.text}
+          {problem?.singleAnswer?.correctAnswer}
+          {problem?.variables.map((v) => (
+            <span>
+              {v.variableName} = {v.correctAnswer}
+            </span>
+          ))}
         </div>
       )}
     </DialogWrapper>
