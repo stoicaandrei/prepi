@@ -28,7 +28,7 @@ export function InitialAssessmentModal({
   const { isTester } = useUserRoles();
 
   const utils = trpc.useUtils();
-  const { data: assessmentSession } =
+  const { data: assessmentSession, isLoading: assessmentSessionLoading } =
     trpc.assessment.getAssessmentSession.useQuery();
 
   const { data: problem, isLoading: problemLoading } =
@@ -80,6 +80,15 @@ export function InitialAssessmentModal({
     sendAttemptRecording(false);
   };
 
+  const [displayExplanation, setDisplayExplanation] = useState(false);
+
+  useEffect(() => {
+    console.log("assessedQuestions", assessmentSession?._count.questions);
+    if (!assessmentSessionLoading) return;
+
+    !assessmentSession && setDisplayExplanation(true);
+  }, [assessmentSession, assessmentSessionLoading]);
+
   const DialogWrapper = useCallback(
     ({ children }: { children: React.ReactNode }) => {
       return (
@@ -96,12 +105,28 @@ export function InitialAssessmentModal({
     [open, onClose],
   );
 
-  if (problemLoading || recordAssessmentQuestion.isLoading) {
-    let message = "Se pregătește următoarea problemă...";
-    if (recordAssessmentQuestion.isLoading) {
-      message = "Se înregistrează răspunsul...";
-    }
+  if (displayExplanation) {
+    return (
+      <DialogWrapper>
+        <InitialAssessmentExplanation
+          onReady={() => setDisplayExplanation(false)}
+        />
+      </DialogWrapper>
+    );
+  }
 
+  let message = "";
+  if (assessmentSessionLoading) {
+    message = "Se pregătește următoarea testul...";
+  }
+  if (problemLoading) {
+    message = "Se pregătește următoarea problemă...";
+  }
+  if (recordAssessmentQuestion.isLoading) {
+    message = "Se înregistrează răspunsul...";
+  }
+
+  if (message) {
     return (
       <DialogWrapper>
         <ModalLoader message={message} />
@@ -166,3 +191,43 @@ export function InitialAssessmentModal({
     </DialogWrapper>
   );
 }
+
+type InitialAssessmentExplanationProps = {
+  onReady: () => void;
+};
+
+const InitialAssessmentExplanation = ({
+  onReady,
+}: InitialAssessmentExplanationProps) => {
+  return (
+    <div className="flex flex-col">
+      <h2 className="text-2xl font-bold text-center">Testul inițial</h2>
+      <Image
+        src="/illustrations/girl-checklist.svg"
+        alt="A girl with a checklist"
+        width={329}
+        height={275}
+        className="self-center mt-4"
+      />
+
+      <p className="text-lg mt-4">
+        👨‍🏫 Testul inițial conține un număr de 15 întrebări și durează în medie
+        20-25 minute.
+      </p>
+      <p className="text-lg mt-4">
+        📊 Rezultatele testului inițial vor fi folosite pentru a crea un plan de
+        învățare personalizat.
+      </p>
+      <p className="text-lg mt-4">
+        ❤️ Nu te stresa dacă nu știi răspunsul la toate întrebările. Scopul este
+        de a afla nivelul tău de cunoștințe, iar apoi de a te ajuta să înveți
+      </p>
+      <p className="text-lg mt-4">
+        ⚠️ Poți părăsi testul în orice moment, iar progresul tău va fi salvat.
+      </p>
+      <Button size="lg" className="self-center mt-4" onClick={onReady}>
+        Sunt pregătit!
+      </Button>
+    </div>
+  );
+};
