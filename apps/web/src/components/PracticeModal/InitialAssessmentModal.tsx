@@ -276,9 +276,10 @@ const InitialAssessmentSummary = ({
           <p className="text-lg mt-4">
             🤖 Planul tău personalizat a fost creat
           </p>
-          <p className="text-lg mt-4">
+          {/* TODO: Add this back */}
+          {/* <p className="text-lg mt-4">
             ⭐ Ai câștigat {Math.floor(Math.random() * 100)} puncte
-          </p>
+          </p> */}
           <Button size="lg" className="mt-8" onClick={onFinished}>
             Continuă
           </Button>
