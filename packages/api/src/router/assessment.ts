@@ -94,7 +94,6 @@ export const assessmentRouter = router({
         id: true,
         description: true,
         type: true,
-        // Include other necessary fields
       },
     });
 
@@ -106,7 +105,23 @@ export const assessmentRouter = router({
 
     // Step 4: Randomly select a problem from the selected subject
     const randomProblemIndex = Math.floor(Math.random() * problems.length);
-    const selectedProblem = problems[randomProblemIndex];
+    let selectedProblem = problems[randomProblemIndex];
+
+    // In case something happened with the subject selected problem
+    if (!selectedProblem) {
+      // Get a random problem from database
+      const problemsCount = await ctx.prisma.problem.count();
+      const randomProblemId = Math.floor(Math.random() * problemsCount);
+      const randomProblem = await ctx.prisma.problem.findFirst({
+        skip: randomProblemId,
+        select: {
+          id: true,
+          description: true,
+          type: true,
+        },
+      });
+      if (randomProblem) selectedProblem = randomProblem;
+    }
 
     const completeProblem = ctx.prisma.problem.findUnique({
       where: { id: selectedProblem.id },
