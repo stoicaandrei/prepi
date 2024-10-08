@@ -23,6 +23,7 @@ export const stripeRouter = router({
         //   end_behavior: "cancel",
         // },
       },
+      payment_method_collection: "if_required",
       locale: "ro",
       return_url: `${process.env.NEXT_PUBLIC_APP_URL}/?session_id={CHECKOUT_SESSION_ID}`,
       automatic_tax: { enabled: true },
