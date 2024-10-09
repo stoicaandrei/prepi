@@ -183,7 +183,7 @@ export function InitialAssessmentModal({
 
         <Button
           onClick={submitAnswer}
-          disabled={!!problem && isReadyToSubmit(problem, answerAttempt)}
+          disabled={!!problem && !isReadyToSubmit(problem, answerAttempt)}
         >
           Trimite <ChevronRight className="ml-2 h-4 w-4" />
         </Button>
