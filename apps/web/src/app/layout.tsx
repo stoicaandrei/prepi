@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Prepi",
+  title: "Prepi - Pregătire pentru BAC la matematică",
   description:
     "Prepi este platforma care te pregătește să iei BACul la matematică cu brio. Ai acces la toate exercițiile rezolvate și materialele explicative necesare. Începe pregătirea gratuit!",
   icons: [
@@ -20,6 +20,20 @@ export const metadata: Metadata = {
       url: "/favicon.ico",
     },
   ],
+  openGraph: {
+    title: "Prepi - Pregătire pentru BAC la matematică",
+    description:
+      "Prepi este platforma care te pregătește să iei BACul la matematică cu brio. Ai acces la toate exercițiile rezolvate și materialele explicative necesare. Începe pregătirea gratuit!",
+    url: "https://app.prepi.ro",
+    siteName: "Prepi",
+    locale: "ro_RO",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  metadataBase: new URL("https://app.prepi.ro"),
 };
 
 export default function RootLayout({
@@ -28,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={montserrat.className}>
+    <html lang="ro" className={montserrat.className}>
       <head>
         <link
           rel="stylesheet"
