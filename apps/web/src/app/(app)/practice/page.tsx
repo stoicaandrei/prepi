@@ -14,6 +14,7 @@ import { useUserRoles } from "@/hooks/useUserRoles";
 import { trpc } from "@/utils/trpc";
 import { CheckSquare } from "lucide-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function MathPracticeInteractive({
   searchParams,
@@ -29,7 +30,7 @@ export default function MathPracticeInteractive({
 
   const subjectsProgress = trpc.practice.listSubjectsProgress.useQuery();
 
-  const { data: nextChapters } =
+  const { data: nextChapters, isLoading: nextChaptersLoading } =
     trpc.practice.getRecommendedNextChapters.useQuery();
   const nextChapter = nextChapters?.[0];
   const nextChapterProgress = subjectsProgress.data?.find(
@@ -110,23 +111,37 @@ export default function MathPracticeInteractive({
           {/* TODO: Display all recommened chapters here */}
           <Button
             variant="ghost"
-            className="w-full p-4 h-auto flex items-center justify-between hover:bg-gray-100 shadow-md"
+            className="w-full p-2 sm:p-4 h-auto flex flex-col items-start justify-between hover:bg-gray-100 shadow-md overflow-hidden"
             onClick={() => nextChapter && setSelectedSubjectId(nextChapter.id)}
           >
-            <div className="flex flex-col items-start gap-2">
-              <span className="text-lg font-medium">
-                {nextChapter?.name ?? "..."}
-              </span>
-              <Progress
-                className="w-[300px] shadow-prepi"
-                value={(nextChapterProgress?.masteryLevel ?? 0) * 100}
+            {nextChaptersLoading && (
+              <Image
+                src="/effects/load.gif"
+                alt="loading bars"
+                width={220}
+                height={10}
               />
-              <p>
-                Ai rezolvat {nextChapterProgress?._count.completedProblems ?? 0}
-                / {nextChapterDetails?._count.problems} probleme din această
-                categorie
-              </p>
-            </div>
+            )}
+            {!!nextChapter && (
+              <div className="w-full flex flex-col items-start gap-2">
+                <span className="text-base sm:text-lg font-medium truncate">
+                  {nextChapter?.name ?? "..."}
+                </span>
+                <Progress
+                  className="shadow-prepi w-full"
+                  value={(nextChapterProgress?.masteryLevel ?? 0) * 100}
+                />
+                <p className="text-xs sm:text-sm text-gray-600 break-words hyphens-auto">
+                  {"Ai rezolvat "}
+                  <span className="font-medium">
+                    {nextChapterProgress?._count.completedProblems ?? 0}
+                    {" / "}
+                    {nextChapterDetails?._count.problems}
+                  </span>
+                  {" probleme din această categorie"}
+                </p>
+              </div>
+            )}
           </Button>
           <p>Mai multe subiecte:</p>
           {subjectsByCategories.data?.map((category) => (

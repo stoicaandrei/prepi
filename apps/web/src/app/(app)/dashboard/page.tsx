@@ -47,7 +47,7 @@ export default function Dashboard() {
 
         {!initialTestTaken && (
           <Card className="col-span-full">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardHeader className="flex flex-row items-center flex-wrap justify-between space-y-0 pb-2">
               <CardTitle className="text-2xl font-bold flex items-center">
                 <CheckSquare className="mr-2 h-6 w-6 inline-block text-cyan-500" />
                 Stabilește-ți nivelul
