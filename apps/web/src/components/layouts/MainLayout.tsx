@@ -222,42 +222,43 @@ export function MainLayout({ children }: LayoutProps) {
               </span>
             </span>
           </div>
-          <div className="flex items-center px-3">
-            <div className="text-left mr-4 hidden sm:inline">
-              <h1 className="text-base font-bold">
-                Salut, {user?.firstName ?? "Elevule"}!
-              </h1>
-              <p className="text-xs text-gray-600">Învățăcel</p>
-            </div>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <div className="flex items-center px-3 cursor-pointer">
+                <div className="text-left mr-4 hidden sm:inline">
+                  <h1 className="text-base font-bold">
+                    Salut, {user?.firstName ?? "Elevule"}!
+                  </h1>
+                  <p className="text-xs text-gray-600">Învățăcel</p>
+                </div>
+
                 <img
                   src="/avatars/babychicken.png"
                   alt=""
-                  className="w-14 h-14 cursor-pointer"
+                  className="w-14 h-14 "
                 />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem disabled>Setări</DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link
-                    href={process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL!}
-                    target="_blank"
-                  >
-                    Plăți
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => Crisp.chat.open()}>
-                  Ajutor
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => signOut()}>
-                  Logout
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
+              </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem disabled>Setări</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href={process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL!}
+                  target="_blank"
+                >
+                  Plăți
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => Crisp.chat.open()}>
+                Ajutor
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => signOut()}>
+                Logout
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </header>
       <div className="flex flex-1 overflow-hidden">
