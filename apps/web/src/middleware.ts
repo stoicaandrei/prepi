@@ -32,13 +32,12 @@ export default clerkMiddleware(async (auth, req) => {
     return;
   }
 
-  const metadata = auth().sessionClaims?.metadata ?? {};
-
-  if (!metadata) {
+  if (!auth().userId) {
     auth().protect();
     return;
   }
 
+  const metadata = auth().sessionClaims?.metadata ?? {};
   const isOnboardingDone =
     metadata.preferencesSet && metadata.subscriptionCreated;
 
