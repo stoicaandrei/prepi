@@ -3,7 +3,7 @@ import { prisma } from "@prepi/db";
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
-export default async function Page({
+export default async function PostCheckoutPage({
   searchParams: { session_id },
 }: {
   searchParams: { session_id: string };
