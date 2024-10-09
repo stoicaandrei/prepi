@@ -22,12 +22,6 @@ import { useAppContext } from "../appContext";
 import Link from "next/link";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Dashboard | Prepi",
-  description:
-    "Accesează dashboard-ul tău Prepi pentru a-ți gestiona pregătirea pentru BAC la matematică.",
-};
-
 export default function Dashboard() {
   const { data: nextChapter } =
     trpc.practice.getRecommendedNextChapters.useQuery();
