@@ -20,7 +20,6 @@ import { WeeklyActivityCard } from "./cards/WeeklyActivityCard";
 import { WeeklyPointsCard } from "./cards/WeeklyPointsCard";
 import { useAppContext } from "../appContext";
 import Link from "next/link";
-import { Metadata } from "next";
 
 export default function Dashboard() {
   const { data: nextChapter } =

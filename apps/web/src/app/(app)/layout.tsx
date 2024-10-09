@@ -2,6 +2,7 @@ import { MainLayout } from "@/components/layouts/MainLayout";
 import { ReactNode } from "react";
 import { AppProvider } from "./appContext";
 import { AppModalsWrapper } from "./appModals";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Prepi",
