@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { trpc } from "@/utils/trpc";
 import { SubmissionStatus } from "./ProblemsProgress";
 import { PracticeSessionResults, ProblemAnswerAttempt } from "./types";
 import { PracticeView } from "./PracticeView";
 import { ResultsView } from "./ResultsView";
+import { ModalLoader } from "./ModalLoader";
 
 type PracticeModalProps = {
   open: boolean;
@@ -20,16 +21,14 @@ export function PracticeModal({
   subjectId,
 }: PracticeModalProps) {
   const utils = trpc.useUtils();
-  const { data: problems } = trpc.practice.listProblemsForSubject.useQuery(
-    subjectId,
-    {
+  const { data: problems, isLoading: problemsLoading } =
+    trpc.practice.listProblemsForSubject.useQuery(subjectId, {
       enabled: !!subjectId,
       refetchOnMount: false,
       refetchOnReconnect: false,
       refetchOnWindowFocus: false,
       refetchInterval: false,
-    },
-  );
+    });
 
   const recordPracticeSession = trpc.practice.recordPracticeSession.useMutation(
     {
@@ -71,31 +70,56 @@ export function PracticeModal({
     }
   }, [practiceFinished]);
 
+  const DialogWrapper = useCallback(
+    ({ children }: { children: ReactNode }) => (
+      <Dialog open={open} onOpenChange={() => {}}>
+        <DialogContent
+          onClose={onClose}
+          className="max-w-full w-[100%] md:w-[90%] min-h-[90vh] md:min-h-[50vh] max-h-[100vh] overflow-scroll"
+        >
+          {children}
+        </DialogContent>
+      </Dialog>
+    ),
+    [open, onClose],
+  );
+
+  if (problemsLoading) {
+    return (
+      <DialogWrapper>
+        <ModalLoader message="Se încarcă testul..." />
+      </DialogWrapper>
+    );
+  }
+
+  if (recordPracticeSession.isLoading) {
+    return (
+      <DialogWrapper>
+        <ModalLoader message="Se salvează rezultatele..." />
+      </DialogWrapper>
+    );
+  }
+
   return (
-    <Dialog open={open} onOpenChange={() => {}}>
-      <DialogContent
-        onClose={onClose}
-        className="max-w-full w-[100%] md:w-[90%] min-h-[90vh] md:min-h-[50vh] max-h-[100vh] overflow-scroll"
-      >
-        {practiceFinished && (
-          <ResultsView
-            practiceResults={practiceResults}
-            submissions={submissions}
-            onClose={onClose}
-            onRepeat={repeatPractice}
-            onNext={repeatPractice}
-          />
-        )}
-        {!practiceFinished && (
-          <PracticeView
-            currentProblemIndex={currentProblemIndex}
-            problems={problems ?? []}
-            setCurrentProblemIndex={setCurrentProblemIndex}
-            setSubmissions={setSubmissions}
-            submissions={submissions}
-          />
-        )}
-      </DialogContent>
-    </Dialog>
+    <DialogWrapper>
+      {practiceFinished && (
+        <ResultsView
+          practiceResults={practiceResults}
+          submissions={submissions}
+          onClose={onClose}
+          onRepeat={repeatPractice}
+          onNext={repeatPractice}
+        />
+      )}
+      {!practiceFinished && (
+        <PracticeView
+          currentProblemIndex={currentProblemIndex}
+          problems={problems ?? []}
+          setCurrentProblemIndex={setCurrentProblemIndex}
+          setSubmissions={setSubmissions}
+          submissions={submissions}
+        />
+      )}
+    </DialogWrapper>
   );
 }
