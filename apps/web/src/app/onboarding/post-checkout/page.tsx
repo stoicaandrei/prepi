@@ -19,7 +19,7 @@ export default async function Page({
       stripeCustomerId: session.customer?.toString(),
     },
   });
-  await clerkClient.users.updateUserMetadata(clerkId, {
+  await clerkClient().users.updateUserMetadata(clerkId, {
     publicMetadata: { subscriptionCreated: true },
   });
 

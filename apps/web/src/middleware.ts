@@ -43,7 +43,7 @@ export default clerkMiddleware(async (auth, req) => {
     metadata.preferencesSet && metadata.subscriptionCreated;
 
   if (!isOnboardingDone) {
-    const user = await clerkClient.users.getUser(auth().userId ?? "");
+    const user = await clerkClient().users.getUser(auth().userId ?? "");
     const metadata = user.publicMetadata;
 
     if (!metadata.preferencesSet) {
@@ -59,7 +59,6 @@ export default clerkMiddleware(async (auth, req) => {
     if (!metadata.subscriptionCreated) {
       const correctRoute = isCheckoutRoute(req);
 
-      console.log({ correctRoute });
       if (correctRoute) return;
 
       return NextResponse.redirect(

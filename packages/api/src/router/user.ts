@@ -71,7 +71,7 @@ export const userRouter = router({
         await redeemCode(ctx, invitationCode, user.id);
       }
 
-      await clerkClient.users.updateUserMetadata(user.clerkId, {
+      await clerkClient().users.updateUserMetadata(user.clerkId, {
         publicMetadata: {
           preferencesSet: true,
         },

@@ -46,7 +46,7 @@ export const invitationCodeRouter = router({
         description: z.string().optional(),
         maxUses: z.number().positive().optional(),
         validUntil: z.date().optional(),
-        stripePromotionalCode: z.string().optional(),
+        stripeCoupon: z.string().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {
@@ -86,7 +86,7 @@ export const invitationCodeRouter = router({
         maxUses: z.number().positive().optional(),
         usesLeft: z.number().positive().optional(),
         validUntil: z.date().optional(),
-        stripePromotionalCode: z.string().optional(),
+        stripeCoupon: z.string().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {

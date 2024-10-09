@@ -16,8 +16,7 @@ export const stripeRouter = router({
         },
       },
     });
-    console.log("invitation", invitation);
-    const coupon = invitation?.stripePromotionalCode;
+    const coupon = invitation?.stripeCoupon ?? undefined;
 
     const session = await ctx.stripe.checkout.sessions.create({
       ui_mode: "embedded",

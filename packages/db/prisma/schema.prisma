@@ -63,7 +63,7 @@ model InvitationCode {
     usesLeft   Int?
     validUntil DateTime?
 
-    stripePromotionalCode String?
+    stripeCoupon String?
 
     creatorId  String
     creator    User   @relation("creator", fields: [creatorId], references: [id])

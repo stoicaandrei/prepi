@@ -35,7 +35,7 @@ export function CreateInvitationCode() {
         description: "",
         maxUses: "",
         validUntil: null,
-        stripePromotionalCode: "",
+        stripeCoupon: "",
       });
     },
   });
@@ -46,7 +46,7 @@ export function CreateInvitationCode() {
     description: "",
     maxUses: "",
     validUntil: null as Date | null,
-    stripePromotionalCode: "",
+    stripeCoupon: "",
   });
 
   const handleInputChange = (
@@ -70,7 +70,7 @@ export function CreateInvitationCode() {
       description: formData.description,
       maxUses: formData.maxUses ? Number(formData.maxUses) : undefined,
       validUntil: formData.validUntil ?? undefined,
-      stripePromotionalCode: formData.stripePromotionalCode,
+      stripeCoupon: formData.stripeCoupon,
     });
   };
 
@@ -143,13 +143,11 @@ export function CreateInvitationCode() {
             </Popover>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="stripePromotionalCode">
-              Stripe Promotional Code
-            </Label>
+            <Label htmlFor="stripeCoupon">Stripe Coupon ID (optional)</Label>
             <Input
-              id="stripePromotionalCode"
-              name="stripePromotionalCode"
-              value={formData.stripePromotionalCode}
+              id="stripeCoupon"
+              name="stripeCoupon"
+              value={formData.stripeCoupon}
               onChange={handleInputChange}
             />
           </div>
