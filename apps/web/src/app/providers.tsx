@@ -30,6 +30,9 @@ export const CrispChat = () => {
     if (user) {
       const email = user.primaryEmailAddress?.emailAddress;
       email && Crisp.user.setEmail(email);
+
+      const fullName = user.fullName;
+      fullName && Crisp.user.setNickname(fullName);
     }
   }, [user]);
 
