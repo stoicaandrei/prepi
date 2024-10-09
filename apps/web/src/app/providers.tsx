@@ -2,7 +2,7 @@
 "use client";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, useAuth, useUser } from "@clerk/nextjs";
 import { roRO } from "@clerk/localizations";
 import { MathJaxContext } from "better-react-mathjax";
 import { TrpcProvider } from "@/utils/trpc";
@@ -24,7 +24,15 @@ type SimpleProps = {
   children: React.ReactNode;
 };
 
-export function Providers({ children }: SimpleProps) {
+export const CrispChat = () => {
+  const { user } = useUser();
+  useEffect(() => {
+    if (user) {
+      const email = user.primaryEmailAddress?.emailAddress;
+      email && Crisp.user.setEmail(email);
+    }
+  }, [user]);
+
   useEffect(() => {
     const websiteId = process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID;
     if (websiteId) {
@@ -32,11 +40,18 @@ export function Providers({ children }: SimpleProps) {
     }
   });
 
+  return null;
+};
+
+export function Providers({ children }: SimpleProps) {
   return (
     <PostHogProvider client={posthog}>
       <ClerkProvider localization={roRO}>
         <MathJaxContext>
-          <TrpcProvider>{children}</TrpcProvider>
+          <TrpcProvider>
+            {children}
+            <CrispChat />
+          </TrpcProvider>
         </MathJaxContext>
       </ClerkProvider>
     </PostHogProvider>
