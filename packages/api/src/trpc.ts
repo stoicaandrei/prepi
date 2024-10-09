@@ -27,8 +27,15 @@ const hasRole = (role: UserRoles) =>
     return next();
   });
 
+const delayedProcedure = t.procedure.use(async ({ next }) => {
+  if (process.env.NODE_ENV !== "development") return next();
+
+  await new Promise((resolve) => setTimeout(resolve, Math.random() * 1000));
+  return next();
+});
+
 export const router = t.router;
-export const publicProcedure = t.procedure;
-export const protectedProcedure = t.procedure.use(isAuthed);
-export const adminProcedure = t.procedure.use(hasRole("admin"));
-export const testerProcedure = t.procedure.use(hasRole("tester"));
+export const publicProcedure = delayedProcedure;
+export const protectedProcedure = publicProcedure.use(isAuthed);
+export const adminProcedure = protectedProcedure.use(hasRole("admin"));
+export const testerProcedure = protectedProcedure.use(hasRole("tester"));
