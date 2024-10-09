@@ -4,7 +4,6 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { prisma } from "@prepi/db";
 import { config } from "./env";
 import Stripe from "stripe";
-import { startStripeSubscription } from "./utils/stripe";
 
 export const createContext = async (opts: FetchCreateContextFnOptions) => {
   const session = auth();
