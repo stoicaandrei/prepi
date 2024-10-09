@@ -11,29 +11,32 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Prepi - Pregătire pentru BAC la matematică",
+  metadataBase: new URL("https://app.prepi.ro"),
+  title: {
+    default: "Prepi - Pregătire pentru BAC la matematică",
+    template: "%s | Prepi",
+  },
   description:
-    "Prepi este platforma care te pregătește să iei BACul la matematică cu brio. Ai acces la toate exercițiile rezolvate și materialele explicative necesare. Începe pregătirea gratuit!",
+    "Prepi este platforma care te pregătește să iei BACul la matematică cu brio. Ai acces la toate exercițiile rezolvate și materialele explicative necesare.",
+  openGraph: {
+    type: "website",
+    locale: "ro_RO",
+    url: "https://app.prepi.ro",
+    siteName: "Prepi",
+    title: "Prepi - Pregătire pentru BAC la matematică",
+    description:
+      "Prepi este platforma care te pregătește să iei BACul la matematică cu brio. Ai acces la toate exercițiile rezolvate și materialele explicative necesare.",
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
   icons: [
     {
       rel: "icon",
       url: "/favicon.ico",
     },
   ],
-  openGraph: {
-    title: "Prepi - Pregătire pentru BAC la matematică",
-    description:
-      "Prepi este platforma care te pregătește să iei BACul la matematică cu brio. Ai acces la toate exercițiile rezolvate și materialele explicative necesare. Începe pregătirea gratuit!",
-    url: "https://app.prepi.ro",
-    siteName: "Prepi",
-    locale: "ro_RO",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  metadataBase: new URL("https://app.prepi.ro"),
 };
 
 export default function RootLayout({
