@@ -33,7 +33,7 @@ export default function Page() {
 
   const [idealGrade, setIdealGrade] = useState<IdealGrade>(IdealGrade.EIGHT);
   const [examDifficulty, setExamDifficulty] = useState<ExamDifficulty>(
-    ExamDifficulty.M2,
+    ExamDifficulty.M1,
   );
   const [invitationCode, setInvitationCode] = useState("");
   const codeToCheck = useDeferredValue(invitationCode);
@@ -159,6 +159,7 @@ export default function Page() {
             disabled={
               !readyToSubmit ||
               onboardPreferences.isLoading ||
+              codeValidation.isLoading ||
               (!!invitationCode && codeValidation.data?.success === false)
             }
             onClick={handleSubmit}

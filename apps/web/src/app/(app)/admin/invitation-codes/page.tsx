@@ -20,6 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { CreateInvitationCode } from "./create-code";
 
 type SortField = "createdAt" | "code" | "maxUses" | "usesLeft" | "validUntil";
 type SortOrder = "asc" | "desc";
@@ -59,6 +60,7 @@ export default function Component() {
   return (
     <div className="container mx-auto py-10">
       <h1 className="text-2xl font-bold mb-5">Invitation Codes</h1>
+      <CreateInvitationCode />
       <div className="flex justify-between items-center mb-4">
         <Select
           value={limit.toString()}

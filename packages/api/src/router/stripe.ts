@@ -4,11 +4,24 @@ import { z } from "zod";
 
 export const stripeRouter = router({
   createCheckoutSession: protectedProcedure.mutation(async ({ ctx }) => {
-    const user = await ctx.currentUser();
+    const clerkUser = await ctx.currentUser();
+    const dbUser = await ctx.getDbUser();
+
+    const invitation = await ctx.prisma.invitationCode.findFirst({
+      where: {
+        redeemedBy: {
+          some: {
+            id: dbUser.id,
+          },
+        },
+      },
+    });
+    console.log("invitation", invitation);
+    const coupon = invitation?.stripePromotionalCode;
 
     const session = await ctx.stripe.checkout.sessions.create({
       ui_mode: "embedded",
-      customer_email: user?.emailAddresses[0].emailAddress,
+      customer_email: clerkUser?.emailAddresses[0].emailAddress,
       line_items: [
         {
           price: process.env.STRIPE_SUBSCRIPTION_PRICE_ID,
@@ -26,7 +39,7 @@ export const stripeRouter = router({
       },
       discounts: [
         {
-          promotion_code: "promo_1Q5zI9FMuPtZf5FPB2hGQe7h",
+          coupon,
         },
       ],
       payment_method_collection: "if_required",
