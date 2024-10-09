@@ -44,7 +44,7 @@ export default function Page() {
 
   const requiredDataReady = idealGrade && examDifficulty;
   const stuffIsLoading =
-    onboardPreferences.isLoading || codeValidation.isLoading;
+    onboardPreferences.isLoading || codeValidation.isFetching;
   const invitationCodeIsValid =
     !invitationCode || (!!invitationCode && codeValidation.data?.success);
 
@@ -146,7 +146,7 @@ export default function Page() {
                   value={invitationCode}
                   onChange={(e) => setInvitationCode(e.target.value)}
                 />
-                {invitationCode && codeValidation.isLoading && (
+                {invitationCode && codeValidation.isFetching && (
                   <span className="text-xs text-muted-foreground">
                     Se verifică codul...
                   </span>
