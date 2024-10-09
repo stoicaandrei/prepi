@@ -42,7 +42,14 @@ export default function Page() {
     enabled: !!codeToCheck,
   });
 
-  const readyToSubmit = idealGrade && examDifficulty;
+  const requiredDataReady = idealGrade && examDifficulty;
+  const stuffIsLoading =
+    onboardPreferences.isLoading || codeValidation.isLoading;
+  const invitationCodeIsValid =
+    !invitationCode || (!!invitationCode && codeValidation.data?.success);
+
+  const readyToSubmit =
+    requiredDataReady && invitationCodeIsValid && !stuffIsLoading;
 
   const handleSubmit = () => {
     if (!readyToSubmit) return;
@@ -156,12 +163,7 @@ export default function Page() {
         <CardFooter className="flex justify-end">
           <Button
             className="text-sm"
-            disabled={
-              !readyToSubmit ||
-              onboardPreferences.isLoading ||
-              codeValidation.isLoading ||
-              (!!invitationCode && codeValidation.data?.success === false)
-            }
+            disabled={!readyToSubmit}
             onClick={handleSubmit}
           >
             {onboardPreferences.isLoading && "încarcă..."}
