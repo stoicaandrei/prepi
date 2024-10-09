@@ -95,7 +95,7 @@ export function InitialAssessmentModal({
         <Dialog open={open} onOpenChange={() => {}}>
           <DialogContent
             onClose={onClose}
-            className="max-w-full w-[90%] min-h-[90vh] md:min-h-[50vh] max-h-[100vh] overflow-scroll"
+            className="max-w-full w-[100%] md:w-[90%] min-h-[90vh] md:min-h-[50vh] max-h-[100vh] overflow-scroll"
           >
             <div className="p-6">{children}</div>
           </DialogContent>
