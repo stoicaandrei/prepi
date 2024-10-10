@@ -5,7 +5,7 @@ import {
 } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-const isUtilityRoute = createRouteMatcher(["/crons(.*)"]);
+const isUtilityRoute = createRouteMatcher(["/crons(.*)", "/webhooks(.*)"]);
 const isApiRoute = createRouteMatcher(["/api(.*)"]);
 
 const isPublicRoute = createRouteMatcher(["/auth(.*)"]);
