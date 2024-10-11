@@ -1,3 +1,4 @@
+import Stripe from "stripe";
 import { cacheable } from "../cache";
 import { router, protectedProcedure } from "../trpc";
 import { z } from "zod";
@@ -6,6 +7,29 @@ export const stripeRouter = router({
   createCheckoutSession: protectedProcedure.mutation(async ({ ctx }) => {
     const clerkUser = await ctx.currentUser();
     const dbUser = await ctx.getDbUser();
+
+    let customer: Stripe.Customer | Stripe.DeletedCustomer | undefined =
+      undefined;
+
+    if (dbUser.stripeCustomerId) {
+      customer = await ctx.stripe.customers.retrieve(dbUser.stripeCustomerId);
+    }
+
+    if (!customer) {
+      customer = await ctx.stripe.customers.create({
+        email: clerkUser?.emailAddresses[0].emailAddress,
+        preferred_locales: ["ro"],
+      });
+
+      await ctx.prisma.user.update({
+        where: {
+          id: dbUser.id,
+        },
+        data: {
+          stripeCustomerId: customer.id,
+        },
+      });
+    }
 
     const invitation = await ctx.prisma.invitationCode.findFirst({
       where: {
@@ -20,7 +44,7 @@ export const stripeRouter = router({
 
     const session = await ctx.stripe.checkout.sessions.create({
       ui_mode: "embedded",
-      customer_email: clerkUser?.emailAddresses[0].emailAddress,
+      customer: customer.id,
       line_items: [
         {
           price: process.env.STRIPE_SUBSCRIPTION_PRICE_ID,
@@ -52,14 +76,21 @@ export const stripeRouter = router({
       id: session.id,
     };
   }),
-  getCheckoutSession: protectedProcedure
-    .input(z.string())
-    .query(async ({ ctx, input }) => {
-      const session = await ctx.stripe.checkout.sessions.retrieve(input);
+  createSetupCheckoutSession: protectedProcedure.mutation(async ({ ctx }) => {
+    const clerkUser = await ctx.currentUser();
+    const dbUser = await ctx.getDbUser();
 
-      return {
-        status: session.status,
-        customer_email: session.customer_details?.email,
-      };
-    }),
+    const session = await ctx.stripe.checkout.sessions.create({
+      ui_mode: "embedded",
+      mode: "setup",
+      customer: dbUser.stripeCustomerId ?? "",
+      payment_method_types: ["card"],
+      return_url: `${process.env.NEXT_PUBLIC_APP_URL}/settings/billing`,
+    });
+
+    return {
+      clientSecret: session.client_secret,
+      id: session.id,
+    };
+  }),
 });
