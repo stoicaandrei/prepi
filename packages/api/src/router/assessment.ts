@@ -29,6 +29,8 @@ export const assessmentRouter = router({
     const user = await ctx.getDbUser();
     const userId = user.id;
 
+    console.log("Getting next problem for user", userId);
+
     const assessmentSession =
       await ctx.prisma.initialAssessmentSession.findUnique({
         where: { userId },
@@ -36,6 +38,9 @@ export const assessmentRouter = router({
     const questionsCount = await ctx.prisma.assessmentQuestion.count({
       where: { initialAssessmentSessionId: assessmentSession?.id },
     });
+
+    console.log("Questions answered", questionsCount);
+    console.log("MAX_QUESTIONS", MAX_QUESTIONS);
 
     if (questionsCount >= MAX_QUESTIONS) {
       // Assessment is complete
@@ -61,6 +66,8 @@ export const assessmentRouter = router({
       },
     });
 
+    console.log("Subjects pool length", subjectsPool.length);
+
     if (subjectsPool.length === 0) {
       // All subjects have been assessed
       subjectsPool = await ctx.prisma.subject.findMany({
@@ -77,9 +84,16 @@ export const assessmentRouter = router({
       });
     }
 
+    console.log(
+      "Subjects pool length after checking again",
+      subjectsPool.length,
+    );
+
     // Step 2: Randomly select one of the unassessed subjects
     const randomSubjectIndex = Math.floor(Math.random() * subjectsPool.length);
     const selectedSubject = subjectsPool[randomSubjectIndex];
+
+    console.log("Selected subject", selectedSubject.id);
 
     // Step 3: Fetch problems from the selected subject
     let problems = await ctx.prisma.problem.findMany({
@@ -97,6 +111,8 @@ export const assessmentRouter = router({
       },
     });
 
+    console.log("Problems length", problems.length);
+
     // In case something happened with the subject selected problem
     if (problems.length === 0) {
       const problemsCount = await ctx.prisma.problem.count();
@@ -113,9 +129,13 @@ export const assessmentRouter = router({
       if (randomProblem) problems = [randomProblem];
     }
 
+    console.log("Problems length after checking again", problems.length);
+
     // Step 4: Randomly select a problem from the selected subject
     const randomProblemIndex = Math.floor(Math.random() * problems.length);
     let selectedProblem = problems[randomProblemIndex];
+
+    console.log("Selected problem", selectedProblem.id);
 
     if (!selectedProblem) {
       // Get a random problem from database
