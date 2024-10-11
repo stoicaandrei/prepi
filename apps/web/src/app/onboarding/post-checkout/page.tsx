@@ -11,16 +11,38 @@ export default async function PostCheckoutPage({
   const clerkId = auth().userId ?? "";
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
   const session = await stripe.checkout.sessions.retrieve(session_id);
-  await prisma.user.update({
+  const stripeCustomerId = session.customer?.toString();
+
+  const subscriptions = await stripe.subscriptions.list({
+    customer: stripeCustomerId,
+    limit: 1,
+  });
+  const subscription = subscriptions.data[0];
+
+  const dbUser = await prisma.user.findFirst({
     where: {
-      clerkId,
+      stripeCustomerId,
     },
-    data: {
-      stripeCustomerId: session.customer?.toString(),
+    select: {
+      id: true,
     },
   });
+
+  await prisma.stripeSubscription.create({
+    data: {
+      stripeSubscriptionId: subscription.id,
+      status: subscription.status,
+      trialEndsAt: new Date((subscription.trial_end ?? 0) * 1000),
+      userId: dbUser?.id ?? "",
+    },
+  });
+
   await clerkClient().users.updateUserMetadata(clerkId, {
-    publicMetadata: { subscriptionCreated: true },
+    publicMetadata: {
+      subscriptionCreated: true,
+      trialEndsAt: subscription.trial_end ?? 0,
+      subscriptionActive: true,
+    },
   });
 
   redirect("/");

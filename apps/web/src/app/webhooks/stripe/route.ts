@@ -25,27 +25,18 @@ export async function POST(req: NextRequest) {
     case "customer.subscription.updated":
     case "customer.subscription.deleted":
       const subscription = event.data.object;
-      // await updateSubscriptionStatus(subscription)
+      await prisma.stripeSubscription.update({
+        where: {
+          stripeSubscriptionId: subscription.id,
+        },
+        data: {
+          status: subscription.status,
+        },
+      });
       break;
     default:
       console.log(`Unhandled event type ${event.type}`);
   }
 
   return Response.json({ received: true });
-}
-
-async function updateSubscriptionStatus(subscription: Stripe.Subscription) {
-  const stripeCustomerId = subscription.customer.toString();
-  const status = subscription.status;
-
-  const user = await prisma.user.findFirst({
-    where: {
-      stripeCustomerId,
-    },
-  });
-
-  if (!user) {
-    console.log(`User with stripeCustomerId ${stripeCustomerId} not found`);
-    return;
-  }
 }

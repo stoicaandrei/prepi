@@ -11,9 +11,10 @@ datasource db {
 }
 
 model User {
-    id               String  @id @default(cuid())
-    clerkId          String  @unique
-    stripeCustomerId String? @unique
+    id                 String              @id @default(cuid())
+    clerkId            String              @unique
+    stripeCustomerId   String?             @unique
+    stripeSubscription StripeSubscription?
 
     currentStreak  Int              @default(0)
     longestStreak  Int              @default(0)
@@ -33,6 +34,31 @@ model User {
     createdAt        DateTime @default(now())
     updatedAt        DateTime @updatedAt
     invitationCodeId String?
+}
+
+enum StripeSubscriptionStatus {
+    active
+    canceled
+    incomplete
+    incomplete_expired
+    past_due
+    paused
+    trialing
+    unpaid
+}
+
+model StripeSubscription {
+    id                   String @id @default(cuid())
+    stripeSubscriptionId String @unique
+
+    userId String @unique
+    user   User   @relation(fields: [userId], references: [id])
+
+    trialEndsAt DateTime
+    status      StripeSubscriptionStatus @default(trialing)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
 enum IdealGrade {

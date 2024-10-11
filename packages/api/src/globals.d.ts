@@ -7,6 +7,8 @@ declare global {
     metadata: {
       preferencesSet?: boolean;
       subscriptionCreated?: boolean;
+      trialEndsAt?: number;
+      subscriptionActive?: boolean;
       roles?: UserRoles[];
     };
   }
