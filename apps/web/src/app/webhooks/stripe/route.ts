@@ -3,8 +3,21 @@ import { NextRequest } from "next/server";
 import Stripe from "stripe";
 import { prisma } from "@prepi/db";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+if (!stripeSecretKey) {
+  console.error("STRIPE_SECRET_KEY is not set in the environment variables");
+  throw new Error("STRIPE_SECRET_KEY is not set");
+}
+
+const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+if (!webhookSecret) {
+  console.error(
+    "STRIPE_WEBHOOK_SECRET is not set in the environment variables",
+  );
+  throw new Error("STRIPE_WEBHOOK_SECRET is not set");
+}
+
+const stripe = new Stripe(stripeSecretKey);
 
 export async function POST(req: NextRequest) {
   const body = await req.text();
