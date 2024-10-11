@@ -1,10 +1,22 @@
 "use client";
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
+import { trpc } from "@/utils/trpc";
+import dayjs from "dayjs";
 
 interface AppContextProps {
   isInitialAssessmentModalOpen: boolean;
   openInitialAssessmentModal: () => void;
   closeInitialAssessmentModal: () => void;
+
+  isStripeSetupModalOpen: boolean;
+  openStripeSetupModal: () => void;
+  closeStripeSetupModal: () => void;
 }
 
 const AppContext = createContext<AppContextProps | undefined>(undefined);
@@ -14,6 +26,23 @@ interface AppProviderProps {
 }
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
+  const { data: subscription } = trpc.stripe.getSubscriptionDetails.useQuery();
+
+  useEffect(() => {
+    if (!subscription) return;
+
+    const isBeforeTrial =
+      dayjs(subscription.trialEndsAt).diff(dayjs(), "day") < 3;
+    if (isBeforeTrial) {
+      openInitialAssessmentModal();
+    }
+  }, [subscription]);
+
+  const [isStripeSetupModalOpen, setStripeSetupModalOpen] = useState(false);
+
+  const openStripeSetupModal = () => setStripeSetupModalOpen(true);
+  const closeStripeSetupModal = () => setStripeSetupModalOpen(false);
+
   const [isInitialAssessmentModalOpen, setInitialAssessmentModalOpen] =
     useState(false);
 
@@ -27,6 +56,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         isInitialAssessmentModalOpen,
         openInitialAssessmentModal,
         closeInitialAssessmentModal,
+
+        isStripeSetupModalOpen,
+        openStripeSetupModal,
+        closeStripeSetupModal,
       }}
     >
       {children}

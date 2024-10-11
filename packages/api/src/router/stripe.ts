@@ -80,17 +80,43 @@ export const stripeRouter = router({
     const clerkUser = await ctx.currentUser();
     const dbUser = await ctx.getDbUser();
 
+    const sessions = await ctx.stripe.checkout.sessions.list({
+      customer: dbUser.stripeCustomerId ?? "",
+    });
+
+    console.log(sessions.data.length);
+
     const session = await ctx.stripe.checkout.sessions.create({
       ui_mode: "embedded",
       mode: "setup",
       customer: dbUser.stripeCustomerId ?? "",
       payment_method_types: ["card"],
-      return_url: `${process.env.NEXT_PUBLIC_APP_URL}/settings/billing`,
+      return_url: `${process.env.NEXT_PUBLIC_APP_URL}/?session_id={CHECKOUT_SESSION_ID}`,
+      locale: "ro",
     });
 
     return {
       clientSecret: session.client_secret,
       id: session.id,
     };
+  }),
+  getSubscriptionDetails: protectedProcedure.query(async ({ ctx }) => {
+    const dbUser = await ctx.getDbUser();
+
+    if (!dbUser.stripeCustomerId) {
+      return null;
+    }
+
+    const subscription = await ctx.prisma.stripeSubscription.findFirst({
+      where: {
+        userId: dbUser.id,
+      },
+      select: {
+        status: true,
+        trialEndsAt: true,
+      },
+    });
+
+    return subscription;
   }),
 });
