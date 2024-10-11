@@ -47,10 +47,7 @@ export default function RootLayout({
   return (
     <html lang="ro" className={montserrat.className}>
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.css"
-        />
+        <link rel="stylesheet" href="/mathquill/mathquill.min.css" />
       </head>
       <body>
         <Providers>
@@ -61,10 +58,7 @@ export default function RootLayout({
           src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
           strategy="beforeInteractive"
         />
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.js"
-          strategy="afterInteractive"
-        />
+        <Script src="/mathquill/mathquill.min.js" strategy="afterInteractive" />
       </body>
     </html>
   );
