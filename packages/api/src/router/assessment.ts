@@ -31,10 +31,19 @@ export const assessmentRouter = router({
 
     console.log("Getting next problem for user", userId);
 
-    const assessmentSession =
+    let assessmentSession =
       await ctx.prisma.initialAssessmentSession.findUnique({
         where: { userId },
       });
+
+    if (!assessmentSession) {
+      assessmentSession = await ctx.prisma.initialAssessmentSession.create({
+        data: {
+          userId,
+        },
+      });
+    }
+
     const questionsCount = await ctx.prisma.assessmentQuestion.count({
       where: { initialAssessmentSessionId: assessmentSession?.id },
     });
