@@ -4,14 +4,14 @@ import { ReactNode } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
-import { useAuth } from "@clerk/nextjs";
+import { useSignOut } from "@/hooks/useSignOut";
 
 export default function OnboardingLayout({
   children,
 }: {
   children: ReactNode;
 }) {
-  const { signOut } = useAuth();
+  const signOut = useSignOut();
 
   return (
     <div className="flex h-screen flex-col">

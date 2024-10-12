@@ -9,6 +9,11 @@ import { TrpcProvider } from "@/utils/trpc";
 import { Crisp } from "crisp-sdk-web";
 import { useEffect } from "react";
 
+console.log(
+  "process.env.NEXT_PUBLIC_POSTHOG_KEY",
+  process.env.NEXT_PUBLIC_POSTHOG_KEY,
+);
+
 if (typeof window !== "undefined") {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? "", {
     person_profiles: "identified_only",
@@ -46,17 +51,34 @@ export const CrispChat = () => {
   return null;
 };
 
+export const PostHogProviderWithClerk = ({ children }: SimpleProps) => {
+  const { user } = useUser();
+  useEffect(() => {
+    if (user) {
+      const email = user.primaryEmailAddress?.emailAddress;
+      const name = user.fullName;
+
+      posthog.identify(user.id, {
+        email,
+        name,
+      });
+    }
+  }, [user]);
+
+  return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
+};
+
 export function Providers({ children }: SimpleProps) {
   return (
-    <PostHogProvider client={posthog}>
-      <ClerkProvider localization={roRO}>
+    <ClerkProvider localization={roRO}>
+      <PostHogProviderWithClerk>
         <MathJaxContext>
           <TrpcProvider>
             {children}
             <CrispChat />
           </TrpcProvider>
         </MathJaxContext>
-      </ClerkProvider>
-    </PostHogProvider>
+      </PostHogProviderWithClerk>
+    </ClerkProvider>
   );
 }

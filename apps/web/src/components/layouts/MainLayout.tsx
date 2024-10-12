@@ -23,7 +23,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useAuth, useUser } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
 import { useState } from "react";
@@ -31,6 +31,7 @@ import { trpc } from "@/utils/trpc";
 import { pluralize } from "@prepi/utils";
 import { Crisp } from "crisp-sdk-web";
 import { useUserRoles } from "@/hooks/useUserRoles";
+import { useSignOut } from "@/hooks/useSignOut";
 
 export const description =
   "A products dashboard with a sidebar navigation and a main content area. The dashboard has a header with a search input and a user menu. The sidebar has a logo, navigation links, and a card with a call to action. The main content area shows an empty state with a call to action.";
@@ -51,7 +52,7 @@ const navClasses = (active: boolean) =>
 export function MainLayout({ children }: LayoutProps) {
   const fullPath = usePathname();
   const activeSection = fullPath?.split("/")[1];
-  const { signOut } = useAuth();
+  const signOut = useSignOut();
   const { user } = useUser();
   const { isTester, isAdmin } = useUserRoles();
 
