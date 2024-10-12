@@ -75,7 +75,7 @@ export default function Dashboard() {
             <img
               src="/elements/hourglass.svg"
               alt=""
-              className="h-9 w-9 absolute top-0 left-0 -translate-y-1/2 sm:left-[80%]"
+              className="h-9 w-9 absolute top-0 left-0 -translate-y-1/2 sm:left-auto sm:right-[120px]"
             />
           </Card>
         )}
