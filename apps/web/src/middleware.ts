@@ -16,11 +16,7 @@ const isPublicRoute = createRouteMatcher(["/auth(.*)"]);
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
 const isTesterRoute = createRouteMatcher("/tester(.*)");
 
-const isPreferencesRoute = createRouteMatcher(["/onboarding/preferences"]);
-const isCheckoutRoute = createRouteMatcher([
-  "/onboarding/checkout",
-  "/onboarding/post-checkout",
-]);
+const isOnboardingRoute = createRouteMatcher(["/onboarding(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
   if (isUtilityRoute(req)) {
@@ -42,31 +38,21 @@ export default clerkMiddleware(async (auth, req) => {
   }
 
   const metadata = auth().sessionClaims?.metadata ?? {};
-  const isOnboardingDone =
-    metadata.preferencesSet && metadata.subscriptionCreated;
+  const isOnboardingCompleted = metadata.onboardingCompleted;
+  const onboardingRoute = isOnboardingRoute(req);
 
-  if (!isOnboardingDone) {
+  if (onboardingRoute && isOnboardingCompleted) {
+    return NextResponse.redirect(new URL("/", req.nextUrl));
+  }
+
+  if (!isOnboardingCompleted) {
+    // Fetch the user to get the latest metadata,
+    // because the session claims don't always have the latest metadata
     const user = await clerkClient().users.getUser(auth().userId ?? "");
-    const metadata = user.publicMetadata;
+    const freshMetadata = user.publicMetadata;
 
-    if (!metadata.preferencesSet) {
-      const correctRoute = isPreferencesRoute(req);
-
-      if (correctRoute) return;
-
-      return NextResponse.redirect(
-        new URL("/onboarding/preferences", req.nextUrl),
-      );
-    }
-
-    if (!metadata.subscriptionCreated) {
-      const correctRoute = isCheckoutRoute(req);
-
-      if (correctRoute) return;
-
-      return NextResponse.redirect(
-        new URL("/onboarding/checkout", req.nextUrl),
-      );
+    if (!freshMetadata.onboardingCompleted && !onboardingRoute) {
+      return NextResponse.redirect(new URL("/onboarding", req.nextUrl));
     }
   }
 

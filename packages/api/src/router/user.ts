@@ -1,4 +1,9 @@
-import { ExamDifficulty, IdealGrade, InvitationCode } from "@prepi/db";
+import {
+  ExamDifficulty,
+  IdealGrade,
+  InvitationCode,
+  PrismaClient,
+} from "@prepi/db";
 import { cacheable } from "../cache";
 import { router, protectedProcedure } from "../trpc";
 import { z } from "zod";
@@ -55,27 +60,24 @@ export const userRouter = router({
 
       const user = await ctx.getDbUser();
 
-      await ctx.prisma.userPreferences.create({
-        data: {
+      await ctx.prisma.userPreferences.upsert({
+        where: {
+          userId: user.id,
+        },
+        update: {
           idealGrade,
           examDifficulty,
-          user: {
-            connect: {
-              id: user.id,
-            },
-          },
+        },
+        create: {
+          userId: user.id,
+          idealGrade,
+          examDifficulty,
         },
       });
 
       if (invitationCode) {
-        await redeemCode(ctx, invitationCode, user.id);
+        await redeemCode(ctx.prisma, invitationCode, user.id);
       }
-
-      await clerkClient().users.updateUserMetadata(user.clerkId, {
-        publicMetadata: {
-          preferencesSet: true,
-        },
-      });
     }),
 });
 
@@ -96,8 +98,24 @@ const isInvitationCodeValid = async (invitationCode: InvitationCode) => {
   return true;
 };
 
-const redeemCode = async (ctx: any, code: string, userId: string) => {
-  const invitation = await ctx.prisma.invitationCode.findUnique({
+const redeemCode = async (
+  prisma: PrismaClient,
+  code: string,
+  userId: string,
+) => {
+  // Remove the last code used by the user
+  await prisma.user.update({
+    where: {
+      id: userId,
+    },
+    data: {
+      redeemedCodes: {
+        set: [],
+      },
+    },
+  });
+
+  const invitation = await prisma.invitationCode.findUnique({
     where: {
       code,
     },
@@ -107,7 +125,7 @@ const redeemCode = async (ctx: any, code: string, userId: string) => {
     return;
   }
 
-  await ctx.prisma.invitationCode.update({
+  await prisma.invitationCode.update({
     where: {
       code,
     },
@@ -121,7 +139,7 @@ const redeemCode = async (ctx: any, code: string, userId: string) => {
   });
 
   if (invitation.usesLeft) {
-    await ctx.prisma.invitationCode.update({
+    await prisma.invitationCode.update({
       where: {
         code,
       },

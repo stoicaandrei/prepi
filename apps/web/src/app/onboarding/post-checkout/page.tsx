@@ -33,13 +33,13 @@ export default async function PostCheckoutPage({
       stripeSubscriptionId: subscription.id,
       status: subscription.status,
       trialEndsAt: new Date((subscription.trial_end ?? 0) * 1000),
-      userId: dbUser?.id ?? "",
+      userId: dbUser!.id,
     },
   });
 
   await clerkClient().users.updateUserMetadata(clerkId, {
     publicMetadata: {
-      subscriptionCreated: true,
+      onboardingCompleted: true,
       trialEndsAt: subscription.trial_end ?? 0,
       subscriptionActive: true,
     },
