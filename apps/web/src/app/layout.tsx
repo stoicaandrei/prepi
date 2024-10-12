@@ -58,7 +58,10 @@ export default function RootLayout({
           src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
           strategy="beforeInteractive"
         />
-        <Script src="/mathquill/mathquill.min.js" strategy="afterInteractive" />
+        <Script
+          src="/mathquill/mathquill.min.js"
+          strategy="beforeInteractive"
+        />
       </body>
     </html>
   );
