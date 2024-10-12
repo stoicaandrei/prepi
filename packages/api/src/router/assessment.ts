@@ -151,6 +151,15 @@ export const assessmentRouter = router({
       },
     });
 
+    ctx.posthog.capture({
+      distinctId: userId,
+      event: "initial_assessment_next_problem",
+      properties: {
+        problemId: selectedProblem.id,
+        problemCount: questionsCount + 1,
+      },
+    });
+
     // Return the selected problem and subject information
     return completeProblem;
   }),
@@ -233,6 +242,15 @@ export const assessmentRouter = router({
       }
 
       // TODO: Give user points
+
+      ctx.posthog.capture({
+        distinctId: userId,
+        event: "initial_assessment_question_answered",
+        properties: {
+          correct,
+          problemId,
+        },
+      });
     }),
 });
 

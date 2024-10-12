@@ -2,6 +2,7 @@ import Stripe from "stripe";
 import { prisma } from "@prepi/db";
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { PostHog } from "posthog-node";
 
 export default async function PostCheckoutPage({
   searchParams: { session_id },
@@ -44,6 +45,17 @@ export default async function PostCheckoutPage({
       subscriptionActive: true,
     },
   });
+
+  const posthog = new PostHog(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
+    host: "https://eu.i.posthog.com",
+  });
+
+  posthog.capture({
+    distinctId: dbUser!.id,
+    event: "subscription_trial_created",
+  });
+
+  await posthog.shutdown();
 
   redirect("/");
 }

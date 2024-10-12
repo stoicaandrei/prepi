@@ -4,10 +4,14 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { prisma } from "@prepi/db";
 import { config } from "./env";
 import Stripe from "stripe";
+import { PostHog } from "posthog-node";
 
 export const createContext = async (opts: FetchCreateContextFnOptions) => {
   const session = auth();
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+  const posthog = new PostHog(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
+    host: "https://eu.i.posthog.com",
+  });
 
   return {
     auth: session,
@@ -15,6 +19,7 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
     env: config,
     currentUser,
     stripe,
+    posthog,
     getDbUser: async () => {
       if (!session.userId) {
         throw new Error(
@@ -38,6 +43,11 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
         data: {
           clerkId,
         },
+      });
+
+      posthog.capture({
+        distinctId: newUser.id,
+        event: "user_created",
       });
 
       return newUser;

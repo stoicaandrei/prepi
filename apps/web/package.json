@@ -59,6 +59,7 @@
     "mathquill": "0.10.1-a",
     "next": "14.2.13",
     "posthog-js": "^1.163.0",
+    "posthog-node": "^4.2.0",
     "react": "18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-day-picker": "8.10.1",

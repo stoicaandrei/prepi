@@ -78,6 +78,19 @@ export const userRouter = router({
       if (invitationCode) {
         await redeemCode(ctx.prisma, invitationCode, user.id);
       }
+
+      ctx.posthog.capture({
+        distinctId: user.id,
+        event: "user_onboarded_preferences",
+        properties: {
+          idealGrade,
+          examDifficulty,
+          $set: {
+            idealGrade,
+            examDifficulty,
+          },
+        },
+      });
     }),
 });
 

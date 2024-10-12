@@ -242,6 +242,15 @@ export const practiceRouter = router({
         }
       }
 
+      ctx.posthog.capture({
+        distinctId: user.id,
+        event: "user_practice_start",
+        properties: {
+          subjectId: input,
+          problems: problems.map((problem) => problem.id),
+        },
+      });
+
       return problems;
     }),
   recordPracticeSession: protectedProcedure
@@ -349,6 +358,18 @@ export const practiceRouter = router({
               isCorrect: problem.correct,
             })),
           },
+        },
+      });
+
+      ctx.posthog.capture({
+        distinctId: user.id,
+        event: "user_practice_end",
+        properties: {
+          subjectId: input.subjectId,
+          problems: input.problems.map((problem) => problem.problemId),
+          correctProblems: correctProblemIds,
+          correctCount,
+          pointsEarned,
         },
       });
 
