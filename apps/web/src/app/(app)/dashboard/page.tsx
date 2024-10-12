@@ -12,6 +12,7 @@ import {
   Book,
   ClipboardList,
   ChartNoAxesCombined,
+  PieChart,
 } from "lucide-react";
 import Head from "next/head";
 import { StreaksCard } from "./cards/StreaksCard";
@@ -40,24 +41,24 @@ export default function Dashboard() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         <Card className="col-span-full">
           <p className="text-base font-medium text-[#6e6e6e] p-10">
-            Amintește-ți că suntem în Beta și încă lucrăm la platformă. Fii
-            răbdător și nu ezita să ne scrii dacă ai o propunere!
+            Hei, suntem încă în Beta și îmbunătățim continuu platforma. Dacă ai
+            idei sau sugestii, ne-ar plăcea să le auzim. 😊
           </p>
         </Card>
 
         {!initialTestTaken && (
-          <Card className="col-span-full">
+          <Card className="col-span-full relative">
             <CardHeader className="flex flex-row items-center flex-wrap justify-between space-y-0 pb-2">
               <CardTitle className="text-2xl font-bold flex items-center">
                 <CheckSquare className="mr-2 h-6 w-6 inline-block text-cyan-500" />
-                Stabilește-ți nivelul
+                Care îți este nivelul?
               </CardTitle>
               <Button
                 variant="default"
-                className="bg-cyan-500 hover:bg-cyan-600"
+                className="shadow-prepi-lg hover:shadow-prepi relative"
                 onClick={openInitialAssessmentModal}
               >
-                Deschide
+                Începe!
               </Button>
             </CardHeader>
             <CardContent>
@@ -66,6 +67,16 @@ export default function Dashboard() {
                 individuală.
               </p>
             </CardContent>
+            <img
+              src="/elements/stopwatch.svg"
+              alt=""
+              className="h-9 w-9 absolute bottom-0 right-0 translate-y-1/2 sm:bottom-8"
+            />
+            <img
+              src="/elements/hourglass.svg"
+              alt=""
+              className="h-9 w-9 absolute top-0 left-0 -translate-y-1/2 sm:left-[80%]"
+            />
           </Card>
         )}
 
@@ -87,7 +98,8 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                Exersează zilnic pentru a-ți îmbunătăți performanța.
+                Dă startul pregătirii tale personale. Fă testul inițial și
+                descoperă planul creat special pentru tine.
               </p>
             </CardContent>
           </Card>
@@ -96,7 +108,7 @@ export default function Dashboard() {
         <Card>
           <CardHeader>
             <CardTitle className="text-xl font-bold">
-              <BarChart2 className="mr-2 h-6 w-6 inline-block text-cyan-500" />
+              <PieChart className="mr-2 h-6 w-6 inline-block text-cyan-500" />
               Competențele mele
             </CardTitle>
           </CardHeader>

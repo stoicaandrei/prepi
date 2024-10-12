@@ -8,6 +8,7 @@ import {
 } from "chart.js";
 import { PolarArea } from "react-chartjs-2";
 import { trpc } from "@/utils/trpc";
+import { useEffect, useRef } from "react";
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
@@ -52,7 +53,14 @@ export const MySkillsChart = () => {
   }
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: "url(/illustrations/student-desk.svg)",
+        backgroundColor: "rgba(255, 255, 255, 0.6)",
+        backgroundBlendMode: "lighten",
+      }}
+      className="bg-contain bg-center bg-no-repeat"
+    >
       <PolarArea
         data={{
           labels: categories.map((c) => c.name),
@@ -70,6 +78,7 @@ export const MySkillsChart = () => {
           ],
         }}
         options={{
+          responsive: true,
           plugins: {
             legend: {
               display: false,
@@ -108,6 +117,6 @@ export const MySkillsChart = () => {
           },
         }}
       />
-    </>
+    </div>
   );
 };

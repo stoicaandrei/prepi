@@ -85,6 +85,7 @@ module.exports = {
       },
       boxShadow: {
         prepi: "0 0 3px #6badee",
+        "prepi-lg": "0 0 10px #6badee",
       },
     },
   },

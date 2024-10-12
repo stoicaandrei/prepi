@@ -11,8 +11,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+import { useAppContext } from "../../appContext";
 
 export const PracticeHistoryCard = () => {
+  const { openInitialAssessmentModal } = useAppContext();
   const { data: practiceHistory, isLoading: practiceHistoryLoading } =
     trpc.practice.listPracticeHistory.useQuery({
       limit: 6,
@@ -46,9 +49,21 @@ export const PracticeHistoryCard = () => {
           </TableBody>
         </Table>
         {!practiceHistory?.length && (
-          <p className="text-sm text-muted-foreground text-center mt-4">
-            Nu ai făcut teste încă!
-          </p>
+          <div className="flex flex-col h-full justify-center">
+            <p className="text-sm text-muted-foreground text-center mt-4">
+              Hmm, pare că nu ai dat niciun test..
+            </p>
+            <p className="text-sm text-muted-foreground text-center">
+              Haide să vedem unde te afli!
+            </p>
+
+            <Button
+              className="mt-4 self-center shadow-prepi-lg hover:shadow-prepi"
+              onClick={openInitialAssessmentModal}
+            >
+              Exersează
+            </Button>
+          </div>
         )}
       </CardContent>
     </Card>
