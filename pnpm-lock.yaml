@@ -78,8 +78,8 @@ importers:
         specifier: 14.2.11
         version: 14.2.11(react-dom@18.3.1)(react@18.3.1)
       posthog-js:
-        specifier: ^1.163.0
-        version: 1.163.0
+        specifier: ^1.167.0
+        version: 1.167.0
       react:
         specifier: ^18
         version: 18.3.1
@@ -277,8 +277,8 @@ importers:
         specifier: 14.2.13
         version: 14.2.13(react-dom@18.3.1)(react@18.3.1)
       posthog-js:
-        specifier: ^1.163.0
-        version: 1.163.0
+        specifier: ^1.167.0
+        version: 1.167.0
       posthog-node:
         specifier: ^4.2.0
         version: 4.2.0
@@ -10179,10 +10179,10 @@ packages:
       picocolors: 1.1.0
       source-map-js: 1.2.0
 
-  /posthog-js@1.163.0:
+  /posthog-js@1.167.0:
     resolution:
       {
-        integrity: sha512-gpLbxZkOm06oOWg0uvCxBIVIHrhX3A5hxf9eAi/Z+aFP9DvWxwHQdGUkIWjnYUyxXilIbLxBPvWmiM98dYsAHA==,
+        integrity: sha512-/zXQ6tuJgiF1d4mgg3UsAi/uoyg7UnfFNQtikuALmaE53xFExpcAKbMfHPG/f54QgTvLxSHyGL1kFl/1uspkGg==,
       }
     dependencies:
       fflate: 0.4.8
