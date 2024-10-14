@@ -8,6 +8,7 @@ import { PracticeSessionResults, ProblemAnswerAttempt } from "./types";
 import { PracticeView } from "./PracticeView";
 import { ResultsView } from "./ResultsView";
 import { ModalLoader } from "./ModalLoader";
+import { useSound } from "@/hooks/use-sound";
 
 type PracticeModalProps = {
   open: boolean;
@@ -20,6 +21,8 @@ export function PracticeModal({
   onClose,
   subjectId,
 }: PracticeModalProps) {
+  const { play: playEnd } = useSound("/audio/end.wav");
+
   const utils = trpc.useUtils();
   const { data: problems, isLoading: problemsLoading } =
     trpc.practice.listProblemsForSubject.useQuery(subjectId, {
@@ -32,6 +35,9 @@ export function PracticeModal({
 
   const recordPracticeSession = trpc.practice.recordPracticeSession.useMutation(
     {
+      onMutate: () => {
+        playEnd();
+      },
       onSuccess: (results) => {
         setPracticeResults(results);
         utils.practice.listSubjectsProgress.invalidate();
