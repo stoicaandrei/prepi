@@ -34,7 +34,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     const isBeforeTrial =
       dayjs(subscription.trialEndsAt).diff(dayjs(), "day") < 3;
     if (isBeforeTrial) {
-      openInitialAssessmentModal();
+      openStripeSetupModal();
     }
   }, [subscription]);
 
