@@ -12,7 +12,7 @@ const isUtilityRoute = createRouteMatcher([
 ]);
 const isApiRoute = createRouteMatcher(["/api(.*)"]);
 
-const isPublicRoute = createRouteMatcher(["/auth(.*)"]);
+const isAuthRoute = createRouteMatcher(["/auth(.*)"]);
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
 const isTesterRoute = createRouteMatcher("/tester(.*)");
 
@@ -23,7 +23,13 @@ export default clerkMiddleware(async (auth, req) => {
     return;
   }
 
-  if (isPublicRoute(req)) {
+  if (isAuthRoute(req)) {
+    const nextUrl = req.nextUrl;
+    const search = nextUrl.search;
+    if (search) {
+      // Remove the search params from the URL
+      return NextResponse.redirect(new URL(nextUrl.pathname, req.nextUrl));
+    }
     return;
   }
 

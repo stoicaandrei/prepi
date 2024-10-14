@@ -50,6 +50,11 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
         event: "user_created",
       });
 
+      posthog.alias({
+        distinctId: newUser.id,
+        alias: clerkId,
+      });
+
       return newUser;
     },
   };
