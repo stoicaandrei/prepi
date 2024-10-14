@@ -105,8 +105,8 @@ export default function MathPracticeInteractive({
         </CardHeader>
         <CardContent className="space-y-4">
           <p>
-            Bazat pe activitatea ta, îți recomandăm să lucrezi la următorul
-            subiect:
+            După ce a analizat activitatea ta, Prepi crede că acest subiect te
+            va ajuta să progresezi și mai mult:
           </p>
           {/* TODO: Display all recommened chapters here */}
           <Button
