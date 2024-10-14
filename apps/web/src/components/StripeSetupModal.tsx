@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Dialog,
   DialogContent,
@@ -47,9 +49,11 @@ export const StripeSetupModal = ({ open, onClose }: StripeSetupModalProps) => {
 
   return (
     <Dialog open={open} onOpenChange={trialOverdue ? undefined : onClose}>
-      <DialogContent className="bg-secondary overflow-scroll">
+      <DialogContent className="bg-secondary max-h-screen overflow-scroll">
         <DialogHeader>
-          <DialogTitle>Perioada de probă va expira</DialogTitle>
+          <DialogTitle>
+            Perioada de probă {trialOverdue ? "a expirat" : "va expira"}
+          </DialogTitle>
           {!!subscription && (
             <DialogDescription>
               {trialOverdue && (
