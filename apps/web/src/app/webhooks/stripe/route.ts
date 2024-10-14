@@ -2,6 +2,7 @@ import { headers } from "next/headers";
 import { NextRequest } from "next/server";
 import Stripe from "stripe";
 import { prisma } from "@prepi/db";
+import { PostHog } from "posthog-node";
 
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 if (!stripeSecretKey) {
@@ -33,6 +34,10 @@ export async function POST(req: NextRequest) {
     return new Response(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
+  const posthog = new PostHog(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
+    host: "https://eu.i.posthog.com",
+  });
+
   switch (event.type) {
     case "customer.subscription.created":
     case "customer.subscription.updated":
@@ -47,9 +52,37 @@ export async function POST(req: NextRequest) {
         },
       });
       break;
+    case "invoice.payment_succeeded":
+      const invoice = event.data.object;
+      const subscriptionId = invoice.subscription;
+      const customerId = invoice.customer;
+
+      if (!customerId) break;
+
+      const dbUser = await prisma.user.findFirst({
+        where: {
+          stripeCustomerId: customerId.toString(),
+        },
+        select: {
+          id: true,
+        },
+      });
+
+      if (!dbUser) break;
+
+      posthog.capture({
+        distinctId: dbUser.id,
+        event: "invoice_payment_succeeded",
+        properties: {
+          subscriptionId: subscriptionId,
+          amountPaid: invoice.amount_paid / 100, // convert cents to currency unit
+        },
+      });
     default:
       console.log(`Unhandled event type ${event.type}`);
   }
+
+  await posthog.shutdown();
 
   return Response.json({ received: true });
 }
