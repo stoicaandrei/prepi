@@ -48,28 +48,30 @@ export default function Dashboard() {
 
         {!initialTestTaken && (
           <Card className="col-span-full relative">
-            <CardHeader className="flex flex-row items-center flex-wrap justify-center md:justify-between pb-2">
-              <CardTitle className="text-2xl font-bold flex items-center">
+            <CardHeader className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between pb-2 ">
+              <CardTitle className="text-2xl font-bold flex items-center self-start">
                 <CheckSquare className="mr-2 h-6 w-6 inline-block text-cyan-500" />
                 Care îți este nivelul?
               </CardTitle>
-              <Button
-                variant="default"
-                className="shadow-prepi-lg hover:shadow-prepi relative m-6 md:m-0"
-                onClick={openInitialAssessmentModal}
-              >
-                Începe!
-                <img
-                  src="/elements/stopwatch.svg"
-                  alt=""
-                  className="h-9 w-9 absolute hidden sm:block -bottom-12 -right-8"
-                />
-                <img
-                  src="/elements/hourglass.svg"
-                  alt=""
-                  className="h-9 w-9 absolute hidden sm:block -top-8 -left-12"
-                />
-              </Button>
+              <div>
+                <Button
+                  variant="default"
+                  className="shadow-prepi-lg hover:shadow-prepi relative m-3 sm:m-0 "
+                  onClick={openInitialAssessmentModal}
+                >
+                  Începe!
+                  <img
+                    src="/elements/stopwatch.svg"
+                    alt=""
+                    className="h-9 w-9 absolute hidden sm:block -bottom-12 -right-8"
+                  />
+                  <img
+                    src="/elements/hourglass.svg"
+                    alt=""
+                    className="h-9 w-9 absolute hidden sm:block -top-8 -left-12"
+                  />
+                </Button>
+              </div>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
