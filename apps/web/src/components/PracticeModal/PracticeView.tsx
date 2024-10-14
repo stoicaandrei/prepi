@@ -8,6 +8,7 @@ import { compareEqs } from "@prepi/utils";
 import { ExtendedProblem, ProblemAnswerAttempt } from "./types";
 import { checkAnswerAttempt, isReadyToSubmit } from "./utils";
 import { useToast } from "@/hooks/use-toast";
+import { useSound } from "@/hooks/use-sound";
 
 type PracticeViewProps = {
   currentProblemIndex: number;
@@ -26,6 +27,9 @@ export const PracticeView = ({
 }: PracticeViewProps) => {
   const { isTester } = useUserRoles();
   const { toast } = useToast();
+  const { play: playCorrect } = useSound("/audio/correct.wav");
+  const { play: playWrong } = useSound("/audio/wrong.wav");
+  const { play: playHint } = useSound("/audio/beep.wav");
 
   const currentProblem = problems[currentProblemIndex];
   const currentSubmission = submissions[currentProblemIndex];
@@ -90,6 +94,7 @@ export const PracticeView = ({
         description: "Felicitări! Răspunsul tău este corect.",
         variant: "default",
       });
+      playCorrect();
     }
 
     if (status === SubmissionStatus.INCORRECT) {
@@ -100,6 +105,7 @@ export const PracticeView = ({
         description: "Răspunsul tău nu este corect. Încearcă din nou.",
         variant: "destructive",
       });
+      playWrong();
     }
 
     if (status === SubmissionStatus.HINT) {
@@ -110,6 +116,7 @@ export const PracticeView = ({
         description: "Ai cerut indicații pentru rezolvare.",
         variant: "default",
       });
+      playHint();
     }
 
     if (!currentSubmission) {
