@@ -20,6 +20,8 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ro";
 import { Separator } from "@/components/ui/separator";
+import { useSignOut } from "@/hooks/useSignOut";
+import { Button } from "@/components/ui/button";
 
 dayjs.extend(relativeTime);
 dayjs.locale("ro");
@@ -34,6 +36,7 @@ export type StripeSetupModalProps = {
 };
 
 export const StripeSetupModal = ({ open, onClose }: StripeSetupModalProps) => {
+  const signOut = useSignOut();
   const { data: subscription } = trpc.stripe.getSubscriptionDetails.useQuery();
 
   const createSetupCheckoutSession =
@@ -59,7 +62,7 @@ export const StripeSetupModal = ({ open, onClose }: StripeSetupModalProps) => {
               {trialOverdue && (
                 <p>
                   Perioada de probă a expirat. Introdu datele cardului pentru a
-                  continua abonamentul fără nicio problemă.
+                  continua abonamentul.
                 </p>
               )}
               {!trialOverdue && (
@@ -86,6 +89,14 @@ export const StripeSetupModal = ({ open, onClose }: StripeSetupModalProps) => {
         >
           <EmbeddedCheckout />
         </EmbeddedCheckoutProvider>
+
+        <Button
+          variant="outline"
+          className="mt-6 flex justify-center items-center"
+          onClick={signOut}
+        >
+          Ieși din cont
+        </Button>
       </DialogContent>
     </Dialog>
   );
