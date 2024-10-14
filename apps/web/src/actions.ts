@@ -12,6 +12,8 @@ export const listAllLessonsByTagsAction = async () => {
 };
 
 export const getLessonBySlugAction = async (slug: string) => {
+  // wait ten seconds
+  await new Promise((resolve) => setTimeout(resolve, 10000));
   return getLessonBySlug(prisma, slug);
 };
 

@@ -1,8 +1,9 @@
-import { ArrowLeft, ArrowRight, BookOpen, LucideLoader } from "lucide-react";
+import { Suspense } from "react";
+import { ArrowLeft, BookOpen, LucideLoader } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
-import { trpc } from "@/utils/trpc";
 import parse from "html-react-parser";
 import {
   getLessonBySlugAction,
@@ -25,39 +26,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function LessonCard({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) {
-  const lesson = await getLessonBySlugAction(slug);
-
+function LessonSkeleton() {
   return (
-    <div>
-      <Link href="/lessons">
-        <Button variant="ghost" className="mb-4">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Înapoi la lecții
-        </Button>
-      </Link>
-
-      <Card className="w-full max-w-4xl">
-        <CardHeader className="space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <BookOpen className="h-8 w-8 text-blue-500" />
-              <span className="ml-2 text-2xl font-semibold text-blue-500">
-                {lesson?.title || "Lecție.."}
-              </span>
-            </div>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <LessonContent content={lesson?.legacyContent?.html ?? ""} />
-        </CardContent>
-      </Card>
-
-      <LessonNavigationButtons slug={slug as string} />
+    <div className="flex flex-col gap-4 p-6">
+      <Skeleton className="h-8 w-3/4 mb-6" />
+      <Skeleton className="h-4 w-full" />
+      <Skeleton className="h-4 w-full" />
+      <Skeleton className="h-4 w-2/3" />
     </div>
   );
 }
@@ -78,7 +53,6 @@ const LessonContent = ({ content }: { content: string }) => {
 
   return (
     <>
-      {/* We render the head so the styles of the lesson are going to be correct */}
       <div dangerouslySetInnerHTML={{ __html: head }} />
       <div className="prose prose-headings:font-bold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base">
         {parse(body, {
@@ -103,3 +77,52 @@ const LessonContent = ({ content }: { content: string }) => {
     </>
   );
 };
+
+async function LessonCardContent({ slug }: { slug: string }) {
+  const lesson = await getLessonBySlugAction(slug);
+
+  return (
+    <>
+      <CardHeader className="space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <BookOpen className="h-8 w-8 text-blue-500" />
+            <span className="ml-2 text-2xl font-semibold text-blue-500">
+              {lesson?.title || "Lecție.."}
+            </span>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <LessonContent content={lesson?.legacyContent?.html ?? ""} />
+      </CardContent>
+    </>
+  );
+}
+
+export default function LessonCard({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
+  return (
+    <div>
+      <Link href="/lessons">
+        <Button variant="ghost" className="mb-4">
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Înapoi la lecții
+        </Button>
+      </Link>
+
+      <Card className="w-full max-w-4xl">
+        <Suspense fallback={<LessonSkeleton />}>
+          <LessonCardContent slug={slug} />
+        </Suspense>
+      </Card>
+
+      <Suspense fallback={<div className="h-16" />}>
+        <LessonNavigationButtons slug={slug} />
+      </Suspense>
+    </div>
+  );
+}
