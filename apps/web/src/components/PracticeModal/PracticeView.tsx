@@ -7,6 +7,7 @@ import { useUserRoles } from "@/hooks/useUserRoles";
 import { compareEqs } from "@prepi/utils";
 import { ExtendedProblem, ProblemAnswerAttempt } from "./types";
 import { checkAnswerAttempt, isReadyToSubmit } from "./utils";
+import { useToast } from "@/hooks/use-toast";
 
 type PracticeViewProps = {
   currentProblemIndex: number;
@@ -24,6 +25,7 @@ export const PracticeView = ({
   setSubmissions,
 }: PracticeViewProps) => {
   const { isTester } = useUserRoles();
+  const { toast } = useToast();
 
   const currentProblem = problems[currentProblemIndex];
   const currentSubmission = submissions[currentProblemIndex];
@@ -71,11 +73,43 @@ export const PracticeView = ({
       setAnswerAttempt(null);
     }
 
+    const hintsUsed = hintCount || showExplanation;
+
     let status = isCorrect
       ? SubmissionStatus.CORRECT
       : SubmissionStatus.INCORRECT;
-    if (hintCount || showExplanation) {
+    if (isCorrect && hintsUsed) {
       status = SubmissionStatus.HINT;
+    }
+
+    if (status === SubmissionStatus.CORRECT) {
+      toast({
+        className:
+          "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4",
+        title: "✅ Corect!",
+        description: "Felicitări! Răspunsul tău este corect.",
+        variant: "default",
+      });
+    }
+
+    if (status === SubmissionStatus.INCORRECT) {
+      toast({
+        className:
+          "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4",
+        title: "❌ Greșit!",
+        description: "Răspunsul tău nu este corect. Încearcă din nou.",
+        variant: "destructive",
+      });
+    }
+
+    if (status === SubmissionStatus.HINT) {
+      toast({
+        className:
+          "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4",
+        title: "🔍 Indicații",
+        description: "Ai cerut indicații pentru rezolvare.",
+        variant: "default",
+      });
     }
 
     if (!currentSubmission) {
