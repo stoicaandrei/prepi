@@ -14,7 +14,7 @@ export default function OnboardingLayout({
   const signOut = useSignOut();
 
   return (
-    <div className="flex h-screen flex-col">
+    <div className="flex h-screen flex-col overflow-scroll">
       <header className="h-[80px] flex flex-row justify-between items-center px-4">
         <div className="w-[250px] h-full py-4">
           <div className="relative h-full w-full">
