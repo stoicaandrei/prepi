@@ -11,14 +11,23 @@ export default async function PostCheckoutPage({
 }) {
   const clerkId = auth().userId ?? "";
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+
+  console.log(`Post checkout for session ${session_id} and clerkId ${clerkId}`);
   const session = await stripe.checkout.sessions.retrieve(session_id);
   const stripeCustomerId = session.customer!.toString();
+
+  console.log(
+    `Retrieved session ${session.id} for customer ${stripeCustomerId}`,
+  );
+  console.log("session", session);
 
   const subscriptions = await stripe.subscriptions.list({
     customer: stripeCustomerId,
     limit: 1,
   });
+  console.log("subscriptions", subscriptions);
   const subscription = subscriptions.data[0];
+  console.log("subscription", subscription);
 
   const dbUser = await prisma.user.findFirst({
     where: {
