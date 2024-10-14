@@ -92,6 +92,8 @@ export const userRouter = router({
           },
         },
       });
+
+      await ctx.posthog.shutdown();
     }),
 });
 

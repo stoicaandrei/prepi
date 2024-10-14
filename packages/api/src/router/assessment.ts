@@ -160,6 +160,8 @@ export const assessmentRouter = router({
       },
     });
 
+    await ctx.posthog.shutdown();
+
     // Return the selected problem and subject information
     return completeProblem;
   }),
@@ -251,6 +253,8 @@ export const assessmentRouter = router({
           problemId,
         },
       });
+
+      await ctx.posthog.shutdown();
     }),
 });
 

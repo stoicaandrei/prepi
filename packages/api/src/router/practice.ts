@@ -251,6 +251,8 @@ export const practiceRouter = router({
         },
       });
 
+      await ctx.posthog.shutdown();
+
       return problems;
     }),
   recordPracticeSession: protectedProcedure
@@ -372,6 +374,8 @@ export const practiceRouter = router({
           pointsEarned,
         },
       });
+
+      await ctx.posthog.shutdown();
 
       return { pointsEarned };
     }),
