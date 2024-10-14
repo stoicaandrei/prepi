@@ -43,12 +43,22 @@ export async function POST(req: NextRequest) {
     case "customer.subscription.updated":
     case "customer.subscription.deleted":
       const subscription = event.data.object;
-      await prisma.stripeSubscription.update({
+      await prisma.stripeSubscription.upsert({
         where: {
           stripeSubscriptionId: subscription.id,
         },
-        data: {
+        update: {
           status: subscription.status,
+        },
+        create: {
+          stripeSubscriptionId: subscription.id,
+          status: subscription.status,
+          trialEndsAt: new Date((subscription.trial_end ?? 0) * 1000),
+          user: {
+            connect: {
+              stripeCustomerId: subscription.customer.toString(),
+            },
+          },
         },
       });
 
