@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "./providers";
 import { Montserrat } from "next/font/google";
 import Script from "next/script";
+import { Toaster } from "@/components/ui/toaster";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({
       <body>
         <Providers>
           {children}
+          <Toaster />
           <Analytics />
         </Providers>
         <Script
