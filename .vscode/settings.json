@@ -11,6 +11,7 @@
     "posthog",
     "prepi",
     "prereq",
-    "tanstack"
+    "tanstack",
+    "upsert"
   ]
 }
