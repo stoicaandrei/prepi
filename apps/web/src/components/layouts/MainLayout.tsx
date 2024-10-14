@@ -64,13 +64,13 @@ export function MainLayout({ children }: LayoutProps) {
 
   return (
     <div className="flex h-screen flex-col">
-      <header className="h-[80px] flex flex-row justify-between items-center">
+      <header className="h-[80px] flex flex-row justify-center md:justify-between items-center relative">
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
           <SheetTrigger asChild>
             <Button
               variant="outline"
               size="icon"
-              className="shrink-0 md:hidden mx-4 text-primary"
+              className="shrink-0 md:hidden mx-4 text-primary absolute left-0"
             >
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle navigation menu</span>
