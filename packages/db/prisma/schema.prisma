@@ -90,6 +90,7 @@ model InvitationCode {
     validUntil DateTime?
 
     stripeCoupon String?
+    isReferral   Boolean @default(false)
 
     creatorId  String
     creator    User   @relation("creator", fields: [creatorId], references: [id])

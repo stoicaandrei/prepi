@@ -8,6 +8,7 @@ import { cacheable } from "../cache";
 import { router, protectedProcedure } from "../trpc";
 import { z } from "zod";
 import { clerkClient } from "@clerk/nextjs/server";
+import { PostHog } from "posthog-node";
 
 export const userRouter = router({
   userDetails: protectedProcedure.query(async ({ ctx }) => {
@@ -76,7 +77,7 @@ export const userRouter = router({
       });
 
       if (invitationCode) {
-        await redeemCode(ctx.prisma, invitationCode, user.id);
+        await redeemCode(ctx.prisma, ctx.posthog, invitationCode, user.id);
       }
 
       ctx.posthog.capture({
@@ -113,6 +114,7 @@ const isInvitationCodeValid = async (invitationCode: InvitationCode) => {
 
 const redeemCode = async (
   prisma: PrismaClient,
+  posthog: PostHog,
   code: string,
   userId: string,
 ) => {
@@ -160,6 +162,25 @@ const redeemCode = async (
         usesLeft: {
           decrement: 1,
         },
+      },
+    });
+  }
+
+  posthog.capture({
+    distinctId: userId,
+    event: "invitation_code_redeemed",
+    properties: {
+      code,
+    },
+  });
+
+  if (invitation.isReferral) {
+    posthog.capture({
+      distinctId: userId,
+      event: "user_referred",
+      properties: {
+        code,
+        referredBy: invitation.creatorId,
       },
     });
   }
