@@ -12,7 +12,7 @@ export default async function PostCheckoutPage({
   const clerkId = auth().userId ?? "";
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
   const session = await stripe.checkout.sessions.retrieve(session_id);
-  const stripeCustomerId = session.customer?.toString();
+  const stripeCustomerId = session.customer!.toString();
 
   const subscriptions = await stripe.subscriptions.list({
     customer: stripeCustomerId,
@@ -53,6 +53,11 @@ export default async function PostCheckoutPage({
   posthog.capture({
     distinctId: dbUser!.id,
     event: "subscription_trial_created",
+  });
+
+  posthog.alias({
+    distinctId: dbUser!.id,
+    alias: stripeCustomerId,
   });
 
   await posthog.shutdown();

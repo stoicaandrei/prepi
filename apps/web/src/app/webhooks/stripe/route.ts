@@ -51,6 +51,16 @@ export async function POST(req: NextRequest) {
           status: subscription.status,
         },
       });
+
+      posthog.capture({
+        distinctId: subscription.customer.toString(),
+        event: "subscription_status_updated",
+        properties: {
+          subscriptionId: subscription.id,
+          status: subscription.status,
+        },
+      });
+
       break;
     case "invoice.payment_succeeded":
       const invoice = event.data.object;
@@ -59,19 +69,8 @@ export async function POST(req: NextRequest) {
 
       if (!customerId) break;
 
-      const dbUser = await prisma.user.findFirst({
-        where: {
-          stripeCustomerId: customerId.toString(),
-        },
-        select: {
-          id: true,
-        },
-      });
-
-      if (!dbUser) break;
-
       posthog.capture({
-        distinctId: dbUser.id,
+        distinctId: customerId.toString(),
         event: "invoice_payment_succeeded",
         properties: {
           subscriptionId: subscriptionId,
