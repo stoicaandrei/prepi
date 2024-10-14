@@ -59,6 +59,16 @@ export default function Dashboard() {
                 onClick={openInitialAssessmentModal}
               >
                 Începe!
+                <img
+                  src="/elements/stopwatch.svg"
+                  alt=""
+                  className="h-9 w-9 absolute hidden sm:block -bottom-12 -right-8"
+                />
+                <img
+                  src="/elements/hourglass.svg"
+                  alt=""
+                  className="h-9 w-9 absolute hidden sm:block -top-8 -left-12"
+                />
               </Button>
             </CardHeader>
             <CardContent>
@@ -67,16 +77,6 @@ export default function Dashboard() {
                 individuală.
               </p>
             </CardContent>
-            <img
-              src="/elements/stopwatch.svg"
-              alt=""
-              className="h-9 w-9 absolute bottom-0 right-0 translate-y-1/2 sm:bottom-8"
-            />
-            <img
-              src="/elements/hourglass.svg"
-              alt=""
-              className="h-9 w-9 absolute top-0 left-0 -translate-y-1/2 sm:left-auto sm:right-[120px]"
-            />
           </Card>
         )}
 
