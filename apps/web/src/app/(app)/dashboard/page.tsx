@@ -48,14 +48,14 @@ export default function Dashboard() {
 
         {!initialTestTaken && (
           <Card className="col-span-full relative">
-            <CardHeader className="flex flex-row items-center flex-wrap justify-between space-y-0 pb-2">
+            <CardHeader className="flex flex-row items-center flex-wrap justify-center md:justify-between pb-2">
               <CardTitle className="text-2xl font-bold flex items-center">
                 <CheckSquare className="mr-2 h-6 w-6 inline-block text-cyan-500" />
                 Care îți este nivelul?
               </CardTitle>
               <Button
                 variant="default"
-                className="shadow-prepi-lg hover:shadow-prepi relative"
+                className="shadow-prepi-lg hover:shadow-prepi relative m-6 md:m-0"
                 onClick={openInitialAssessmentModal}
               >
                 Începe!
