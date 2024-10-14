@@ -39,6 +39,8 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
         return existingUser;
       }
 
+      const clerkDetails = await currentUser();
+
       const newUser = await prisma.user.create({
         data: {
           clerkId,
@@ -48,6 +50,12 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
       posthog.capture({
         distinctId: newUser.id,
         event: "user_created",
+        properties: {
+          $set: {
+            email: clerkDetails!.primaryEmailAddress?.emailAddress,
+            name: clerkDetails!.fullName,
+          },
+        },
       });
 
       posthog.alias({
