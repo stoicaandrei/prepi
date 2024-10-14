@@ -5,7 +5,7 @@ export default function MdxLayout({ children }: { children: ReactNode }) {
   // Create any shared layout or styles here
   return (
     <div className="flex h-screen flex-col">
-      <header className="h-[80px] flex flex-row justify-center items-center">
+      <header className="h-[80px] flex flex-row justify-center md:justify-between items-center">
         <div className="w-[250px] h-full py-4">
           <div className="relative h-full w-full">
             <Image
