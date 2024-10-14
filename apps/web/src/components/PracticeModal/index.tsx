@@ -35,12 +35,10 @@ export function PracticeModal({
 
   const recordPracticeSession = trpc.practice.recordPracticeSession.useMutation(
     {
-      onMutate: () => {
-        playEnd();
-      },
       onSuccess: (results) => {
         setPracticeResults(results);
         utils.practice.listSubjectsProgress.invalidate();
+        playEnd();
       },
     },
   );
@@ -87,7 +85,7 @@ export function PracticeModal({
         </DialogContent>
       </Dialog>
     ),
-    [open, onClose],
+    [open],
   );
 
   if (problemsLoading) {

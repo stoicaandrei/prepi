@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ProblemsProgress, SubmissionStatus } from "./ProblemsProgress";
 import { PracticeSessionResults } from "./types";
+import { ConfettiCenterBurst } from "../animations/ConfettiCenterBurst";
 
 type ResultsViewProps = {
   practiceResults?: PracticeSessionResults;
@@ -19,9 +20,14 @@ export const ResultsView = ({
 }: ResultsViewProps) => {
   if (!practiceResults) return "...";
 
+  const perfectScore = submissions.every(
+    (submission) => submission === SubmissionStatus.CORRECT,
+  );
+
   return (
     <div className="p-6">
       <h2 className="text-2xl font-bold mb-6">Felicitări!</h2>
+      {perfectScore && <ConfettiCenterBurst />}
 
       <h2 className="text-4xl font-bold text-center mb-8">
         Ai terminat testul!

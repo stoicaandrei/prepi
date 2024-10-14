@@ -214,6 +214,7 @@ export const PracticeView = ({
             variant="link"
             onClick={() => {
               const getRandomSubmission = () => {
+                return SubmissionStatus.CORRECT;
                 const randomIndex = Math.floor(Math.random() * 3);
                 return Object.values(SubmissionStatus)[
                   randomIndex
