@@ -44,14 +44,16 @@ async function ExamContent({ slug }: { slug: string }) {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Files className="h-8 w-8" />
-            <span className="ml-2 text-2xl font-semibold">{exam.title}</span>
+            <span className="ml-2 text-2xl font-semibold">
+              {exam?.title ?? "Varianta..."}
+            </span>
           </div>
         </div>
       </CardHeader>
       <CardContent className="p-6">
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-primary">Subiectul 1</h2>
-          {exam.sub1Problems.map((problem, index) => (
+          {exam?.sub1Problems.map((problem, index) => (
             <div key={index} className="mb-6 p-4 bg-gray-50 rounded-lg">
               <h3 className="text-xl font-semibold mb-2 text-gray-800">
                 Problema {index + 1}.
@@ -64,52 +66,84 @@ async function ExamContent({ slug }: { slug: string }) {
 
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-primary">Subiectul 2</h2>
-          {exam.sub2Problems.map((problem, index) => (
+          {exam?.sub2Problems.map((problem, index) => (
             <div key={index} className="mb-6 p-4 bg-gray-50 rounded-lg">
               <h3 className="text-xl font-semibold mb-2 text-gray-800">
                 Problema {index + 1}.
               </h3>
               <ExamProblemDescription description={problem.description} />
 
-              {["A", "B", "C"].map((subSection) => (
-                <div key={subSection} className="ml-4 mb-4">
-                  <h4 className="font-medium text-gray-800 mb-2">
-                    {subSection}.{" "}
-                    <ExamSubsectionDescription
-                      description={problem[`sub${subSection}`]?.description}
-                    />
-                  </h4>
-                  <ExplanationSection
-                    explanation={problem[`sub${subSection}`]?.explanation}
+              <div className="ml-4 mb-4">
+                <h4 className="font-medium text-gray-800 mb-2">
+                  A.{" "}
+                  <ExamSubsectionDescription
+                    description={problem.subA?.description}
                   />
-                </div>
-              ))}
+                </h4>
+                <ExplanationSection explanation={problem.subA?.explanation} />
+              </div>
+
+              <div className="ml-4 mb-4">
+                <h4 className="font-medium text-gray-800 mb-2">
+                  B.{" "}
+                  <ExamSubsectionDescription
+                    description={problem.subB?.description}
+                  />
+                </h4>
+                <ExplanationSection explanation={problem.subB?.explanation} />
+              </div>
+
+              <div className="ml-4 mb-4">
+                <h4 className="font-medium text-gray-800 mb-2">
+                  C.{" "}
+                  <ExamSubsectionDescription
+                    description={problem.subC?.description}
+                  />
+                </h4>
+                <ExplanationSection explanation={problem.subC?.explanation} />
+              </div>
             </div>
           ))}
         </div>
 
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-primary">Subiectul 3</h2>
-          {exam.sub3Problems.map((problem, index) => (
+          {exam?.sub3Problems.map((problem, index) => (
             <div key={index} className="mb-6 p-4 bg-gray-50 rounded-lg">
               <h3 className="text-xl font-semibold mb-2 text-gray-800">
                 Problema {index + 1}.
               </h3>
               <ExamProblemDescription description={problem.description} />
 
-              {["A", "B", "C"].map((subSection) => (
-                <div key={subSection} className="ml-4 mb-4">
-                  <h4 className="font-medium text-gray-800 mb-2">
-                    {subSection}.{" "}
-                    <ExamSubsectionDescription
-                      description={problem[`sub${subSection}`]?.description}
-                    />
-                  </h4>
-                  <ExplanationSection
-                    explanation={problem[`sub${subSection}`]?.explanation}
+              <div className="ml-4 mb-4">
+                <h4 className="font-medium text-gray-800 mb-2">
+                  A.{" "}
+                  <ExamSubsectionDescription
+                    description={problem.subA?.description}
                   />
-                </div>
-              ))}
+                </h4>
+                <ExplanationSection explanation={problem.subA?.explanation} />
+              </div>
+
+              <div className="ml-4 mb-4">
+                <h4 className="font-medium text-gray-800 mb-2">
+                  B.{" "}
+                  <ExamSubsectionDescription
+                    description={problem.subB?.description}
+                  />
+                </h4>
+                <ExplanationSection explanation={problem.subB?.explanation} />
+              </div>
+
+              <div className="ml-4 mb-4">
+                <h4 className="font-medium text-gray-800 mb-2">
+                  C.{" "}
+                  <ExamSubsectionDescription
+                    description={problem.subC?.description}
+                  />
+                </h4>
+                <ExplanationSection explanation={problem.subC?.explanation} />
+              </div>
             </div>
           ))}
         </div>
