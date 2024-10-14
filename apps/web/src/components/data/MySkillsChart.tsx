@@ -55,9 +55,10 @@ export const MySkillsChart = () => {
   return (
     <div
       style={{
-        backgroundImage: "url(/illustrations/student-desk.svg)",
-        backgroundColor: "rgba(255, 255, 255, 0.6)",
+        backgroundImage: "url(/illustrations/books-and-symbols.png)",
+        backgroundColor: "rgba(255, 255, 255, 0.9)",
         backgroundBlendMode: "lighten",
+        filter: "grayscale(100%)",
       }}
       className="bg-contain bg-center bg-no-repeat"
     >
