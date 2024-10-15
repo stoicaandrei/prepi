@@ -20,7 +20,7 @@ const MathInput: React.FC<MathInputProps> = ({
   mathSymbolButtons,
   ...rest
 }) => {
-  const MQ = useMathQuill();
+  const { MQ, isReady, MathQuillLoader } = useMathQuill();
   const mathFieldRef = useRef<HTMLSpanElement>(null);
   const mathQuillRef = useRef<any>(null);
 
@@ -60,7 +60,10 @@ const MathInput: React.FC<MathInputProps> = ({
         ref={mathFieldRef}
         className={cn(
           "flex min-h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-          className
+          {
+            "bg-secondary cursor-not-allowed": !isReady,
+          },
+          className,
         )}
         {...rest}
       ></span>
@@ -80,6 +83,7 @@ const MathInput: React.FC<MathInputProps> = ({
           </Button>
         ))}
       </div>
+      <MathQuillLoader />
     </>
   );
 };

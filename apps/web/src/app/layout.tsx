@@ -47,23 +47,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro" className={montserrat.className}>
-      <head>
-        <link rel="stylesheet" href="/mathquill/mathquill.min.css" />
-      </head>
       <body>
         <Providers>
           {children}
           <Toaster />
           <Analytics />
         </Providers>
-        <Script
-          src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
-          strategy="beforeInteractive"
-        />
-        <Script
-          src="/mathquill/mathquill.min.js"
-          strategy="beforeInteractive"
-        />
       </body>
     </html>
   );
