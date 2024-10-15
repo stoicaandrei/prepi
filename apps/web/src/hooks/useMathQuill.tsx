@@ -16,17 +16,14 @@ export function useMathQuill() {
   const [isJQueryLoaded, setIsJQueryLoaded] = useState(false);
   const [isMathQuillLoaded, setIsMathQuillLoaded] = useState(false);
 
-  console.log({
-    isJQueryLoaded,
-    isMathQuillLoaded,
-    window: window.MathQuill,
-    interface: window.MathQuill?.getInterface(2),
-    MQ,
-  });
-
   useEffect(() => {
-    if (isJQueryLoaded && isMathQuillLoaded && window.MathQuill) {
+    if (MQ) return;
+
+    if (window.MathQuill) {
       setMQ(() => window.MathQuill.getInterface(2));
+      setIsMathQuillLoaded(true);
+      setIsJQueryLoaded(true);
+      console.log("MathQuill instance loaded inside hook");
     }
   }, [isJQueryLoaded, isMathQuillLoaded]);
 
