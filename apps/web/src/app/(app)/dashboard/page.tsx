@@ -40,7 +40,7 @@ export default function Dashboard() {
       </Head>
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         <Card className="col-span-full">
-          <p className="text-base font-medium text-[#6e6e6e] p-10">
+          <p className="text-base font-medium text-[#6e6e6e] p-5 sm:p-10 text-center sm:text-left">
             Hei, suntem încă în Beta și îmbunătățim continuu platforma. Dacă ai
             idei sau sugestii, ne-ar plăcea să le auzim. 😊
           </p>
@@ -53,7 +53,7 @@ export default function Dashboard() {
                 <CheckSquare className="mr-2 h-6 w-6 inline-block text-cyan-500" />
                 Care îți este nivelul?
               </CardTitle>
-              <div>
+              <div className="hidden sm:block">
                 <Button
                   variant="default"
                   className="shadow-prepi-lg hover:shadow-prepi relative m-3 sm:m-0 "
@@ -63,21 +63,33 @@ export default function Dashboard() {
                   <img
                     src="/elements/stopwatch.svg"
                     alt=""
-                    className="h-9 w-9 absolute hidden sm:block -bottom-12 -right-8"
+                    className="h-9 w-9 absolute -bottom-12 -right-8"
                   />
                   <img
                     src="/elements/hourglass.svg"
                     alt=""
-                    className="h-9 w-9 absolute hidden sm:block -top-8 -left-12"
+                    className="h-9 w-9 absolute -top-8 -left-12"
                   />
                 </Button>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground mt-2">
                 Fă testul inițial pentru a stabili planul de pregătire
                 individuală.
               </p>
+              <Button
+                variant="default"
+                className="shadow-prepi-lg hover:shadow-prepi relative mx-auto mt-5 block sm:hidden"
+                onClick={openInitialAssessmentModal}
+              >
+                Începe!
+                <img
+                  src="/elements/hourglass.svg"
+                  alt=""
+                  className="h-9 w-9 absolute -bottom-8 -right-24"
+                />
+              </Button>
             </CardContent>
           </Card>
         )}
