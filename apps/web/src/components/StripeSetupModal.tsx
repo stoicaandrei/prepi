@@ -37,7 +37,8 @@ export type StripeSetupModalProps = {
 
 export const StripeSetupModal = ({ open, onClose }: StripeSetupModalProps) => {
   const signOut = useSignOut();
-  const { data: subscription } = trpc.stripe.getSubscriptionDetails.useQuery();
+  const { data: subscription, isLoading } =
+    trpc.stripe.getSubscriptionDetails.useQuery();
 
   const createSetupCheckoutSession =
     trpc.stripe.createSetupCheckoutSession.useMutation();
@@ -50,9 +51,19 @@ export const StripeSetupModal = ({ open, onClose }: StripeSetupModalProps) => {
   const trialOverdue = dayjs(subscription?.trialEndsAt).isBefore(dayjs());
   const trialEndsIn = dayjs(subscription?.trialEndsAt).fromNow(true);
 
+  const closeModal = () => {
+    if (isLoading) return;
+    if (trialOverdue) return;
+
+    onClose();
+  };
+
   return (
-    <Dialog open={open} onOpenChange={trialOverdue ? undefined : onClose}>
-      <DialogContent className="bg-secondary max-h-screen overflow-scroll">
+    <Dialog open={open} onOpenChange={closeModal}>
+      <DialogContent
+        className="bg-secondary max-h-screen overflow-scroll"
+        closable={!trialOverdue}
+      >
         <DialogHeader>
           <DialogTitle>
             Perioada de probă {trialOverdue ? "a expirat" : "va expira"}
