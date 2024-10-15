@@ -112,8 +112,8 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                Dă startul pregătirii tale personale. Fă testul inițial și
-                descoperă planul creat special pentru tine.
+                Exersează în continuare pentru a-ți îmbunătăți competențele.
+                Mergi la secțiunea de exersat pentru a continua.
               </p>
             </CardContent>
           </Card>
