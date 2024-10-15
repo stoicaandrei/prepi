@@ -9,11 +9,6 @@ import { TrpcProvider } from "@/utils/trpc";
 import { Crisp } from "crisp-sdk-web";
 import { useEffect } from "react";
 
-console.log(
-  "process.env.NEXT_PUBLIC_POSTHOG_KEY",
-  process.env.NEXT_PUBLIC_POSTHOG_KEY,
-);
-
 if (typeof window !== "undefined") {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? "", {
     person_profiles: "identified_only",
