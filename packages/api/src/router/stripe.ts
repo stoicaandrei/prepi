@@ -91,6 +91,7 @@ export const stripeRouter = router({
       mode: "setup",
       customer: dbUser.stripeCustomerId ?? "",
       payment_method_types: ["card"],
+      billing_address_collection: "required",
       return_url: `${process.env.NEXT_PUBLIC_APP_URL}/?session_id={CHECKOUT_SESSION_ID}`,
       locale: "ro",
     });
