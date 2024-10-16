@@ -56,7 +56,7 @@ export default function Dashboard() {
               <div className="hidden sm:block">
                 <Button
                   variant="default"
-                  className="shadow-prepi-lg hover:shadow-prepi relative m-3 sm:m-0 "
+                  className="bg-prepi-gradient shadow-prepi-lg hover:shadow-prepi relative m-3 sm:m-0 "
                   onClick={openInitialAssessmentModal}
                 >
                   Începe!

@@ -179,7 +179,7 @@ export default function Home() {
           rapid și simplu.
         </h1>
         <Link href={startNowUrl}>
-          <Button className="bg-gradient-to-r from-[#00CCCC] to-[#6BADEE] text-white font-bold py-3 px-8 rounded-full shadow-lg">
+          <Button className="bg-gradient-to-r from-[#00CCCC] to-[#6BADEE] text-white font-bold py-3 px-8 rounded-full shadow-prepi-lg">
             Începe acum gratuit!
           </Button>
         </Link>
