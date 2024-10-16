@@ -64,7 +64,7 @@ export default function Dashboard() {
           </div>
         </Card>
 
-        {!!subscription && (
+        {subscription?.status === "trialing" && (
           <Card className="col-span-full">
             <CardContent className="flex items-center justify-between p-6">
               <div className="flex items-center space-x-4">
