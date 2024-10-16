@@ -53,71 +53,76 @@ export const MySkillsChart = () => {
   }
 
   return (
-    <div
-      style={{
-        backgroundImage: "url(/illustrations/books-and-symbols.png)",
-        backgroundColor: "rgba(255, 255, 255, 0.9)",
-        backgroundBlendMode: "lighten",
-        filter: "grayscale(100%)",
-      }}
-      className="bg-contain bg-center bg-no-repeat"
-    >
-      <PolarArea
-        data={{
-          labels: categories.map((c) => c.name),
-          datasets: [
-            {
-              data: categories.map((c) => c.currentMasteryLevel),
-              backgroundColor: [
-                "rgb(255, 99, 132)",
-                "rgb(75, 192, 192)",
-                "rgb(255, 205, 86)",
-                "rgb(201, 203, 207)",
-                "rgb(54, 162, 235)",
-              ],
-            },
-          ],
+    <div className="relative">
+      {/* Background image with grayscale filter */}
+      <div
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url(/illustrations/books-and-symbols.png)",
+          filter: "grayscale(100%)",
+          opacity: 0.1, // Adjust this value to control the background intensity
         }}
-        options={{
-          responsive: true,
-          plugins: {
-            legend: {
-              display: false,
-            },
-            tooltip: {
-              callbacks: {
-                title: (context) => {
-                  const index = context[0].dataIndex;
-                  const category = categories[index];
-                  const mastery = category.currentMasteryLevel?.toFixed(0);
+      ></div>
 
-                  return `${context[0].label} (competență ${mastery}%)`;
-                },
-                label: (context) => {
-                  const index = context.dataIndex;
-                  const category = categories[index];
+      {/* Chart content */}
+      <div className="relative z-10">
+        <PolarArea
+          data={{
+            labels: categories.map((c) => c.name),
+            datasets: [
+              {
+                data: categories.map((c) => c.currentMasteryLevel),
+                backgroundColor: [
+                  "rgb(255, 99, 132)",
+                  "rgb(75, 192, 192)",
+                  "rgb(255, 205, 86)",
+                  "rgb(201, 203, 207)",
+                  "rgb(54, 162, 235)",
+                ],
+              },
+            ],
+          }}
+          options={{
+            responsive: true,
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                callbacks: {
+                  title: (context) => {
+                    const index = context[0].dataIndex;
+                    const category = categories[index];
+                    const mastery = category.currentMasteryLevel?.toFixed(0);
 
-                  return `${category.completedProblems}/${category.totalProblems} probleme`;
+                    return `${context[0].label} (competență ${mastery}%)`;
+                  },
+                  label: (context) => {
+                    const index = context.dataIndex;
+                    const category = categories[index];
+
+                    return `${category.completedProblems}/${category.totalProblems} probleme`;
+                  },
                 },
               },
             },
-          },
-          scales: {
-            r: {
-              ticks: {
-                stepSize: 20,
+            scales: {
+              r: {
+                ticks: {
+                  stepSize: 20,
+                },
+                max: 100,
+                min: 0,
+                beginAtZero: true,
               },
-              max: 100,
-              min: 0,
-              beginAtZero: true,
             },
-          },
-          animation: {
-            animateRotate: true,
-            animateScale: true,
-          },
-        }}
-      />
+            animation: {
+              animateRotate: true,
+              animateScale: true,
+            },
+          }}
+        />
+      </div>
     </div>
   );
 };
