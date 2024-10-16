@@ -59,7 +59,7 @@
     "html-react-parser": "^5.1.16",
     "lucide-react": "^0.438.0",
     "mathquill": "0.10.1-a",
-    "next": "14.2.13",
+    "next": "14.2.15",
     "posthog-js": "^1.167.0",
     "posthog-node": "^4.2.0",
     "react": "18.3.1",
