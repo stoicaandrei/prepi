@@ -21,6 +21,7 @@ import { WeeklyActivityCard } from "./cards/WeeklyActivityCard";
 import { WeeklyPointsCard } from "./cards/WeeklyPointsCard";
 import { useAppContext } from "../appContext";
 import Link from "next/link";
+import { Crisp } from "crisp-sdk-web";
 
 export default function Dashboard() {
   const { data: nextChapter } =
@@ -40,15 +41,24 @@ export default function Dashboard() {
       </Head>
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         <Card className="col-span-full">
-          <p className="text-base font-medium text-[#6e6e6e] p-5 sm:p-10 text-center sm:text-left">
-            Hei, suntem încă în Beta și îmbunătățim continuu platforma. Dacă ai
-            idei sau sugestii, ne-ar plăcea să le auzim. 😊
-          </p>
+          <div className="p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-base font-medium text-[#6e6e6e] text-center sm:text-left">
+              Hei, suntem încă în Beta și îmbunătățim continuu platforma. Dacă
+              ai idei sau sugestii, ne-ar plăcea să le auzim. 😊
+            </p>
+            <Button
+              variant="outline"
+              className="whitespace-nowrap"
+              onClick={() => Crisp.chat.open()}
+            >
+              Vorbește cu noi!
+            </Button>
+          </div>
         </Card>
 
         {!initialTestTaken && (
           <Card className="col-span-full relative">
-            <CardHeader className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between pb-2 ">
+            <CardHeader className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between pb-2">
               <CardTitle className="text-2xl font-bold flex items-center self-start">
                 <CheckSquare className="mr-2 h-6 w-6 inline-block text-cyan-500" />
                 Care îți este nivelul?
@@ -56,6 +66,7 @@ export default function Dashboard() {
               <div className="hidden sm:block">
                 <Button
                   variant="default"
+                  size="lg"
                   className="bg-prepi-gradient shadow-prepi-lg hover:shadow-prepi relative m-3 sm:m-0 "
                   onClick={openInitialAssessmentModal}
                 >
