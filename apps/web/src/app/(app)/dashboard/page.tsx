@@ -21,7 +21,9 @@ import { WeeklyActivityCard } from "./cards/WeeklyActivityCard";
 import { WeeklyPointsCard } from "./cards/WeeklyPointsCard";
 import { useAppContext } from "../appContext";
 import Link from "next/link";
+import Image from "next/image";
 import { Crisp } from "crisp-sdk-web";
+import dayjs from "dayjs";
 
 export default function Dashboard() {
   const { data: nextChapter } =
@@ -31,6 +33,12 @@ export default function Dashboard() {
   const initialTestTaken =
     assessmentSession &&
     assessmentSession.totalQuestions === assessmentSession._count.questions;
+
+  const { data: subscription } = trpc.stripe.getSubscriptionDetails.useQuery();
+  const subscriptionDaysLeft = dayjs(subscription?.trialEndsAt).diff(
+    dayjs(),
+    "days",
+  );
 
   const { openInitialAssessmentModal } = useAppContext();
 
@@ -55,6 +63,30 @@ export default function Dashboard() {
             </Button>
           </div>
         </Card>
+
+        {!!subscription && (
+          <Card className="col-span-full">
+            <CardContent className="flex items-center justify-between p-6">
+              <div className="flex items-center space-x-4">
+                <Image
+                  src="/notification-icons/confetti.png"
+                  alt="Confetti"
+                  width="64"
+                  height="64"
+                />
+                <div>
+                  <h2 className="text-2xl font-semibold text-primary">
+                    Hooray
+                  </h2>
+                  <p className="text-md text-muted-foreground">
+                    Ai {subscriptionDaysLeft} zile sa te pregatesti gratuit cu
+                    Prepi!
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         {!initialTestTaken && (
           <Card className="col-span-full relative">
