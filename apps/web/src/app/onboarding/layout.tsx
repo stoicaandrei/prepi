@@ -2,6 +2,7 @@
 
 import { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
 import { useSignOut } from "@/hooks/useSignOut";
@@ -17,15 +18,17 @@ export default function OnboardingLayout({
     <div className="flex h-screen flex-col overflow-scroll">
       <header className="h-[80px] flex flex-row justify-between items-center px-4">
         <div className="w-[250px] h-full py-4">
-          <div className="relative h-full w-full">
-            <Image
-              src="/logo.svg"
-              alt="Prepi Logo"
-              layout="fill"
-              objectFit="contain"
-              priority
-            />
-          </div>
+          <Link href="https://www.prepi.ro">
+            <div className="relative h-full w-full">
+              <Image
+                src="/logo.svg"
+                alt="Prepi Logo"
+                layout="fill"
+                objectFit="contain"
+                priority
+              />
+            </div>
+          </Link>
         </div>
         <Button
           variant="ghost"
