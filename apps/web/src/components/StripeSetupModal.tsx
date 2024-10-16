@@ -61,7 +61,7 @@ export const StripeSetupModal = ({ open, onClose }: StripeSetupModalProps) => {
   return (
     <Dialog open={open} onOpenChange={closeModal}>
       <DialogContent
-        className="bg-secondary max-h-screen overflow-scroll"
+        className="bg-secondary max-h-screen sm:max-h-[90vh] max-w-screen w-screen sm:w-[90vw] overflow-scroll"
         closable={!trialOverdue}
       >
         <DialogHeader>
