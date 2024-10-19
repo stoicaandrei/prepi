@@ -118,8 +118,8 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mt-2">
-                Fă testul inițial pentru a stabili planul de pregătire
-                individuală.
+                Începe o scurtă evaluare și descoperă un plan creat special
+                pentru tine
               </p>
               <Button
                 variant="default"
