@@ -78,6 +78,9 @@ const config: Config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        "prepi-gradient": "linear-gradient(to right, #00CCCC, #6BADEE)",
+      },
       boxShadow: {
         prepi: "0 0 3px #6badee",
         "prepi-lg": "0 0 10px #6badee",
