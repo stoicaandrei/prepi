@@ -8,6 +8,8 @@
     "Authed",
     "Cacheable",
     "mathjax",
+    "mathpix",
+    "openai",
     "posthog",
     "prepi",
     "prereq",
