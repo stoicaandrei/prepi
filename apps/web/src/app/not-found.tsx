@@ -1,20 +1,30 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ContactUsButton } from "./not-found.components";
+
+export default function NotFoundComponent() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex flex-col items-center justify-center px-4 py-16">
+      <h1 className="text-6xl font-bold text-[#6BADEE] mb-4">404</h1>
+      <h2 className="text-3xl font-semibold text-gray-800 mb-6">
+        Pagină negăsită
+      </h2>
+      <p className="text-xl text-gray-600 text-center max-w-md mb-8">
+        Ne pare rău, dar pagina pe care o cauți nu există sau a fost mutată.
+      </p>
+      <div className="space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row">
+        <Button
+          asChild
+          className="bg-gradient-to-r from-[#00CCCC] to-[#6BADEE] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:opacity-90 transition-opacity"
+        >
+          <Link href="/">Înapoi la pagina principală</Link>
+        </Button>
+        <ContactUsButton />
+      </div>
+    </div>
+  );
+}
 
 export const metadata = {
   title: "Prepi",
 };
-
-export default function NotFound() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background">
-      <h1 className="text-4xl font-bold mb-4">404 - Pagină negăsită</h1>
-      <p className="text-xl mb-8">
-        Ne pare rău, pagina pe care o cauți nu există.
-      </p>
-      <Button asChild>
-        <Link href="/">Înapoi la Aplicație</Link>
-      </Button>
-    </div>
-  );
-}
