@@ -348,42 +348,54 @@ model Exam {
     slug  String @unique
     title String
 
-    sub1Problems ExamProblem[] @relation("Sub1Problems")
-    sub2Problems ExamProblem[] @relation("Sub2Problems")
-    sub3Problems ExamProblem[] @relation("Sub3Problems")
+    problems ExamProblem[] @relation("ExamProblems") // Relation to problems
+
+    examSourceFiles ExamSourceFiles?
+}
+
+enum ExamProblemCategory {
+    SUB1
+    SUB2
+    SUB3
+}
+
+enum ExamSubproblemCategory {
+    A
+    B
+    C
+}
+
+model ExamProblemOfficialSolutionStep {
+    id String @id @default(cuid())
+
+    examProblem   ExamProblem @relation(fields: [examProblemId], references: [id])
+    examProblemId String
+
+    stepNumber Int
+    content    String
+    points     Int
 }
 
 model ExamProblem {
     id String @id @default(cuid())
 
-    exam1   Exam?   @relation("Sub1Problems", fields: [exam1Id], references: [id])
-    exam1Id String?
-    exam2   Exam?   @relation("Sub2Problems", fields: [exam2Id], references: [id])
-    exam2Id String?
-    exam3   Exam?   @relation("Sub3Problems", fields: [exam3Id], references: [id])
-    exam3Id String?
+    exam   Exam   @relation("ExamProblems", fields: [examId], references: [id])
+    examId String
 
-    order       Int     @default(0)
-    description String
-    explanation String?
-
-    subA   ExamSubproblem? @relation("SubA", fields: [subAId], references: [id])
-    subAId String?         @unique
-    subB   ExamSubproblem? @relation("SubB", fields: [subBId], references: [id])
-    subBId String?         @unique
-    subC   ExamSubproblem? @relation("SubC", fields: [subCId], references: [id])
-    subCId String?         @unique
-}
-
-model ExamSubproblem {
-    id String @id @default(cuid())
+    category    ExamProblemCategory?
+    subcategory ExamSubproblemCategory?
+    order       Int                     @default(0)
 
     description String
-    explanation String?
+    points      Int
 
-    parentA ExamProblem? @relation("SubA")
-    parentB ExamProblem? @relation("SubB")
-    parentC ExamProblem? @relation("SubC")
+    officialSolutionSteps ExamProblemOfficialSolutionStep[]
+
+    subproblems ExamProblem[] @relation("ExamSubproblems")
+    parent      ExamProblem?  @relation("ExamSubproblems", fields: [parentId], references: [id])
+    parentId    String?
+
+    @@index([category, subcategory, order])
 }
 
 model InitialAssessmentSession {
@@ -405,4 +417,20 @@ model AssessmentQuestion {
     userAnswer                 String?
     isCorrect                  Boolean
     createdAt                  DateTime                 @default(now())
+}
+
+model ExamSourceFiles {
+    id String @id @default(cuid())
+
+    exam   Exam   @relation(fields: [examId], references: [id])
+    examId String @unique
+
+    examPdfUrl String
+    examMD     String
+
+    solutionPdfUrl String
+    solutionMD     String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
