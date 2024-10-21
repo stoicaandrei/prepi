@@ -330,6 +330,13 @@ enum ExamDifficulty {
     M3
 }
 
+enum ExamProfile {
+    M_mate_info
+    M_st_nat
+    M_tehnologic
+    M_pedagogic
+}
+
 enum ExamType {
     SIMULARE
     MODEL
@@ -338,8 +345,10 @@ enum ExamType {
 }
 
 model Exam {
-    id            String         @id @default(cuid())
-    difficulty    ExamDifficulty
+    id         String         @id @default(cuid())
+    difficulty ExamDifficulty
+    profile    ExamProfile
+
     type          ExamType
     year          Int?
     month         String?
