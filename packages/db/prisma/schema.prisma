@@ -349,7 +349,7 @@ model Exam {
     difficulty ExamDifficulty
     profile    ExamProfile
 
-    type          ExamType
+    type          ExamType?
     year          Int?
     month         String?
     variantNumber Int?
