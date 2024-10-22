@@ -10,6 +10,7 @@ import {
   ExamProblemDescription,
   ExamSubsectionDescription,
 } from "./exam-components";
+import { ExamProblemCategory, ExamSubproblemCategory } from "@prisma/client";
 
 function ExamSkeleton() {
   return (
@@ -38,6 +39,53 @@ async function ExamContent({ slug }: { slug: string }) {
     return <div>Exam not found</div>;
   }
 
+  const findSubProblem = (
+    category: ExamProblemCategory,
+    order: number,
+    subcategory: ExamSubproblemCategory,
+  ) => {
+    return exam.problems.find(
+      (problem) =>
+        problem.category === category &&
+        problem.order === order &&
+        problem.subcategory === subcategory,
+    );
+  };
+
+  const sub1Problems = exam.problems.filter(
+    (problem) => problem.category === "SUB1",
+  );
+  const sub2Problems = exam.problems
+    .filter((problem) => problem.category === "SUB2" && !problem.subcategory)
+    .map((problem) => {
+      const subA = findSubProblem("SUB2", problem.order, "A");
+      const subB = findSubProblem("SUB2", problem.order, "B");
+      const subC = findSubProblem("SUB2", problem.order, "C");
+
+      return {
+        ...problem,
+        subA,
+        subB,
+        subC,
+      };
+    });
+  const sub3Problems = exam.problems
+    .filter((problem) => problem.category === "SUB3" && !problem.subcategory)
+    .map((problem) => {
+      const subA = findSubProblem("SUB3", problem.order, "A");
+      const subB = findSubProblem("SUB3", problem.order, "B");
+      const subC = findSubProblem("SUB3", problem.order, "C");
+
+      return {
+        ...problem,
+        subA,
+        subB,
+        subC,
+      };
+    });
+
+  console.log(sub2Problems);
+
   return (
     <>
       <CardHeader className="space-y-4 bg-prepi-gradient text-white rounded-t-md">
@@ -53,20 +101,20 @@ async function ExamContent({ slug }: { slug: string }) {
       <CardContent className="p-6">
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-primary">Subiectul 1</h2>
-          {exam?.sub1Problems.map((problem, index) => (
+          {sub1Problems?.map((problem, index) => (
             <div key={index} className="mb-6 p-4 bg-gray-50 rounded-lg">
               <h3 className="text-xl font-semibold mb-2 text-gray-800">
                 Problema {index + 1}.
               </h3>
               <ExamProblemDescription description={problem.description} />
-              <ExplanationSection explanation={problem.explanation} />
+              <ExplanationSection explanation={problem.officialSolutionSteps} />
             </div>
           ))}
         </div>
 
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-primary">Subiectul 2</h2>
-          {exam?.sub2Problems.map((problem, index) => (
+          {sub2Problems.map((problem, index) => (
             <div key={index} className="mb-6 p-4 bg-gray-50 rounded-lg">
               <h3 className="text-xl font-semibold mb-2 text-gray-800">
                 Problema {index + 1}.
@@ -80,7 +128,9 @@ async function ExamContent({ slug }: { slug: string }) {
                     description={problem.subA?.description}
                   />
                 </h4>
-                <ExplanationSection explanation={problem.subA?.explanation} />
+                <ExplanationSection
+                  explanation={problem.subA?.officialSolutionSteps}
+                />
               </div>
 
               <div className="ml-4 mb-4">
@@ -90,7 +140,9 @@ async function ExamContent({ slug }: { slug: string }) {
                     description={problem.subB?.description}
                   />
                 </h4>
-                <ExplanationSection explanation={problem.subB?.explanation} />
+                <ExplanationSection
+                  explanation={problem.subB?.officialSolutionSteps}
+                />
               </div>
 
               <div className="ml-4 mb-4">
@@ -100,7 +152,9 @@ async function ExamContent({ slug }: { slug: string }) {
                     description={problem.subC?.description}
                   />
                 </h4>
-                <ExplanationSection explanation={problem.subC?.explanation} />
+                <ExplanationSection
+                  explanation={problem.subC?.officialSolutionSteps}
+                />
               </div>
             </div>
           ))}
@@ -108,7 +162,7 @@ async function ExamContent({ slug }: { slug: string }) {
 
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-primary">Subiectul 3</h2>
-          {exam?.sub3Problems.map((problem, index) => (
+          {sub3Problems.map((problem, index) => (
             <div key={index} className="mb-6 p-4 bg-gray-50 rounded-lg">
               <h3 className="text-xl font-semibold mb-2 text-gray-800">
                 Problema {index + 1}.
@@ -122,7 +176,9 @@ async function ExamContent({ slug }: { slug: string }) {
                     description={problem.subA?.description}
                   />
                 </h4>
-                <ExplanationSection explanation={problem.subA?.explanation} />
+                <ExplanationSection
+                  explanation={problem.subA?.officialSolutionSteps}
+                />
               </div>
 
               <div className="ml-4 mb-4">
@@ -132,7 +188,9 @@ async function ExamContent({ slug }: { slug: string }) {
                     description={problem.subB?.description}
                   />
                 </h4>
-                <ExplanationSection explanation={problem.subB?.explanation} />
+                <ExplanationSection
+                  explanation={problem.subB?.officialSolutionSteps}
+                />
               </div>
 
               <div className="ml-4 mb-4">
@@ -142,7 +200,9 @@ async function ExamContent({ slug }: { slug: string }) {
                     description={problem.subC?.description}
                   />
                 </h4>
-                <ExplanationSection explanation={problem.subC?.explanation} />
+                <ExplanationSection
+                  explanation={problem.subC?.officialSolutionSteps}
+                />
               </div>
             </div>
           ))}

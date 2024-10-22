@@ -12,25 +12,33 @@ import Link from "next/link";
 import { trpc } from "@/utils/trpc";
 import { MathJax } from "better-react-mathjax";
 import { getExamBySlugAction } from "@/actions";
+import { ExamProblemOfficialSolutionStep } from "@prisma/client";
+
+const parseLatex = (text?: string) => text?.replace(/\$([^$]+)\$/g, "\\($1\\)");
 
 export const ExplanationSection = ({
   explanation,
 }: {
-  explanation?: string | null;
+  explanation?: ExamProblemOfficialSolutionStep[];
 }) => {
   return (
-    <Collapsible>
+    <Collapsible open>
       <CollapsibleTrigger asChild>
         <Button
           variant="outline"
           className="w-full justify-start text-left mb-2"
         >
           <ChevronRight className="mr-2 h-4 w-4" />
-          Rezolvare
+          Barem
         </Button>
       </CollapsibleTrigger>
       <CollapsibleContent className="bg-white p-4 rounded-md border border-gray-200">
-        <MathJax>{explanation}</MathJax>
+        {explanation?.map((step, index) => (
+          <div key={index} className="mb-4 flex align-middle">
+            <div className="mr-4">{step.points}p</div>
+            <MathJax inline>{parseLatex(step.content)}</MathJax>
+          </div>
+        ))}
       </CollapsibleContent>
     </Collapsible>
   );
@@ -41,7 +49,9 @@ export const ExamProblemDescription = ({
 }: {
   description: string;
 }) => {
-  return <MathJax className="mb-4 text-gray-700">{description}</MathJax>;
+  return (
+    <MathJax className="mb-4 text-gray-700">{parseLatex(description)}</MathJax>
+  );
 };
 
 export const ExamSubsectionDescription = ({
@@ -49,5 +59,5 @@ export const ExamSubsectionDescription = ({
 }: {
   description?: string;
 }) => {
-  return <MathJax inline>{description}</MathJax>;
+  return <MathJax inline>{parseLatex(description)}</MathJax>;
 };
