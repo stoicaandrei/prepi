@@ -316,12 +316,56 @@ export default function Home() {
       <SectionDivider shape="f2" />
 
       <section id="pricing" className="py-16 ">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-2xl mx-auto mb-4">
+            <div className="bg-white text-primary rounded-3xl shadow-xl overflow-hidden">
+              <div className="px-8 py-12 text-center ">
+                <h2 className="text-5xl font-bold mb-4">{currentPrice}</h2>
+                <p className="text-xl mb-8">7 zile gratuit!</p>
+                <ul className="text-lg space-y-4 mb-8">
+                  <li>Plan de pregătire personalizat</li>
+                  <li>Explicații pentru fiecare lecție</li>
+                  <li>Recomandări zilnice</li>
+                  <li>Teste și rezolvări nelimitate</li>
+                  <li>Videoclipuri explicative</li>
+                  <li>Recomandări bazate pe stilul tău</li>
+                  <li>Asistent Prepi</li>
+                </ul>
+                <Link href={startNowUrl}>
+                  <Button className="bg-prepi-gradient text-white text-lg font-semibold py-3 px-8 rounded-full transition duration-300">
+                    Începe gratuit!
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="max-w-2xl mx-auto mb-4">
+            <div className="bg-prepi-gradient rounded-3xl shadow-xl overflow-hidden">
+              <div className="px-8 py-12 text-center text-white">
+                <h2 className="text-5xl font-bold mb-4">445 lei/6 luni</h2>
+                <p className="text-xl mb-8">O lună gratuită!</p>
+                <ul className="text-lg space-y-4 mb-8">
+                  <li>Plan de pregătire personalizat</li>
+                  <li>Explicații pentru fiecare lecție</li>
+                  <li>Recomandări zilnice</li>
+                  <li>Teste și rezolvări nelimitate</li>
+                  <li>Videoclipuri explicative</li>
+                  <li>Recomandări bazate pe stilul tău</li>
+                  <li>Asistent Prepi</li>
+                </ul>
+                <Link href={startNowUrl}>
+                  <Button className="bg-white text-blue-600 hover:bg-blue-100 text-lg font-semibold py-3 px-8 rounded-full transition duration-300">
+                    Începe gratuit!
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="max-w-2xl mx-auto mb-4">
             <div className="bg-gradient-to-r from-purple-400 to-blue-500 rounded-3xl shadow-xl overflow-hidden">
               <div className="px-8 py-12 text-center text-white">
-                <h2 className="text-5xl font-bold mb-4">{currentPrice}</h2>
-                <p className="text-xl mb-8">7 zile gratuit</p>
+                <h2 className="text-5xl font-bold mb-4">890 lei/an</h2>
+                <p className="text-xl mb-8">Două luni gratuite!</p>
                 <ul className="text-lg space-y-4 mb-8">
                   <li>Plan de pregătire personalizat</li>
                   <li>Explicații pentru fiecare lecție</li>
