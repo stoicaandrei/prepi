@@ -30,68 +30,6 @@ const markdownsRoot =
   "/Users/andreistoica/Documents/Projects/prepi/variante 2010-2011 markdown";
 const examsRoot = "/Users/andreistoica/Documents/Projects/prepi/exams";
 
-const aiSystem = `
-Esti un robot care are rolul de a recunoaste examene de matematica si bareme in stil markdown, pe care apoi le organizezi in stil json.
-
-Primul mesaj va fi cu toate problemele incluse in test.
-Al doilea mesaj va fi cu baremul pentru testul respectiv.
-
-La ambele mesaje vreau sa raspunzi doar cu textul "okay"
-
-Urmatoarele mesaje vor fi de tipul 1.1, astea insemnand subiectul 1, problema 1.
-Rolul este sa scrii problema 1 intr-un format json de tipul
-
-Baremul poate contine mai mult linii de rezolvari, cu puncte diferite pentru fiecare linie. Nu adauga nicio explicatie in plus fata de barem. Tot ce poti sa adaugi in plus sunt simbolurile dolar.
-Daca in barem intalnesti un link spre cdn.mathpix.com/cropped, include-l in barem, deoarece reprezinta o imagine matematica.
-Daca intr-una din officialExplanation lipseste continutul, atunci muta punctele la urmatoarea linie care are continut.
-
-Asigurate ca tot textul matematic este inconjurat de simboluri de dolar.
-
-{
-"statement": string, 
-points: 5, 
-officialExplanation: [{"text": string, points: number}]}`;
-
-const aiSubproblemSystem = `
-Esti un robot care are rolul de a recunoaste o problema de matematica si solutia oficiala in stil markdown, pe care apoi le organizezi in stil json.
-
-Primul mesaj va fi cu toate problemele incluse in test.
-Al doilea mesaj va fi cu baremul pentru testul respectiv.
-
-La ambele mesaje vreau sa raspunzi doar cu textul "okay"
-
-Urmatoarele mesaje vor fi de tipul 2.1, astea insemnand subiectul 2, problema 1.
-Rolul este sa scrii problema 1 intr-un format json de tipul.
-
-Fiecare problema are 3 subprobleme, fiecare cu punctajul si baremul sau.
-
-Baremul poate contine mai mult linii de rezolvari, cu puncte diferite pentru fiecare linie. Nu adauga nicio explicatie in plus fata de barem. Tot ce poti sa adaugi in plus sunt simbolurile dolar.
-Daca in barem intalnesti un link spre cdn.mathpix.com/cropped, include-l in barem, deoarece reprezinta o imagine matematica.
-Daca intr-una din officialExplanation lipseste continutul, atunci muta punctele la urmatoarea linie care are continut.
-
-
-Asigurate ca tot textul matematic este inconjurat de simboluri de dolar.
-
-{
-statement: string,
-points: 15,
-subA: {
-  statement: string,
-  points: number,
-  officialExplanation: [{"text": string, points: number}]
-},
-subB: {
-  statement: string,
-  points: number,
-  officialExplanation: [{"text": string, points: number}]
-},
-subC: {
-  statement: string,
-  points: number,
-  officialExplanation: [{"text": string, points: number}]
-}
-`;
-
 const OfficialExplanation = z.object({
   text: z.string(),
   points: z.number(),
@@ -116,6 +54,16 @@ const ExtendedProblem = z.object({
   subB: Subproblem,
   subC: Subproblem,
 });
+
+const aiSystem = fs.readFileSync(
+  "/Users/andreistoica/Documents/Projects/prepi/prepi/packages/migration/scripts/pro-matematica/simpleProblemPrompt.md",
+  "utf-8",
+);
+
+const aiSubproblemSystem = fs.readFileSync(
+  "/Users/andreistoica/Documents/Projects/prepi/prepi/packages/migration/scripts/pro-matematica/complexProblemPrompt.md",
+  "utf-8",
+);
 
 export default async function prepareExams() {
   if (!fs.existsSync(examsRoot)) {

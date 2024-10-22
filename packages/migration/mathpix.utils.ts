@@ -4,12 +4,16 @@ import {
   getConversionResult,
 } from "./mathpix.api";
 
+const cleanUpMd = (md: string) => {
+  return md.replace(/\\text\s*\{\s*([^}]+\s*)\}/g, "$1");
+};
+
 export const convertPdfToMd = async (pdfUrl: string) => {
   // Step 1: Process the PDF
   console.log("Processing PDF...");
   const processResult = await processPdf({
     url: pdfUrl,
-
+    numbers_default_to_math: true,
     conversion_formats: {
       md: true,
     },
@@ -34,7 +38,7 @@ export const convertPdfToMd = async (pdfUrl: string) => {
 
     // Get Markdown result
     const mdResult = await getConversionResult(pdfId, "md");
-    return mdResult;
+    return cleanUpMd(mdResult);
   } else {
     throw new Error("PDF processing failed or timed out");
   }
