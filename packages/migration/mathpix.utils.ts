@@ -2,6 +2,7 @@ import {
   processPdf,
   pollProcessingStatus,
   getConversionResult,
+  processImage,
 } from "./mathpix.api";
 
 const cleanUpMd = (md: string) => {
@@ -37,9 +38,43 @@ export const convertPdfToMd = async (pdfUrl: string) => {
     console.log("Getting conversion results...");
 
     // Get Markdown result
-    const mdResult = await getConversionResult(pdfId, "md");
+    const _mdResult = await getConversionResult(pdfId, "md");
+    const mdResult = await replaceImagesWithText(_mdResult);
+
     return cleanUpMd(mdResult);
   } else {
     throw new Error("PDF processing failed or timed out");
   }
+};
+
+const replaceImagesWithText = async (markdown: string): Promise<string> => {
+  const imageRegex = /!\[[^\]]*\]\(([^)]+)\)/g;
+  let result = markdown;
+  let match;
+
+  while ((match = imageRegex.exec(markdown)) !== null) {
+    const [fullMatch, imageUrl] = match;
+
+    console.log(`Converting image: ${imageUrl}`);
+    const convertedText = await convertImgToMd(imageUrl);
+    result = result.replace(fullMatch, convertedText);
+  }
+
+  return result;
+};
+
+export const convertImgToMd = async (imgUrl: string) => {
+  console.log("Processing Image...");
+  const processResult = await processImage({
+    src: imgUrl,
+    formats: ["latex_styled"],
+  });
+
+  const data = processResult.latex_styled;
+
+  if (!data) {
+    throw new Error("Image processing failed, no data returned");
+  }
+
+  return data;
 };

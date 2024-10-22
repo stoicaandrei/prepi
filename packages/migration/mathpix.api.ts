@@ -1,6 +1,5 @@
 import axios from "axios";
 
-const mathpixBase = "https://api.mathpix.com/v3/";
 const mathpixHeaders = {
   app_id: process.env.MATHPIX_APP_ID,
   app_key: process.env.MATHPIX_APP_KEY,
@@ -153,6 +152,133 @@ export const getConversionResult = async (
       `Error getting conversion result for format ${format}:`,
       error,
     );
+    throw error;
+  }
+};
+
+const mathpixImageUrl = "https://api.mathpix.com/v3/text";
+
+interface DataOptions {
+  include_asciimath?: boolean;
+  include_latex?: boolean;
+}
+
+interface Region {
+  top_left_x: number;
+  top_left_y: number;
+  width: number;
+  height: number;
+}
+
+interface Callback {
+  post: string;
+  headers?: Record<string, string>;
+}
+
+interface ProcessImageParams {
+  src?: string;
+  file?: File;
+  metadata?: Record<string, any>;
+  tags?: string[];
+  async?: boolean;
+  callback?: Callback;
+  formats?: ("text" | "data" | "html" | "latex_styled")[];
+  data_options?: DataOptions;
+  include_detected_alphabets?: boolean;
+  alphabets_allowed?: AlphabetsAllowed;
+  region?: Region;
+  enable_blue_hsv_filter?: boolean;
+  confidence_threshold?: number;
+  confidence_rate_threshold?: number;
+  include_equation_tags?: boolean;
+  include_line_data?: boolean;
+  include_word_data?: boolean;
+  include_smiles?: boolean;
+  include_inchi?: boolean;
+  include_geometry_data?: boolean;
+  auto_rotate_confidence_threshold?: number;
+  rm_spaces?: boolean;
+  rm_fonts?: boolean;
+  idiomatic_eqn_arrays?: boolean;
+  idiomatic_braces?: boolean;
+  numbers_default_to_math?: boolean;
+  math_fonts_default_to_math?: boolean;
+  math_inline_delimiters?: [string, string];
+  math_display_delimiters?: [string, string];
+  enable_spell_check?: boolean;
+  enable_tables_fallback?: boolean;
+}
+
+interface DataObject {
+  type: string;
+  value: string;
+}
+
+interface LineData {
+  // Define LineData structure if needed
+}
+
+interface WordData {
+  // Define WordData structure if needed
+}
+
+interface DetectedAlphabet {
+  // Define DetectedAlphabet structure if needed
+}
+
+interface GeometryData {
+  // Define GeometryData structure if needed
+}
+
+interface ProcessImageResponse {
+  request_id?: string;
+  text?: string;
+  latex_styled?: string;
+  confidence?: number;
+  confidence_rate?: number;
+  line_data?: LineData[];
+  word_data?: WordData[];
+  data?: DataObject[];
+  html?: string;
+  detected_alphabets?: DetectedAlphabet[];
+  is_printed?: boolean;
+  is_handwritten?: boolean;
+  auto_rotate_confidence?: number;
+  geometry_data?: GeometryData[];
+  auto_rotate_degrees?: number;
+  error?: string;
+  error_info?: Record<string, any>;
+  version: string;
+}
+
+export const processImage = async (
+  params: ProcessImageParams,
+): Promise<ProcessImageResponse> => {
+  try {
+    let data: any;
+    let headers = { ...mathpixHeaders };
+
+    if (params.file) {
+      // If a file is provided, use FormData
+      const formData = new FormData();
+      formData.append("file", params.file);
+      formData.append("options_json", JSON.stringify(params));
+      data = formData;
+      headers["Content-Type"] = "multipart/form-data";
+    } else {
+      // If no file is provided, assume it's a URL in the 'src' parameter
+      data = params;
+    }
+
+    const response = await axios.post<ProcessImageResponse>(
+      mathpixImageUrl,
+      data,
+      { headers },
+    );
+
+    return response.data;
+  } catch (error) {
+    console.error("Error processing image:", error);
     throw error;
   }
 };
