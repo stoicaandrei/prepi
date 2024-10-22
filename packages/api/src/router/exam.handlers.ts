@@ -20,29 +20,9 @@ export const getExamBySlug = async (prisma: PrismaClient, slug: string) => {
       slug,
     },
     include: {
-      sub1Problems: {
-        orderBy: {
-          order: "asc",
-        },
-      },
-      sub2Problems: {
-        orderBy: {
-          order: "asc",
-        },
+      problems: {
         include: {
-          subA: true,
-          subB: true,
-          subC: true,
-        },
-      },
-      sub3Problems: {
-        orderBy: {
-          order: "asc",
-        },
-        include: {
-          subA: true,
-          subB: true,
-          subC: true,
+          officialSolutionSteps: true,
         },
       },
     },
