@@ -362,7 +362,13 @@ export default function Home() {
             </div>
           </div>
           <div className="max-w-2xl mx-auto mb-4">
-            <div className="bg-gradient-to-r from-purple-400 to-blue-500 rounded-3xl shadow-xl overflow-hidden">
+            <div className="bg-gradient-to-r from-purple-400 to-blue-500 rounded-3xl shadow-xl overflow-hidden relative">
+              {/* Ribbon */}
+              <div className="absolute top-0 left-0 w-40 h-40 overflow-hidden">
+                <div className="absolute top-3 left-3 w-40 sm:top-7 sm:left-6 sm:w-52 bg-red-500 text-white text-center py-1 transform -rotate-45 translate-x-[-30%] translate-y-[30%]">
+                  POPULAR
+                </div>
+              </div>
               <div className="px-8 py-12 text-center text-white">
                 <h2 className="text-5xl font-bold mb-4">890 lei/an</h2>
                 <p className="text-xl mb-8">Două luni gratuite!</p>
