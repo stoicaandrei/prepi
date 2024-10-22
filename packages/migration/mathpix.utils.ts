@@ -57,7 +57,8 @@ const replaceImagesWithText = async (markdown: string): Promise<string> => {
 
     console.log(`Converting image: ${imageUrl}`);
     const convertedText = await convertImgToMd(imageUrl);
-    result = result.replace(fullMatch, convertedText);
+    const cleanedText = convertedText.replace(/\n/g, " ");
+    result = result.replace(fullMatch, cleanedText);
   }
 
   return result;

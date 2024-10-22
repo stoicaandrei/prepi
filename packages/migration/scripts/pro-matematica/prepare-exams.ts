@@ -7,6 +7,7 @@ import { ExamProblemCategory, ExamSubproblemCategory, prisma } from "@prepi/db";
 import { convertPdfToMd } from "../../mathpix.utils";
 
 import exams from "./categorized_exams.json";
+import { parseSolutionMarkdownToJson } from "./parse-solution-markdown";
 
 type Exam = {
   examLink: string;
@@ -41,6 +42,11 @@ const Problem = z.object({
   officialExplanation: z.array(OfficialExplanation),
 });
 
+const ProblemBase = z.object({
+  statement: z.string(),
+  points: z.number(),
+});
+
 const Subproblem = z.object({
   statement: z.string(),
   points: z.number(),
@@ -62,6 +68,11 @@ const aiSystem = fs.readFileSync(
 
 const aiSubproblemSystem = fs.readFileSync(
   "/Users/andreistoica/Documents/Projects/prepi/prepi/packages/migration/scripts/pro-matematica/complexProblemPrompt.md",
+  "utf-8",
+);
+
+const aiProblemBaseSystem = fs.readFileSync(
+  "/Users/andreistoica/Documents/Projects/prepi/prepi/packages/migration/scripts/pro-matematica/problemStatementPrompt.md",
   "utf-8",
 );
 
@@ -146,6 +157,17 @@ export default async function prepareExams() {
     const examMarkdown = fs.readFileSync(examMarkdownPath, "utf-8");
     const solutionMarkdown = fs.readFileSync(solutionMarkdownPath, "utf-8");
 
+    console.log(`Verifying solution json: ${exam.name}`);
+    const solutionJsonPath = `${examDir}/solution_parsed.json`;
+    if (!fs.existsSync(solutionJsonPath)) {
+      console.log(`Parsing solution markdown to json: ${exam.name}`);
+
+      const json = parseSolutionMarkdownToJson(solutionMarkdown);
+      fs.writeFileSync(solutionJsonPath, JSON.stringify(json, null, 2));
+    }
+
+    const solutionJson = JSON.parse(fs.readFileSync(solutionJsonPath, "utf-8"));
+
     const parseProblem = async (problemIndex: string) => {
       console.log(`Running chat for problem: ${problemIndex}`);
       const completion = await openai.beta.chat.completions.parse({
@@ -161,7 +183,74 @@ export default async function prepareExams() {
           { role: "assistant", content: "okay" },
           {
             role: "user",
-            content: solutionMarkdown,
+            content: JSON.stringify(solutionJson[problemIndex]),
+          },
+          { role: "assistant", content: "okay" },
+          { role: "user", content: problemIndex },
+        ],
+      });
+
+      const totalTokens = completion.usage?.total_tokens;
+      const cachedTokens =
+        completion.usage?.prompt_tokens_details?.cached_tokens;
+      console.log(
+        `Completion for ${problemIndex} used ${totalTokens} tokens, ${cachedTokens} cached`,
+      );
+
+      const content = completion.choices[0].message.parsed;
+      return content;
+    };
+
+    const parseProblemBase = async (problemIndex: string) => {
+      console.log(`Running chat for problem: ${problemIndex}`);
+      const completion = await openai.beta.chat.completions.parse({
+        model: "gpt-4o",
+        temperature: 0.01,
+        response_format: zodResponseFormat(
+          ProblemBase,
+          "official_exam_base_problem",
+        ),
+        messages: [
+          { role: "system", content: aiProblemBaseSystem },
+          {
+            role: "user",
+            content: examMarkdown,
+          },
+          { role: "assistant", content: "okay" },
+          { role: "user", content: problemIndex },
+        ],
+      });
+
+      const totalTokens = completion.usage?.total_tokens;
+      const cachedTokens =
+        completion.usage?.prompt_tokens_details?.cached_tokens;
+      console.log(
+        `Completion for ${problemIndex} used ${totalTokens} tokens, ${cachedTokens} cached`,
+      );
+
+      const content = completion.choices[0].message.parsed;
+      return content;
+    };
+
+    const parseSubProblem = async (problemIndex: string) => {
+      console.log(`Running extended chat for problem: ${problemIndex}`);
+      const completion = await openai.beta.chat.completions.parse({
+        model: "gpt-4o",
+        temperature: 0.01,
+        response_format: zodResponseFormat(
+          Problem,
+          "official_subproblem_exam_problem",
+        ),
+        messages: [
+          { role: "system", content: aiSubproblemSystem },
+          {
+            role: "user",
+            content: examMarkdown,
+          },
+          { role: "assistant", content: "okay" },
+          {
+            role: "user",
+            content: JSON.stringify(solutionJson[problemIndex]),
           },
           { role: "assistant", content: "okay" },
           { role: "user", content: problemIndex },
@@ -180,39 +269,25 @@ export default async function prepareExams() {
     };
 
     const parseExtendedProblem = async (problemIndex: string) => {
-      console.log(`Running extended chat for problem: ${problemIndex}`);
-      const completion = await openai.beta.chat.completions.parse({
-        model: "gpt-4o",
-        temperature: 0.01,
-        response_format: zodResponseFormat(
-          ExtendedProblem,
-          "official_extended_exam_problem",
-        ),
-        messages: [
-          { role: "system", content: aiSubproblemSystem },
-          {
-            role: "user",
-            content: examMarkdown,
-          },
-          { role: "assistant", content: "okay" },
-          {
-            role: "user",
-            content: solutionMarkdown,
-          },
-          { role: "assistant", content: "okay" },
-          { role: "user", content: problemIndex },
-        ],
-      });
+      console.log(`Parsing extended problem: ${problemIndex}`);
+      const responses = await Promise.all([
+        parseProblemBase(problemIndex),
+        parseSubProblem(`${problemIndex}.a`),
+        parseSubProblem(`${problemIndex}.b`),
+        parseSubProblem(`${problemIndex}.c`),
+      ]);
 
-      const totalTokens = completion.usage?.total_tokens;
-      const cachedTokens =
-        completion.usage?.prompt_tokens_details?.cached_tokens;
-      console.log(
-        `Completion for ${problemIndex} used ${totalTokens} tokens, ${cachedTokens} cached`,
-      );
+      const base = responses[0] as z.infer<typeof ProblemBase>;
+      const subA = responses[1] as z.infer<typeof Problem>;
+      const subB = responses[2] as z.infer<typeof Problem>;
+      const subC = responses[3] as z.infer<typeof Problem>;
 
-      const content = completion.choices[0].message.parsed;
-      return content;
+      return {
+        ...base,
+        subA,
+        subB,
+        subC,
+      };
     };
 
     console.log(`Verifying problems: ${exam.name}`);
