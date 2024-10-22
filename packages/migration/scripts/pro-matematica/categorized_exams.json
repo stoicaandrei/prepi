@@ -1,0 +1,3989 @@
+[
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S2_M1_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S2_M1_Barem_06_LRO.pdf",
+    "name": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2010",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S2_M2_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S2_M2_Barem_06_LRO.pdf",
+    "name": "2010_E_c_Matematica_S2_M2_Subiect_06_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2010",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S2_M4_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S2_M4_Barem_06_LRO.pdf",
+    "name": "2010_E_c_Matematica_S2_M4_Subiect_06_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2010",
+    "profile": "M_tehnologic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S2R_M2_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S2R_M2_Barem_08_LRO.pdf",
+    "name": "2010_E_c_Matematica_S2R_M2_Subiect_08_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2010",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S1_M1_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S1_M1_Barem_09_LRO.pdf",
+    "name": "2010_E_c_Matematica_S1_M1_Subiect_09_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2010",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S1_M2_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S1_M2_Barem_09_LRO.pdf",
+    "name": "2010_E_c_Matematica_S1_M2_Subiect_09_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2010",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S1_M4_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S1_M4_Barem_09_LRO.pdf",
+    "name": "2010_E_c_Matematica_S1_M4_Subiect_09_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2010",
+    "profile": "M_tehnologic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S1R_M1_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S1R_M1_Barem_10_LRO.pdf",
+    "name": "2010_E_c_Matematica_S1R_M1_Subiect_10_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2010",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S1R_M2_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_S1R_M2_Barem_10_LRO.pdf",
+    "name": "2010_E_c_Matematica_S1R_M2_Subiect_10_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2010",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_SM_M1_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_SM_M1_Model_Barem_LRO.pdf",
+    "name": "2010_E_c_Matematica_SM_M1_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2010",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_SM_M2_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_SM_M2_Model_Barem_LRO.pdf",
+    "name": "2010_E_c_Matematica_SM_M2_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2010",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_SM_M4_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2010/2010_E_c_Matematica_SM_M4_Model_Barem_LRO.pdf",
+    "name": "2010_E_c_Matematica_SM_M4_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2010",
+    "profile": "M_tehnologic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S2_M1_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S2_M1_Barem_02_LRO.pdf",
+    "name": "2011_E_c_Matematica_S2_M1_Subiect_02_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2011",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S2_M2_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S2_M2_Barem_02_LRO.pdf",
+    "name": "2011_E_c_Matematica_S2_M2_Subiect_02_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2011",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S2_M4_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S2_M4_Barem_02_LRO.pdf",
+    "name": "2011_E_c_Matematica_S2_M4_Subiect_02_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2011",
+    "profile": "M_tehnologic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S2R_M2_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S2R_M2_Barem_03_LRO.pdf",
+    "name": "2011_E_c_Matematica_S2R_M2_Subiect_03_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2011",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S1_M1_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S1_M1_Barem_05_LRO.pdf",
+    "name": "2011_E_c_Matematica_S1_M1_Subiect_05_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2011",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S1_M2_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S1_M2_Barem_05_LRO.pdf",
+    "name": "2011_E_c_Matematica_S1_M2_Subiect_05_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2011",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S1_M4_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S1_M4_Barem_05_LRO.pdf",
+    "name": "2011_E_c_Matematica_S1_M4_Subiect_05_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2011",
+    "profile": "M_tehnologic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S1R_M2_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_S1R_M2_Barem_10_LRO.pdf",
+    "name": "2011_E_c_Matematica_S1R_M2_Subiect_10_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2011",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_SS_M1_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_SS_M2_Subiect_07_LRO.pdf",
+    "name": "2011_E_c_Matematica_SS_M1_Subiect_07_LRO",
+    "session": "Sesiunea specială",
+    "year": "2011",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_SM_M1_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_SM_M1_Model_Barem_LRO.pdf",
+    "name": "2011_E_c_Matematica_SM_M1_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2011",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_SM_M2_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_SM_M2_Model_Barem_LRO.pdf",
+    "name": "2011_E_c_Matematica_SM_M2_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2011",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_SM_M4_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2011/2011_E_c_Matematica_SM_M4_Model_Barem_LRO.pdf",
+    "name": "2011_E_c_Matematica_SM_M4_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2011",
+    "profile": "M_tehnologic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S2_M1_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S2_M1_Barem_09_LRO.pdf",
+    "name": "2012_E_c_Matematica_S2_M1_Subiect_09_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2012",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S2_M2_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S2_M2_Barem_09_LRO.pdf",
+    "name": "2012_E_c_Matematica_S2_M2_Subiect_09_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2012",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S2_M4_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S2_M4_Barem_09_LRO.pdf",
+    "name": "2012_E_c_Matematica_S2_M4_Subiect_09_LRO",
+    "session": "Sesiunea a II-a (toamna)",
+    "year": "2012",
+    "profile": "M_tehnologic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S1_M1_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S1_M1_Barem_05_LRO.pdf",
+    "name": "2012_E_c_Matematica_S1_M1_Subiect_05_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2012",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S1_M2_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S1_M2_Barem_05_LRO.pdf",
+    "name": "2012_E_c_Matematica_S1_M2_Subiect_05_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2012",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S1_M4_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S1_M4_Barem_05_LRO.pdf",
+    "name": "2012_E_c_Matematica_S1_M4_Subiect_05_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2012",
+    "profile": "M_tehnologic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S1R_M1_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S1R_M1_Barem_03_LRO.pdf",
+    "name": "2012_E_c_Matematica_S1R_M1_Subiect_03_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2012",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S1R_M2_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_S1R_M2_Barem_03_LRO.pdf",
+    "name": "2012_E_c_Matematica_S1R_M2_Subiect_03_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2012",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_SS_M1_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_SS_M1_Barem_07_LRO.pdf",
+    "name": "2012_E_c_Matematica_SS_M1_Subiect_07_LRO",
+    "session": "Sesiunea specială",
+    "year": "2012",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_SS_M2_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_SS_M2_Barem_07_LRO.pdf",
+    "name": "2012_E_c_Matematica_SS_M2_Subiect_07_LRO",
+    "session": "Sesiunea specială",
+    "year": "2012",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_SM_M1_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_SM_M1_Model_Barem_LRO.pdf",
+    "name": "2012_E_c_Matematica_SM_M1_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2012",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_SM_M2_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_SM_M2_Model_Barem_LRO.pdf",
+    "name": "2012_E_c_Matematica_SM_M2_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2012",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_SM_M4_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2012/2012_E_c_Matematica_SM_M4_Model_Barem_LRO.pdf",
+    "name": "2012_E_c_Matematica_SM_M4_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2012",
+    "profile": "M_tehnologic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2_M_mate-info_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2_M_mate-info_Barem_09_LRO.pdf",
+    "name": "2013_E_c_Matematica_S2_M_mate-info_Subiect_09_LRO",
+    "session": "Sesiunea a II-a (toamna 28 august 2013)",
+    "year": "2013",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2_M_st-nat_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2_M_st-nat_Barem_09_LRO.pdf",
+    "name": "2013_E_c_Matematica_S2_M_st-nat_Subiect_09_LRO",
+    "session": "Sesiunea a II-a (toamna 28 august 2013)",
+    "year": "2013",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2_M_tehnologic_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2_M_tehnologic_Barem_09_LRO.pdf",
+    "name": "2013_E_c_Matematica_S2_M_tehnologic_Subiect_09_LRO",
+    "session": "Sesiunea a II-a (toamna 28 august 2013)",
+    "year": "2013",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2_M_pedagogic_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2_M_pedagogic_Barem_09_LRO.pdf",
+    "name": "2013_E_c_Matematica_S2_M_pedagogic_Subiect_09_LRO",
+    "session": "Sesiunea a II-a (toamna 28 august 2013)",
+    "year": "2013",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2R_M_mate-info_Subiect_04_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2R_M_mate-info_Barem_04_LRO.pdf",
+    "name": "2013_E_c_Matematica_S2R_M_mate-info_Subiect_04_LRO",
+    "session": "Sesiunea a II-a (toamna 28 august 2013)",
+    "year": "2013",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2R_M_st-nat_Subiect_04_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2R_M_st-nat_Barem_04_LRO.pdf",
+    "name": "2013_E_c_Matematica_S2R_M_st-nat_Subiect_04_LRO",
+    "session": "Sesiunea a II-a (toamna 28 august 2013)",
+    "year": "2013",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2R_M_tehnologic_Subiect_04_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S2R_M_tehnologic_Barem_04_LRO.pdf",
+    "name": "2013_E_c_Matematica_S2R_M_tehnologic_Subiect_04_LRO",
+    "session": "Sesiunea a II-a (toamna 28 august 2013)",
+    "year": "2013",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1_M_mate-info_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1_M_mate-info_Barem_02_LRO.pdf",
+    "name": "2013_E_c_Matematica_S1_M_mate-info_Subiect_02_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2013",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1_M_st-nat_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1_M_st-nat_Barem_02_LRO.pdf",
+    "name": "2013_E_c_Matematica_S1_M_st-nat_Subiect_02_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2013",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1_M_tehnologic_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1_M_tehnologic_Barem_02_LRO.pdf",
+    "name": "2013_E_c_Matematica_S1_M_tehnologic_Subiect_02_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2013",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1_M_pedagogic_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1_M_pedagogic_Barem_02_LRO.pdf",
+    "name": "2013_E_c_Matematica_S1_M_pedagogic_Subiect_02_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2013",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1R_M_mate-info_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1R_M_mate-info_Barem_06_LRO.pdf",
+    "name": "2013_E_c_Matematica_S1R_M_mate-info_Subiect_06_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2013",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1R_M_st-nat_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1R_M_st-nat_Barem_06_LRO.pdf",
+    "name": "2013_E_c_Matematica_S1R_M_st-nat_Subiect_06_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2013",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1R_M_tehnologic_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_S1R_M_tehnologic_Barem_06_LRO.pdf",
+    "name": "2013_E_c_Matematica_S1R_M_tehnologic_Subiect_06_LRO",
+    "session": "Sesiunea I (vara)",
+    "year": "2013",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SS_M_mate-info_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SS_M_mate-info_Barem_03_LRO.pdf",
+    "name": "2013_E_c_Matematica_SS_M_mate-info_Subiect_03_LRO",
+    "session": "Sesiunea specială",
+    "year": "2013",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SS_M_st-nat_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SS_M_st-nat_Barem_03_LRO.pdf",
+    "name": "2013_E_c_Matematica_SS_M_st-nat_Subiect_03_LRO",
+    "session": "Sesiunea specială",
+    "year": "2013",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SS_M_tehnologic_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SS_M_tehnologic_Barem_03_LRO.pdf",
+    "name": "2013_E_c_Matematica_SS_M_tehnologic_Subiect_03_LRO",
+    "session": "Sesiunea specială",
+    "year": "2013",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2013_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2013",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2013_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2013",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2013_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2013",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2013/2013_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2013_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2013",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2_M_mate-info_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2_M_mate-info_Barem_07_LRO.pdf",
+    "name": "2014_E_c_Matematica_S2_M_mate-info_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 27 august 2014 (toamna)",
+    "year": "2014",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2_M_st-nat_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2_M_st-nat_Barem_07_LRO.pdf",
+    "name": "2014_E_c_Matematica_S2_M_st-nat_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 27 august 2014 (toamna)",
+    "year": "2014",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2_M_tehnologic_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2_M_tehnologic_Barem_07_LRO.pdf",
+    "name": "2014_E_c_Matematica_S2_M_tehnologic_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 27 august 2014 (toamna)",
+    "year": "2014",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2_M_pedagogic_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2_M_pedagogic_Barem_07_LRO.pdf",
+    "name": "2014_E_c_Matematica_S2_M_pedagogic_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 27 august 2014 (toamna)",
+    "year": "2014",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2R_M_mate-info_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2R_M_mate-info_Barem_03_LRO.pdf",
+    "name": "2014_E_c_Matematica_S2R_M_mate-info_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 27 august 2014 (toamna)",
+    "year": "2014",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2R_M_tehnologic_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S2R_M_tehnologic_Barem_03_LRO.pdf",
+    "name": "2014_E_c_Matematica_S2R_M_tehnologic_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 27 august 2014 (toamna)",
+    "year": "2014",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1_M_mate-info_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1_M_mate-info_Barem_01_LRO.pdf",
+    "name": "2014_E_c_Matematica_S1_M_mate-info_Subiect_01_LRO",
+    "session": "Sesiunea I - 2 iulie 2014 (vara)",
+    "year": "2014",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1_M_st-nat_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1_M_st-nat_Barem_01_LRO.pdf",
+    "name": "2014_E_c_Matematica_S1_M_st-nat_Subiect_01_LRO",
+    "session": "Sesiunea I - 2 iulie 2014 (vara)",
+    "year": "2014",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1_M_tehnologic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1_M_tehnologic_Barem_01_LRO.pdf",
+    "name": "2014_E_c_Matematica_S1_M_tehnologic_Subiect_01_LRO",
+    "session": "Sesiunea I - 2 iulie 2014 (vara)",
+    "year": "2014",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1_M_pedagogic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1_M_pedagogic_Barem_01_LRO.pdf",
+    "name": "2014_E_c_Matematica_S1_M_pedagogic_Subiect_01_LRO",
+    "session": "Sesiunea I - 2 iulie 2014 (vara)",
+    "year": "2014",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1R_M_mate-info_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1R_M_mate-info_Barem_05_LRO.pdf",
+    "name": "2014_E_c_Matematica_S1R_M_mate-info_Subiect_05_LRO",
+    "session": "Sesiunea I - 2 iulie 2014 (vara)",
+    "year": "2014",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1R_M_st-nat_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1R_M_st-nat_Barem_05_LRO.pdf",
+    "name": "2014_E_c_Matematica_S1R_M_st-nat_Subiect_05_LRO",
+    "session": "Sesiunea I - 2 iulie 2014 (vara)",
+    "year": "2014",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1R_M_tehnologic_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_S1R_M_tehnologic_Barem_05_LRO.pdf",
+    "name": "2014_E_c_Matematica_S1R_M_tehnologic_Subiect_05_LRO",
+    "session": "Sesiunea I - 2 iulie 2014 (vara)",
+    "year": "2014",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SS_M_mate-info_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SS_M_mate-info_Barem_09_LRO.pdf",
+    "name": "2014_E_c_Matematica_SS_M_mate-info_Subiect_09_LRO",
+    "session": "Sesiunea specială - 27 mai 2014",
+    "year": "2014",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SS_M_st-nat_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SS_M_st-nat_Barem_09_LRO.pdf",
+    "name": "2014_E_c_Matematica_SS_M_st-nat_Subiect_09_LRO",
+    "session": "Sesiunea specială - 27 mai 2014",
+    "year": "2014",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SS_M_tehnologic_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SS_M_tehnologic_Barem_09_LRO.pdf",
+    "name": "2014_E_c_Matematica_SS_M_tehnologic_Subiect_09_LRO",
+    "session": "Sesiunea specială - 27 mai 2014",
+    "year": "2014",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_mate-info_Simulare_XI_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2014",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_st-nat_Simulare_XI_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2014",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2014",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2014",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_mate-info_Simulare_XII_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2014",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_st-nat_Simulare_XII_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2014",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2014",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2014",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2014",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2014",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2014",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2014/2014_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2014_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2014",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2_M_mate-info_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2_M_mate-info_Barem_01_LRO.pdf",
+    "name": "2015_E_c_Matematica_S2_M_mate-info_Subiect_01_LRO",
+    "session": "Sesiunea a II-a - 26 august 2015 (toamna)",
+    "year": "2015",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2_M_st-nat_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2_M_st-nat_Barem_01_LRO.pdf",
+    "name": "2015_E_c_Matematica_S2_M_st-nat_Subiect_01_LRO",
+    "session": "Sesiunea a II-a - 26 august 2015 (toamna)",
+    "year": "2015",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2_M_tehnologic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2_M_tehnologic_Barem_01_LRO.pdf",
+    "name": "2015_E_c_Matematica_S2_M_tehnologic_Subiect_01_LRO",
+    "session": "Sesiunea a II-a - 26 august 2015 (toamna)",
+    "year": "2015",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2_M_pedagogic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2_M_pedagogic_Barem_01_LRO.pdf",
+    "name": "2015_E_c_Matematica_S2_M_pedagogic_Subiect_01_LRO",
+    "session": "Sesiunea a II-a - 26 august 2015 (toamna)",
+    "year": "2015",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2R_M_mate-info_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2R_M_mate-info_Barem_03_LRO.pdf",
+    "name": "2015_E_c_Matematica_S2R_M_mate-info_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 26 august 2015 (toamna)",
+    "year": "2015",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2R_M_st-nat_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2R_M_st-nat_Barem_03_LRO.pdf",
+    "name": "2015_E_c_Matematica_S2R_M_st-nat_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 26 august 2015 (toamna)",
+    "year": "2015",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2R_M_tehnologic_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S2R_M_tehnologic_Barem_03_LRO.pdf",
+    "name": "2015_E_c_Matematica_S2R_M_tehnologic_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 26 august 2015 (toamna)",
+    "year": "2015",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1_M_mate-info_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1_M_mate-info_Barem_08_LRO.pdf",
+    "name": "2015_E_c_Matematica_S1_M_mate-info_Subiect_08_LRO",
+    "session": "Sesiunea I - 1 iulie 2015 (vara)",
+    "year": "2015",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1_M_st-nat_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1_M_st-nat_Barem_08_LRO.pdf",
+    "name": "2015_E_c_Matematica_S1_M_st-nat_Subiect_08_LRO",
+    "session": "Sesiunea I - 1 iulie 2015 (vara)",
+    "year": "2015",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1_M_tehnologic_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1_M_tehnologic_Barem_08_LRO.pdf",
+    "name": "2015_E_c_Matematica_S1_M_tehnologic_Subiect_08_LRO",
+    "session": "Sesiunea I - 1 iulie 2015 (vara)",
+    "year": "2015",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1_M_pedagogic_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1_M_pedagogic_Barem_08_LRO.pdf",
+    "name": "2015_E_c_Matematica_S1_M_pedagogic_Subiect_08_LRO",
+    "session": "Sesiunea I - 1 iulie 2015 (vara)",
+    "year": "2015",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1R_M_st-nat_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1R_M_st-nat_Barem_05_LRO.pdf",
+    "name": "2015_E_c_Matematica_S1R_M_st-nat_Subiect_05_LRO",
+    "session": "Sesiunea I - 1 iulie 2015 (vara)",
+    "year": "2015",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1R_M_tehnologic_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_S1R_M_tehnologic_Barem_05_LRO.pdf",
+    "name": "2015_E_c_Matematica_S1R_M_tehnologic_Subiect_05_LRO",
+    "session": "Sesiunea I - 1 iulie 2015 (vara)",
+    "year": "2015",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SS_M_mate-info_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SS_M_mate-info_Barem_09_LRO.pdf",
+    "name": "2015_E_c_Matematica_SS_M_mate-info_Subiect_09_LRO",
+    "session": "Sesiunea specială - 26 mai 2015",
+    "year": "2015",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SS_M_st-nat_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SS_M_st-nat_Barem_09_LRO.pdf",
+    "name": "2015_E_c_Matematica_SS_M_st-nat_Subiect_09_LRO",
+    "session": "Sesiunea specială - 26 mai 2015",
+    "year": "2015",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SS_M_tehnologic_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SS_M_tehnologic_Barem_09_LRO.pdf",
+    "name": "2015_E_c_Matematica_SS_M_tehnologic_Subiect_09_LRO",
+    "session": "Sesiunea specială - 26 mai 2015",
+    "year": "2015",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_mate-info_Simulare_XI_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2015",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_st-nat_Simulare_XI_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2015",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2015",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2015",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_mate-info_Simulare_XII_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2015",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_st-nat_Simulare_XII_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2015",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2015",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2015",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2015",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2015",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2015",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2015/2015_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2015_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2015",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2_M_mate-info_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2_M_mate-info_Barem_02_LRO.pdf",
+    "name": "2016_E_c_Matematica_S2_M_mate-info_Subiect_02_LRO",
+    "session": "Sesiunea a II-a - 24 august 2016 (toamna)",
+    "year": "2016",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2_M_st-nat_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2_M_st-nat_Barem_02_LRO.pdf",
+    "name": "2016_E_c_Matematica_S2_M_st-nat_Subiect_02_LRO",
+    "session": "Sesiunea a II-a - 24 august 2016 (toamna)",
+    "year": "2016",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2_M_tehnologic_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2_M_tehnologic_Barem_02_LRO.pdf",
+    "name": "2016_E_c_Matematica_S2_M_tehnologic_Subiect_02_LRO",
+    "session": "Sesiunea a II-a - 24 august 2016 (toamna)",
+    "year": "2016",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2_M_pedagogic_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2_M_pedagogic_Barem_02_LRO.pdf",
+    "name": "2016_E_c_Matematica_S2_M_pedagogic_Subiect_02_LRO",
+    "session": "Sesiunea a II-a - 24 august 2016 (toamna)",
+    "year": "2016",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2R_M_st-nat_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2R_M_st-nat_Barem_09_LRO.pdf",
+    "name": "2016_E_c_Matematica_S2R_M_st-nat_Subiect_09_LRO",
+    "session": "Sesiunea a II-a - 24 august 2016 (toamna)",
+    "year": "2016",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2R_M_tehnologic_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S2R_M_tehnologic_Barem_09_LRO.pdf",
+    "name": "2016_E_c_Matematica_S2R_M_tehnologic_Subiect_09_LRO",
+    "session": "Sesiunea a II-a - 24 august 2016 (toamna)",
+    "year": "2016",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1_M_mate-info_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1_M_mate-info_Barem_08_LRO.pdf",
+    "name": "2016_E_c_Matematica_S1_M_mate-info_Subiect_08_LRO",
+    "session": "Sesiunea I - 7 iulie 2016 (vara)",
+    "year": "2016",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1_M_st-nat_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1_M_st-nat_Barem_08_LRO.pdf",
+    "name": "2016_E_c_Matematica_S1_M_st-nat_Subiect_08_LRO",
+    "session": "Sesiunea I - 7 iulie 2016 (vara)",
+    "year": "2016",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1_M_tehnologic_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1_M_tehnologic_Barem_08_LRO.pdf",
+    "name": "2016_E_c_Matematica_S1_M_tehnologic_Subiect_08_LRO",
+    "session": "Sesiunea I - 7 iulie 2016 (vara)",
+    "year": "2016",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1_M_pedagogic_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1_M_pedagogic_Barem_08_LRO.pdf",
+    "name": "2016_E_c_Matematica_S1_M_pedagogic_Subiect_08_LRO",
+    "session": "Sesiunea I - 7 iulie 2016 (vara)",
+    "year": "2016",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1R_M_mate-info_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1R_M_mate-info_Barem_05_LRO.pdf",
+    "name": "2016_E_c_Matematica_S1R_M_mate-info_Subiect_05_LRO",
+    "session": "Sesiunea I - 7 iulie 2016 (vara)",
+    "year": "2016",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1R_M_tehnologic_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1R_M_tehnologic_Barem_05_LRO.pdf",
+    "name": "2016_E_c_Matematica_S1R_M_tehnologic_Subiect_05_LRO",
+    "session": "Sesiunea I - 7 iulie 2016 (vara)",
+    "year": "2016",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1R_M_pedagogic_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_S1R_M_pedagogic_Barem_05_LRO.pdf",
+    "name": "2016_E_c_Matematica_S1R_M_pedagogic_Subiect_05_LRO",
+    "session": "Sesiunea I - 7 iulie 2016 (vara)",
+    "year": "2016",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SS_M_mate-info_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SS_M_mate-info_Barem_01_LRO.pdf",
+    "name": "2016_E_c_Matematica_SS_M_mate-info_Subiect_01_LRO",
+    "session": "Sesiunea specială - 24 mai 2016",
+    "year": "2016",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SS_M_st-nat_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SS_M_st-nat_Barem_01_LRO.pdf",
+    "name": "2016_E_c_Matematica_SS_M_st-nat_Subiect_01_LRO",
+    "session": "Sesiunea specială - 24 mai 2016",
+    "year": "2016",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SS_M_tehnologic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SS_M_tehnologic_Barem_01_LRO.pdf",
+    "name": "2016_E_c_Matematica_SS_M_tehnologic_Subiect_01_LRO",
+    "session": "Sesiunea specială - 24 mai 2016",
+    "year": "2016",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_mate-info_Simulare_XI_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2016",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_st-nat_Simulare_XI_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2016",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2016",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a",
+    "year": "2016",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_mate-info_Simulare_XII_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2016",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_st-nat_Simulare_XII_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2016",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2016",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a",
+    "year": "2016",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2016",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2016",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2016",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2016/2016_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2016_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2016",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S2_M_mate-info_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S2_M_mate-info_Barem_10_LRO.pdf",
+    "name": "2017_E_c_Matematica_S2_M_mate-info_Subiect_10_LRO",
+    "session": "Sesiunea a II-a - 23 august 2017 (toamna)",
+    "year": "2017",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S2_M_st-nat_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S2_M_st-nat_Barem_10_LRO.pdf",
+    "name": "2017_E_c_Matematica_S2_M_st-nat_Subiect_10_LRO",
+    "session": "Sesiunea a II-a - 23 august 2017 (toamna)",
+    "year": "2017",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S2_M_tehnologic_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S2_M_tehnologic_Barem_10_LRO.pdf",
+    "name": "2017_E_c_Matematica_S2_M_tehnologic_Subiect_10_LRO",
+    "session": "Sesiunea a II-a - 23 august 2017 (toamna)",
+    "year": "2017",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S2_M_pedagogic_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S2_M_pedagogic_Barem_10_LRO.pdf",
+    "name": "2017_E_c_Matematica_S2_M_pedagogic_Subiect_10_LRO",
+    "session": "Sesiunea a II-a - 23 august 2017 (toamna)",
+    "year": "2017",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S2R_M_mate-info_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S2R_M_mate-info_Barem_07_LRO.pdf",
+    "name": "2017_E_c_Matematica_S2R_M_mate-info_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 23 august 2017 (toamna)",
+    "year": "2017",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1_M_mate-info_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1_M_mate-info_Barem_02_LRO.pdf",
+    "name": "2017_E_c_Matematica_S1_M_mate-info_Subiect_02_LRO",
+    "session": "Sesiunea I - 28 iunie 2017 (vara)",
+    "year": "2017",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1_M_st-nat_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1_M_st-nat_Barem_02_LRO.pdf",
+    "name": "2017_E_c_Matematica_S1_M_st-nat_Subiect_02_LRO",
+    "session": "Sesiunea I - 28 iunie 2017 (vara)",
+    "year": "2017",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1_M_tehnologic_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1_M_tehnologic_Barem_02_LRO.pdf",
+    "name": "2017_E_c_Matematica_S1_M_tehnologic_Subiect_02_LRO",
+    "session": "Sesiunea I - 28 iunie 2017 (vara)",
+    "year": "2017",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1_M_pedagogic_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1_M_pedagogic_Barem_02_LRO.pdf",
+    "name": "2017_E_c_Matematica_S1_M_pedagogic_Subiect_02_LRO",
+    "session": "Sesiunea I - 28 iunie 2017 (vara)",
+    "year": "2017",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1R_M_mate-info_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1R_M_mate-info_Barem_09_LRO.pdf",
+    "name": "2017_E_c_Matematica_S1R_M_mate-info_Subiect_09_LRO",
+    "session": "Sesiunea I - 28 iunie 2017 (vara)",
+    "year": "2017",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1R_M_tehnologic_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_S1R_M_tehnologic_Barem_09_LRO.pdf",
+    "name": "2017_E_c_Matematica_S1R_M_tehnologic_Subiect_09_LRO",
+    "session": "Sesiunea I - 28 iunie 2017 (vara)",
+    "year": "2017",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SS_M_mate-info_Subiect_04_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SS_M_mate-info_Barem_04_LRO.pdf",
+    "name": "2017_E_c_Matematica_SS_M_mate-info_Subiect_04_LRO",
+    "session": "Sesiunea specială - 7 iunie 2017",
+    "year": "2017",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SS_M_st-nat_Subiect_04_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SS_M_st-nat_Barem_04_LRO.pdf",
+    "name": "2017_E_c_Matematica_SS_M_st-nat_Subiect_04_LRO",
+    "session": "Sesiunea specială - 7 iunie 2017",
+    "year": "2017",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SS_M_tehnologic_Subiect_04_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SS_M_tehnologic_Barem_04_LRO.pdf",
+    "name": "2017_E_c_Matematica_SS_M_tehnologic_Subiect_04_LRO",
+    "session": "Sesiunea specială - 7 iunie 2017",
+    "year": "2017",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_mate-info_Simulare_XI_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 16 martie 2017",
+    "year": "2017",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_st-nat_Simulare_XI_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 16 martie 2017",
+    "year": "2017",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 16 martie 2017",
+    "year": "2017",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 16 martie 2017",
+    "year": "2017",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_mate-info_Simulare_XII_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 16 martie 2017",
+    "year": "2017",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_st-nat_Simulare_XII_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 16 martie 2017",
+    "year": "2017",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 16 martie 2017",
+    "year": "2017",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 16 martie 2017",
+    "year": "2017",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2017",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2017",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2017",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2017/2017_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2017_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2017",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S2_M_mate-info_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S2_M_mate-info_Barem_09_LRO.pdf",
+    "name": "2018_E_c_Matematica_S2_M_mate-info_Subiect_09_LRO",
+    "session": "Sesiunea a II-a - 22 august 2018 (toamna)",
+    "year": "2018",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S2_M_st-nat_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S2_M_st-nat_Barem_09_LRO.pdf",
+    "name": "2018_E_c_Matematica_S2_M_st-nat_Subiect_09_LRO",
+    "session": "Sesiunea a II-a - 22 august 2018 (toamna)",
+    "year": "2018",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S2_M_tehnologic_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S2_M_tehnologic_Barem_09_LRO.pdf",
+    "name": "2018_E_c_Matematica_S2_M_tehnologic_Subiect_09_LRO",
+    "session": "Sesiunea a II-a - 22 august 2018 (toamna)",
+    "year": "2018",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S2_M_pedagogic_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S2_M_pedagogic_Barem_09_LRO.pdf",
+    "name": "2018_E_c_Matematica_S2_M_pedagogic_Subiect_09_LRO",
+    "session": "Sesiunea a II-a - 22 august 2018 (toamna)",
+    "year": "2018",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1_M_mate-info_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1_M_mate-info_Barem_02_LRO.pdf",
+    "name": "2018_E_c_Matematica_S1_M_mate-info_Subiect_02_LRO",
+    "session": "Sesiunea I - 27 iunie 2018 (vara)",
+    "year": "2018",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1_M_st-nat_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1_M_st-nat_Barem_02_LRO.pdf",
+    "name": "2018_E_c_Matematica_S1_M_st-nat_Subiect_02_LRO",
+    "session": "Sesiunea I - 27 iunie 2018 (vara)",
+    "year": "2018",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1_M_tehnologic_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1_M_tehnologic_Barem_02_LRO.pdf",
+    "name": "2018_E_c_Matematica_S1_M_tehnologic_Subiect_02_LRO",
+    "session": "Sesiunea I - 27 iunie 2018 (vara)",
+    "year": "2018",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1_M_pedagogic_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1_M_pedagogic_Barem_02_LRO.pdf",
+    "name": "2018_E_c_Matematica_S1_M_pedagogic_Subiect_02_LRO",
+    "session": "Sesiunea I - 27 iunie 2018 (vara)",
+    "year": "2018",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1R_M_st-nat_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1R_M_st-nat_Barem_05_LRO.pdf",
+    "name": "2018_E_c_Matematica_S1R_M_st-nat_Subiect_05_LRO",
+    "session": "Sesiunea I - 27 iunie 2018 (vara)",
+    "year": "2018",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1R_M_tehnologic_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_S1R_M_tehnologic_Barem_05_LRO.pdf",
+    "name": "2018_E_c_Matematica_S1R_M_tehnologic_Subiect_05_LRO",
+    "session": "Sesiunea I - 27 iunie 2018 (vara)",
+    "year": "2018",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SS_M_mate-info_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SS_M_mate-info_Barem_03_LRO.pdf",
+    "name": "2018_E_c_Matematica_SS_M_mate-info_Subiect_03_LRO",
+    "session": "Sesiunea specială - 22 mai 2018",
+    "year": "2018",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SS_M_st-nat_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SS_M_st-nat_Barem_03_LRO.pdf",
+    "name": "2018_E_c_Matematica_SS_M_st-nat_Subiect_03_LRO",
+    "session": "Sesiunea specială - 22 mai 2018",
+    "year": "2018",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SS_M_tehnologic_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SS_M_tehnologic_Barem_03_LRO.pdf",
+    "name": "2018_E_c_Matematica_SS_M_tehnologic_Subiect_03_LRO",
+    "session": "Sesiunea specială - 22 mai 2018",
+    "year": "2018",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_mate-info_Simulare_XI_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 21 martie 2018",
+    "year": "2018",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_st-nat_Simulare_XI_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 21 martie 2018",
+    "year": "2018",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 21 martie 2018",
+    "year": "2018",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 21 martie 2018",
+    "year": "2018",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_mate-info_Simulare_XII_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 21 martie 2018",
+    "year": "2018",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_st-nat_Simulare_XII_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 21 martie 2018",
+    "year": "2018",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 21 martie 2018",
+    "year": "2018",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 21 martie 2018",
+    "year": "2018",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2018",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2018",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2018",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2018/2018_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2018_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2018",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S2_M_mate-info_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S2_M_mate-info_Barem_07_LRO.pdf",
+    "name": "2019_E_c_Matematica_S2_M_mate-info_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 23 august 2019 (toamna)",
+    "year": "2019",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S2_M_st-nat_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S2_M_st-nat_Barem_07_LRO.pdf",
+    "name": "2019_E_c_Matematica_S2_M_st-nat_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 23 august 2019 (toamna)",
+    "year": "2019",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S2_M_tehnologic_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S2_M_tehnologic_Barem_07_LRO.pdf",
+    "name": "2019_E_c_Matematica_S2_M_tehnologic_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 23 august 2019 (toamna)",
+    "year": "2019",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S2_M_pedagogic_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S2_M_pedagogic_Barem_07_LRO.pdf",
+    "name": "2019_E_c_Matematica_S2_M_pedagogic_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 23 august 2019 (toamna)",
+    "year": "2019",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S2R_M_tehnologic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S2R_M_tehnologic_Barem_01_LRO.pdf",
+    "name": "2019_E_c_Matematica_S2R_M_tehnologic_Subiect_01_LRO",
+    "session": "Sesiunea a II-a - 23 august 2019 (toamna)",
+    "year": "2019",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S1_M_mate-info_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S1_M_mate-info_Barem_06_LRO.pdf",
+    "name": "2019_E_c_Matematica_S1_M_mate-info_Subiect_06_LRO",
+    "session": "Sesiunea I - 03 iulie 2019 (vara)",
+    "year": "2019",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S1_M_st-nat_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S1_M_st-nat_Barem_06_LRO.pdf",
+    "name": "2019_E_c_Matematica_S1_M_st-nat_Subiect_06_LRO",
+    "session": "Sesiunea I - 03 iulie 2019 (vara)",
+    "year": "2019",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S1_M_tehnologic_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S1_M_tehnologic_Barem_06_LRO.pdf",
+    "name": "2019_E_c_Matematica_S1_M_tehnologic_Subiect_06_LRO",
+    "session": "Sesiunea I - 03 iulie 2019 (vara)",
+    "year": "2019",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S1_M_pedagogic_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S1_M_pedagogic_Barem_06_LRO.pdf",
+    "name": "2019_E_c_Matematica_S1_M_pedagogic_Subiect_06_LRO",
+    "session": "Sesiunea I - 03 iulie 2019 (vara)",
+    "year": "2019",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S1R_M_mate-info_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_S1R_M_mate-info_Barem_02_LRO.pdf",
+    "name": "2019_E_c_Matematica_S1R_M_mate-info_Subiect_02_LRO",
+    "session": "Sesiunea I - 03 iulie 2019 (vara)",
+    "year": "2019",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SS_M_mate-info_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SS_M_mate-info_Barem_08_LRO.pdf",
+    "name": "2019_E_c_Matematica_SS_M_mate-info_Subiect_08_LRO",
+    "session": "Sesiunea specială - 28 mai 2019",
+    "year": "2019",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SS_M_st-nat_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SS_M_st-nat_Barem_08_LRO.pdf",
+    "name": "2019_E_c_Matematica_SS_M_st-nat_Subiect_08_LRO",
+    "session": "Sesiunea specială - 28 mai 2019",
+    "year": "2019",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SS_M_tehnologic_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SS_M_tehnologic_Barem_08_LRO.pdf",
+    "name": "2019_E_c_Matematica_SS_M_tehnologic_Subiect_08_LRO",
+    "session": "Sesiunea specială - 28 mai 2019",
+    "year": "2019",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_mate-info_Simulare_XI_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_mate-info_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 20 martie 2019",
+    "year": "2019",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_st-nat_Simulare_XI_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_st-nat_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 20 martie 2019",
+    "year": "2019",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_tehnologic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 20 martie 2019",
+    "year": "2019",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_pedagogic_Simulare_XI_Subiect_LRO",
+    "session": "Simulare clasa a XI-a - 20 martie 2019",
+    "year": "2019",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_mate-info_Simulare_XII_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 20 martie 2019",
+    "year": "2019",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_st-nat_Simulare_XII_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 20 martie 2019",
+    "year": "2019",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 20 martie 2019",
+    "year": "2019",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 20 martie 2019",
+    "year": "2019",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2019",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2019",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2019",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2019/2019_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2019_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2019",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S2_M_mate-info_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S2_M_mate-info_Barem_03_LRO.pdf",
+    "name": "2020_E_c_Matematica_S2_M_mate-info_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 25 august 2020 (toamna)",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S2_M_st-nat_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S2_M_st-nat_Barem_03_LRO.pdf",
+    "name": "2020_E_c_Matematica_S2_M_st-nat_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 25 august 2020 (toamna)",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S2_M_tehnologic_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S2_M_tehnologic_Barem_03_LRO.pdf",
+    "name": "2020_E_c_Matematica_S2_M_tehnologic_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 25 august 2020 (toamna)",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S2_M_pedagogic_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S2_M_pedagogic_Barem_03_LRO.pdf",
+    "name": "2020_E_c_Matematica_S2_M_pedagogic_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 25 august 2020 (toamna)",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SS_M_mate-info_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SS_M_mate-info_Barem_01_LRO.pdf",
+    "name": "2020_E_c_Matematica_SS_M_mate-info_Subiect_01_LRO",
+    "session": "Sesiunea specială - 7 iulie 2020",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SS_M_st-nat_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SS_M_st-nat_Barem_01_LRO.pdf",
+    "name": "2020_E_c_Matematica_SS_M_st-nat_Subiect_01_LRO",
+    "session": "Sesiunea specială - 7 iulie 2020",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SS_M_tehnologic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SS_M_tehnologic_Barem_01_LRO.pdf",
+    "name": "2020_E_c_Matematica_SS_M_tehnologic_Subiect_01_LRO",
+    "session": "Sesiunea specială - 7 iulie 2020",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SS_M_pedagogic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SS_M_pedagogic_Barem_01_LRO.pdf",
+    "name": "2020_E_c_Matematica_SS_M_pedagogic_Subiect_01_LRO",
+    "session": "Sesiunea specială - 7 iulie 2020",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S1_M_mate-info_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S1_M_mate-info_Barem_06_LRO.pdf",
+    "name": "2020_E_c_Matematica_S1_M_mate-info_Subiect_06_LRO",
+    "session": "Sesiunea I - 24 iunie 2020 (vara)",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S1_M_st-nat_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S1_M_st-nat_Barem_06_LRO.pdf",
+    "name": "2020_E_c_Matematica_S1_M_st-nat_Subiect_06_LRO",
+    "session": "Sesiunea I - 24 iunie 2020 (vara)",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S1_M_tehnologic_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S1_M_tehnologic_Barem_06_LRO.pdf",
+    "name": "2020_E_c_Matematica_S1_M_tehnologic_Subiect_06_LRO",
+    "session": "Sesiunea I - 24 iunie 2020 (vara)",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S1_M_pedagogic_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_S1_M_pedagogic_Barem_06_LRO.pdf",
+    "name": "2020_E_c_Matematica_S1_M_pedagogic_Subiect_06_LRO",
+    "session": "Sesiunea I - 24 iunie 2020 (vara)",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_20.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_20.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_20",
+    "session": "Teste - setul 8",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_20.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_20.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_20",
+    "session": "Teste - setul 8",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_20.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_20.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_20",
+    "session": "Teste - setul 8",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_20.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_20.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_20",
+    "session": "Teste - setul 8",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_19.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_19.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_19",
+    "session": "Teste - setul 7",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_19.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_19.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_19",
+    "session": "Teste - setul 7",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_19.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_19.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_19",
+    "session": "Teste - setul 7",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_19.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_19.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_19",
+    "session": "Teste - setul 7",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_18.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_18.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_18",
+    "session": "Teste - setul 6",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_18.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_18.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_18",
+    "session": "Teste - setul 6",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_18.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_18.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_18",
+    "session": "Teste - setul 6",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_18.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_18.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_18",
+    "session": "Teste - setul 6",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_17.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_17.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_17",
+    "session": "Teste - setul 5",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_17.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_17.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_17",
+    "session": "Teste - setul 5",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_17.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_17.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_17",
+    "session": "Teste - setul 5",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_17.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_17.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_17",
+    "session": "Teste - setul 5",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_16.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_16.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_16",
+    "session": "Teste - setul 4",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_16.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_16.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_16",
+    "session": "Teste - setul 4",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_16.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_16.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_16",
+    "session": "Teste - setul 4",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_16.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_16.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_16",
+    "session": "Teste - setul 4",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_11.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_11.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_11",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_12.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_12.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_12",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_13.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_13.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_13",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_14.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_14.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_14",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_15.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_15.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_15",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_11.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_11.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_11",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_12.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_12.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_12",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_13.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_13.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_13",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_14.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_14.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_14",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_15.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_15.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_15",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_11.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_11.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_11",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_12.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_12.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_12",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_13.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_13.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_13",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_14.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_14.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_14",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_15.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_15.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_15",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_11.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_11.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_11",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_12.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_12.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_12",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_13.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_13.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_13",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_14.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_14.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_14",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_15.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_15.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_15",
+    "session": "Teste - setul 3",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_06.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_06.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_06",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_07.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_07.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_07",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_08.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_08.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_08",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_09.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_09.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_09",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_10.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_10.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_10",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_06.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_06.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_06",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_07.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_07.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_07",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_08.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_08.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_08",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_09.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_09.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_09",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_10.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_10.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_10",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_06.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_06.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_06",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_07.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_07.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_07",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_08.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_08.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_08",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_09.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_09.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_09",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_10.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_10.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_10",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_06.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_06.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_06",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_07.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_07.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_07",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_08.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_08.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_08",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_09.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_09.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_09",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_10.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_10.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_10",
+    "session": "Teste - setul 2",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_01.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_01.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_01",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_02.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_02.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_02",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_03.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_03.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_03",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_04.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_04.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_04",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Test_05.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_mate-info_Barem_05.pdf",
+    "name": "2020_E_c_matematica_M_mate-info_Test_05",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_01.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_01.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_01",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_02.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_02.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_02",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_03.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_03.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_03",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_04.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_04.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_04",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Test_05.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_st-nat_Barem_05.pdf",
+    "name": "2020_E_c_matematica_M_st-nat_Test_05",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_01.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_01.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_01",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_02.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_02.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_02",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_03.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_03.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_03",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_04.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_04.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_04",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Test_05.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_tehnologic_Barem_05.pdf",
+    "name": "2020_E_c_matematica_M_tehnologic_Test_05",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_01.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_01.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_01",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_02.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_02.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_02",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_03.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_03.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_03",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_04.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_04.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_04",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Test_05.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_matematica_M_pedagogic_Barem_05.pdf",
+    "name": "2020_E_c_matematica_M_pedagogic_Test_05",
+    "session": "Teste - setul 1",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2020_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2020",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2020_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2020",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2020_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2020",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2020/2020_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2020_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2020",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S2_M_mate-info_Subiect_04_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S2_M_mate-info_Barem_04_LRO.pdf",
+    "name": "2021_E_c_Matematica_S2_M_mate-info_Subiect_04_LRO",
+    "session": "Sesiunea a II-a - 17 august 2021 (toamna)",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S2_M_st-nat_Subiect_04_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S2_M_st-nat_Barem_04_LRO.pdf",
+    "name": "2021_E_c_Matematica_S2_M_st-nat_Subiect_04_LRO",
+    "session": "Sesiunea a II-a - 17 august 2021 (toamna)",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S2_M_tehnologic_Subiect_04_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S2_M_tehnologic_Barem_04_LRO.pdf",
+    "name": "2021_E_c_Matematica_S2_M_tehnologic_Subiect_04_LRO",
+    "session": "Sesiunea a II-a - 17 august 2021 (toamna)",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S2_M_pedagogic_Subiect_04_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S2_M_pedagogic_Barem_04_LRO.pdf",
+    "name": "2021_E_c_Matematica_S2_M_pedagogic_Subiect_04_LRO",
+    "session": "Sesiunea a II-a - 17 august 2021 (toamna)",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1_M_mate-info_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1_M_mate-info_Barem_02_LRO.pdf",
+    "name": "2021_E_c_Matematica_S1_M_mate-info_Subiect_02_LRO",
+    "session": "Sesiunea I - 29 iunie 2021 (vara)",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1_M_st-nat_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1_M_st-nat_Barem_02_LRO.pdf",
+    "name": "2021_E_c_Matematica_S1_M_st-nat_Subiect_02_LRO",
+    "session": "Sesiunea I - 29 iunie 2021 (vara)",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1_M_tehnologic_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1_M_tehnologic_Barem_02_LRO.pdf",
+    "name": "2021_E_c_Matematica_S1_M_tehnologic_Subiect_02_LRO",
+    "session": "Sesiunea I - 29 iunie 2021 (vara)",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1_M_pedagogic_Subiect_02_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1_M_pedagogic_Barem_02_LRO.pdf",
+    "name": "2021_E_c_Matematica_S1_M_pedagogic_Subiect_02_LRO",
+    "session": "Sesiunea I - 29 iunie 2021 (vara)",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1R_M_st-nat_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1R_M_st-nat_Barem_01_LRO.pdf",
+    "name": "2021_E_c_Matematica_S1R_M_st-nat_Subiect_01_LRO",
+    "session": "Sesiunea I - 29 iunie 2021 (vara)",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1R_M_tehnologic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_S1R_M_tehnologic_Barem_01_LRO.pdf",
+    "name": "2021_E_c_Matematica_S1R_M_tehnologic_Subiect_01_LRO",
+    "session": "Sesiunea I - 29 iunie 2021 (vara)",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SS_M_mate-info_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SS_M_mate-info_Barem_07_LRO.pdf",
+    "name": "2021_E_c_Matematica_SS_M_mate-info_Subiect_07_LRO",
+    "session": "Sesiunea specială - 19 mai 2021",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_12.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_12.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_12",
+    "session": "Teste - setul 12",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_12.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_12.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_12",
+    "session": "Teste - setul 12",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_12.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_12.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_12",
+    "session": "Teste - setul 12",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_12.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_12.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_12",
+    "session": "Teste - setul 12",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_11.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_11.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_11",
+    "session": "Teste - setul 11",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_11.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_11.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_11",
+    "session": "Teste - setul 11",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_11.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_11.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_11",
+    "session": "Teste - setul 11",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_11.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_11.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_11",
+    "session": "Teste - setul 11",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_10.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_10.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_10",
+    "session": "Teste - setul 10",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_10.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_10.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_10",
+    "session": "Teste - setul 10",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_10.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_10.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_10",
+    "session": "Teste - setul 10",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_10.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_10.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_10",
+    "session": "Teste - setul 10",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_09.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_09.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_09",
+    "session": "Teste - setul 9",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_09.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_09.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_09",
+    "session": "Teste - setul 9",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_09.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_09.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_09",
+    "session": "Teste - setul 9",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_09.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_09.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_09",
+    "session": "Teste - setul 9",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_08.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_08.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_08",
+    "session": "Teste - setul 8",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_08.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_08.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_08",
+    "session": "Teste - setul 8",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_08.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_08.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_08",
+    "session": "Teste - setul 8",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_08.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_08.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_08",
+    "session": "Teste - setul 8",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_07.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_07.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_07",
+    "session": "Teste - setul 7",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_07.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_07.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_07",
+    "session": "Teste - setul 7",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_07.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_07.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_07",
+    "session": "Teste - setul 7",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_07.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_07.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_07",
+    "session": "Teste - setul 7",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_06.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_06.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_06",
+    "session": "Teste - setul 6",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_06.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_06.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_06",
+    "session": "Teste - setul 6",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_06.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_06.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_06",
+    "session": "Teste - setul 6",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_06.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_06.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_06",
+    "session": "Teste - setul 6",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_05.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_05.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_05",
+    "session": "Teste - setul 5",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_05.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_05.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_05",
+    "session": "Teste - setul 5",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_05.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_05.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_05",
+    "session": "Teste - setul 5",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_05.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_05.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_05",
+    "session": "Teste - setul 5",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_mate-info_Simulare_XII_Barem_LRO.pdf",
+    "name": "2021_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 23 martie 2021",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_st-nat_Simulare_XII_Barem_LRO.pdf",
+    "name": "2021_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 23 martie 2021",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2021_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 23 martie 2021",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2021_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 23 martie 2021",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_04.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_04.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_04",
+    "session": "Teste - setul 4",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_04.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_04.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_04",
+    "session": "Teste - setul 4",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_04.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_04.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_04",
+    "session": "Teste - setul 4",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_04.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_04.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_04",
+    "session": "Teste - setul 4",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_03.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_03.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_03",
+    "session": "Teste - setul 3",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_03.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_03.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_03",
+    "session": "Teste - setul 3",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_03.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_03.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_03",
+    "session": "Teste - setul 3",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_03.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_03.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_03",
+    "session": "Teste - setul 3",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_02.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_02.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_02",
+    "session": "Teste - setul 2",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_02.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_02.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_02",
+    "session": "Teste - setul 2",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_02.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_02.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_02",
+    "session": "Teste - setul 2",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_02.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_02.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_02",
+    "session": "Teste - setul 2",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Test_01.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_mate-info_Barem_01.pdf",
+    "name": "2021_E_c_matematica_M_mate-info_Test_01",
+    "session": "Teste - setul 1",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Test_01.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_st-nat_Barem_01.pdf",
+    "name": "2021_E_c_matematica_M_st-nat_Test_01",
+    "session": "Teste - setul 1",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Test_01.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_tehnologic_Barem_01.pdf",
+    "name": "2021_E_c_matematica_M_tehnologic_Test_01",
+    "session": "Teste - setul 1",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Test_01.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_matematica_M_pedagogic_Barem_01.pdf",
+    "name": "2021_E_c_matematica_M_pedagogic_Test_01",
+    "session": "Teste - setul 1",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2021_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2021",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2021_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2021",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2021_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2021",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2021/2021_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2021_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2021",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S2_M_mate-info_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S2_M_mate-info_Barem_07_LRO.pdf",
+    "name": "2022_E_c_Matematica_S2_M_mate-info_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 17 august 2022 (toamna)",
+    "year": "2022",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S2_M_st-nat_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S2_M_st-nat_Barem_07_LRO.pdf",
+    "name": "2022_E_c_Matematica_S2_M_st-nat_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 17 august 2022 (toamna)",
+    "year": "2022",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S2_M_tehnologic_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S2_M_tehnologic_Barem_07_LRO.pdf",
+    "name": "2022_E_c_Matematica_S2_M_tehnologic_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 17 august 2022 (toamna)",
+    "year": "2022",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S2_M_pedagogic_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S2_M_pedagogic_Barem_07_LRO.pdf",
+    "name": "2022_E_c_Matematica_S2_M_pedagogic_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 17 august 2022 (toamna)",
+    "year": "2022",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S1_M_mate-info_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S1_M_mate-info_Barem_01_LRO.pdf",
+    "name": "2022_E_c_Matematica_S1_M_mate-info_Subiect_01_LRO",
+    "session": "Sesiunea I - 21 iunie 2022 (vara)",
+    "year": "2022",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S1_M_st-nat_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S1_M_st-nat_Barem_01_LRO.pdf",
+    "name": "2022_E_c_Matematica_S1_M_st-nat_Subiect_01_LRO",
+    "session": "Sesiunea I - 21 iunie 2022 (vara)",
+    "year": "2022",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S1_M_tehnologic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S1_M_tehnologic_Barem_01_LRO.pdf",
+    "name": "2022_E_c_Matematica_S1_M_tehnologic_Subiect_01_LRO",
+    "session": "Sesiunea I - 21 iunie 2022 (vara)",
+    "year": "2022",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S1_M_pedagogic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_S1_M_pedagogic_Barem_01_LRO.pdf",
+    "name": "2022_E_c_Matematica_S1_M_pedagogic_Subiect_01_LRO",
+    "session": "Sesiunea I - 21 iunie 2022 (vara)",
+    "year": "2022",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SS_M_mate-info_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SS_M_mate-info_Barem_03_LRO.pdf",
+    "name": "2022_E_c_Matematica_SS_M_mate-info_Subiect_03_LRO",
+    "session": "Sesiunea specială - 19 mai 2022",
+    "year": "2022",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SS_M_st-nat_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SS_M_st-nat_Barem_03_LRO.pdf",
+    "name": "2022_E_c_Matematica_SS_M_st-nat_Subiect_03_LRO",
+    "session": "Sesiunea specială - 19 mai 2022",
+    "year": "2022",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SS_M_tehnologic_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SS_M_tehnologic_Barem_03_LRO.pdf",
+    "name": "2022_E_c_Matematica_SS_M_tehnologic_Subiect_03_LRO",
+    "session": "Sesiunea specială - 19 mai 2022",
+    "year": "2022",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SS_M_pedagogic_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SS_M_pedagogic_Barem_03_LRO.pdf",
+    "name": "2022_E_c_Matematica_SS_M_pedagogic_Subiect_03_LRO",
+    "session": "Sesiunea specială - 19 mai 2022",
+    "year": "2022",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_mate-info_Simulare_XII_Barem_LRO.pdf",
+    "name": "2022_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 29 martie 2022",
+    "year": "2022",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_st-nat_Simulare_XII_Barem_LRO.pdf",
+    "name": "2022_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 29 martie 2022",
+    "year": "2022",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2022_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 29 martie 2022",
+    "year": "2022",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2022_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 29 martie 2022",
+    "year": "2022",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2022_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2022",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2022_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2022",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2022_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2022",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2022/2022_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2022_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2022",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S2_M_mate-info_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S2_M_mate-info_Barem_07_LRO.pdf",
+    "name": "2023_E_c_Matematica_S2_M_mate-info_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 17 august 2023 (toamna)",
+    "year": "2023",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S2_M_st-nat_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S2_M_st-nat_Barem_07_LRO.pdf",
+    "name": "2023_E_c_Matematica_S2_M_st-nat_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 17 august 2023 (toamna)",
+    "year": "2023",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S2_M_tehnologic_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S2_M_tehnologic_Barem_07_LRO.pdf",
+    "name": "2023_E_c_Matematica_S2_M_tehnologic_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 17 august 2023 (toamna)",
+    "year": "2023",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S2_M_pedagogic_Subiect_07_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S2_M_pedagogic_Barem_07_LRO.pdf",
+    "name": "2023_E_c_Matematica_S2_M_pedagogic_Subiect_07_LRO",
+    "session": "Sesiunea a II-a - 17 august 2023 (toamna)",
+    "year": "2023",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S2R_M_tehnologic_Subiect_05_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S2R_M_tehnologic_Barem_05_LRO.pdf",
+    "name": "2023_E_c_Matematica_S2R_M_tehnologic_Subiect_05_LRO",
+    "session": "Sesiunea a II-a - 17 august 2023 (toamna)",
+    "year": "2023",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S1_M_mate-info_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S1_M_mate-info_Barem_01_LRO.pdf",
+    "name": "2023_E_c_Matematica_S1_M_mate-info_Subiect_01_LRO",
+    "session": "Sesiunea I - 27 iunie 2023 (vara)",
+    "year": "2023",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S1_M_st-nat_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S1_M_st-nat_Barem_01_LRO.pdf",
+    "name": "2023_E_c_Matematica_S1_M_st-nat_Subiect_01_LRO",
+    "session": "Sesiunea I - 27 iunie 2023 (vara)",
+    "year": "2023",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S1_M_tehnologic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S1_M_tehnologic_Barem_01_LRO.pdf",
+    "name": "2023_E_c_Matematica_S1_M_tehnologic_Subiect_01_LRO",
+    "session": "Sesiunea I - 27 iunie 2023 (vara)",
+    "year": "2023",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S1_M_pedagogic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_S1_M_pedagogic_Barem_01_LRO.pdf",
+    "name": "2023_E_c_Matematica_S1_M_pedagogic_Subiect_01_LRO",
+    "session": "Sesiunea I - 27 iunie 2023 (vara)",
+    "year": "2023",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SS_M_mate-info_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SS_M_mate-info_Barem_06_LRO.pdf",
+    "name": "2023_E_c_Matematica_SS_M_mate-info_Subiect_06_LRO",
+    "session": "Sesiunea specială - 16 mai 2023",
+    "year": "2023",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SS_M_st-nat_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SS_M_st-nat_Barem_06_LRO.pdf",
+    "name": "2023_E_c_Matematica_SS_M_st-nat_Subiect_06_LRO",
+    "session": "Sesiunea specială - 16 mai 2023",
+    "year": "2023",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SS_M_tehnologic_Subiect_06_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SS_M_tehnologic_Barem_06_LRO.pdf",
+    "name": "2023_E_c_Matematica_SS_M_tehnologic_Subiect_06_LRO",
+    "session": "Sesiunea specială - 16 mai 2023",
+    "year": "2023",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_mate-info_Simulare_XII_Barem_LRO.pdf",
+    "name": "2023_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 28 martie 2023",
+    "year": "2023",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_st-nat_Simulare_XII_Barem_LRO.pdf",
+    "name": "2023_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 28 martie 2023",
+    "year": "2023",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2023_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 28 martie 2023",
+    "year": "2023",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2023_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 28 martie 2023",
+    "year": "2023",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2023_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2023",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2023_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2023",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2023_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2023",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2023/2023_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2023_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2023",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S2_M_mate-info_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S2_M_mate-info_Barem_03_LRO.pdf",
+    "name": "2024_E_c_Matematica_S2_M_mate-info_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 20 august 2024 (toamna)",
+    "year": "2024",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S2_M_st-nat_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S2_M_st-nat_Barem_03_LRO.pdf",
+    "name": "2024_E_c_Matematica_S2_M_st-nat_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 20 august 2024 (toamna)",
+    "year": "2024",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S2_M_tehnologic_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S2_M_tehnologic_Barem_03_LRO.pdf",
+    "name": "2024_E_c_Matematica_S2_M_tehnologic_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 20 august 2024 (toamna)",
+    "year": "2024",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S2_M_pedagogic_Subiect_03_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S2_M_pedagogic_Barem_03_LRO.pdf",
+    "name": "2024_E_c_Matematica_S2_M_pedagogic_Subiect_03_LRO",
+    "session": "Sesiunea a II-a - 20 august 2024 (toamna)",
+    "year": "2024",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S2R_M_tehnologic_Subiect_01_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S2R_M_tehnologic_Barem_01_LRO.pdf",
+    "name": "2024_E_c_Matematica_S2R_M_tehnologic_Subiect_01_LRO",
+    "session": "Sesiunea a II-a - 20 august 2024 (toamna)",
+    "year": "2024",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S1_M_mate-info_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S1_M_mate-info_Barem_10_LRO.pdf",
+    "name": "2024_E_c_Matematica_S1_M_mate-info_Subiect_10_LRO",
+    "session": "Sesiunea I - 2 iulie 2024 (vara)",
+    "year": "2024",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S1_M_st-nat_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S1_M_st-nat_Barem_10_LRO.pdf",
+    "name": "2024_E_c_Matematica_S1_M_st-nat_Subiect_10_LRO",
+    "session": "Sesiunea I - 2 iulie 2024 (vara)",
+    "year": "2024",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S1_M_tehnologic_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S1_M_tehnologic_Barem_10_LRO.pdf",
+    "name": "2024_E_c_Matematica_S1_M_tehnologic_Subiect_10_LRO",
+    "session": "Sesiunea I - 2 iulie 2024 (vara)",
+    "year": "2024",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S1_M_pedagogic_Subiect_10_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S1_M_pedagogic_Barem_10_LRO.pdf",
+    "name": "2024_E_c_Matematica_S1_M_pedagogic_Subiect_10_LRO",
+    "session": "Sesiunea I - 2 iulie 2024 (vara)",
+    "year": "2024",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S1R_M_st-nat_Subiect_08_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_S1R_M_st-nat_Barem_08_LRO.pdf",
+    "name": "2024_E_c_Matematica_S1R_M_st-nat_Subiect_08_LRO",
+    "session": "Sesiunea I - 2 iulie 2024 (vara)",
+    "year": "2024",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SS_M_mate-info_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SS_M_mate-info_Barem_09_LRO.pdf",
+    "name": "2024_E_c_Matematica_SS_M_mate-info_Subiect_09_LRO",
+    "session": "Sesiunea specială - 22 mai 2024",
+    "year": "2024",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SS_M_st-nat_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SS_M_st-nat_Barem_09_LRO.pdf",
+    "name": "2024_E_c_Matematica_SS_M_st-nat_Subiect_09_LRO",
+    "session": "Sesiunea specială - 22 mai 2024",
+    "year": "2024",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SS_M_tehnologic_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SS_M_tehnologic_Barem_09_LRO.pdf",
+    "name": "2024_E_c_Matematica_SS_M_tehnologic_Subiect_09_LRO",
+    "session": "Sesiunea specială - 22 mai 2024",
+    "year": "2024",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SS_M_pedagogic_Subiect_09_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SS_M_pedagogic_Barem_09_LRO.pdf",
+    "name": "2024_E_c_Matematica_SS_M_pedagogic_Subiect_09_LRO",
+    "session": "Sesiunea specială - 22 mai 2024",
+    "year": "2024",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_mate-info_Simulare_XII_Barem_LRO.pdf",
+    "name": "2024_E_c_Matematica_SM_M_mate-info_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 5 martie 2024",
+    "year": "2024",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_st-nat_Simulare_XII_Barem_LRO.pdf",
+    "name": "2024_E_c_Matematica_SM_M_st-nat_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 5 martie 2024",
+    "year": "2024",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2024_E_c_Matematica_SM_M_tehnologic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 5 martie 2024",
+    "year": "2024",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Barem_LRO.pdf",
+    "name": "2024_E_c_Matematica_SM_M_pedagogic_Simulare_XII_Subiect_LRO",
+    "session": "Simulare clasa a XII-a - 5 martie 2024",
+    "year": "2024",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_mate-info_Model_Barem_LRO.pdf",
+    "name": "2024_E_c_Matematica_SM_M_mate-info_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2024",
+    "profile": "M_mate-info",
+    "level": "M1"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_st-nat_Model_Barem_LRO.pdf",
+    "name": "2024_E_c_Matematica_SM_M_st-nat_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2024",
+    "profile": "M_st-nat",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_tehnologic_Model_Barem_LRO.pdf",
+    "name": "2024_E_c_Matematica_SM_M_tehnologic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2024",
+    "profile": "M_tehnologic",
+    "level": "M2"
+  },
+  {
+    "examLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO.pdf",
+    "solutionLink": "https://www.pro-matematica.ro/bacalaureat/2024/2024_E_c_Matematica_SM_M_pedagogic_Model_Barem_LRO.pdf",
+    "name": "2024_E_c_Matematica_SM_M_pedagogic_Model_Subiect_LRO",
+    "session": "Model",
+    "year": "2024",
+    "profile": "M_pedagogic",
+    "level": "M3"
+  }
+]

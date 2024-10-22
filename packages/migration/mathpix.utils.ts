@@ -9,6 +9,7 @@ export const convertPdfToMd = async (pdfUrl: string) => {
   console.log("Processing PDF...");
   const processResult = await processPdf({
     url: pdfUrl,
+
     conversion_formats: {
       md: true,
     },

@@ -1,0 +1,352 @@
+[
+  {
+    "id": "batch_req_6715b5ca5b888190a97c2bc4635aeb1e",
+    "custom_id": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO-1.1",
+    "response": {
+      "status_code": 200,
+      "request_id": "c0f34e9b5b66ee053f2b21297d9e393c",
+      "body": {
+        "id": "chatcmpl-AKblcO5FjVinBisJ1lv1XsIgpSNnf",
+        "object": "chat.completion",
+        "created": 1729475100,
+        "model": "gpt-4o-2024-08-06",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"statement\": \"Care dintre numerele $2 \\\\sqrt[3]{6}$ \u015fi $3 \\\\sqrt[3]{3}$ este mai mare?\",\n  \"points\": 5,\n  \"officialExplanation\": [\n    {\n      \"text\": \"$2 \\\\sqrt[3]{6}=\\\\sqrt[3]{48}$\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"$3 \\\\sqrt[3]{3}=\\\\sqrt[3]{81}$\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"$2 \\\\sqrt[3]{6}<3 \\\\sqrt[3]{3}$\",\n      \"points\": 1\n    }\n  ]\n}\n```",
+              "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3917,
+          "completion_tokens": 151,
+          "total_tokens": 4068,
+          "prompt_tokens_details": { "cached_tokens": 0 },
+          "completion_tokens_details": { "reasoning_tokens": 0 }
+        },
+        "system_fingerprint": "fp_6b68a8204b"
+      }
+    },
+    "error": null
+  },
+  {
+    "id": "batch_req_6715b5ca70148190a41c540872fe7dd7",
+    "custom_id": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO-1.2",
+    "response": {
+      "status_code": 200,
+      "request_id": "2cc8787e2adb74c31ac1de6f1c02a6e4",
+      "body": {
+        "id": "chatcmpl-AKbkq0fw3pxXbMNhB3NjRNBQKmJoq",
+        "object": "chat.completion",
+        "created": 1729475052,
+        "model": "gpt-4o-2024-08-06",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"statement\": \"Determina\u021bi mul\u021bimea valorilor func\u021biei $f: \\\\mathbb{R} \\\\rightarrow \\\\mathbb{R}, f(x)=|x|$.\",\n  \"points\": 5,\n  \"officialExplanation\": [\n    {\n      \"text\": \"$|x| \\\\geq 0, \\\\forall x \\\\in \\\\mathbb{R} \\\\Rightarrow \\\\operatorname{Im} f \\\\subset[0,+\\\\infty)$\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"$x \\\\geq 0 \\\\Rightarrow x=f(x) \\\\Rightarrow[0,+\\\\infty) \\\\subset \\\\operatorname{Im} f$\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"$\\\\operatorname{Im} f=[0,+\\\\infty)$\",\n      \"points\": 1\n    }\n  ]\n}\n```",
+              "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3917,
+          "completion_tokens": 198,
+          "total_tokens": 4115,
+          "prompt_tokens_details": { "cached_tokens": 0 },
+          "completion_tokens_details": { "reasoning_tokens": 0 }
+        },
+        "system_fingerprint": "fp_6b68a8204b"
+      }
+    },
+    "error": null
+  },
+  {
+    "id": "batch_req_6715b5ca7d848190ba64d21da3d31654",
+    "custom_id": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO-1.3",
+    "response": {
+      "status_code": 200,
+      "request_id": "9903745343fd5fb69f217efa43cbd5ef",
+      "body": {
+        "id": "chatcmpl-AKbs5XkovfTbfYxvPVlyKYID3eWuy",
+        "object": "chat.completion",
+        "created": 1729475501,
+        "model": "gpt-4o-2024-08-06",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"statement\": \"Determina\u021bi $m \\\\in \\\\mathbb{R}$ pentru care ecua\u021bia $x^{2}-x+m^{2}=0$ are dou\u0103 solu\u021bii reale egale.\",\n  \"points\": 5,\n  \"officialExplanation\": [\n    {\n      \"text\": \"$\\\\Delta=1-4m^{2}$\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"Ecua\u021bia are dou\u0103 solu\u021bii egale $\\\\Leftrightarrow \\\\Delta=0$\",\n      \"points\": 1\n    },\n    {\n      \"text\": \"$\\\\Delta=0 \\\\Leftrightarrow m= \\\\pm \\\\frac{1}{2}$\",\n      \"points\": 2\n    }\n  ]\n}\n```",
+              "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3917,
+          "completion_tokens": 167,
+          "total_tokens": 4084,
+          "prompt_tokens_details": { "cached_tokens": 0 },
+          "completion_tokens_details": { "reasoning_tokens": 0 }
+        },
+        "system_fingerprint": "fp_6b68a8204b"
+      }
+    },
+    "error": null
+  },
+  {
+    "id": "batch_req_6715b5ca903c8190a857a3c2602ed781",
+    "custom_id": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO-1.4",
+    "response": {
+      "status_code": 200,
+      "request_id": "b7f9762a427537afc6fd874d7afc4d6e",
+      "body": {
+        "id": "chatcmpl-AKbmQRczbRMGoN5kj6XXvvOZ3uBlg",
+        "object": "chat.completion",
+        "created": 1729475150,
+        "model": "gpt-4o-2024-08-06",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"statement\": \"Determina\u021bi num\u0103rul termenilor ra\u021bionali din dezvoltarea \\\\((1+\\\\sqrt[4]{2})^{41}\\\\).\",\n  \"points\": 5,\n  \"officialExplanation\": [\n    {\n      \"text\": \"Calcul\u0103m termenul general \\\\(T_{k+1}=C_{41}^{k} \\\\sqrt[4]{2^{k}}=C_{k+1}^{k} 2^{\\\\frac{k}{4}}\\\\).\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"Termenul \\\\(T_{k+1}\\\\) este ra\u021bional dac\u0103 \u0219i numai dac\u0103 4 divide \\\\(k\\\\).\",\n      \"points\": 1\n    },\n    {\n      \"text\": \"Exist\u0103 11 termeni ra\u021bionali \u00een dezvoltare.\",\n      \"points\": 2\n    }\n  ]\n}\n```",
+              "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3917,
+          "completion_tokens": 193,
+          "total_tokens": 4110,
+          "prompt_tokens_details": { "cached_tokens": 0 },
+          "completion_tokens_details": { "reasoning_tokens": 0 }
+        },
+        "system_fingerprint": "fp_6b68a8204b"
+      }
+    },
+    "error": null
+  },
+  {
+    "id": "batch_req_6715b5caaa508190b52086664a53c009",
+    "custom_id": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO-1.5",
+    "response": {
+      "status_code": 200,
+      "request_id": "c98fa52a36f4efbdf42fdadf2a74c4a3",
+      "body": {
+        "id": "chatcmpl-AKblZ74migPeZW1CYvwzCzk0gVLKf",
+        "object": "chat.completion",
+        "created": 1729475097,
+        "model": "gpt-4o-2024-08-06",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"statement\": \"\u00cen sistemul de coordonate $x O y$ se consider\u0103 punctele $A(2,1), B(-2,3), C(1,-3)$ \u015fi $D(4, a)$, unde $a \\in \\mathbb{R}$. Determina\u021bi $a \\in \\mathbb{R}$ astfel \u00eenc\u00e2t dreptele $A B$ \u015fi $C D$ s\u0103 fie paralele.\",\n  \"points\": 5,\n  \"officialExplanation\": [\n    {\n      \"text\": \"Calcul\u0103m panta dreptei AB: $m_{AB} = \\\\frac{3 - 1}{-2 - 2} = -\\\\frac{1}{2}$.\",\n      \"points\": 1\n    },\n    {\n      \"text\": \"Calcul\u0103m panta dreptei CD: $m_{CD} = \\\\frac{a + 3}{3}$.\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"Pentru ca dreptele s\u0103 fie paralele, trebuie ca $m_{AB} = m_{CD}$, deci $-\\\\frac{1}{2} = \\\\frac{a + 3}{3}$.\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"Rezolv\u0103m ecua\u021bia: $-\\\\frac{1}{2} = \\\\frac{a + 3}{3} \\\\Rightarrow a + 3 = -\\\\frac{3}{2} \\\\Rightarrow a = -\\\\frac{9}{2}$.\",\n      \"points\": 2\n    }\n  ]\n}\n```",
+              "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3917,
+          "completion_tokens": 349,
+          "total_tokens": 4266,
+          "prompt_tokens_details": { "cached_tokens": 0 },
+          "completion_tokens_details": { "reasoning_tokens": 0 }
+        },
+        "system_fingerprint": "fp_6b68a8204b"
+      }
+    },
+    "error": null
+  },
+  {
+    "id": "batch_req_6715b5cab6f48190942cf259ddab8a01",
+    "custom_id": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO-1.6",
+    "response": {
+      "status_code": 200,
+      "request_id": "16fae375fa45e8b32469eb62acb44b49",
+      "body": {
+        "id": "chatcmpl-AKbmLdeL1rWm2D8QAOWYShSgJzFZi",
+        "object": "chat.completion",
+        "created": 1729475145,
+        "model": "gpt-4o-2024-08-06",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"statement\": \"Fie mul\u021bimea A={0 ; \\\\frac{\\\\pi}{6} ; \\\\frac{\\\\pi}{2} ; \\\\pi ; \\\\frac{3\\\\pi}{2}}. Care este probabilitatea ca, aleg\u00e2nd un element din mul\u021bimea A, acesta s\u0103 fie solu\u021bie a ecua\u021biei \\\\sin^{3} x+\\\\cos^{3} x=1?\",\n  \"points\": 5,\n  \"officialExplanation\": [\n    {\n      \"text\": \"\\\\sin^{3} x+\\\\cos^{3} x=1, x \\\\in A, numai pentru x \\\\in\\\\{0 ; \\\\frac{\\\\pi}{2}\\\\}\",\n      \"points\": 3\n    },\n    {\n      \"text\": \"P=\\\\frac{2}{5}\",\n      \"points\": 2\n    }\n  ]\n}\n```",
+              "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3917,
+          "completion_tokens": 186,
+          "total_tokens": 4103,
+          "prompt_tokens_details": { "cached_tokens": 0 },
+          "completion_tokens_details": { "reasoning_tokens": 0 }
+        },
+        "system_fingerprint": "fp_6b68a8204b"
+      }
+    },
+    "error": null
+  },
+  {
+    "id": "batch_req_6715b5cac9b8819084afee86d1b43e1b",
+    "custom_id": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO-2.1",
+    "response": {
+      "status_code": 200,
+      "request_id": "c71a6068c75f830a227cae4de5247069",
+      "body": {
+        "id": "chatcmpl-AKbqpFsFlmkZOPcaIQfr2by9ZZ0Ag",
+        "object": "chat.completion",
+        "created": 1729475423,
+        "model": "gpt-4o-2024-08-06",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"statement\": \"Fie matricea $A=\\\\left(\\\\begin{array}{lll}0 & 1 & 0 \\\\\\\\ 0 & 0 & 1 \\\\\\\\ a & 0 & 0\\\\end{array}\\\\right) \\\\in \\\\mathcal{M}_{3}(\\\\mathbb{R})$. Pentru $n \\\\in \\\\mathbb{N}^{*}$, not\u0103m $B_{n}=A^{n}+A^{n+1}+A^{n+2}$. a) Ar\u0103ta\u021bi c\u0103 $A^{2010}=a^{670} \\\\cdot I_{3}$.\",\n  \"points\": 5,\n  \"officialExplanation\": [\n    {\n      \"text\": \"$A^{2}=\\\\left(\\\\begin{array}{lll} 0 & 0 & 1 \\\\\\\\ a & 0 & 0 \\\\\\\\ 0 & a & 0 \\\\end{array}\\\\right)$\",\n      \"points\": 1\n    },\n    {\n      \"text\": \"$A^{3}=a I_{3}$\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"$A^{2010}=\\\\left(A^{3}\\\\right)^{670}=a^{670} I_{3}$\",\n      \"points\": 2\n    }\n  ]\n}\n```",
+              "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3917,
+          "completion_tokens": 292,
+          "total_tokens": 4209,
+          "prompt_tokens_details": { "cached_tokens": 0 },
+          "completion_tokens_details": { "reasoning_tokens": 0 }
+        },
+        "system_fingerprint": "fp_6b68a8204b"
+      }
+    },
+    "error": null
+  },
+  {
+    "id": "batch_req_6715b5cae628819091d9e74065a84a3f",
+    "custom_id": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO-2.2",
+    "response": {
+      "status_code": 200,
+      "request_id": "6d85c533fedbc326ecddf5a3fa83645d",
+      "body": {
+        "id": "chatcmpl-AKbm1NNTD8kucdZGct3z7xQvmniyV",
+        "object": "chat.completion",
+        "created": 1729475125,
+        "model": "gpt-4o-2024-08-06",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"statement\": \"Pe mul\u021bimea \\\\(\\\\mathbb{R}\\\\) se define\u015fte legea \\\\(x * y=2 x y-3 x-3 y+m, m \\\\in \\\\mathbb{R}\\\\). Fie mul\u021bimea \\\\(M=\\\\mathbb{R} \\\\backslash\\\\left\\\\{\\\\frac{3}{2}\\\\right\\\\}\\\\). a) Determina\u021bi \\\\(m \\\\in \\\\mathbb{R}\\\\) astfel \u00eenc\u00e2t \\\\(x * y \\\\in M\\\\), pentru orice \\\\(x, y \\\\in M\\\\). b) Pentru \\\\(m=6\\\\) ar\u0103ta\u021bi c\u0103 \\\\((M, *)\\\\) este grup. c) Pentru \\\\(m=6\\\\), demonstra\u021bi c\u0103 func\u021bia \\\\(f: M \\\\rightarrow \\\\mathbb{R}^{*}, f(x)=2 x-3\\\\) este un izomorfism \u00eentre grupurile \\\\((M, *)\\\\) \u015fi \\\\(\\\\left(\\\\mathbb{R}^{*}, \\\\cdot\\\\right)\\\\).\",\n  \"points\": 15,\n  \"officialExplanation\": [\n    {\n      \"text\": \"a) Determina\u021bi \\\\(m \\\\in \\\\mathbb{R}\\\\) astfel \u00eenc\u00e2t \\\\(x * y \\\\in M\\\\), pentru orice \\\\(x, y \\\\in M\\\\).\",\n      \"points\": 5\n    },\n    {\n      \"text\": \"b) Pentru \\\\(m=6\\\\) ar\u0103ta\u021bi c\u0103 \\\\((M, *)\\\\) este grup.\",\n      \"points\": 5\n    },\n    {\n      \"text\": \"c) Pentru \\\\(m=6\\\\), demonstra\u021bi c\u0103 func\u021bia \\\\(f: M \\\\rightarrow \\\\mathbb{R}^{*}, f(x)=2 x-3\\\\) este un izomorfism \u00eentre grupurile \\\\((M, *)\\\\) \u015fi \\\\(\\\\left(\\\\mathbb{R}^{*}, \\\\cdot\\\\right)\\\\).\",\n      \"points\": 5\n    }\n  ]\n}\n```",
+              "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3917,
+          "completion_tokens": 443,
+          "total_tokens": 4360,
+          "prompt_tokens_details": { "cached_tokens": 0 },
+          "completion_tokens_details": { "reasoning_tokens": 0 }
+        },
+        "system_fingerprint": "fp_6b68a8204b"
+      }
+    },
+    "error": null
+  },
+  {
+    "id": "batch_req_6715b5cb0d948190a84378acbb711226",
+    "custom_id": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO-3.1",
+    "response": {
+      "status_code": 200,
+      "request_id": "efdc541e67cfda82e565806ef9c900b7",
+      "body": {
+        "id": "chatcmpl-AKbliJ0X0TE1EgBtvB20cqLmE62Ar",
+        "object": "chat.completion",
+        "created": 1729475106,
+        "model": "gpt-4o-2024-08-06",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"statement\": \"Se consider\u0103 func\u021bia f: \u211d \u2192 \u211d, f(x)=\u221b(2x\u22121)\u2212\u221b(2x+1).\",\n  \"points\": 5,\n  \"officialExplanation\": [\n    {\n      \"text\": \"Calcul\u0103m derivata func\u021biei f: f'(x) = (2/3) / \u221b((2x\u22121)\u00b2) \u2212 (2/3) / \u221b((2x+1)\u00b2), x \u2260 \u00b11/2.\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"Calcul\u0103m valoarea func\u021biei \u00een punctul x=0: f(0) = \u22122.\",\n      \"points\": 2\n    },\n    {\n      \"text\": \"Calcul\u0103m derivata \u00een punctul x=0: f'(0) = 0.\",\n      \"points\": 1\n    }\n  ]\n}\n```",
+              "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3917,
+          "completion_tokens": 202,
+          "total_tokens": 4119,
+          "prompt_tokens_details": { "cached_tokens": 0 },
+          "completion_tokens_details": { "reasoning_tokens": 0 }
+        },
+        "system_fingerprint": "fp_6b68a8204b"
+      }
+    },
+    "error": null
+  },
+  {
+    "id": "batch_req_6715b5cb1ad48190a315956fb2ea58c7",
+    "custom_id": "2010_E_c_Matematica_S2_M1_Subiect_06_LRO-3.2",
+    "response": {
+      "status_code": 200,
+      "request_id": "cf2946bbd1a63f341ca78daf42cc0087",
+      "body": {
+        "id": "chatcmpl-AKbmJBQZPXvbDU5roafzBIG7B26fk",
+        "object": "chat.completion",
+        "created": 1729475143,
+        "model": "gpt-4o-2024-08-06",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"statement\": \"b) Ar\u0103ta\u021bi c\u0103 \u0219irul \\\\( (I_n)_{n \\geq 1} \\\\) este descresc\u0103tor.\",\n  \"points\": 5,\n  \"officialExplanation\": [\n    {\n      \"text\": \"0 \\\\leq x \\\\leq 1 \\\\Rightarrow x^n \\\\geq x^{n+1}\",\n      \"points\": 1\n    },\n    {\n      \"text\": \"x^2 + x + 1 > 0, \\\\forall x \\\\in \\\\mathbb{R}\",\n      \"points\": 1\n    },\n    {\n      \"text\": \"\\\\frac{x^n}{x^2 + x + 1} \\\\geq \\\\frac{x^{n+1}}{x^2 + x + 1}, \\\\forall x \\\\in [0,1] \\\\Rightarrow I_n \\\\geq I_{n+1}, \\\\forall n \\\\in \\\\mathbb{N}^*, adic\u0103 \u0219irul este descresc\u0103tor\",\n      \"points\": 3\n    }\n  ]\n}\n```",
+              "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3917,
+          "completion_tokens": 235,
+          "total_tokens": 4152,
+          "prompt_tokens_details": { "cached_tokens": 0 },
+          "completion_tokens_details": { "reasoning_tokens": 0 }
+        },
+        "system_fingerprint": "fp_6b68a8204b"
+      }
+    },
+    "error": null
+  }
+]
