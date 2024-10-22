@@ -63,16 +63,30 @@ export const PostHogProviderWithClerk = ({ children }: SimpleProps) => {
   return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
 };
 
+export const MathJaxProvider = ({ children }: SimpleProps) => {
+  return (
+    <MathJaxContext
+      config={{
+        "HTML-CSS": { linebreaks: { automatic: true } },
+        CommonHTML: { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } },
+      }}
+    >
+      {children}
+    </MathJaxContext>
+  );
+};
+
 export function Providers({ children }: SimpleProps) {
   return (
     <ClerkProvider localization={roRO}>
       <PostHogProviderWithClerk>
-        <MathJaxContext>
+        <MathJaxProvider>
           <TrpcProvider>
             {children}
             <CrispChat />
           </TrpcProvider>
-        </MathJaxContext>
+        </MathJaxProvider>
       </PostHogProviderWithClerk>
     </ClerkProvider>
   );

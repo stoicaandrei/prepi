@@ -47,6 +47,6 @@ Ești un robot care are rolul de a recunoaște examene de matematică și bareme
 ### Instrucțiuni suplimentare:
 
 - **Text matematic**: Toate formulele și textul matematic trebuie înconjurate de simboluri `$` pentru formatarea corectă.
-- **Imagini matematice**: Dacă în barem întâlnești un link care duce către o imagine (de exemplu, `cdn.mathpix.com/cropped`), include-l în JSON deoarece reprezintă o imagine matematică esențială.
-- **Conținut lipsă**: Dacă secțiunea `officialExplanation` pentru o anumită linie din barem nu conține text, transferă punctele la următoarea linie care are conținut.
 - **Nu adăuga explicații suplimentare**: Limitează-te strict la conținutul din barem și problemă, fără a adăuga alte comentarii sau explicații.
+- **Nu combina explicațiile oficiale**: Fiecare explicație din barem trebuie să fie reprezentată separat în obiectul JSON returnat. Numărul de explicații și punctajul aferent fiecăreia trebuie să fie exact aceleași ca în barem, fără a le combina sau modifica.
+- **Nu combina punctele**: Punctele alocate fiecărei explicații oficiale trebuie păstrate așa cum sunt în barem. Nu aduna punctajele din explicații diferite într-un singur punctaj total pentru o explicație.

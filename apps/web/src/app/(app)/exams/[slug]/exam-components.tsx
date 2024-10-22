@@ -1,20 +1,14 @@
 "use client";
 
-import { ArrowLeft, ChevronRight, Files } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import Link from "next/link";
-import { trpc } from "@/utils/trpc";
-import { MathJax } from "better-react-mathjax";
-import { getExamBySlugAction } from "@/actions";
 import { ExamProblemOfficialSolutionStep } from "@prisma/client";
-
-const parseLatex = (text?: string) => text?.replace(/\$([^$]+)\$/g, "\\($1\\)");
+import { MathRender } from "@/components/MathRender";
 
 export const ExplanationSection = ({
   explanation,
@@ -36,7 +30,7 @@ export const ExplanationSection = ({
         {explanation?.map((step, index) => (
           <div key={index} className="mb-4 flex align-middle">
             <div className="mr-4">{step.points}p</div>
-            <MathJax inline>{parseLatex(step.content)}</MathJax>
+            <MathRender content={step.content} />
           </div>
         ))}
       </CollapsibleContent>
@@ -49,9 +43,7 @@ export const ExamProblemDescription = ({
 }: {
   description: string;
 }) => {
-  return (
-    <MathJax className="mb-4 text-gray-700">{parseLatex(description)}</MathJax>
-  );
+  return <MathRender className="mb-4 text-gray-700" content={description} />;
 };
 
 export const ExamSubsectionDescription = ({
@@ -59,5 +51,5 @@ export const ExamSubsectionDescription = ({
 }: {
   description?: string;
 }) => {
-  return <MathJax inline>{parseLatex(description)}</MathJax>;
+  return <MathRender content={description ?? ""} />;
 };
